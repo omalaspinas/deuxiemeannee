@@ -625,7 +625,7 @@ Une intégrale de la forme
  \int f(x)f'(x)\dd x=\frac{1}{2}f(x)^2+c.
 \end{equation}
 \begin{exemple}
- Le calcul de l'intégrale de suivante 
+ Le calcul de l'intégrale suivante 
 \begin{equation}
  \int \sin(x)\cos(x)\dd x=\frac{1}{2}\sin^2(x)+c.
 \end{equation} 
@@ -676,7 +676,7 @@ De façon similaire si nous nous intéressons à une intégrale définie
 \begin{equation}
  \int_a^b f' g\dd x=\left.(fg)\right|_a^b-\int_a^b f g'\dd x.
 \end{equation}
-Le choix des fonction est complètement arbitraire. 
+Le choix des fonctions est complètement arbitraire. 
 Néanmoins, le but de cette transformation est de remplacer une intégrale par une autre dont on connaîtrait la solution.
 
 Des ``règles'' pour utiliser cette technique seraient que 
@@ -742,7 +742,7 @@ $[a,b]$. Soit également l'image de $g$ contenue dans le domaine de définition 
 \end{equation}
 \end{theoreme}
 Nous utilisons ce théorème de la façon suivante. L'idée est de remplacer la fonction $g(x)$ par $z$. Puis il faut également
-modifier $\dd x$ par $\dd z$ où nous avons que $\dd x=\dd z/g'(x)$. Finalement, il faut changer les bornes d'intégration 
+remplacer $\dd x$ par $\dd z$ où nous avons que $\dd x=\dd z/g'(x)$. Finalement, il faut changer les bornes d'intégration 
 par $a\rightarrow g(a)$ et $b\rightarrow g(b)$. Si on ne calcule pas l'intégrale mais la primitive, on ne modifie (évidemment) pas
 les bornes d'intégration, mais en revanche pour trouver la primitive il faut également appliquer la transformation
 $x=g^{-1}(z)$ sur la solution.
@@ -779,11 +779,11 @@ Dans ce cas, on va approximer l'intégrale et donc commettre une erreur.
 Pour ce faire on va subdiviser l'espace d'intégration $[a,b]$ en $N$ pas équidistants (pour simplifier) $\delta x=(a-b)/N$,
 et approximer l'intégrale par une somme finie
 \begin{equation}
- \int_a^bf(x)\dd x=\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i,
+ \int_a^bf(x)\dd x=\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i,
 \end{equation}
 où $g_i$ est un coefficient qui va dépendre de la méthode d'intégration 
 que nous allons utiliser, $E$ est l'erreur commise par l'intégration numérique et va dépendre des bornes d'intégration, 
-de $\delta x$ (du nombre de pas d'intégration), de la forme de $f(x)$ (combien est est ``gentille'') et finalement de
+de $\delta x$ (du nombre de pas d'intégration), de la forme de $f(x)$ (combien est ``gentille'') et finalement de
 la méthode d'intégration.
 
 D'une façon générale plus $\delta x$ est petit ($N$ est grand) plus l'erreur sera petite et donc l'intégration sera précise
@@ -816,7 +816,7 @@ Si cette condition est requise on parlera de \textbf{convergence} de notre inté
 
 
 \subsection{Méthode des rectangles}
-Pour la méthode des rectangles, nous allons calculer l'intégrale en approximant l'air sous la fonction par une somme de rectangles,
+Pour la méthode des rectangles, nous allons calculer l'intégrale en approximant l'aire sous la fonction par une somme de rectangles,
 comme nous l'avons fait pour la définition de l'intégration au sens de Riemann.
 La différence principale est que nous ne regarderons pas les valeurs minimales ou maximales de $f$ sur les 
 subdivisions de l'espace, mais uniquement les valeurs sur les bornes. Cette approximation donne donc la formule suivante
@@ -837,7 +837,7 @@ En effet, la précision de la méthode des rectangles est améliorée et devient
 
 \subsection{Méthode des trapèzes}
 
-Pour la méthode des trapèzes, nous allons calculer l'intégrale en approximant l'air sous la fonction par une somme de trapèzes.
+Pour la méthode des trapèzes, nous allons calculer l'intégrale en approximant l'aire sous la fonction par une somme de trapèzes.
 Pour rappel l'aire d'un trapèze, dont les côtés parallèles sont de longueurs $c$ et $d$ et la hauteur $h$, est donnée pas
 \begin{equation}
  A=(c+d)h/2. 
@@ -2254,7 +2254,7 @@ On a également l'équation de la chaleur
 \begin{equation}
  \pDeriv{T}{t}=\kappa\left(\pDerivTwo{T}{x}+\pDerivTwo{T}{y}+\pDerivTwo{T}{z}\right),
 \end{equation}
-où $T$ est est la température et $\kappa$ la diffusivité thermique.
+où $T$ est la température et $\kappa$ la diffusivité thermique.
 
 Ces équations ont une structure particulière. En effet, d'une part elles sont linéaires. Soient $\rho_1$ et $\rho_2$
 deux solutions de l'équation \eqref{eq_ondes}, on a que la somme $\rho_1+\rho_2$ est également solution de \eqref{eq_ondes}.
