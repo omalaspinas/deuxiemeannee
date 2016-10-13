@@ -1,0 +1,61 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsfonts,bm,amsmath,amssymb,graphicx}
+\usepackage{cancel}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\integer}{\mathbb{Z}}
+\newcommand{\definition}{\textbf{Definition }}
+\newcommand{\exemples}{\textbf{Exemples }}
+\newcommand{\remarque}{\textbf{Remarque }}
+\newcommand{\proprietes}{\textbf{Propriétés }}
+\newcommand{\propriete}{\textbf{Propriété }}
+
+\title{Travail pratique sur les intégrales}
+% \author{Orestis Malaspinas}
+\date{A rendre pour le XX.YY.2016}
+
+\begin{document}
+\maketitle
+
+Le but de ce travail pratique est d'implanter les méthodes numériques de calcul d'intégrales que nous avons vues en cours,
+afin de les comprendre de façon un peu plus approfondie.
+
+Dans un premier temps, le but est donc d'écrire un code où l'utilisateur spécifie une fonction $f(x)$ gentille (pas besoin de vérifier 
+si elle est bien définie partout par exemple), un intervalle $[a,b]$, et 
+un nombre de subdivisions $N$. Le code devra rendre la valeur numérique obtenue pour $I(a,b,N,f(x))$ pour trois méthodes 
+vues en cours (méthode du rectangle à gauche, méthode du trapèze et méthode de Simpson).
+
+Puis vous devrez effectuer une étude de l'erreur pour chacune de ces méthodes. Il s'agira de prendre une fonction $f(x)$ 
+dont la primitive est simple à calculer, disons
+\begin{equation}
+f(x)=\frac{1}{x},
+\end{equation}
+et un intervalle sur lequel la fonction est bien définie. Choisissons ici $[a,b]$ avec $a=1$ et $b=5$. 
+On peut donc calculer l'intégrale exactement et on notera ce résultat exact $I_{exact}(a,b,f(x))$.
+Il s'agira de calculer l'erreur commise par l'évaluation de la fonction $I(a,b,N,f(x))$ de la façon suivante
+\begin{equation}
+ E(N)=\left|\frac{I_{exact}(a,b,f(x))-I(a,b,N,f(x))}{I_{exact}(a,b,f(x))}\right|
+\end{equation}
+Ces résultats devront être illustrés sous forme de graphique ($E$ en fonction de $N$ en échelle log-log).
+
+Finalement, une comparaison des performances des différentes méthodes devra être effectuée.
+On choisira des $\varepsilon=0.1,0.01,0.001$ (au sens du cours) pour savoir si la convergence de la méthode est atteinte.
+On comparera le temps qu'il faut pour calculer l'intégrale avec les différentes méthodes
+avec un nombre de point permettant d'avoir atteint la convergence pour chaque $\varepsilon$.
+
+Vous devrez rendre un petit rapport (2-3 pages) qui explique ce que vous avez fait et dans quel but. Il devra contenir
+une courte introduction théorique (rappelant les formules et le but du travail), une partie expliquant dans les grandes lignes 
+l'algorithme (pas de copier-coller du code), une partie illustrant les résultats obtenus, et finalement
+une conclusion résumant les résultats.
+
+Le travail peut-être effectué en groupe de deux, mais les rapports doivent être individuels (le code peut être identique, n'oubliez pas de mentionner 
+explicitement si vous avez effectué le code à deux).  Je dois pouvoir exécuter le code
+afin de pouvoir reproduire les résultats présentés dans le rapport. Je dois aussi pouvoir définir ma propre fonction à intégrer de façon simple.
+Vous pouvez m'envoyer le rapport au format pdf et le code par e-mail.
+
+La note sera une combinaison entre le code rendu et le rapport (moitié/moitié). 
+
+\end{document}
