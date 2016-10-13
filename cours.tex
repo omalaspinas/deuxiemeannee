@@ -620,24 +620,24 @@ Les polynômes s'intègrent terme à terme. Pour $\{a_i\}_{i=0}^{n}\in\real$
  \end{equation}
 \end{exercice}
 \subsubsection{Application de la règle de chaîne pour l'intégration}
-Une intégrale de la forme
+Une primitive de la forme
 \begin{equation}
  \int f(x)f'(x)\dd x=\frac{1}{2}f(x)^2+c.
 \end{equation}
 \begin{exemple}
- Le calcul de l'intégrale suivante 
+ Le calcul de la primitive suivante 
 \begin{equation}
  \int \sin(x)\cos(x)\dd x=\frac{1}{2}\sin^2(x)+c.
 \end{equation} 
 \end{exemple}
 
 \subsubsection{Inverse de la dérivation logarithmique}
-Une intégrale de la forme
+Une primitive de la forme
 \begin{equation}
  \int \frac{f'(x)}{f(x)}\dd x=\ln(f(x))+c.
 \end{equation}
 \begin{exemple}[Trivial]
- Le calcul de l'intégrale de suivante 
+ Le calcul de la primitive de suivante 
 \begin{equation}
  \int \frac{1}{x}\dd x=\int \frac{(x)'}{x}\dd x=\ln(x)+c.
 \end{equation} 
@@ -650,7 +650,7 @@ dans le terme à intégrer
  \int g'(f(x))f'(x)\dd x=\int [g(f(x))]' \dd x=g(f(x))+c.
 \end{equation}
 \begin{exemple}
-Si $g$ est définie comme $g(x)=x^{-1}$ et $f(x)=3x^2+2$, alors l'intégrale 
+Si $g$ est définie comme $g(x)=x^{-1}$ et $f(x)=3x^2+2$, alors la primitive 
 \begin{equation}
  \int \frac{f'(x)}{g'(f(x))}\dd x=\int -\frac{6 x}{(3x^2+2)^2}\dd x=\frac{1}{3x^2+2}.
 \end{equation} 
@@ -668,7 +668,7 @@ En intégrant cette équation on obtient
 \begin{equation}
  fg=\int f' g\dd x+\int f g'\dd x.
 \end{equation}
-Une intégrale de la forme $\int f' g\dd x$ peut s'intégrer de la façon suivante
+Une primitive de la forme $\int f' g\dd x$ peut se calculer de la façon suivante
 \begin{equation}
  \int f' g\dd x=fg-\int f g'\dd x.
 \end{equation}
@@ -685,7 +685,7 @@ Des ``règles'' pour utiliser cette technique seraient que
 \item $f=\int f'\dd x$ soit facile à calculer et aurait une forme plus simple que $f'$.
 \end{enumerate}
 \begin{exemples}
-Intégrer les fonctions suivantes
+Calculer les primitives suivantes
  \begin{enumerate}
   \item $\int x e^x\dd x$. $g=x$, $f'=e^x$ et donc $g'=1$, $f=e^x$. Il vient
   \begin{equation}
