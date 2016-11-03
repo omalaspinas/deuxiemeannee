@@ -786,6 +786,8 @@ que nous allons utiliser, $E$ est l'erreur commise par l'intégration numérique
 de $\delta x$ (du nombre de pas d'intégration), de la forme de $f(x)$ (combien est ``gentille'') et finalement de
 la méthode d'intégration.
 
+\subsection{Erreur d'une méthode d'intégration}
+
 D'une façon générale plus $\delta x$ est petit ($N$ est grand) plus l'erreur sera petite et donc l'intégration sera précise
 (et plus le calcul sera long).
 Néanmoins, comme la précision des machines sur lesquelles nous évaluons les intégrale est finie, si $\delta x$ devient 
@@ -799,20 +801,28 @@ en capable de déterminer \textbf{l'ordre} de l'erreur.
 \begin{definition}[Ordre d'une méthode]
  On dit qu'une méthode d'intégration est d'ordre $k$, si l'erreur commise par la méthode varie 
  proportionnellement à $\delta x^k$. On note qu'une erreur est d'ordre $k$ par le symbole $\mathcal{O}(\delta x^k)$. Exemple: si une méthode est d'ordre deux, alors en diminuant 
- $\delta x$ d'un facteur $2$, l'erreur sera elle divisée par $2^2=4$.
+ $\delta x$ d'un facteur $2$, l'erreur sera elle divisée par $2^2=4$. Si une méthode est d'ordre $3$, alors en diminuant 
+ $\delta x$ d'un facteur $2$, nous aurons que l'erreur est divisée par un facteur $2^3=8$. Etc.
 \end{definition}
 
 Comme le calcul d'une intégrale de façon numérique ne donne en général pas un résultat exact, mais
 un résultat qui va dépendre d'un certain nombre de paramètres utilisés pour l'intégration, il faut
 définir un critère qui va nous dire si notre intégrale est calculée avec une précision suffisante.
 
-Une façon de faire est de calculer l'intégrale $I$ avec $N$ subdivisions, puis
-de refaire le calcul avec $2N$ subdivisions. En se donnant un nombre $\varepsilon>0$ (et mais plus grand que la précision de la machine), 
-on peut dès lors dire qu'on a une précision 
+Si nous notons $I(N,a,b,f,g)$ l'approximation du calcul de l'intégrale entre $a$ et $b$ de la fonction $f$
+avec une résolution $N$ pour la méthode d'intégration $g$
 \begin{equation}
- \left|\frac{I(2N)-I(N)}{I(2N)}\right|<\varepsilon.
+ I(N,a,b,f,g)=\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i,
 \end{equation}
-Si cette condition est requise on parlera de \textbf{convergence} de notre intégration.
+où $g_i$ est encore à préciser. Afin de déterminer si le nombre de points que nous avons choisi est suffisant, 
+après avoir évalué $I(N,a,b,f,g)$, nous évaluons $I(2\cdot N,a,b,f,g)$. En d'autres termes nous évaluons l'intégrales de la même fonction avec la même 
+méthode mais avec un nombre de points deux fois plus élevé.
+Puis, nous pouvons définir $\varepsilon(N)$ comme étant l'erreur relative de notre intégration avec une résolution $N$ et $2\cdot N$
+\begin{equation}
+ \varepsilon(N)\equiv\left|\frac{I(2N)-I(N)}{I(2N)}\right|.
+\end{equation}
+Si à présent nous choisissons un $\varepsilon_0>0$ (mais plus grand que la précision machine), nous pouvons dire que
+le calcul numérique de notre intégrale a \textbf{convergé} (on parle de \textbf{convergence} du calcul également) pour une résolution $N$ quand $\varepsilon(N)<\varepsilon_0$.
 
 
 \subsection{Méthode des rectangles}
