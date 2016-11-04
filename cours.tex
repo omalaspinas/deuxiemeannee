@@ -662,19 +662,19 @@ Si $g$ est définie comme $g(x)=x^{-1}$ et $f(x)=3x^2+2$, alors la primitive
 \subsection{Intégration par parties}
 La dérivation d'un produit de fonction $f\cdot g$ s'écrit
 \begin{equation}
- (fg)'=f' g+f g'.
+ (f(x)g(x))'=f'(x) g(x)+f(x) g'(x).
 \end{equation}
 En intégrant cette équation on obtient
 \begin{equation}
- fg=\int f' g\dd x+\int f g'\dd x.
+ f(x)g(x)=\int f'(x) g(x)\dd x+\int f(x) g'(x)\dd x.
 \end{equation}
-Une primitive de la forme $\int f' g\dd x$ peut se calculer de la façon suivante
+Une primitive de la forme $\int f'(x) g(x)\dd x$ peut se calculer de la façon suivante
 \begin{equation}
- \int f' g\dd x=fg-\int f g'\dd x.
+ \int f'(x) g(x)\dd x=f(x)g(x)-\int f(x) g'(x)\dd x.
 \end{equation}
 De façon similaire si nous nous intéressons à une intégrale définie
 \begin{equation}
- \int_a^b f' g\dd x=\left.(fg)\right|_a^b-\int_a^b f g'\dd x.
+ \int_a^b f'(x) g(x)\dd x=\left.(f(x)g(x))\right|_a^b-\int_a^b f(x) g'(x)\dd x.
 \end{equation}
 Le choix des fonctions est complètement arbitraire. 
 Néanmoins, le but de cette transformation est de remplacer une intégrale par une autre dont on connaîtrait la solution.
@@ -687,11 +687,11 @@ Des ``règles'' pour utiliser cette technique seraient que
 \begin{exemples}
 Calculer les primitives suivantes
  \begin{enumerate}
-  \item $\int x e^x\dd x$. $g=x$, $f'=e^x$ et donc $g'=1$, $f=e^x$. Il vient
+  \item $\int x e^x\dd x$. $g(x)=x$, $f'(x)=e^x$ et donc $g'(x)=1$, $f(x)=e^x$. Il vient
   \begin{equation}
     \int x e^x=x e^x-\int e^x\dd x=x e^x-e^x+c.
   \end{equation}
-  \item $\int \cos(x)\sin(x)\dd x$. $g= \cos(x)$, $f'=\sin(x)$ et donc $g'=\sin(x)$, $f=\cos(x)$. Il vient
+  \item $\int \cos(x)\sin(x)\dd x$. $g= \cos(x)$, $f'(x)=\sin(x)$ et donc $g'(x)=\sin(x)$, $f(x)=\cos(x)$. Il vient
   \begin{align}
     &\int \cos(x)\sin(x)\dd x=\sin^2(x)-\int \cos(x)\sin(x)\dd x\nonumber\\
     \Rightarrow &\int \cos(x)\sin(x)\dd x=\frac{1}{2}\sin^2(x).
@@ -702,11 +702,11 @@ Calculer les primitives suivantes
 \end{exemples}
 Il est également possible d'enchaîner plusieurs intégrations par parties.
 \begin{exemple}
-L'intégrale de $\int x^2 e^x\dd x$. En posant $g=x^2$, $f'=e^x$ et donc $g'=2x$, $f=e^x$. Il vient
+L'intégrale de $\int x^2 e^x\dd x$. En posant $g(x)=x^2$, $f'(x)=e^x$ et donc $g'(x)=2x$, $f(x)=e^x$. Il vient
 \begin{equation}
  \int x^2 e^x\dd x=x^2e^x-2\int x e^x\dd x.
 \end{equation}
-On pose de façon similaire $g=x$, $f'=e^x$ et donc $g'=1$, $f=e^x$ et il vient
+On pose de façon similaire $g(x)=x$, $f'(x)=e^x$ et donc $g'(x)=1$, $f(x)=e^x$ et il vient
 \begin{equation}
 \int x^2 e^x\dd x=x^2e^x-2\left(x e^x -\int e^x\dd x\right)=x^2e^x-2x e^x +2e^x+c.
 \end{equation}
