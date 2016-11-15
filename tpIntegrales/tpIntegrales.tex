@@ -23,9 +23,11 @@
 Le but de ce travail pratique est d'implanter les méthodes numériques de calcul d'intégrales que nous avons vues en cours,
 afin de les comprendre de façon un peu plus approfondie.
 
-Dans un premier temps, le but est donc d'écrire un code où l'utilisateur spécifie une fonction $f(x)$ gentille (pas besoin de vérifier 
+Dans un premier temps, le but est donc d'écrire un code où l'utilisateur spécifie une fonction $f(x)$ qu'on 
+suppose ``gentille'' (pas besoin de vérifier 
 si elle est bien définie partout par exemple), un intervalle $[a,b]$, et 
-un nombre de subdivisions $N$. Le code devra rendre la valeur numérique obtenue pour $I(a,b,N,f(x))$ pour trois méthodes 
+un nombre de subdivisions $N$. Le code devra rendre la valeur numérique obtenue pour l'intégrale de la fonction $I(a,b,N,f(x))$ 
+pour trois méthodes 
 vues en cours (méthode du rectangle à gauche, méthode du trapèze et méthode de Simpson).
 
 Puis vous devrez effectuer une étude de l'erreur pour chacune de ces méthodes. Il s'agira de prendre une fonction $f(x)$ 
@@ -44,16 +46,23 @@ Ces résultats devront être illustrés sous forme de graphique ($E$ en fonction
 Finalement, une comparaison des performances des différentes méthodes devra être effectuée.
 On choisira des $\varepsilon=0.1,0.01,0.001$ (au sens du cours) pour savoir si la convergence de la méthode est atteinte.
 On comparera le temps qu'il faut pour calculer l'intégrale avec les différentes méthodes
-avec un nombre de point permettant d'avoir atteint la convergence pour chaque $\varepsilon$.
+avec une résolution permettant d'avoir atteint la convergence pour chaque $\varepsilon$
+(à présenter sous forme de tableau). 
+Rappelons ici que nous avons convergence si pour un $N$ donné, on a
+\begin{equation}
+ \left|\frac{I(a,b,N,f(x))-I(a,b,2\cdot N,f(x))}{I(a,b,2\cdot N,f(x))}\right|<\varepsilon.
+\end{equation}
 
-Vous devrez rendre un petit rapport (2-3 pages) qui explique ce que vous avez fait et dans quel but. Il devra contenir
+Vous devrez rendre un petit rapport (3-4 pages) qui explique ce que vous avez fait et dans quel but. Il devra contenir
 une courte introduction théorique (rappelant les formules et le but du travail), une partie expliquant dans les grandes lignes 
 l'algorithme (pas de copier-coller du code), une partie illustrant les résultats obtenus, et finalement
 une conclusion résumant les résultats.
 
-Le travail peut-être effectué en groupe de deux, mais les rapports doivent être individuels (le code peut être identique, n'oubliez pas de mentionner 
+Le travail peut-être effectué en groupe de deux, mais les rapports doivent être individuels 
+(le code peut être identique, n'oubliez pas de mentionner 
 explicitement si vous avez effectué le code à deux).  Je dois pouvoir exécuter le code
-afin de pouvoir reproduire les résultats présentés dans le rapport. Je dois aussi pouvoir définir ma propre fonction à intégrer de façon simple.
+afin de pouvoir reproduire les résultats présentés dans le rapport. Je dois aussi pouvoir 
+définir ma propre fonction à intégrer de façon simple.
 Vous pouvez m'envoyer le rapport au format pdf et le code par e-mail.
 
 La note sera une combinaison entre le code rendu et le rapport (moitié/moitié). 
