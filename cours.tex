@@ -776,7 +776,7 @@ Calculer les primitives suivantes par changement de variable
 Dans certains cas, il est impossible d'évaluer analytiquement une intégrale ou alors elle est très compliquée à calculer.
 Dans ce cas, on va approximer l'intégrale et donc commettre une erreur.
 
-Pour ce faire on va subdiviser l'espace d'intégration $[a,b]$ en $N$ pas équidistants (pour simplifier) $\delta x=(a-b)/N$,
+Pour ce faire on va subdiviser l'espace d'intégration $[a,b]$ en $N$ pas équidistants (pour simplifier) $\delta x=(b-a)/N$,
 et approximer l'intégrale par une somme finie
 \begin{equation}
  \int_a^bf(x)\dd x=\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i,
@@ -877,7 +877,7 @@ En résolvant ce système (nous n'écrivons pas la solution ici) nous pouvons à
 l'intégrale 
 \begin{align}
  I&=\int_a^b f(x)\dd x\cong\int_a^b (cx^2+dx+e)\dd x,\nonumber\\
- &=\frac{a-b}{6}(f(a)+f(b)+4f((a+b)/2))+\mathcal{O}(\delta x^4).
+ &=\frac{b-a}{6}(f(a)+f(b)+4f((a+b)/2))+\mathcal{O}(\delta x^4).
 \end{align}
 
 On peut donc généraliser affiner cette formule en rajoutant des intervalles comme précédemment
