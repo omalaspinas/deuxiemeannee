@@ -876,19 +876,20 @@ $(f(a+b)/2)$. On se retrouve donc avec trois équations à trois inconnues
 En résolvant ce système (nous n'écrivons pas la solution ici) nous pouvons à présent évaluer 
 l'intégrale 
 \begin{align}
- I&=\int_a^b f(x)\dd x\cong\int_a^b (cx^2+dx+e)\dd x,\nonumber\\
- &=\frac{a-b}{6}(f(a)+f(b)+4f((a+b)/2))+\mathcal{O}(\delta x^4).
+ I&\cong\int_a^b f(x)\dd x\cong\int_a^b (cx^2+dx+e)\dd x,\nonumber\\
+ &=\frac{a-b}{6}(f(a)+f(b)+4f((a+b)/2)).
 \end{align}
 
 On peut donc généraliser affiner cette formule en rajoutant des intervalles comme précédemment
 et en répétant cette opération pour chaque intervalle.
 
 Il vient donc que 
-\begin{equation}
- I=\frac{\delta x}{6}\sum_{i=0}^{N-1}\left[f(a+i\cdot \delta x)+f(a+(i+1)\cdot\delta x)+4f(a+(i+1/2)\cdot\delta x)\right].
-\end{equation}
+\begin{align}
+ I&=\frac{\delta x}{6}\sum_{i=0}^{N-1}\left[f(a+i\cdot \delta x)+f(a+(i+1)\cdot\delta x)\right.\nonumber\\
+ &\left.+4f(a+(i+1/2)\cdot\delta x)\right]+\mathcal{O}(\delta x^4).
+\end{align}
 
-Cette méthode permet d'évaluer exactement des polynômes d'ordre 3, $f(x)=ax^3+bx^2+cx+d$.
+Cette méthode permet d'évaluer exactement des polynômes d'ordre 4, $f(x)=ax^3+bx^2+cx+d$.
 
 
 \chapter{Équations différentielles ordinaires}
