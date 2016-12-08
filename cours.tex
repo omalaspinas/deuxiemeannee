@@ -953,8 +953,71 @@ revient à calculer
 
 \subsection{Mouvement rectiligne uniformément accéléré}
 
-Dans le cas du mouvement rectiligne d'un objet 
+Dans le cas du mouvement rectiligne d'un objet dont on le connaît que l'accélération, $a(t)$, on peut également écrire une équation différentielle
+qui décrirait l'évolution de la position de l'objet en fonction du temps. En effet, l'accélération d'un objet est la deuxième dérivée 
+de la position, soit
+\begin{equation}
+x''(t)=a(t),
+\end{equation}
+ou encore la première dérivée de la vitesse.
+\begin{align}
+v'(t)&=a(t),\\
+x'(t)&=v(t).
+\end{align}
 
+Par simplicité supposons que l'accélération est constante, $a(t)=a$. On doit donc résoudre\footnote{On cherche la fonction dont la deuxième dérivée est une constante, $a$.}
+\begin{equation}
+x''(t)=a,
+\end{equation}
+ou 
+\begin{align}
+v'(t)&=a,\\
+x'(t)&=v(t).\label{eq_xpv}
+\end{align}
+Commen\c cons pas le système d'équations ci-dessus. On commence par résoudre 
+la première équation pour $v(t)$ et on a
+\begin{equation}
+ v(t)=a\cdot t+C.
+\end{equation}
+En substituant ce résultat dans l'équation \eqref{eq_xpv}, on a
+\begin{equation}
+ x'(t)=a\cdot t+C.
+\end{equation}
+On peut donc directement intégrer des deux côtés comme vu dans la sous-section précédente
+\begin{align}
+ \int x'(t)\dd t&=\int a\cdot t+C\dd t,\nonumber\\
+ x(t)&=\frac{a}{2}\cdot t^2+C\cdot t + D.
+\end{align}
+On a donc que la position d'un objet en mouvement rectiligne uniformément accéléré est donné par une
+parabole. Cette équation ci-dessus néanmoins a encore deux constante indéterminées. Pour les déterminer, on doit donc imposer
+deux conditions intiales. Une possibilité est d'imposer une condition initiale par équation
+\begin{equation}
+ v(t_0)=v_0,\mbox{ et } x(t_0)=x_0.
+\end{equation}
+On obtient donc 
+\begin{equation}
+ v(t_0)=v_0=a\cdot t_0+C \Leftrightarrow C=v_0-a\cdot t_0,
+\end{equation}
+et
+\begin{equation}
+ x(t_0)=x_0=\frac{a}{2}\cdot t_0^2+D \Leftrightarrow D=x_0-\frac{a}{2}\cdot t_0^2.
+\end{equation}
+Finalement la solution est donc
+\begin{equation}
+ x(t)=\frac{a}{2}\cdot (t^2-t_0^2)+v_0\cdot (t-t_0)+x_0.
+\end{equation}
+
+\begin{remarque}
+La solution de l'équation différentielle peut également se calculer de la façon suivante
+\begin{equation}
+ x''(t)=av,\ x(t_0)=x_0,\ v(t_0)=v_0.
+\end{equation}
+revient à calculer 
+\begin{align*}
+ \int \int x''(t)\dd t\dd t=\int \int a \dd t\dd t,\\
+ x(t)=\frac{a}{2}t^2+C\cdot t + D.
+\end{align*}
+\end{remarque}
 
 \subsection{Évolution d'une population}
 
