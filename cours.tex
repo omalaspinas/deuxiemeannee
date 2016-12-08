@@ -898,6 +898,64 @@ Cette méthode permet d'évaluer exactement des polynômes d'ordre 3, $f(x)=ax^3
 Pour illustrer le concept d'équations différentielles, nous allons considérer pour commencer des systèmes
 qui évoluent dans le temps (évolution d'une population, taux d'intérêts, circuits électriques, ...).
 
+\subsection{Mouvement rectiligne uniforme}
+
+Imaginons que nous connaissons la fonction décrivant le vitesse d'une particle au cours du temps et 
+notons la $v(t)$. Nous savons également que la vitesse d'une particule est relié à l'évolution au cours du temps 
+de sa position. Cette dernière peut être notée, $x(t)$.
+En particulier, nous avons que la vitesse n'est rien d'autre que la dérivée de la position. On peut onc écrire 
+une équation reliant la vitesse à la position
+\begin{equation}
+ x'(t)=v(t).
+\end{equation}
+Cette équation est appelée \textit{équation différentielle}, car elle fait intervernir non seulement les fonctions $x(t)$ et $v(t)$, mais également 
+la dérivée de la fonction $x(t)$. Si maintenant nous précisons ce que vaut la fonction $v(t)$ nous pourrons résoudre cette équation.
+Comme le nom de la sous-section le laisse entendre, nous nous intéressons à un mouvement rectiligne uniforme, qui a la particularité
+de décrire le mouvement d'un objet qui se déplace à vitesse constante. On a donc
+\begin{equation}
+ v(t)=v.
+\end{equation}
+Nous cherchons donc à résoudre l'équation différentielle
+\begin{equation}
+ x'(t)=v.
+\end{equation}
+Ou en d'autres termes, nous cherchons la fonction dont la dérivée donne $C$\footnote{Cette formulation devrait vous rappeler ce que nous avons vu au chapitre précédent}. 
+Vous savez sans doute que l'ensemble de fonctions satisfaisant la contrainte précédente est
+\begin{equation}
+ x(t)=v\cdot t+B,
+\end{equation}
+où $B$ est une constante arbitraire. On a donc la solution générale de cette équation différentielle qui n'est pas unique, mais qui donne une infinité
+de solution (comme quand nous avons calculé la primitive d'une fonction au chapitre précédent). Afin de trouver une solution unique,
+nous devons imposer une ``condition intiale'' à notre équation différentielle. En effet, si nous imposons la condition intiale
+\begin{equation}
+ x(t_0)=x_0, 
+\end{equation}
+il vient
+\begin{equation}
+ x(t_0)=x_0=v\cdot t_0+B \Leftrightarrow B=x_0-v\cdot t_0.
+\end{equation}
+Finalement, la solution de l'équation différentielle est donnée par
+\begin{equation}
+ x(t)=v\cdot (t-t_0)+x_0.
+\end{equation}
+
+\begin{remarque}
+La solution de l'équation différentielle
+\begin{equation}
+ x'(t)=v,\ x(t_0)=x_0,
+\end{equation}
+revient à calculer 
+\begin{align*}
+ \int x'(t)\dd t=\int v \dd t,\\
+ x(t)=v\cdot t + B.
+\end{align*}
+\end{remarque}
+
+\subsection{Mouvement rectiligne uniformément accéléré}
+
+Dans le cas du mouvement rectiligne d'un objet 
+
+
 \subsection{Évolution d'une population}
 
 Imaginons une colonie de bactéries dont nous connaissons le taux de reproduction $r$. Nous connaissons le nombre de
