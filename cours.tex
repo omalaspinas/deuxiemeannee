@@ -2457,7 +2457,7 @@ b_j&\equiv A_j\sin(\phi_j),
 \end{align}
 on obtient
 \begin{equation}
- f(t)=\sum_{j=0}^\infty \left(a_j\cos(j\omega t)+b_j\sin(j\omega t)\right). \label{eq_decomp_sincos}
+ f(t)=\sum_{j=0}^\infty \left(a_j\sin(j\omega t)+b_j\cos(j\omega t)\right). \label{eq_decomp_sincos}
 \end{equation}
 On a donc transformé une équation où on devait déterminer une amplitude et une phase, ce qui est très compliqué, en une autre
 équation où on doit déterminer uniquement deux amplitude. Par ailleurs, comme $\cos$ et $\sin$ sont indépendants,
@@ -2469,7 +2469,7 @@ que les $a_j\cos(j\omega t)$ et $b_j\sin(j\omega t)$ approximent au mieux la fon
 
 On va donc considérer les fonctions d'erreur suivantes
 \begin{equation}
- E^s_j=\int_0^T(f(t)-b_j\sin(j\omega t))^2\dd t,\quad E^c_j=\int_0^T(f(t)-a_j\cos(j\omega t))^2\dd t.
+ E^s_j=\int_0^T(f(t)-a_j\sin(j\omega t))^2\dd t,\quad E^c_j=\int_0^T(f(t)-b_j\cos(j\omega t))^2\dd t.
 \end{equation}
 Puis on va déterminer $a_j,b_j$ tels que $E_j^s$ et $E_j^c$ sont minimales. Pour ce faire on va utiliser les dérivées
 et déterminer nos coefficients en résolvant les équations
@@ -2479,22 +2479,22 @@ et déterminer nos coefficients en résolvant les équations
 \end{align}
 Pour l'équation \eqref{eq_deriv_aj}, on a 
 \begin{align}
- \dDeriv{E^c_j}{a_j}&=\dDeriv{\int_0^T(f(t)-a_j\cos(j\omega t))^2\dd t}{a_j},\nonumber\\
- &=\underbrace{\dDeriv{(\int_0^Tf^2(t)\dd t)}{a_j}}_{=0}+\dDeriv{(a_j^2\int_0^T(\cos^2(j\omega t)\dd t))}{a_j}-\dDeriv{(2a_j\int_0^T(f(t)\cos(j\omega t)\dd t))}{a_j},\nonumber\\
- &=2a_j\int_0^T\cos^2(j\omega t)\dd t-2\int_0^Tf(t)\cos(j\omega t)\dd t,\nonumber\\
- &=2a_j\frac{T}{2}-2\int_0^T\cos(j\omega t)f(t)\dd t.
+ \dDeriv{E^c_j}{b_j}&=\dDeriv{\int_0^T(f(t)-b_j\cos(j\omega t))^2\dd t}{b_j},\nonumber\\
+ &=\underbrace{\dDeriv{(\int_0^Tf^2(t)\dd t)}{b_j}}_{=0}+\dDeriv{(b_j^2\int_0^T(\cos^2(j\omega t)\dd t))}{b_j}-\dDeriv{(2b_j\int_0^T(f(t)\cos(j\omega t)\dd t))}{b_j},\nonumber\\
+ &=2b_j\int_0^T\cos^2(j\omega t)\dd t-2\int_0^Tf(t)\cos(j\omega t)\dd t,\nonumber\\
+ &=2b_j\frac{T}{2}-2\int_0^T\cos(j\omega t)f(t)\dd t.
 \end{align}
 Finalement on obtient
 \begin{equation}
- a_j=\frac{2}{T}\int_0^T\cos(j\omega t)f(t)\dd t.
+ b_j=\frac{2}{T}\int_0^T\cos(j\omega t)f(t)\dd t.
 \end{equation}
-Pour $b_j$ on a de façon similaire 
+Pour $a_j$ on a de façon similaire 
 \begin{equation}
- b_j=\frac{2}{T}\int_0^T\sin(j\omega t)f(t)\dd t.
+ a_j=\frac{2}{T}\int_0^T\sin(j\omega t)f(t)\dd t.
 \end{equation}
 En particulier si $j=0$, on a 
 \begin{equation}
-b_0=0,\quad a_0=\frac{2}{T}\int_0^T f(t)\dd t.
+a_0=0,\quad b_0=\frac{2}{T}\int_0^T f(t)\dd t.
 \end{equation}
 On constate que $a_0/2$ correspond à la valeur moyenne de $f(t)$ dans $[0,T]$. Cela 
 permet d'approximer des fonctions dons la valeur moyenne n'est pas nulle (les sinus et cosinus ont toujours
@@ -2518,8 +2518,8 @@ Cela est dû à la propriété d'othorgonalité des fonctions sinus/cosinus.
 En multipliant l'équation \eqref{eq_decomp_sincos} par $\frac{2}{T}\sin(k \omega t)$ et en intégrant 
 entre $0$ et $T$, on obtient
  \begin{align}
-\frac{2}{T}\int_0^T f(t)\sin(k\omega t)\dd t&=\frac{2}{T}\sum_{j=0}^\infty \left(a_j\underbrace{\int_0^T\cos(j\omega t)\sin(k\omega t)\dd t}_{=0}+b_j\underbrace{\int_0^T\sin(j\omega t)\sin(k \omega t)}_{=\frac{T}{2}\delta_{jk}}\right),\nonumber\\
-\frac{2}{T}\int_0^T f(t)\sin(k\omega t)\dd t&=\sum_{j=0}^\infty b_j \delta_{jk}=b_k,
+\frac{2}{T}\int_0^T f(t)\sin(k\omega t)\dd t&=\frac{2}{T}\sum_{j=0}^\infty \left(b_j\underbrace{\int_0^T\cos(j\omega t)\sin(k\omega t)\dd t}_{=0}+a_j\underbrace{\int_0^T\sin(j\omega t)\sin(k \omega t)\dd t}_{=\frac{T}{2}\delta_{jk}}\right),\nonumber\\
+\frac{2}{T}\int_0^T f(t)\sin(k\omega t)\dd t&=\sum_{j=0}^\infty a_j \delta_{jk}=a_k,
 \end{align}
 où $\delta_{jk}$ est le ``delta de Kronecker'', dont la définition est
 \begin{equation}
@@ -2532,8 +2532,8 @@ où $\delta_{jk}$ est le ``delta de Kronecker'', dont la définition est
 En multipliant l'équation \eqref{eq_decomp_sincos} par $\frac{2}{T}\cos(k \omega t)$ et en intégrant 
 entre $0$ et $T$, on obtient
  \begin{align}
-\frac{2}{T}\int_0^T f(t)\cos(k\omega t)\dd t&=\frac{2}{T}\sum_{j=0}^\infty \left(a_j\underbrace{\int_0^T\cos(j\omega t)\sin(k\omega t)\dd t}_{=\frac{T}{2}\delta_{jk}}+b_j\underbrace{\int_0^T\sin(j\omega t)\sin(k \omega t)}_{=0}\right),\nonumber\\
-\frac{2}{T}\int_0^T f(t)\cos(k\omega t)\dd t&=\sum_{j=0}^\infty a_j \delta_{jk}=a_k.
+\frac{2}{T}\int_0^T f(t)\cos(k\omega t)\dd t&=\frac{2}{T}\sum_{j=0}^\infty \left(a_j\underbrace{\int_0^T\cos(j\omega t)\sin(k\omega t)\dd t}_{=0}+b_j\underbrace{\int_0^T\cos(j\omega t)\cos(k \omega t)\dd t}_{=\frac{T}{2}\delta_{jk}}\right),\nonumber\\
+\frac{2}{T}\int_0^T f(t)\cos(k\omega t)\dd t&=\sum_{j=0}^\infty b_j \delta_{jk}=b_k.
 \end{align}
 
 \subsubsection{Les séries de Fourier en notations complexes}
@@ -2543,9 +2543,9 @@ Cette écriture nous fait penser qu'il pourrait être possible de réécrire cet
 de nouveaux coefficients $c_n$,
 \begin{equation}
  c_n=\left\{\begin{array}{ll}
-                \frac{a_n+ib_n}{2}, & $\mbox{ si }$n<0\\
-                \frac{a_0}{2},      & $\mbox{ si }$n=0\\
-                \frac{a_n-ib_n}{2}, & $\mbox{ si }$n>0
+                \frac{b_n+ia_n}{2}, & $\mbox{ si }$n<0\\
+                \frac{b_0}{2},      & $\mbox{ si }$n=0\\
+                \frac{b_n-ia_n}{2}, & $\mbox{ si }$n>0
                \end{array}\right.
 \end{equation}
 Avec cette notation, on peut réécrire l'équation \eqref{eq_decomp_sincos} (exercice) comme
