@@ -2830,9 +2830,9 @@ Montrons à présent que la transformée inverse discrète de la transformée de
 discrète donne bien la suite de départ
 \begin{align}
  f[n]&=\frac{1}{N}\sum_{k=0}^{N-1} \fh[k] e^{\frac{2\pi i k n}{N}},\nonumber\\
- &=\frac{1}{N}\sum_{k=0}^{N-1} \sum_{m=0}^{N-1} f[m] e^{-\frac{2\pi k m}{N}} e^{\frac{2\pi i k n}{N}},\nonumber\\
- &=\frac{1}{N}\sum_{k=0}^{N-1} \sum_{m=0}^{N-1} f[m] e^{\frac{2\pi k (n-m)}{N}},\nonumber\\
- &=\frac{1}{N}\sum_{m=0}^{N-1} f[m] \sum_{k=0}^{N-1} e^{\frac{2\pi k (n-m)}{N}},\nonumber\\
+ &=\frac{1}{N}\sum_{k=0}^{N-1} \sum_{m=0}^{N-1} f[m] e^{-\frac{2\pi i k m}{N}} e^{\frac{2\pi i k n}{N}},\nonumber\\
+ &=\frac{1}{N}\sum_{k=0}^{N-1} \sum_{m=0}^{N-1} f[m] e^{\frac{2\pi i k (n-m)}{N}},\nonumber\\
+ &=\frac{1}{N}\sum_{m=0}^{N-1} f[m] \sum_{k=0}^{N-1} e^{\frac{2\pi i k (n-m)}{N}},\nonumber\\
  &=\frac{1}{N}\sum_{m=0}^{N-1} f[m] N \delta_{nm},\nonumber\\
  &=f[n].
 \end{align}
