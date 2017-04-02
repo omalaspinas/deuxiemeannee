@@ -1,0 +1,70 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsfonts,bm,amsmath,amssymb,graphicx,verbatim}
+\usepackage{cancel}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\hf}{\hat{f}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\integer}{\mathbb{Z}}
+\newcommand{\definition}{\textbf{Definition }}
+\newcommand{\exemples}{\textbf{Exemples }}
+\newcommand{\remarque}{\textbf{Remarque }}
+\newcommand{\proprietes}{\textbf{Propriétés }}
+\newcommand{\propriete}{\textbf{Propriété }}
+
+\title{Travaux pratiques: Transformées de Fourier}
+% \author{Orestis Malaspinas}
+\date{A rendre pour le 17.04.2016}
+
+\begin{document}
+\maketitle
+
+\section*{Travaux pratiques: Transformées de Fourier}
+
+Le but de ce travail est d'essayer de comprendre comment utiliser les transformées de Fourier dans différentes applications,
+en particulier le filtrage. Pour ce faire, nous allons considérer une fonction analytique ``simple'' (dont
+la transformée de Fourier est facile à calculer) et la manipuler avec les fonctions préimplantées dans Matlab/Octave de
+transformées de Fourier: \texttt{fft} et \texttt{ifft} (il s'agit donc également d'essayer de comprendre comment les manipuler). 
+Ces fonctions représentent respectivement les transformées de Fourier et transformées de Fourier inverses rapides.
+
+Dans un premier temps, nous allons considérer la fonction
+\begin{equation}
+ f(t)=\cos(2\pi t)+0.9\cos(2\pi 10 t).
+\end{equation}
+Calculez analytiquement les coefficients de la série de Fourier de cette fonction
+et la dessinez pour $t=0..10$ avec $\delta t=0.025$ le pas entre deux points.
+
+Une fois que cette étape est effectuée, utilisez la fonction \texttt{fft}, pour 
+calculer la transformée de Fourier, $\hf$, de $f$. Pour ce faire,
+il faut ``\'echantillonner $f$ (choisir le pas de temps qu'on veut pour représenter 
+$f(t)$ numériquement). Un bon choix est de prendre $\delta t=0.025$.
+Représentez le module de transformée de Fourier sur un graphique en fonction de la fréquence, $\nu$\footnote{Indication: l'amplitude de la transformée de Fourier doit être normalisée par le 
+nombre échantillons de la fonction. De plus vous allez constater que le spectre se trouve représenté deux fois dans le vecteur donné par la fonction \texttt{fft}, à vous de tout remettre à l'échelle comme il faut}.
+Qu'observez-vous? Le résultat est-il cohérent avec le résultat analytique? 
+Reconstruire $f(t)$ à partir de $\hf(\nu)$ avec la fonction \texttt{ifft}. Superposer la fonction obtenue avec avec la fonction originale, que note-t-on?
+Refaites ces étapes en utilisant $\delta t=0.05,0.1$ que notez-vous? Comment expliquer le phénomène?
+
+En principe, vous avez dû trouver un spectre avec deux pics. Ôtez le premier 
+pic, puis le second et avec \texttt{ifft} 
+calculez les transformées de Fourier inverses et représentez les superposées à la fonction originale\footnote{Il faut ``filtrer'' dans le monde des fréquences et effectuer la tranformées de Fourier inverse pour avoir 
+le signal dans le temps. Attention le spectre est présent à double.}. Discutez les résultats.
+
+Chargez le fichier \texttt{mydata.txt} qui contient deux colonnes. Le temps $t$, et une fonction $h(t)$. Représentez la fonction sur un graphique.
+Calculez la transformée de Fourier de cette fonction avec \texttt{fft} et faites un graphique de $\hat{h}(\nu)$. Filtrez toutes les fréquences $\nu>10$ de $\hat{h}(\nu)$ dans 
+l'espace spectral. Reconstruisez la la fonction dans l'espace temporel depuis la fonction filtrée. Superposez
+le résultat avec la fonction originale. Que constatez-vous? Comparez le résultat avec la fonction $f(t)$.
+
+
+\section*{Remarques}
+
+Le travail peut-être effectué en groupe de deux. 
+Déposez le rapport et le code sur le site du cours s'il vous plaît, cela simplifie mon administration (et évite les problèmes avec les étudiants qui 
+ne mettent pas de nom sur le rapport...).
+
+La note sera une combinaison entre le code rendu et le rapport (moitié/moitié). 
+
+
+
+\end{document}
