@@ -3331,7 +3331,367 @@ Calculer les intervalles semi-inter-quartiles des exemples que nous avons vus pl
  
 \end{exercice}
 
+\section{Exemple du jeu de dé}
 
+On considère un dé à 6 faces. Le lancer de dé est une \textit{expérience aléatoire}, car
+on ne peut dire quel sera le résultat avant d'avoir effectué l'expérience. 
+
+Avant de commencer à étudier les probabilités du lancer de dé, et les questions qu'on peut se poser, faisons d'abord un peu de vocabulaire
+qui sera utile pour la suite.
+
+\begin{itemize}
+\item[$\bullet$] L'ensemble des résultats possibles du lancer de dé est $\Omega=\{1,2,3,4,5,6\}$ et cet ensemble est appelé l'\textit{univers} du lancer de dé.
+
+\item[$\bullet$] Chaque résultat possible du lancer de dé ($1$, $2$, etc), noté $\omega\in\Omega$, est appelé une \textit{éventualité}.
+
+\item[$\bullet$] Un ensemble de résultats possibles, par exemple tous les résultats pairs du lancer de dé $A=\{2, 4, 6\}\in\Omega$, s'appelle un \textit{événement}.
+Un événement composé d'une seule éventualité est appelé \textit{événement élémentaire}.
+
+\item[$\bullet$] On dit que l'événement $A$ est \textit{réalisé} si on obtient $2$, $4$, ou $6$ en lançant le dé.
+
+\item[$\bullet$] \textit{L'événement certain} est l'univers en entier. On est certain de réaliser l'événement. 
+
+\item[$\bullet$] \textit{L'événement impossible} est l'ensemble vide, $A=\emptyset$. Il correspondrait à l'événement obtenir $7$ ou plus en lançant un dé par exemple. 
+
+\item[$\bullet$] Si $A$ est un événement, on note $p(A)$ la \textit{probabilité} que $A$ soit réalisé.
+\end{itemize}
+
+Si maintenant nous voulons connaître la probabilité de tirer $6$, ou encore la probabilité de réaliser $A=\{6\}$.  
+Cela est assez intuitif pour le cas du dé. Nous avons $6$ éléments dans l'univers
+du lancer de dé. La probabilité de réaliser $A=\{6\}$ est donc
+\begin{equation}
+ p(6)=\frac{1}{6}.
+\end{equation}
+Pour le cas du lancer de dé, on dit qu'on a un processus qui est \textit{équiprobable}. En effet,
+la probabilité de réaliser chacun des événements élémentaires est la même. On a en effet la même probabilité de tirer 
+$1$, $2$, $3$, $4$, $5$, ou $6$.
+
+Si à présent, on se pose la question de la probabilité de réaliser un tirage pair, $A=\{2,4,6\}$, 
+alors on trouve 
+\begin{equation}
+ p(\mbox{tirer un nombre pair})=\frac{1}{2}.
+\end{equation}
+De façon générale pour le lancer de dé, on a que la probabilité de réaliser l'événement $A$ est
+\begin{equation}
+p(A)=\frac{\mbox{nombre d'éléments dans }A}{\mbox{nombre d'éléments dans }\Omega}.
+\end{equation}
+
+Si maintenant, on veut savoir quelle est la probabilité de tirer n'importe quel élément dans l'univers, on a
+\begin{equation}
+p(\Omega)=\frac{\mbox{nombre d'éléments dans }\Omega}{\mbox{nombre d'éléments dans }\Omega}=1.
+\end{equation}
+De même la probabilité de réaliser l'événement impossible est de 
+\begin{equation}
+p(\emptyset)=\frac{\mbox{nombre d'éléments dans }\emptyset}{\mbox{nombre d'éléments dans }\Omega}=0.
+\end{equation}
+On voit ici une propriété fondamentale des probabilités qui est que $0\leq p(A)\leq 1,\ \forall A$.
+
+La probabilité de ne pas tirer un 6 donc de réaliser l'événement $\bar A=\{1,2,3,4,5\}$ est donné par 
+$1$ moins la probabilité de réaliser $A=\{6\}$, il vient
+\begin{equation}
+ p(\bar A)=1-p(A)=\frac{5}{6}.
+\end{equation}
+De même la probabilité de tirer un nombre impair, est donnée par $1$ moins la probabilité de réaliser 
+l'événement pair
+\begin{equation}
+ p(\{1,3,5\})=1-p(\{2,4,6\})=\frac{1}{2}.
+\end{equation}
+
+
+\subsection{Evénements disjoints}\label{subsec_disjoints}
+Considérons maintenant deux événements, $A=\{1,2\}$ et $B=\{3,4,5\}$. 
+Comme $A$ et $B$ n'ont pas d'éléments en commun, on dit que c'est deux événements \textit{disjoints}. 
+Les probabilités de réalisation de ces événements sont donc
+\begin{align}
+ p(A)&=\frac{2}{6}=\frac{1}{3},\\
+ p(B)&=\frac{3}{6}=\frac{1}{2}.
+\end{align}
+On va se poser deux questions à présent
+\begin{enumerate}
+ \item On cherche à savoir quelle est la probabilité de réaliser $A$ ou de réaliser $B$, donc de tirer 
+ un dé dont le résultat sera dans l'ensemble $C=A\cup B=\{1,2,3,4,5\}$. Le résultat est
+ \begin{equation}
+ p(C)=\frac{5}{6}.
+ \end{equation}
+ Une coincidence intéressante (qui n'est en fait pas une coincidence) est que
+ \begin{equation}
+ p(C)=p(A)+p(B)=\frac{1}{3}+\frac{1}{2}=\frac{5}{6}.
+ \end{equation}
+ \item On cherche à savoir quelle est la probabilité de réaliser $A$ et réaliser $B$ en même temps,
+ donc de tirer un dé qui sera dans l'ensemble $C=A\cap B=\emptyset$. Ici on a déjà vu 
+ que la probabilité $p(\emptyset)=0$.
+\end{enumerate}
+On voit donc que si des événements sont disjoints, alors la probabilité de réaliser 
+l'un ou l'autre des événements est simplement la somme des probabilités de réaliser chacun des événements.
+Inversément la probabilité de réaliser les deux événements en même temps est nulle.
+
+Nous pouvons facilement décomposer $A$ en deux sous événements élémentaires, $A=\{1\}\cup \{2\}$.
+On a donc une autre façon de calculer $p(A)$
+\begin{equation}
+p(A)=p(\{1\})+p(\{2\})=\frac{1}{6}+\frac{1}{6}=\frac{2}{6}=\frac{1}{3}.
+\end{equation}
+On a donc que la probabilité de réaliser un événement est la somme des événements élémentaires qui le composent.
+
+\subsection{Evénements complémentaires}
+Considérons de nouveau l'événement $A=\{1,2\}$ et cette fois l'événement $B=\Omega\backslash \{1,2\}=\{3,4,5,6\}$. L'événement 
+$B$ est appelé \textit{l'événement complémentaire} de $A$. Il est noté $B=\bar A$. Les probabilité de réaliser $A$ ou de réaliser
+$\bar A$ est la même chose que de réaliser l'événement certain, car $A\cup \bar A=\Omega$. 
+On vérifie aisément dans ce cas que 
+\begin{equation}
+ \Omega=\{1,2\}\cup\{3,4,5,6\}.
+\end{equation}
+On a donc 
+\begin{equation}
+ p(A\cup \bar A)=p(\Omega)=1.
+\end{equation}
+De plus de ce qu'on a vu précédemment,
+on a que 
+\begin{equation}
+p(A\cup \bar A)=p(A)+p(\bar A).
+\end{equation}
+En combinant ces deux derniers résultats, il vient que
+\begin{equation}
+p(A)+p(\bar A)=1.
+\end{equation}
+On en déduit que 
+\begin{equation}
+p(\bar A)=1-p(\bar A)=1-\frac{1}{3}=\frac{2}{3}.
+\end{equation}
+Dans ce cas on peut également calculer à priori $p(B)$
+\begin{equation}
+p(B)=\frac{\mbox{nombre d'éléments dans }B}{\mbox{nombre d'éléments dans }\Omega}=\frac{4}{6}=\frac{2}{3}.
+\end{equation}
+Ce résultat est très important car on calcule facilement $p(\bar A)$ si on connaît $p(A)$.
+
+
+
+\subsection{Evénements non-disjoints}
+Considérons de nouveau l'événement $A=\{1,2\}$ et cette fois $B=\{2,3,4,5\}$. Les probabilités de réaliser les événements
+respectifs sont
+\begin{align}
+ p(A)&=\frac{1}{3},\\
+ p(B)&=\frac{2}{3}.
+\end{align}
+La probabilité de réaliser $A$ et $B$ est maintenant la probabilité de réaliser $C=A\cap B=\{2\}$ 
+\begin{equation}
+ p(C)=\frac{1}{6}.
+\end{equation}
+Si on cherche à présent la probabilité de réaliser $A$ ou $B$, $D=A\cup B=\{1,2,3,4,5\}$, on voit aisément que 
+\begin{equation}
+ p(D)=\frac{5}{6}.
+\end{equation}
+Comme $A$ et $B$ ne sont pas disjoints ont constate 
+\begin{equation}
+ \frac{5}{6}=p(D)\neq p(A)+p(B)=1.
+\end{equation}
+L'inégalité est dûe au fait que dans le cas où on fait la somme $p(A)+p(B)$ on compte à double la probabilité de tirer l'éventualité $2$,
+qui est l'intersection de $A$ et de $B$. Afin de corriger donc le calcul de $p(D)$ à partir de la somme $p(A)+p(B)$ il suffit d'enlever 
+la probabilité de tirer l'intersection $C$. On a donc
+\begin{equation}
+ \frac{5}{6}=p(D)= p(A)+p(B)-p(C)=1-\frac{1}{6}=\frac{5}{6}.
+\end{equation}
+De façon complètement générale, on a la relation suivante pour calculer la probabilité de réaliser l'union de deux événement $A$ et $B$
+\begin{equation}
+ p(A\cup B)=p(A)+p(B)-p(A\cap B).
+\end{equation}
+Il en suit immédiatement que si $A\cap B=\emptyset$, alors
+\begin{equation}
+ p(A\cup B)=p(A)+p(B)-p(A\cap B)=p(A)+p(B)-p(\emptyset)=p(A)+p(B).
+\end{equation}
+
+\subsection{Tirages multiples}
+
+Jusqu'ici on a lancer le dé une fois et calculé la probabilité liée à ce lancer unique. 
+A présent, on va tirer le dé plusieurs fois et calculer les probabilité d'obtenir des séquences 
+de réalisations. Pour notre exemple on va prendre un cas où on tire le dé deux fois successivement.
+Ce type de tirage est appelé \textit{tirage successif avec remise}, car les deux tirages sont 
+successifs et indépendants entre eux (on va tirer deux fois le même dé). L'univers de 
+cette expérience est la combinaison de tous les résultats obtenus avec chacun des dés
+\begin{equation}
+ \Omega=\{11,12,13,14,15,16,21,22,23,24,25,26,...,61,62,63,64,65,66\}.
+\end{equation}
+Il y a $6\times 6=6^2=36$ résultats possibles à ce tirage. Il faut noter ici que l'ordre dans lequel le tirage 
+a lieu est important; le tirage $26$ est différent du tirage $62$. On verra par la suite des exemples ou cela n'est pas le cas.
+
+On cherche à savoir quelle est la probabilité d'obtenir l'événement $A=\{26\}$.
+
+Comme précédemment la probabilité de réaliser l'événement $A$ est le nombre d'éléments dans $A$ divisé par le nombre d'éléments dans $\Omega$.
+La probabilité est donc immédiatement obtenue
+\begin{equation}
+ p(A)=\frac{1}{36}.
+\end{equation}
+Une autre façon de visualiser ce genre de réalisation est de l'écrire sous forme d'arbre
+(voir la figure \ref{fig_arbre}).
+\begin{figure}[htp]
+\includegraphics[width=\textwidth]{figs/arbre.pdf}
+\caption{Représentation du tirage $26$ sous forme d'arbre.}\label{fig_arbre}
+\end{figure}
+Comme pour le cas à un tirage, tout tirage successif de dés est équiprobable et la probabilité
+de chaque tirage est de $1/36$.
+
+Une autre façon de calculer la probabilité d'obtenir $A=\{26\}$ est de constater que la probabilié 
+d'obtenir ce tirage succesif est la probabilité de tirer $2$, puis la probabilité de tirer $6$. La probabilité
+de cet enchaînement est obtenu en multipliant les événements élémentaires
+\begin{equation}
+ p(\{26\})=p(\{2\})\cdot p(\{6\})=\frac{1}{6}\cdot\frac{1}{6}.
+\end{equation}
+\begin{figure}[htp]
+\includegraphics[width=\textwidth]{figs/arbre2.pdf}
+\caption{Représentation du tirage $26$ sous forme d'arbre avec les probabilités associées.}\label{fig_arbre2}
+\end{figure}
+Afin de calculer la probabilité du tirage $26$ il suffit de suivre le chemin menant de la racine à la feuille correspondante
+et de multiplier les probabilités inscrites sur chacune des branches.
+
+Si à présent, nous voulons savoir quelle est la probabilité de tirer un $2$ ou un $4$ avec le premier dé et un nombre pair avec le second,
+on a trois façons de calculer le résultat. La façon compliquée, où on compte toutes les possibilités. L'événement 
+précédent s'écrit
+\begin{equation}
+ A=\{22,24,26,42,44,46\}.
+\end{equation}
+On a donc que $p(A)$ est donné par
+\begin{equation}
+ p(A)=\frac{\mbox{nombre d'éléments dans }A}{\mbox{nombre d'éléments dans }\Omega}=\frac{6}{36}=\frac{1}{6}.
+\end{equation}
+L'autre façon (plus simple) est d'utiliser la propriété du produit des probabilité. Nous savons que la probabilité de tirer un 
+$2$ ou un $4$ avec le premier dé est de $1/3$, puis la probabilité de tirer un nombre pair avec le deuxième est de 
+$1/2$. On a donc finalement que
+\begin{equation}
+ p(A)=\frac{1}{3}\cdot\frac{1}{2}=\frac{1}{6}.
+\end{equation}
+Finalement, on peut aussi utiliser la représentation sous forme d'arbre
+où on somme simplement les probabilités de chacun des éléments de $A$
+(voir figure \ref{fig_arbre3}).
+\begin{figure}[htp]
+\includegraphics[width=\textwidth]{figs/arbre3.pdf}
+\caption{Représentation de l'événement $A=\{22,24,26,42,44,46\}$ sous forme d'arbre avec les probabilités associées.
+Toutes les probabilités et tirages possibles associés aux branches ne sont pas affichées pour simplifier
+l'affichage.}\label{fig_arbre3}
+\end{figure}
+Comme vu dans la section \ref{subsec_disjoints}, il suffit de prendre la somme des 
+probabilités des événements élémentaires
+\begin{align}
+ p(A)&=p(\{22\})+p(\{24\})+p(\{26\})+p(\{42\})+p(\{44\})+p(\{46\})\nonumber\\
+     &=\frac{1}{36}+\frac{1}{36}+\frac{1}{36}+\frac{1}{36}+\frac{1}{36}+\frac{1}{36}\nonumber\\
+     &=\frac{6}{36}=\frac{1}{6}.
+\end{align}
+
+Si à présent l'ordre dans lequel les dés sont tirés n'a plus d'importance le calcul de probabilités change un peu.
+On désire savoir quelle est la probabilité d'obtenir $26$ dans un ordre arbitraire. On peut donc obtenir
+cette combinaison en tirant $26$ ou en tirant $62$. On a donc $A=\{26,62\}$. La probabilité de réaliser $A$
+est donc
+\begin{equation}
+ p(A)=\frac{2}{36}=\frac{1}{18}.
+\end{equation}
+On peut calculer cette probabilité de nouveau avec l'arbre ou en comptant. Une façon de nouveau plus simple
+dans bien des cas est d'utiliser les produits de probabilités. La probabilité de tirer
+$26$ ou $62$ est la probabilité de tirer d'abord $2$ ou $6$, puis de tirer le nombre restant ($2$ si on a d'abord tiré $6$
+ou $6$ si on a d'abord tiré $2$). La probabilité de tirer $2$ ou $6$ est de $1/3$, puis la probabilité de tirer
+le nombre restant est de $1/6$. On a donc que
+\begin{equation}
+ p(A)=\frac{1}{3}\cdot \frac{1}{6}=\frac{1}{18}.
+\end{equation}
+
+\begin{exercices}
+\hfill\break
+ \begin{enumerate}
+  \item Calculer la probabilité d'obtenir $2$ comme la somme des deux nombres tirés par deux dés.
+  \item Calculer la probabilité d'obtenir $3,4,5,6,7,8,9,10,11,12$ comme la somme des deux nombres tirés par deux dés.
+  \item Calculer la probabilité d'obtenir $7$ comme la somme des deux nombres tirés par deux dés.
+  \item Calculer la probabilité d'obtenir $6$ soit avec 1 soit avec 2 dés.
+  \item Déterminer le nombre de combinaisons possibles avec 3, 4, 5 dés. Pouvez vous généraliser à $n$ dés?
+  \item Soit un tirage aléatoire offrant 2 possibilité (pile ou face par exemple). Quel est le nombre de combinaisons possibles 
+  si on tire $n$ fois? Pouvez-vous généraliser pour un tirage aléatoire offrant $m$ possibilités qu'on tire $n$ fois?
+ \end{enumerate}
+
+\end{exercices}
+
+\section{Exemple du lotto}
+Dans un lotto on a dans un sac un nombre de jetons numérotés, disons pour l'exemple entre 1 et 6, 
+qui sont tirés successivement. Une fois un jeton tiré, il ne sera pas remis dans le sac. 
+On appelle ce genre de tirage \textit{sans remise}. Contrairement au cas des dés vus dans 
+la section précédente qui était `\textit{avec remise}.
+On tire un nombre fixé de jetons, disons 3. On souhaite déterminer la probabilité d'obtenir
+une suite donnée de 2 numéros, disons $25$. Disons que pour cet exemple l'ordre du tirage a de l'importance
+(ce qui n'est pas le cas du lotto).
+
+Afin de calculer cette probabilité le fait qu'on effectue un tirage avec remise est promordial.
+En effet considérons le cas initial illustré dans la figure \ref{fig_loto}.
+\begin{figure}[htp]
+\includegraphics[height=1.8truecm]{figs/loto.pdf}
+\caption{Les six numéros présents initialement dans le sac.}\label{fig_loto}
+\end{figure}
+Pendant le premier tirage, nous tirons le numéro 2 (voir figure \ref{fig_loto2}). Notons que le tirage du 2 a une probabilité $\frac{1}{6}$.
+\begin{figure}[htp]
+\includegraphics[height=1.8truecm]{figs/loto2.pdf}
+\caption{Le numéro 2 est tiré lors du premier tirage.}\label{fig_loto2}
+\end{figure}
+Il est donc enlevé du sac et il nous reste uniquement 5 chiffres parmis lesquels choisir 
+(les chiffres $1$, $3$, $4$, $5$, et $6$, comme dans la figure \ref{fig_loto3}).
+\begin{figure}[htp]
+\includegraphics[height=1.8truecm]{figs/loto3.pdf}
+\caption{Il ne reste que 5 chiffres dans le sac.}\label{fig_loto3}
+\end{figure}
+Comme il ne nous reste que 5 chiffres, la probabilité de tirer un des nombres restant, 
+disons le $5$, est de $\frac{1}{5}$ (voir la figure \ref{fig_loto4}). 
+\begin{figure}[htp]
+\includegraphics[height=1.8truecm]{figs/loto4.pdf}
+\caption{Il ne reste que 5 chiffres dans le sac et nous tirons le 5.}\label{fig_loto4}
+\end{figure}
+Le 5 sera lui aussi retiré et il ne restera que 4 numéros dans le sac et ainsi de suite. 
+
+On voit donc que la probabilité de tirer la suite ordonnée $25$ est de
+\begin{equation}
+ p(\{25\})=p(\{2\})\cdot p(\{5\})=\frac{1}{6}\cdot\frac{1}{5}=\frac{1}{30}.
+\end{equation}
+A présent, si nous considérons que l'ordre n'a pas d'importance, on a comme dans la section précédente
+que l'événement qui nous intéresse est $A=\{25,52\}$. On peut donc décomposer 
+ce cas en 2 et dire qu'on a dans un premier temps la probabilité de tirer $2$ ou $5$ parmis 
+$6$ nombres, puis on a la probabilité de tirer le $5$ ou le $2$ (respectrivement si on a tiré $2$ ou $5$) parmis 5.
+Les deux probabilité sont donc données respectivement par $p(\{2,5\})=\frac{2}{6}$ puis par $p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$.
+
+\begin{exercices}
+\hfill\break
+ \begin{enumerate}
+  \item Le jeu Eruomillions consiste en un tirage de 5 numéros parmis 50 possible, puis par le tirage de 2 ``étoiles'' parmis 11 possibles.
+  Déterminez la probabilité de trouver la bonne combinaison à un tirage.
+  \item Le jeu du swiss lotto, consiste au tirage de 5 numéros parmis 42 possibles, puis au tirage d'un numéros parmis 6. Calculez la probabilité de 
+  gagner au swiss lotto..
+ \end{enumerate}
+\end{exercices}
+
+\section{Quelques exercices}
+Afin de continuner avec ces concepts de tirages aléatoires avec ou sans remise
+de suite ordonnées ou non, nous allons faire quelques exercices. Il peut se révéler utile de dessiner un arbre pour ces exercices.
+\begin{enumerate}
+ \item Dans une urne se trouvent 2 boules blanches et 3 boules noires. On tire successivement deux boules sans remise.
+Calculer et comparer les probabilités des deux événements suivants
+\begin{itemize}
+ \item[$\bullet$] Tirer deux boules de même couleur.
+ \item[$\bullet$] Tirer deux boules de couleurs différentes.
+\end{itemize}
+\item Une bille, lâchée en $O$ tombe dans l'une des trois boîtes $A$, $B$, ou $C$. A chaque bifurcation, la bille 
+tombe à gauche avec la probabilité de 0.25 et à droite avec la probabilité de 0.75 (voir figure \ref{fig_bille})
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[height=2.8truecm]{figs/bille.pdf}
+\end{center}
+\caption{Une bille lâchée en $O$ tombe dans la boîte $A$, $B$, ou $C$.}\label{fig_bille}
+\end{figure}
+\begin{itemize}
+ \item[$\bullet$] Calculer les probabilités $p(A)$, $p(B)$, $p(C)$ pour qu'une bille lâchée de O tombe respectivement 
+dans la boîte $A$, $B$ ou $C$.
+\item[$\bullet$] On lâche deux billes en $O$. Calculer la probabilité pour que les deux billes tombent dans la même boîte.
+\item[$\bullet$] On lâche trois billes en $O$. Calculer la probabilité d'avoir une bille dans chaque boîte.
+\item[$\bullet$] On lâche dix billes en $O$. Calculer la probabilité d'avoir au moins trois billes dans la boîte B.
+\end{itemize}
+\item A la naissance, la probabilité qu'un enfant soit un garçon
+est de $p(G)=0.514$.
+\begin{itemize}
+ \item[$\bullet$] Calculer et la probabilité qu'un enfant soit une fille.
+ \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants sooient de même sexe.
+ \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants soient de sexes opposés.
+\end{itemize}
+\end{enumerate}
 
 
 
