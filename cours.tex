@@ -2994,10 +2994,308 @@ le moins complexe. Et la plus grande difficulté tient dans le ``représentatif 
 
 Il existe différentes façon de représenter les caractères d'une population selon que sa nature est \textit{discrète} 
 ou \textit{continue}. Dans le cas discret d'un caractère pouvant prendre $k\in\natural$ valeur différentes $\{x_i\}_{i=0}^{k-1}$,
-on représente le nombre d'indivius pouvant prendre la valeur $x_k$ par le nombre $n_k$. On a donc un ensemble $\{n_i\}_{i=0}^{n-1}$
+on représente le nombre d'indivius pouvant prendre la valeur $x_i$ par le nombre $n_i$. On a donc un ensemble $\{n_i\}_{i=0}^{k-1}$
 d'indivius pour les $k$ valeurs des caratères de la population. Dans le cas continu le nombre d'individus d'un caractère
-correspondrant à une subdivision en $k$ parties de l'ensemble des valeurs possibles pour le dit caractère. On peut résumer les deux 
-représentation sous la forme de tableaux. Dans le cas discret, on reprendre l'exemple de 
+correspondrait à une subdivision en $k$ parties de l'ensemble des valeurs possibles pour le dit caractère.
+\begin{exemples}\hfill\break
+ \begin{enumerate}
+  \item Cas discret: On étudie la distribution de salaires annuels dans une entreprise. 
+  Les salaires possibles sont $40'000$, $50'000$, $60'000$ et $1'000'000$ de CHF.
+  \begin{itemize}
+   \item Il y a 35 personnes payées $40'000$ CHF. 
+   \item Il y a 20 personnes payées $50'000$ CHF. 
+   \item Il y a 5 personnes payées $60'000$ CHF. 
+   \item Il y a 1 personne payée $1'000'000$ CHF.
+  \end{itemize}
+
+  \item Cas continu: Lors du benchmark d'une application, $A$, nous effetuons plusieurs mesures (la population) du temps d'exécution (le caractère) de l'application.
+  Les résultats obtenus sont les suivants: 
+  \begin{itemize}
+   \item 7 exécutions ont pris entre 50 et 51 secondes.
+   \item 12 exécutions ont pris entre 51 et 52 secondes.
+   \item 8 exécutions ont pris entre 52 et 53 secondes.
+   \item 23 exécutions ont pris entre 53 et 54 secondes.
+  \end{itemize}
+
+ \end{enumerate}
+
+\end{exemples}
+Pour représenter de façon un peu plus parlante ces valeurs, deux méthodes principales existent: le tableau ou le graphique.
+Pour illustrer les exemples précédents sous forme de tableau on obtient pour le cas des salaires (voir Tabl.~\ref{fig_salaires})
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ Salaire & Nombre de salairés \\
+ \hline\hline
+ 40000 & 35 \\
+ \hline
+ 50000 & 20 \\
+ \hline
+ 60000 & 5 \\
+ \hline
+ 1000000 & 1 \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Tableau du nombre de salariés par salaire.}\label{table_salaires}
+\end{table}
+et du benchmark de l'application (voir Tabl.~\ref{fig_exec})
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ Temps d'exécution & Nombre \\
+ \hline\hline
+ [50,51) & 7 \\
+ \hline
+ [51,52) & 12 \\
+ \hline
+ [52,53) & 8 \\
+ \hline
+ [53,54) & 23 \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Tableau des temps d'exécution.}\label{table_exec}
+\end{table}
+Sous forme de graphique on peut représenter le tableau des salaires sous la forme d'un graphique bâton (voir Fig.~\ref{fig_salaires})
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{figs/graph_salaires.pdf}
+\caption{Nombre salariés en fonction du salaire.}\label{fig_salaires}
+\end{center}
+\end{figure}
+ou d'un histogramme pour le temps d'exécution de l'application (voir Fig.~\ref{fig_exec}).
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{figs/graph_exec.pdf}
+\caption{Nombre d'exécutions en fonction du temps d'exécution.}\label{fig_exec}
+\end{center}
+\end{figure}
+
+\subsection{Fréquences}
+
+Plutôt que de faire apparaître le nombre d'individus d'une population 
+possédant un caractère, il peut être plus intéressant et parlant de faire intervenir 
+la \textit{fréquence} ou le nombre relatif à la place. En effet, la fréquence donne 
+immédiatement la proportion d'individu plutôt qu'un nombre absolu qui n'est pas forcément 
+très interprétable tout seul. 
+
+La population totale, $n$, est donnée par
+\begin{equation}
+ n=\sum_{i=0}^{k-1}n_i.
+\end{equation}
+On peut donc définir la fréquence d'un caractère $i$, $f_i$ comme
+\begin{equation}
+ f_i=\frac{n_i}{n}.
+\end{equation}
+\begin{exemples}{Fréquence}
+
+Les tableaux de fréquence des deux exemples précédents sont donnés par
+ \begin{enumerate}
+  \item Cas discret: la population totale est de 
+  \begin{equation}
+%    n=40'000+50'000+60'000+1'000'000=1'150'000.
+   n=35+20+5+1=61.
+  \end{equation}
+  \begin{table}[htp]
+  \begin{center}
+  \begin{tabular}{|c|c|c|}
+  \hline
+  Salaire & Nombre de salairés & Fréquence\\
+  \hline\hline
+  40000 & 35 & $35/61\cong0.573770$\\
+  \hline
+  50000 & 20 & $20/61\cong0.327869$\\
+  \hline
+  60000 & 5 & $5/61\cong0.081967$ \\
+  \hline
+  1000000 & 1 & $1/61\cong0.19568$ \\
+  \hline
+  \end{tabular}
+  \end{center}
+  \caption{Tableau des salaires, du nombre de salariés et la fréquence.}
+  \end{table}
+
+  \item Cas continu: la population totale est de 
+  \begin{equation}
+   n=7+12+8+23=50.
+  \end{equation}
+  Le tableau \ref{table_exec_freq} affiche les différentes fréquences des temps d'exécution.
+  \begin{table}[htp]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+ Temps d'exécution & Nombre & Fréquence \\
+ \hline\hline
+ [50,51) & 7 & $7/50=0.14$\\
+ \hline
+ [51,52) & 12 & $12/50=0.24$ \\
+ \hline
+ [52,53) & 8 & $8/50=0.16$ \\
+ \hline
+ [53,54) & 23 & $23/50=0.46$ \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Tableau des temps d'exécution et la fréquence des temps d'exécution.}\label{table_exec_freq}
+\end{table}
+
+ \end{enumerate}
+\end{exemples}
+La fréquence possède un certain nombre de propriétés que nous retrouverons 
+dans les sections suivantes qui sont assez intuitives
+\begin{proprietes}{Propriétés de la fréquence}
+ \begin{enumerate}
+  \item Les fréquences sont toujours dans l'intervalle $[0,1]$
+  \begin{equation}
+    0\leq f_i\leq 1.
+  \end{equation}
+  \item La somme de toutes les fréquences donne toujours $1$
+  \begin{equation}
+  \sum_{i=0}^{k-1} f_i = 1.
+  \end{equation}
+
+ \end{enumerate}
+
+\end{proprietes}
+Relié avec la propriété $2$ ci-dessus, il peut également être intéressant d'obtenir la
+\textit{fréquence cumulée}, notée $F(x)$, d'un caractère qui se définit comme la fréquence des individus 
+qui présentent une valeur de caractère $x_i\leq x$. Les tableaux ocrrespondants aux tableaux 
+\ref{table_salaires} et \ref{table_exec} (voir Tabls. \ref{table_salaires_freqcum} et \ref{table_exec_freqcum})
+  \begin{table}[htp]
+  \begin{center}
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Salaire & Nombre de salairés & Fréquence & Fréquence cumulée\\
+  \hline\hline
+  40000 & 35 & $35/61\cong0.573770$ & $35/61\cong0.573770$\\
+  \hline
+  50000 & 20 & $20/61\cong0.327869$ & $(20+35)/61\cong0.90164$\\
+  \hline
+  60000 & 5 & $5/61\cong0.081967$ & $(20+35+5+1)/61\cong0.98361$\\
+  \hline
+  1000000 & 1 & $1/61\cong0.19568$ & $(20+35+5+1)/61=1$\\
+  \hline
+  \end{tabular}
+  \end{center}
+  \caption{Tableau des salaires, du nombre de salariés, et la fréquence et fréquence cumulée des salaires.}\label{table_salaires_freqcum}
+  \end{table}
+  
+  \begin{table}[htp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+ Temps d'exécution & Nombre & Fréquence & Fréquence cumulée \\
+ \hline\hline
+ [50,51) & 7 & $7/50=0.14$ & $7/50=0.14$ \\
+ \hline
+ [51,52) & 12 & $12/50=0.24$ & $(7+12)/50=0.38$  \\
+ \hline
+ [52,53) & 8 & $8/50=0.16$ & $(7+12+8)/50=0.54$  \\
+ \hline
+ [53,54) & 23 & $23/50=0.46$ & $(7+12+8+23)/50=1$  \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Tableau des temps d'exécution et la fréquence et fréquences cumulées des temps d'exécution.}\label{table_exec_freqcum}
+\end{table}
+\begin{exercices}{Fréquence cumulée}
+\begin{enumerate}
+ \item Tracer les graphes de la fréquence cumulée pour les deux exemples que nous avons vus.
+ \item Que pouvons-nous déduire de la forme de la fonction (croissance, valeur maximale)?
+\end{enumerate}
+
+ 
+\end{exercices}
+
+
+\subsection{Mesures de tendance centrale}
+
+Jusqu'ici le nombre de valeurs étudiées était limité et il est assez simple d'avoir 
+une vue d'ensemble de la distribution des valeurs des caractères de notre population.
+Il est plus aisé d'utiliser une nombre de valeurs beaucoup plus resreint permettant
+de résumer les différents caractères et nous allons en voir deux différents qui nous donne une tendance dite centrale:
+la moyenne, la médiane.
+
+La \textit{moyenne}, notée $\bar{x}$ d'un jeu de données s'obtient par la formule suivante
+\begin{equation}
+ \bar{x}=\frac{1}{n}\sum_{i=0}^{k-1}x_i\cdot n_i.
+\end{equation}
+La moyenne peut également être calculée via les fréquences
+\begin{equation}
+ \bar{x}=\sum_{i=0}^{k-1}f_i\cdot x_i.
+\end{equation}
+\begin{exercices}{Propriétés de la moyenne}
+\begin{enumerate}
+ \item Démontrer la relation précédente.
+ \item Démontrer que la moyenne des écart $x_i-\bar{x}$ est nulle.
+\end{enumerate}
+\end{exercices}
+
+\begin{exemple}{Moyenne}
+
+Pour l'exemple des salaires la moyenne est donnée par
+\begin{equation}
+ \bar{x}_{\textrm{salaire}}=\frac{35\cdot40000+20\cdot50000+5\cdot60000+1\cdot1000000}{61}=60656.
+\end{equation}
+\end{exemple}
+On remarque ici que la moyenne des salaires donne une impression erronnée de la situation car elle est très sensible aux valeurs extrême de la distribution.
+En effet, tous les salaires à l'exception d'un sont inférieurs à la moyenne. En effet, si on retire le salaire d'un million de notre ensemble de valeurs, 
+la moyenne de l'échantillon restant devient
+\begin{equation}
+ \bar{x}_{\textrm{salaire}}=\frac{35\cdot40000+20\cdot50000+5\cdot60000}{60}=45000.
+\end{equation}
+La différence est de l'ordre de $25\%$ par rapport aux $60'000$ CHF obtenus avec toute la population.
+Il est donc nécessaire d'utiliser une autre mesure pour illustrer mieux le salaire caractéristique de notre population.
+De façon plus générale la moyenne est peu robuste à des valeurs extrêmes dans l'étude d'échantillon.
+
+Une mesure qui est plus parlante est la \textit{médiane}, notée $\tilde{x}$. La médiane se définit comme la valeur $\tilde{x}$ qui est telle que
+la moitié des individus de la population sont ont un $x_i\leq \tilde{x}$ et le reste est telle que $x_i\geq\tilde{x}$.
+
+Pour l'exemple des salaires le salaire médian est de $40000 CHF$, ce qui reflète beaucoup mieux la distribution des salaire de notre population.
+\begin{exercice}{Moyenne, médiane}
+
+ Calculer la moyenne et la médiane pour l'exemple du temps d'exécution (prendre la borne inférieure des intervalles pour chaque temps 
+ d'exécution\footnote{Il y a 7 temps de 50s, 12 de 51s, 8 de 52s et 23 de 53s.}).
+\end{exercice}
+
+
+\subsection{Mesures de dispersion}
+
+Nous avons vu deux mesures donnant une tendance générale des caractères d'une population. Hors cette valeur ne nous dit absolument rien
+sur la manière dont ces caractères sont distribués. Sont-ils proches de la moyenne ou de la médiane? Ou en sont-ils au contraire éloignés?
+Nous allons voir deux mesures diffréentes dans cette sous-section: la variance (écart-type), et l'intervalle inter-quantile.
+
+Nous cherchons d'abord à calculer la moyenne des écarts à la moyenne. 
+Hors, comme on l'a vu dans la sous-section précédente l'écart à la moyenne $x_i-\bar{x}$ est nul en moyenne. Cette grandeurs ne nous apprend rien. 
+On peut donc s'intéresser plutôt à la moyenne de l'écart quadratique $(x_i-\bar{x})^2$ qui est une quantité toujours positive et donc la moyenne sera 
+de cette écart quadratique aura toujours une valeurs qui sera positive ou nulle (elle sera nulle uniquement si 
+$x_i-\bar{x}=0,\forall i$)\footnote{on pourrait aussi étudier la moyenne de $|x_i-\bar{x}|$, mais cela est moins pratique à étudier théoriquement.}.
+On définit donc la \textit{variance}, $v$, comme étant la moyenne des écarts quadratiques
+\begin{equation}
+ v=\frac{1}{n}\sum_{i=0}^{k-1}n_i(x_i-\bar{x})^2.
+\end{equation}
+Si on considère plutôt la racine carrée de la variance, on obtient \textit{l'écart-type}
+\begin{equation}
+ s=\sqrt{v}.
+\end{equation}
+\begin{exercices}{Variance, écart-type}
+
+Démontrer les réations suivantes
+ \begin{enumerate}
+  \item On peut également calculer la variance avec la fréquence
+  \begin{equation}
+   v=\sum_{i=0}^{k-1}f_i(x_i-\bar{x})^2.
+  \end{equation}
+  \item On peut également calculer la variance à l'aide de la formule suivante
+  \begin{equation}
+   v=\frac{1}{n}\sum_{i=0}^{k-1}n_ix_i^2-\bar{x}^2.
+  \end{equation}
+ \end{enumerate}
+
+\end{exercices}
 
 
 
@@ -3009,7 +3307,7 @@ Les nombres aléatoires, bien que pas directement reliés aux probabilités, son
 qui vont de la cryptographie aux simulations physiques. Nous allons voir une introdution simplifiée à la génération de nombres aléatoires
 sur un ordinateur et les différentes problématiques reliées à leur génération.
 
-Une très bonne référence concernant les nombre aléatoires est le site \texttt{http://www.random.org}.
+Une très bonne référence concernant les nombre aléatoires est le site \break \texttt{http://www.random.org}.
 
 \subsection{Générateurs algorithmiques: une introduction (très) générale}
 
