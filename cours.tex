@@ -2980,8 +2980,8 @@ En statistique, une \textit{population} est un ensemble d'objets (d'individus) p
 L'étude des caractères d'une population a pour but de révéler des tendances au sein de la population. Ces études sont particulièrement
 intéressantes quand le nombre d'individus de notre population est trop élevé pour pouvoir être analysé en entier. On prélève alors un échantillon 
 représentatif de notre population au hasard 
-et on mène l'analyse statistique sur ce sous ensemble. Les éventuelles conclusions tirées de l'étude statistqiue sur le sous ensemble seront ensuite appliquée
-à l'ensemble de la population. Grâce au calcul de propbabilité nous pourrons alors avoir une confiance plus ou moins grande dans les conclusions 
+et on mène l'analyse statistique sur ce sous ensemble. Les éventuelles conclusions tirées de l'étude statistique sur le sous ensemble seront ensuite appliquée
+à l'ensemble de la population. Grâce au calcul de probabilité nous pourrons alors avoir une confiance plus ou moins grande dans les conclusions 
 tirées en fonction de la taille de l'échantillon. En effet plus celui-ci sera grand, plus la confiance dans les résultats sera élevée.
 
 Un exemple de ce genre d'étude qui est très à la mode ces temps est le sondages (concernant le résultats d'élections ou de votations). 
@@ -2994,8 +2994,8 @@ le moins complexe. Et la plus grande difficulté tient dans le ``représentatif 
 
 Il existe différentes façon de représenter les caractères d'une population selon que sa nature est \textit{discrète} 
 ou \textit{continue}. Dans le cas discret d'un caractère pouvant prendre $k\in\natural$ valeur différentes $\{x_i\}_{i=0}^{k-1}$,
-on représente le nombre d'indivius pouvant prendre la valeur $x_i$ par le nombre $n_i$. On a donc un ensemble $\{n_i\}_{i=0}^{k-1}$
-d'indivius pour les $k$ valeurs des caratères de la population. Dans le cas continu le nombre d'individus d'un caractère
+on représente le nombre d'individus pouvant prendre la valeur $x_i$ par le nombre $n_i$. On a donc un ensemble $\{n_i\}_{i=0}^{k-1}$
+d'individus pour les $k$ valeurs des caractères de la population. Dans le cas continu le nombre d'individus d'un caractère
 correspondrait à une subdivision en $k$ parties de l'ensemble des valeurs possibles pour le dit caractère.
 \begin{exemples}\hfill\break
  \begin{enumerate}
@@ -3008,7 +3008,7 @@ correspondrait à une subdivision en $k$ parties de l'ensemble des valeurs possi
    \item Il y a 1 personne payée $1'000'000$ CHF.
   \end{itemize}
 
-  \item Cas continu: Lors du benchmark d'une application, $A$, nous effetuons plusieurs mesures (la population) du temps d'exécution (le caractère) de l'application.
+  \item Cas continu: Lors du benchmark d'une application, $A$, nous effectuons plusieurs mesures (la population) du temps d'exécution (le caractère) de l'application.
   Les résultats obtenus sont les suivants: 
   \begin{itemize}
    \item 7 exécutions ont pris entre 50 et 51 secondes.
@@ -3026,7 +3026,7 @@ Pour illustrer les exemples précédents sous forme de tableau on obtient pour l
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
- Salaire & Nombre de salairés \\
+ Salaire & Nombre de salariés \\
  \hline\hline
  40000 & 35 \\
  \hline
@@ -3103,7 +3103,7 @@ Les tableaux de fréquence des deux exemples précédents sont donnés par
   \begin{center}
   \begin{tabular}{|c|c|c|}
   \hline
-  Salaire & Nombre de salairés & Fréquence\\
+  Salaire & Nombre de salariés & Fréquence\\
   \hline\hline
   40000 & 35 & $35/61\cong0.573770$\\
   \hline
@@ -3162,13 +3162,13 @@ dans les sections suivantes qui sont assez intuitives
 \end{proprietes}
 Relié avec la propriété $2$ ci-dessus, il peut également être intéressant d'obtenir la
 \textit{fréquence cumulée}, notée $F(x)$, d'un caractère qui se définit comme la fréquence des individus 
-qui présentent une valeur de caractère $x_i\leq x$. Les tableaux ocrrespondants aux tableaux 
+qui présentent une valeur de caractère $x_i\leq x$. Les tableaux correspondants aux tableaux 
 \ref{table_salaires} et \ref{table_exec} (voir Tabls. \ref{table_salaires_freqcum} et \ref{table_exec_freqcum})
   \begin{table}[htp]
   \begin{center}
   \begin{tabular}{|c|c|c|c|}
   \hline
-  Salaire & Nombre de salairés & Fréquence & Fréquence cumulée\\
+  Salaire & Nombre de salariés & Fréquence & Fréquence cumulée\\
   \hline\hline
   40000 & 35 & $35/61\cong0.573770$ & $35/61\cong0.573770$\\
   \hline
@@ -3215,7 +3215,7 @@ qui présentent une valeur de caractère $x_i\leq x$. Les tableaux ocrrespondant
 
 Jusqu'ici le nombre de valeurs étudiées était limité et il est assez simple d'avoir 
 une vue d'ensemble de la distribution des valeurs des caractères de notre population.
-Il est plus aisé d'utiliser une nombre de valeurs beaucoup plus resreint permettant
+Il est plus aisé d'utiliser une nombre de valeurs beaucoup plus restreint permettant
 de résumer les différents caractères et nous allons en voir deux différents qui nous donne une tendance dite centrale:
 la moyenne, la médiane.
 
@@ -3241,7 +3241,7 @@ Pour l'exemple des salaires la moyenne est donnée par
  \bar{x}_{\textrm{salaire}}=\frac{35\cdot40000+20\cdot50000+5\cdot60000+1\cdot1000000}{61}=60656.
 \end{equation}
 \end{exemple}
-On remarque ici que la moyenne des salaires donne une impression erronnée de la situation car elle est très sensible aux valeurs extrême de la distribution.
+On remarque ici que la moyenne des salaires donne une impression erronée de la situation car elle est très sensible aux valeurs extrême de la distribution.
 En effet, tous les salaires à l'exception d'un sont inférieurs à la moyenne. En effet, si on retire le salaire d'un million de notre ensemble de valeurs, 
 la moyenne de l'échantillon restant devient
 \begin{equation}
@@ -3266,7 +3266,7 @@ Pour l'exemple des salaires le salaire médian est de $40000 CHF$, ce qui reflè
 
 Nous avons vu deux mesures donnant une tendance générale des caractères d'une population. Hors cette valeur ne nous dit absolument rien
 sur la manière dont ces caractères sont distribués. Sont-ils proches de la moyenne ou de la médiane? Ou en sont-ils au contraire éloignés?
-Nous allons voir deux mesures diffréentes dans cette sous-section: la variance (écart-type), et l'intervalle inter-quantile.
+Nous allons voir deux mesures différentes dans cette sous-section: la variance (écart-type), et l'intervalle inter-quartile.
 
 Nous cherchons d'abord à calculer la moyenne des écarts à la moyenne. 
 Hors, comme on l'a vu dans la sous-section précédente l'écart à la moyenne $x_i-\bar{x}$ est nul en moyenne. Cette grandeurs ne nous apprend rien. 
@@ -3283,7 +3283,7 @@ Si on considère plutôt la racine carrée de la variance, on obtient \textit{l'
 \end{equation}
 \begin{exercices}{Variance, écart-type}
 
-Démontrer les réations suivantes
+Démontrer les relations suivantes
  \begin{enumerate}
   \item On peut également calculer la variance avec la fréquence
   \begin{equation}
@@ -3291,11 +3291,45 @@ Démontrer les réations suivantes
   \end{equation}
   \item On peut également calculer la variance à l'aide de la formule suivante
   \begin{equation}
-   v=\frac{1}{n}\sum_{i=0}^{k-1}n_ix_i^2-\bar{x}^2.
+   v=\frac{1}{n}\left(\sum_{i=0}^{k-1}n_ix_i^2\right)-\bar{x}^2.
   \end{equation}
  \end{enumerate}
-
 \end{exercices}
+Pour l'exemple du salaire on obtient pour la variance
+\begin{align}
+ v&=\frac{1}{61}\left(35\cdot(40000-60656)^2+35\cdot(50000-60656)^2\right.\nonumber\\
+ &\quad\quad\left.+35\cdot(60000-60656)^2+35\cdot(1000000-60656)^2\right)\nonumber\\
+ &=1.4747\cdot 10^{10},
+\end{align}
+et l'écart-type
+\begin{equation}
+ s=\sqrt{v}=121440.
+\end{equation}
+\begin{exercice}{Variance, écart-type}
+
+Calculer la variance et l'écart type à partir des valeurs du benchmark de l'application.
+\end{exercice}
+
+Encore une fois on constate que la valeur de l'écart-type des salaires est très dépendante de la valeur extrême de la distribution (1000000 CHF). 
+Si on l'enlève la valeur de l'écart type est de $s=6455$ (un facteur 20 plus petit que la valeur sur la population complète).
+
+Comme pour la moyenne et la médiane nous pouvons définir des valeurs plus représentatives. A partir de la fréquence cumulée, $F$,
+on peut définir deux grandeurs, $Q_i\in\{x_i\}_{i=0}^{k-1}$ et $\alpha_i\in[0,1]$ telles que
+\begin{equation}
+ F(Q_i)=\alpha_i.
+\end{equation}
+En d'autres termes $Q_i$ est la valeur pour laquelle la fréquence cumulée vaut $\alpha_i$. $Q_i$ correspond donc au nombre d'individus dons la fréquence cumulée est de $\alpha_i$. 
+En particulier si $\alpha_i=1/2$, alors $Q_i=\tilde{x}$ ($Q_i$ est la médiane). Il est commun d'avoir $Q_i\in[0.25,0.5,0.75]$, on parle alors de quartiles. Avec $Q_1=0.25$ et $Q_3=0.75$, 
+le nombre d'individus entre $0.25$ et $0.75$ est donné par
+\begin{equation}
+ \frac{Q_3-Q_1}{2}.
+\end{equation}
+Cette valeurs est appelée l'intervalle semi-inter-quartile.
+\begin{exercice}{Semi-inter quartile}
+
+Calculer les intervalles semi-inter-quartiles des exemples que nous avons vus plus tôt dans le cours.
+ 
+\end{exercice}
 
 
 
@@ -3304,7 +3338,7 @@ Démontrer les réations suivantes
 \section{Nombres aléatoires}
 
 Les nombres aléatoires, bien que pas directement reliés aux probabilités, sont utilisés dans un certain nombre de domaines
-qui vont de la cryptographie aux simulations physiques. Nous allons voir une introdution simplifiée à la génération de nombres aléatoires
+qui vont de la cryptographie aux simulations physiques. Nous allons voir une introduction simplifiée à la génération de nombres aléatoires
 sur un ordinateur et les différentes problématiques reliées à leur génération.
 
 Une très bonne référence concernant les nombre aléatoires est le site \break \texttt{http://www.random.org}.
@@ -3323,7 +3357,7 @@ De plus, les nombres tirés ne doivent pas dépendre de l'histoire des nombres t
 
 Si on veut maintenant plutôt tirer des nombres réels uniformément distribués entre $[0,1]$, il suffit
 de diviser les nombres $X_i$ par $m$ après chaque tirage. De façon similaire, si nous voulons 
-tirer des nombres dans l'intervalle $[\alpha,\beta]$, on utilise la formule de remise à l'échalle suivante
+tirer des nombres dans l'intervalle $[\alpha,\beta]$, on utilise la formule de remise à l'échelle suivante
 \begin{equation}
  N_i=\alpha+(\beta-\alpha)X_i/m.
 \end{equation}
@@ -3334,13 +3368,13 @@ il existe des transformations beaucoup plus efficaces d'un point de vue computat
 pour changer l'intervalle des nombres aléatoires tirés.
 
 Sans entrer dans les détails, la génération de nombres aléatoires n'ayant pas une distribution
-uniforme s'obtient en effectuant une trasformation un peu plus complexe que celle ci-dessus
-en partant toujours de la suite de nombres aléatoies entiers.
+uniforme s'obtient en effectuant une transformation un peu plus complexe que celle ci-dessus
+en partant toujours de la suite de nombres aléatoires entiers.
 
 Les nombres aléatoires produits de façon algorithmique (donc avec un ordinateur)
-ne peuvent pas être vriament aléatoire, car ils sont obtenus avec une machine 
-déterministe (les opérations faites à l'aide d'un ordinateur snt par définition
-reproductibles avec une chance d'erreur qasiment nulle). On parle donc de nombre pseudo-aléatoires.
+ne peuvent pas être vraiment aléatoire, car ils sont obtenus avec une machine 
+déterministe (les opérations faites à l'aide d'un ordinateur sont par définition
+reproductibles avec une chance d'erreur quasiment nulle). On parle donc de nombre pseudo-aléatoires.
 
 Néanmoins, bien que ces chiffres ne soient pas vraiment aléatoires, ils peuvent 
 être posséder des propriétés qui les rendent satisfaisants pour la plupart des applications. Cette suite de nombres doit avoir des propriétés particulières quand $n\rightarrow\infty$.
@@ -3357,7 +3391,7 @@ très robustes pour tester la qualité des nombres aléatoires algorithmiques.
 Pendant très longtemps, les générateurs de nombres aléatoires algorithmiques
 ont été des générateurs congruenciels linéaires, dont la génération est 
 donné par la formule suivante. Soit $X_i$ un nombre aléatoire,
-aors le prochain nombre de la série est donné par
+alors le prochain nombre de la série est donné par
 \begin{equation}
 X_{i+1}=(aX_i+c)\mod m,
 \end{equation}
@@ -3369,7 +3403,7 @@ Tous les autres nombres obtenus sont déterministes. Pour chaque valeur de grain
 on aura toujours la même séquence de nombre tirés.
 
 Il est très important de noter que la qualité des nombres aléatoires obtenus
-sont extrêment dépendants des valeurs de $a$, $c$ et $m$ choisies (et des 
+sont extrêmement dépendants des valeurs de $a$, $c$ et $m$ choisies (et des 
 relations entre elles). Si par exemple, on choisit 
 $a=1$, $c=1$, $m=10$ et $X_0=0$, on va avoir comme suite de nombre aléatoire
 \begin{equation}
@@ -3412,8 +3446,8 @@ $\tilde X_{i+1}$ est donné par
  \tilde X_{i+1}=A \tilde X_i \mod 2,
 \end{equation}
 où $A$ est une matrice $k\times k$. Ce genre de générateur a l'énorme
-avantage d'être extrêment efficace. Ils sont à la base de l'agorithme Mersenne Twister.
-Ces générateurs ont généralement une période extrêment longue (qui a la particularité d'être
+avantage d'être extrêmement efficace. Ils sont à la base de l'algorithme Mersenne Twister.
+Ces générateurs ont généralement une période extrêmement longue (qui a la particularité d'être
 un nombre premier de type Mersenne dont la forme est $m=2^l-1$, avec $l\in\natural$).
 
 Bien que ne soyant pas parfaits ces générateurs ont le grand avantage d'être très rapides et peu
@@ -3426,7 +3460,7 @@ peut être d'un grand secours.
 \subsection{Les générateurs physiques}
 
 Une autre façon de générer des nombres aléatoires, serait d'utiliser des phénomènes physiques
-qui contiennent de façon inhériente des processus aléatoires. On peut imaginer 
+qui contiennent de façon inhérente des processus aléatoires. On peut imaginer 
 lancer un dé ``à la main'', mesurer les émissions radioactives d'atomes (mesurer leur spin), 
 etc... Ou encore effectuer des lancer de jeux aussi peu biaisés que possibles (roulette, dé, etc).
 
@@ -3484,7 +3518,7 @@ Considérons une simulation nécessitant la génération de nombres aléatoires.
 Un ``bon'' générateur de nombres pseudo-aléatoire produit une série de nombre
 qui peut être utilisée en lieu et place de vrai nombres aléatoires sans que la simulation
 n'en soit affectée. Par exemple, le calcul du nombre $\pi$ vu dans les exercices doit 
-être trouvé avec la précisino désirée avec le générateur de nombre pseudo-aléatoires pour que celui-ci 
+être trouvé avec la précision désirée avec le générateur de nombre pseudo-aléatoires pour que celui-ci 
 soit considéré comme bon.
 
 \subsection{Quelques règles générales}
@@ -3496,15 +3530,15 @@ qualités minimales pour les générateurs de nombres aléatoires.
 \subsubsection{La périodicité}
 
 Tout générateur de nombres pseudo-aléatoires va à un moment ou un autre devenir périodique (la séquence de nombres générés vont 
-se répéter à l'infi). Notons la période du générateur aléatoire $T$. 
+se répéter à l'infini). Notons la période du générateur aléatoire $T$. 
 Il est évident que dès qu'on atteint un nombre de tirages équivalent à la période ($\card(X)\sim T$), on va avoir des nombres 
 pseudo-aléatoires qui ne sont plus du tout satisfaisants. En fait on peut montrer que des problèmes apparaissent dès que
 le nombre de tirages atteint un nombre équivalent à $T^{1/3}$. 
 Une condition primordiale pour avoir un ``bon'' générateur de nombres pseudo-aléatoire est donc une période élevée.
-Pour des généraeurs aléatoires modernes, 
+Pour des générateurs aléatoires modernes, 
 un période $T<2^{100}$ n'est pas considéré comme satisfaisant pour la plupart des applications.
 
-Evidemment il est impossible de tester la périodicité de tels générateurs de façon 
+Évidemment il est impossible de tester la périodicité de tels générateurs de façon 
 expérimentale ($2^{100}\sim 10^{30}$). Cela ne peut se faire que par des études analytiques
 approfondies. Comme expliqué dans la section \ref{sec_congr}
 la période maximale d'un générateur congruentiel linéaire est $m$. Dans les 3 exemples
@@ -3517,7 +3551,7 @@ générateur de nombres pseudo-aléatoires est bon. En particulier on peut prend
  X_{i+1}=(X_i+1)\mod m,
 \end{equation}
 avec $m$ aussi grand qu'on veut (disons $m=2^{2000}$ par exemple) mais la séquence de
-nombres générés ne sera absolument pas aléatoire, étant doné qu'on aura
+nombres générés ne sera absolument pas aléatoire, étant donné qu'on aura
 \begin{equation}
  X=\{0, 1, 2, 3, 4, 5, 6, ..., 2^{2000}-1, 0, 1, 2, ...\},
 \end{equation}
@@ -3526,7 +3560,7 @@ si $X_0=0$. Cela pourrait ne pas être problématique en soit, si la séquence a
  X=\{1, 2, 3, 4, 5, 6, ..., 2^{2000}-1, 0, 1, 2, ...\}.
 \end{equation}
 Il est donc nécessaire d'avoir d'autres critères que la seule période.
-C'est le sujet de la sousection suivante.
+C'est le sujet de la sous-section suivante.
 
 \subsubsection{La discrépance}
 
@@ -3537,7 +3571,7 @@ Reprenons l'exemple du tirage entre $[0,1]$. Nous pouvons imaginer une suite tr�
 sans période avec des tirages aléatoires, mais avec beaucoup plus de 0 que de 1, ce qui évidemment serait problématique.
 
 On doit donc trouver un moyen de tester la répartition des nombres de façon plus quantitative.
-Une façon de le faire est de considérer l'ensemble des $k-$uplets de nombres définits par
+Une façon de le faire est de considérer l'ensemble des $k-$uplets de nombres définis par
 \begin{equation}
  X^k=\{X_1,X_2, ..., X_k\},
 \end{equation}
@@ -3547,7 +3581,7 @@ pour les $k-$uplets formés avec des nombres aléatoires dans $[0,1]^k$. En d'au
 génèrent des $k-$uplets différents pour toutes valeurs de $k$. 
 
 De nouveau ce genre de tests est très compliqué à tester expérimentalement pour $k$ de l'ordre de la période 
-du générateur de nombres aléatoires. Des analyses théoriques sont dèslors primordiales, mais bien en dehors 
+du générateur de nombres aléatoires. Des analyses théoriques sont dès lors primordiales, mais bien en dehors 
 du champs de ce cours...
 
 Il existe beaucoup d'autres tests possibles (il y a des recommandations sur le site \texttt{http://www.random.org} 
