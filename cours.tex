@@ -2059,7 +2059,7 @@ la forme
 Avec l'addition que nous avons définie 
 à l'équation \eqref{eq_add}, nous avons avec la nouvelle notation
 \begin{equation}
- (a,b)+(c,d)=(a+b,c+d)\Leftrightarrow(a+i\cdot b)+(c+i\cdot d)=(a+c)+i(b+d).
+ (a,b)+(c,d)=(a+c,b+d)\Leftrightarrow(a+i\cdot b)+(c+i\cdot d)=(a+c)+i(b+d).
 \end{equation}
 On constate que les nombres multipliés par $i$ sépare nos couples de nombres (les empêche ``de se mélanger''),
 
@@ -2779,7 +2779,7 @@ de  définir une transformée de Fourier discrète qui aura les propriétés sui
 
 Avant de voir en détail comment on calcule la transformée de Fourier discrète, 
 on peut discuter quelle est son application. La TFD est utilisée tout le temps en traitement du signal.
-En gros c'est une approximation de la transformée de Fourier à temps discret. A chaque fois qu'on désire connaître le comportement d'une fonction dans l'espace spectrale, on utilisera la TFD. Un exemple typique 
+En gros c'est une approximation de la transformée de Fourier à temps discret. A chaque fois qu'on désire connaître le comportement d'une fonction dans l'espace spectral, on utilisera la TFD. Un exemple typique 
 est l'application pour téléphones portables Shazam que vous connaissez sans doute. Le but de cette application est l'identification de chansons. Elle fonctionne de la façon suivante. Dans un premier temps elle enregistre un signal sonore. Puis avec ce signal sonore elle crée un spectrogramme (une sorte d'emprunte digitale de la chanson) qui est obtenu à l'aide de TFD. Finalement le spectrogramme est comparé avec une base de donnée de spectrogrammes et la chanson peut ainsi être identifiée. Une autre application est le filtrage de signaux. Comme vous l'avez vu (ou verrez) dans les travaux pratiques, 
 la TFD rend très simple le filtrage de fréquences (ou de bande de fréquences). En effet, il suffit d'ôter de la TFD d'un signal les amplitudes voulues et d'effectuer la transformée de Fourier discrète inverse (TFDI) du signal filtré. Ce genre d'applications est très utilisé dans le domaine de la compression 
 de données (jpg, mp3, ...).
@@ -2799,7 +2799,7 @@ Avec cette définition il est simple de calculer la transformée de Fourier à t
 On note que la somme à présent ne se fait plus dans l'intervalle $(-\infty,\infty)$, 
 mais uniquement entre $[0,N-1]$, car le signal est de longueur finie.
 
-On représente donc un signal de longueur finie $f[n]$ ($n=0,..,N-1]$) par une fonction
+On représente donc un signal de longueur finie $f[n]$ ($n=0,..,N-1$) par une fonction
 continue de la pulsation, $\fh(\omega)$. Les deux représentations sont équivalentes. On en
 déduit que l'information contenue dans un nombre fini de points, est la même que dans une
 fonction continue (et donc contenant une infinité de points). 
