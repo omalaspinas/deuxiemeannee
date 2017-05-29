@@ -3601,10 +3601,13 @@ Si $p(B)\neq0$ alors on appelle probabilité conditionnelle le nombre $p(A|B)$, 
 \end{equation}
 
 \begin{exercice}{Probabilités conditionnelles}
-Sur une population de 1000 hommes qui naissent, 922 atteignent l'âge de 50 ans et 665 70 ans. 
+
+Sur une population de 1000 hommes qui naissent, 922 atteignent l'âge de 50 ans et 665 l'âge de 70 ans. 
+\begin{enumerate}
 \item Quelle est la probabilité qu'un homme qui vient de naître soit encore en vie à 50 ans?
 \item Quelle est la probabilité qu'un homme qui vient de naître soit encore en vie à 70 ans?
 \item Quelle est la probabilité qu'un homme de 50 ans soit encore en vie à 70?
+\end{enumerate}
 \end{exercice}
 
 
@@ -3759,6 +3762,80 @@ le nombre restant est de $1/6$. On a donc que
 
 \end{exercices}
 
+\subsection{La distribution multinomiale}
+
+Plus nous allon rajouter des tirages successifs plus il va être compliqué de calculer les probabilités 
+de tirer une certaine combinaison de nombres. Il existe néanmoins une formule qui généralise les tirages successifs avec
+remise. Prenons le cas où nous avons un dé qui ne donne pas chaque nombre de façon équiprobable, mais avec probabilité $\{p_i\}_{i=1}^6$.
+Nous souhaitons savoir quelle est la probabilité de tirer deux fois le 1 et une fois le 2 lors de trois tirages successifs. 
+
+Dans ce tirage l'ordre dans lequel sont obtenus ces tirages ne sont pas importants. Il y a donc les tirages possibles qui sont
+admissibles
+\begin{equation}
+ [112]=\{112, 121, 211\}.
+\end{equation}
+On a donc que la probabilité associée est de
+\begin{equation}
+ p([112])=p(112)+p(121)+p(211).
+\end{equation}
+Ces trois probabilités sont données par
+\begin{align}
+ p(112)&=p_1\cdot p_1\cdot p_2=p_1^2\cdot p_2,\\
+ p(121)&=p_1\cdot p_2\cdot p_1=p_1^2\cdot p_2,\\
+ p(211)&=p_2\cdot p_1\cdot p_1=p_1^2\cdot p_2.
+\end{align}
+Les tirages étant indépendants (avec remise) on a que la probabilité de tirer $1$ ou $2$ est indépendante 
+du moment où ils sont tirés et donc ces trois probabilités sont égales.
+
+Finalement la probabilité de tirer deux 1 et un 2 est de
+\begin{equation}
+ p([112])=p(112)+p(121)+p(211)=3\cdot p_1^2\cdot p_2.
+\end{equation}
+Si à parésent nous considérons la probabilité de tirer $[1123]$ en 4 tirages. Les torages possibles sont
+\begin{equation}
+ [1123]=\{1123, 1132, 1213, 1231, 1312, 1321, 2113, 2131, 2311, 3112, 3121, 3211\}.
+\end{equation}
+Il y a donc 12 tirages possibles pour cette combinaison. De plus les tirages étant indépendants
+on a que toutes ces combinaisons sont équiprobables avec probabilité
+\begin{equation}
+ p(1123)=p_1^2p_2p_3.
+\end{equation}
+Finalement on a 
+\begin{equation}
+ p([1123])=12 p_1^2p_2p_3.
+\end{equation}
+Si nous définissons $n_i$ le nombre de fois où on obtient le résultat $i$ et qu'on cherche la probabilité de réaliser le tirage $[n_1,n_2,...,n_k]$,
+on constate que la probabilité de réaliser le tirage est proportionnelle à 
+$p_1^{n_1}p_2^{n_2}\cdots p_6^{n_6}$. Il nous reste à déterminer le facteur multiplicatif venant devant. 
+Pour le cas du tirage $1,1,2$, nous avons $[n_1n_2]$ avec $n_1=2$ et $n_2=1$ et le facteur devant le produit des probabilités est 
+donné par $3$. Pour le tirage $1,1,2,3$ il est de $12$ et nous avons $n_1=2$, $n_2=1$, $n_3=1$. Nous pouvons écrire 
+\begin{equation}
+ 3=\frac{3!}{1!2!}\mbox{ et } 12=\frac{4!}{1!1!2!}. 
+\end{equation}
+En fait on peut constater que
+\begin{equation}
+ \frac{n!}{n_1!n_2!\cdots n_6!},
+\end{equation}
+avec $n=\sum_{i=1}^6 n_i$. On a donc que 
+\begin{equation}
+ p([n_1,n_2,...,n_6])=\frac{n!}{n_1!\cdots n_6!}p_1^{n_1}\cdots p_6^{n_6}.
+\end{equation}
+De façon complètement générale ce genre de probabilité se calcule grâce à la \textit{distribution multinomiale}
+\begin{equation}
+ p([n_1,...,n_k])=\frac{n!}{n_1!\cdots n_k!}p_1^{n_1}\cdots p_k^{n_k}.
+\end{equation}
+
+\begin{exercices}
+\hfill\break
+  On lance un dé parfait 10 fois. Quelle est la probabilité d'obtenir:
+ \begin{enumerate}
+  \item 10 fois 6?
+  \item 4 fois 3, 3 fois 2 et 3 fois 1?
+  \item 2 fois 1, 2 fois 2, 2 fois 3, 1 fois 4, 1 fois 5, et 1 fois 6?
+ \end{enumerate}
+
+\end{exercices}
+
 \section{Exemple du lotto}
 Dans un lotto on a dans un sac un nombre de jetons numérotés, disons pour l'exemple entre 1 et 6, 
 qui sont tirés successivement. Une fois un jeton tiré, il ne sera pas remis dans le sac. 
@@ -3847,6 +3924,84 @@ est de $p(G)=0.514$.
 \end{itemize}
 \end{enumerate}
 
+\section{Variables aléatoires}
+
+Lors d'une expérience aléatoire, il est assez commun de relier chaque événement de l'univers, $A\in\Omega$, à un nombre réel, $X(A)\in\real$. 
+Cette relation est définie par une fonction qui porte le nom de variable aléatoire et peut s'écrire mathématiquement sous la forme
+\begin{equation}
+ X:\Omega\rightarrow \real.
+\end{equation}
+Afin de mieux comprendre ce concept voyons quelques exemples
+\begin{enumerate}
+ \item[Le jeu de dé:] Lors d'un jet de dé unique l'univers est défini par $\Omega=\{1,2,3,4,5,6\}$. On peut de façon assez naturelle 
+ définir notre variable aléatoire comme
+ \begin{equation}
+  X:i\rightarrow i.
+ \end{equation}
+ \item[Pile ou face:] Si nous lançons une pièce de monnaie les deux issues possibles sont pile $p$, ou face $f$ ($\Omega={p,f}$). 
+ Nous pouvons définir la variable aléatoire $X$ comme
+ \begin{equation}
+  X:\left\{\begin{array}{l}
+                p\rightarrow 0\\
+                f\rightarrow 1
+               \end{array}\right.
+ \end{equation}
+ \item[Pile ou face fois deux:] Si nous lançons une pièce de monnaie à deux reprises, les issues possibles sont $(p,p)$, 
+ $(p,f)$, $(f,p)$, $(f,f)$. Nous pouvons définir la variable aléatoire $X$ comme
+ \begin{equation}
+  X:\left\{\begin{array}{l}
+                (p,p)\rightarrow 0\\
+                (p,f)\rightarrow 1\\
+                (f,p)\rightarrow 1\\
+                (f,f)\rightarrow 2
+               \end{array}\right.
+ \end{equation}
+\end{enumerate}
+Comme nous nous sommes posés la question de connaître la probabilité d'obtenir un certain résultat lors d'une expérience aléatoire, il en va de même 
+avec la probabilité que la variable aléatoire $X$ prenne une valeur donnée, $\alpha\in\real$ ou prenne une valeur incluse dans un intervalle $I\subseteq\real$. 
+
+Pour illustrer ce qui se passe, intéressons-nous au dernier exemple ci-dessus avec le double pile ou face. On se pose les questions suivantes
+\begin{enumerate}
+ \item Quelle est la probabilité que $X$ prenne la valeur $1$?
+ \item Quelle est la probabilité que $X$ prenne une valeur incluse dans $I=[0.6,3]$?
+ \item Quelle est la probabilité que $X$ prenne une valeur inférieure à $2$?
+\end{enumerate}
+
+Prenons ces trois questions une par une
+\begin{enumerate}
+ \item Les deux façons d'obtenir $X=1$ est d'avoir les tirages $(p,f)$ ou $(f,p)$, soit $A=\{(p,f), (f,p)\}$. Les probabilités de chacun 
+ des événement de l'univerrs étants équiprobables on a 
+ \begin{equation}
+  p(X=1)=p(A)=1/2.
+ \end{equation}
+ \item Le seul événement donnant un $X$ qui n'est pas dans l'intervalle $J=[0.6,3]$ est $B=(p,p)$ ($X(B)=0$). On a donc que 
+ \begin{equation}
+p(0.6\leq X\leq 3)=p(\bar B)=1-p(B)=\frac{3}{4}.
+ \end{equation}
+ \item De façon similaire les trois énénements donnant $X<2$ sont dans $C=\{(p,p), (p,f), (f,p)\}$. On a donc
+ \begin{equation}
+  p(X<2)=p(C)=\frac{3}{4}.
+ \end{equation}
+
+\end{enumerate}
+On constate au travers de ces trois exemples que la probabilité que la variable 
+aléatoire $X$ prenne une valeur particulière $\alpha$ ou soit dans un intervalle $I$ 
+est reliée à la probabilité d'obtenir un événement $D$ qui serait la préimage de $\alpha$ ou d'un intervalle $I$.
+On peut noter dans le cas général qu'on a $D=X^{-1}(I)$.
+
+\begin{definition}[Variable aléatoire] On dit que la fonction $X:\Omega\rightarrow\real$ est une \textit{variable aléatoire} si la 
+préimage de $X$ sur tout intervale, $I\subseteq\real$, est un événement $A\in \Omega$. La probabilité que $X$ prenne une valeur 
+dans l'intervalle $I$ est égale à la probabilité de réaliser l'événement $A$
+\begin{equation}
+ p(X\in I)=p(A).
+\end{equation}
+\end{definition}
+
+\begin{definition}[Fonction de répartition] On dit que la fonction $F:\real\rightarrow\real$ est une \textit{fonction de répartition}
+si $F(x)=p(X\leq x)$ pour tout $x\in\real$.
+\end{definition}
+
+Nous distinguons deux sortes de variables aléatoires différentes: les variables aléatoires discrètes et continues. Nous les discuterons brièvement dans les deux sous-sections suivantes.
 
 
 \section{Nombres aléatoires}
