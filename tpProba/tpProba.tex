@@ -1,0 +1,92 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsfonts,bm,amsmath,amssymb,graphicx,verbatim}
+\usepackage{cancel,url}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\hf}{\hat{f}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\integer}{\mathbb{Z}}
+\newcommand{\definition}{\textbf{Definition }}
+\newcommand{\exemples}{\textbf{Exemples }}
+\newcommand{\remarque}{\textbf{Remarque }}
+\newcommand{\proprietes}{\textbf{Propriétés }}
+\newcommand{\propriete}{\textbf{Propriété }}
+
+\title{Travaux pratiques: Génération de nombres aléatoires}
+% \author{Orestis Malaspinas}
+\date{A rendre pour le 01.06.2016}
+
+\begin{document}
+\maketitle
+
+\section*{Travaux pratiques: Génération de nombres aléatoires}
+
+Les nombres aléatoires sont utilisés dans un vaste champs d'applications (sécurité informatique, simulations, 
+prise de décision, ...). Le but de ce TP est de faire un premier pas vers la compréhension de la problématique de 
+la génération de nombres pseudo-aléatoires avec un ordinateur. 
+
+\section*{Générateurs congruentiels linéaires}
+Les générateurs congruentiels sont des générateurs assez simples et donnent des nombres aléatoires d'assez bonne qualité. 
+La forme générale de ces générateurs est
+\begin{equation}
+ X_{i+1}=(aX_i+c)\mod m,
+\end{equation}
+où $a$, $c$, $m$ sont les paramètres dont la qualité des nombres aléatoires dépendront et $X_0$ est appelé le germe.
+
+\begin{enumerate}
+\item Cette congruence est de la forme $X_{i+1} = f(X_i)$. Si $0\leq X_i < n$ et $0\leq f (X_i ) < n$ $\forall i$, expliquez
+pourquoi cette suite va commencer à faire des cycles (en d'autres termes $\exists m \geq 0$ tel que $X_{m+\lambda} = X_{\lambda}$).
+ \item Créez une fonction pour générer $n$ nombres pseudo-aléatoires en appliquant une congruence linéaire avec paramètres $a$, $c$, $m$ et $X_0$.
+ \item Écrivez un programme qui calcule la période d’un générateur congruentiel pour un ensemble de
+paramètres données. Testez-le avec $m = 10$ et essayez de trouver un $a$ et un $c$ qui vous donnent
+un cycle maximal.
+\item Historiquement, le générateur \texttt{RANDU} développé par \texttt{IBM} utilisait les paramètres suivants :
+$a = 65539$, $c = 0$, $n = 2^{31}$ and $X_0 = 123456789$. Générez 12000 nombres aléatoires avec
+cette méthode. Visualisez les résultats comme des points $(X_{i-1} , X_i)$ en deux dimensions et
+$(X_{i-2}, X_{i-1} , X_i )$ dans l’espace. En Matlab/Octave, servez-vous de la fonction plot3 pour afficher les triplets.
+\end{enumerate}
+
+\section*{Générateur de Stoll--Kirckpatrick}
+Le générateur de Stoll-Kirckpatrick considère que nous possédons déjà 250 nombres aléatoires de
+bonne qualité codés sur $l$ bits. Ensuite, nous pouvons trouver les autres nombres de la suite avec la
+formule suivante :
+\begin{equation}
+X_{i+1} = X_{i-249}\ \bm{xor}\ X_{i-102},
+\end{equation}
+où $\bm{xor}$ est appliqué bit par bit dans la représentation binaire des nombres.
+Prenez le fichier \texttt{aleatoire250.txt} disponible sur Cyberlearn. Ce fichier contient 250 nombres aléatoires (entre 0
+et $2^{16}-1$) obtenus du site \url{http://www.random.org}. Utilisez l’algorithme ci-dessus pour en trouver 300000
+nombres pseudo-aléatoires.
+\begin{enumerate}
+ \item Testez les résultats en les affichant en deux et trois dimensions comme avant.
+ \item Calculez la moyenne des nombres obtenus. Comment se compare-t-elle à la moyenne théorique attendue?
+\end{enumerate}
+
+
+\section*{Calcul de $\pi$}
+
+Utiliser les générateurs de nombres aléatoires précédemment implantés pour calculer $\pi$, ainsi que la fonction \texttt{rand} d'Octave/Matlab (ou
+une librairie d'un langage utilisant l'algorithme Mersenne Twister, elle est disponible dans boost par exemple). Pour ce faire
+il faut tirer des couples des points dont la position est aléatoire $(x,y)\in [0,1]\times[0,1]$. Il faut ensuite calculer le rapport du nombre de points
+tirés qui satisfont $x^2+y^2\leq 1$ sur le nombre total de points tirés. Que doit donner ce rapport si les nombres tirés sont
+tous équiprobables après un très grand nombre de tirages? Obtenez le plus grand nombre possible de décimales de $\pi$
+avec les différents générateurs de nombres aléatoires. Qu'observez-vous?
+
+
+\section*{Remarques}
+
+Le travail peut-être effectué en groupe de deux, mais les rapports doivent être individuels (le code peut être identique, n'oubliez pas de mentionner 
+explicitement si vous avez effectué le code à deux). 
+Finalement, je dois pouvoir exécuter le code
+afin de pouvoir reproduire les résultats présentés dans le rapport. 
+Déposez le rapport EN FORMAT PDF et une archive contenant le code (deux fichiers séparés) 
+sur le site du cours s'il vous plaît, cela simplifie mon administration (et évite les problèmes avec les étudiants qui 
+ne mettent pas de nom sur le rapport...).
+
+La note sera une combinaison entre le code rendu et le rapport (moitié/moitié). 
+
+
+
+\end{document}
