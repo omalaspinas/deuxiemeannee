@@ -2018,7 +2018,7 @@ Sur ces nombres on peut définir à nouveau l'addition, la soustraction, la mult
 \end{align}
 On peut les écrire sous la forme de leurs équivalents des nombres réels sous la forme
 \begin{align}
-&(a,b)+(c,d)=(a+b,c+d),\label{eq_add}\\
+&(a,b)+(c,d)=(a+c,b+d),\label{eq_add}\\
 &(a,b)\cdot(c,d)=(a\cdot c-b\cdot d,a\cdot d+b\cdot c).\label{eq_mult}
 \end{align}
 On voit assez facilement que l'addition sur $\real^2$ a une forme très similaire 
@@ -2432,7 +2432,7 @@ où les $g_j$ sont les vecteurs de la base et les $\alpha_j$ sont les coordonné
 
 La fonction de départ $f$ ayant une période $T$, on a obligatoirement que les fonctions $g_j$ ont une période 
 qui doit être une fraction entière de la période, $T/j$. Ces fonctions $g_j(t)$ peuvent en général
-avoir une forme quelconque, avec l'unique contrainte qu'elles sont périodiques avec période $T/i$. 
+avoir une forme quelconque, avec l'unique contrainte qu'elles sont périodiques avec période $T/j$. 
 \c Ca pourrait être un signal carré, triangulaire, etc. Dans les cas qui nous intéresse, on a un choix
 naturel qui s'impose comme fonctions périodiques: les sinus et cosinus.
 
@@ -2497,8 +2497,8 @@ En particulier si $j=0$, on a
 \begin{equation}
 a_0=0,\quad b_0=\frac{2}{T}\int_0^T f(t)\dd t.
 \end{equation}
-On constate que $a_0/2$ correspond à la valeur moyenne de $f(t)$ dans $[0,T]$. Cela 
-permet d'approximer des fonctions dons la valeur moyenne n'est pas nulle (les sinus et cosinus ont toujours
+On constate que $b_0/2$ correspond à la valeur moyenne de $f(t)$ dans $[0,T]$. Cela 
+permet d'approximer des fonctions dont la valeur moyenne n'est pas nulle (les sinus et cosinus ont toujours
 des moyennes nulles).
 
 Les coefficients $a_j,b_j$ peuvent être calculés directement à partir de $f(t)$,
@@ -2524,7 +2524,7 @@ entre $0$ et $T$, on obtient
 \end{align}
 où $\delta_{jk}$ est le ``delta de Kronecker'', dont la définition est
 \begin{equation}
- \delta_{ij}=\left\{\begin{array}{ll}
+ \delta_{jk}=\left\{\begin{array}{ll}
                 $1,$&$\mbox{ si }j=k$\\
                 $0,$&$\mbox{ sinon.}$
                \end{array}\right.
@@ -3175,7 +3175,7 @@ qui présentent une valeur de caractère $x_i\leq x$. Les tableaux correspondant
   \hline
   50000 & 20 & $20/61\cong0.327869$ & $(20+35)/61\cong0.90164$\\
   \hline
-  60000 & 5 & $5/61\cong0.081967$ & $(20+35+5+1)/61\cong0.98361$\\
+  60000 & 5 & $5/61\cong0.081967$ & $(20+35+5)/61\cong0.98361$\\
   \hline
   1000000 & 1 & $1/61\cong0.19568$ & $(20+35+5+1)/61=1$\\
   \hline
@@ -3319,7 +3319,7 @@ on peut définir deux grandeurs, $Q_i\in\{x_i\}_{i=0}^{k-1}$ et $\alpha_i\in[0,1
 \begin{equation}
  F(Q_i)=\alpha_i.
 \end{equation}
-En d'autres termes $Q_i$ est la valeur pour laquelle la fréquence cumulée vaut $\alpha_i$. $Q_i$ correspond donc au nombre d'individus dons la fréquence cumulée est de $\alpha_i$. 
+En d'autres termes $Q_i$ est la valeur pour laquelle la fréquence cumulée vaut $\alpha_i$. $Q_i$ correspond donc au nombre d'individus dont la fréquence cumulée est de $\alpha_i$. 
 En particulier si $\alpha_i=1/2$, alors $Q_i=\tilde{x}$ ($Q_i$ est la médiane). Il est commun d'avoir $Q_i\in[0.25,0.5,0.75]$, on parle alors de quartiles. Avec $Q_1=0.25$ et $Q_3=0.75$, 
 le nombre d'individus entre $0.25$ et $0.75$ est donné par
 \begin{equation}
