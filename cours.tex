@@ -2202,7 +2202,7 @@ d'algèbre linéaire. Pour ce faire nous allons considérer un ensemble $V$, sou
 Dans notre cas $E$ sera $\real$ ou $\complex$ principalement. 
 \begin{definition}[Espace vectoriel]
  On appelle espace vectoriel sur $E$, un ensemble $V$, dont les éléments appelés vecteur et notés $v$, sont 
- sont munis des opérations opérations $+$ (l'addition) et $\cdot$ (la multiplication par un scalaire) ont les propriétés suivantes
+ munis des opérations $+$ (l'addition) et $\cdot$ (la multiplication par un scalaire) ont les propriétés suivantes
  \pagebreak
  \begin{itemize}
   \item[$+$:$V\times V\rightarrow V$]\ \hfill\break
@@ -2261,7 +2261,7 @@ Dans notre cas $E$ sera $\real$ ou $\complex$ principalement.
   \item Dans ce qui suit dans ce cours, nous allons utiliser encore un autre espace vectoriel
   un peu moins intuitif que ceux que nous avons vus jusqu'ici. Il s'agit de l'espace des fonctions, ou espace fonctionnel.
   Nous définissons les applications de $W$ dans $V$ comme un espace vectoriel dans $E$ avec l'addition et la
-  multiplication par un scalaire définis commme suit. Soient $f:W\rightarrow V$ et $f:W\rightarrow V$, avec
+  multiplication par un scalaire définis comme suit. Soient $f:W\rightarrow V$ et $g:W\rightarrow V$, avec
   $\alpha\in E$, alors
   \begin{align}
    &(f+g)(x)=f(x)+g(x), \quad \forall x\in W,\\
@@ -2324,11 +2324,11 @@ Cette écriture en fonction de vecteurs de base, permet de faire facilement les 
 
 \end{exemples}
 
-Plus formellement nous allons introduire un certain nombre de concepts mathémqtiques pour
+Plus formellement nous allons introduire un certain nombre de concepts mathématiques pour
 définir une base. Considérons toujours $V$ un espace vectoriel sur $E$.
 
 \begin{definition}[Famille libre]
- Soient $\{\alpha_i\}_{i=1}^n\in E$. On dit qu'un ensemble de vecteurs $\{v_i\}_{i=1}^n\in V$ est une famille libre si 
+ Soient $\{\alpha_i\}_{i=1}^n\in E$. On dit qu'un ensemble de vecteurs $\{v_i\}_{i=1}^n\in V$ est une famille libre si
  \begin{equation}
   \sum_{i=1}^n \alpha_iv_i=0 \Rightarrow \alpha_i=0,\ \forall i.
  \end{equation}
@@ -2698,7 +2698,7 @@ La transformée de Fourier possède plusieurs propriétés intéressantes.
 
 \section{La transformée de Fourier à temps discret (TFTD)}
 
-Nous allons maintenant plus considérer une fonction continue, mais une série de valeurs discrètes.
+Nous n'allons maintenant plus considérer une fonction continue, mais une série de valeurs discrètes.
 Notons $f[n]$ une série de nombres, avec $n\in\integer$. Nous voulons définir l'équivalent de la transformée 
 de Fourier de l'équation \eqref{eq_fourier_transform} pour ce genre de séries de points. Une façon naturelle 
 de définir l'équivalent à temps discret de cette équation est 
@@ -2808,9 +2808,9 @@ Une partie de l'information contenue dans la fonction continue doit être redond
 
 L'idée à présent va être d'enlever toute l'information redondante de $\fh(\omega)$ en
 échantillonnant $\fh$ et en gardant uniquement $N$ échantillons de $\fh$. La fréquence 
-d'échantillonage sera de $2\pi/N$ et le domaine d'échantillonage sera $[-\pi,\pi)$.
+d'échantillonnage sera de $2\pi/N$ et le domaine d'échantillonnage sera $[-\pi,\pi)$.
 
-Nous pouvons à présent définir mathématiquement cet échantillonage de $\fh(\omega)$ comme
+Nous pouvons à présent définir mathématiquement cet échantillonnage de $\fh(\omega)$ comme
 étant une suite de points, notée $\{\fh(\omega_k)\}_{k=0}^{N-1}$, où $\omega_k=k/(2\pi)$.
 Cette suite sera notée $\fh[k]$ et appelée la \textit{transformée de Fourier discrète} de
 $f[n]$.
@@ -3533,7 +3533,7 @@ suivants
 Soit $\Omega$ un univers. La probabilité de réaliser un événement $A\subseteq\Omega$ est une fonction $p(A)$ qui associe à tout 
 événement de $A$ un nombre réel, qui satisfait les 3 axiomes suivants
 \begin{enumerate}
- \item Une probabilité est TOUJOURS positive
+ \item Une probabilité est TOUJOURS positive %Ne devriez-vous pas fixer la borne supérieur des probabilités ici?
  \begin{equation}
   p(A)\geq 0.
  \end{equation}
@@ -3546,7 +3546,7 @@ Soit $\Omega$ un univers. La probabilité de réaliser un événement $A\subsete
  \begin{equation}
  p(A\cup B)=p(A)+p(B). 
  \end{equation}
- La probabilité de réalisation de deux évéenements incompatibles est égale à la somme de réalisation
+ La probabilité de réalisation de deux événements incompatibles est égale à la somme de la probabilité de réalisation
  de chacun d'entre eux.
 \end{enumerate}
 \end{definition}
@@ -3560,7 +3560,7 @@ Pour $A,B\subseteq\Omega$ et $\Omega$ un univers et $p$ une probabilité.
  \item $p(\bar A)=1-p(A).$
  \item $p(A\cup B)=p(A)+p(B)-p(A\cap B).$
  \item $p(\bar A\cap \bar B)=1-p(A\cup B).$
- \item Si $A$ et $B$ sont disjoints, alors $p(A\cup B)=p(A)+p(B).$ 
+ \item Si $A$ et $B$ sont disjoints, alors $p(A\cup B)=p(A)+p(B).$  %C'est le trisième axiome, vous voulez le répéter?
  \item Si $A\subseteq B$, alors $p(B\cap \bar A)=p(B)-p(A).$ 
  \item Si $A\subseteq B$, alors $p(A)\leq p(B).$ 
  \item $\forall A$, $0\leq p(A)\leq 1.$ 
