@@ -790,7 +790,7 @@ Dans ce cas, on va approximer l'intégrale et donc commettre une erreur.
 Pour ce faire on va subdiviser l'espace d'intégration $[a,b]$ en $N$ pas équidistants (pour simplifier) $\delta x=(b-a)/N$,
 et approximer l'intégrale par une somme finie
 \begin{equation}
- \int_a^bf(x)\dd x=\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i,
+ \int_a^bf(x)\dd x=\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i,
 \end{equation}
 où $g_i$ est un coefficient qui va dépendre de la méthode d'intégration 
 que nous allons utiliser, $E$ est l'erreur commise par l'intégration numérique et va dépendre des bornes d'intégration, 
@@ -823,7 +823,7 @@ définir un critère qui va nous dire si notre intégrale est calculée avec une
 Si nous notons $I(N,a,b,f,g)$ l'approximation du calcul de l'intégrale entre $a$ et $b$ de la fonction $f$
 avec une résolution $N$ pour la méthode d'intégration $g$
 \begin{equation}
- I(N,a,b,f,g)=\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i,
+ I(N,a,b,f,g)=\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i,
 \end{equation}
 où $g_i$ est encore à préciser. Afin de déterminer si le nombre de points que nous avons choisi est suffisant, 
 après avoir évalué $I(N,a,b,f,g)$, nous évaluons $I(2\cdot N,a,b,f,g)$. En d'autres termes nous évaluons l'intégrales de la même fonction avec la même 
