@@ -222,7 +222,7 @@ avec $y=(A-1)/(A+1)$. On a finalement que
 \begin{equation}
  \log(n)=\log(A\cdot 10^{p-1})=(p-1)\log(10)+2\sum_{k=0}^\infty \frac{y^{2k+1}}{2k+1}.
 \end{equation}
-La valeur de $y$ étant quelque chose de proche de 0, la somme converge vite vers une valeurs finie et on peut faire l'approximation
+La valeur de $y$ étant quelque chose de proche de 0, la somme converge vite vers une valeur finie et on peut faire l'approximation
 \begin{equation}
  \log(n)\cong(p-1)\log(10),
 \end{equation}
@@ -3272,7 +3272,7 @@ Nous allons voir deux mesures différentes dans cette sous-section: la variance 
 Nous cherchons d'abord à calculer la moyenne des écarts à la moyenne. 
 Hors, comme on l'a vu dans la sous-section précédente l'écart à la moyenne $x_i-\bar{x}$ est nul en moyenne. Cette grandeurs ne nous apprend rien. 
 On peut donc s'intéresser plutôt à la moyenne de l'écart quadratique $(x_i-\bar{x})^2$ qui est une quantité toujours positive et donc la moyenne sera 
-de cette écart quadratique aura toujours une valeurs qui sera positive ou nulle (elle sera nulle uniquement si 
+de cette écart quadratique aura toujours une valeur qui sera positive ou nulle (elle sera nulle uniquement si 
 $x_i-\bar{x}=0,\forall i$)\footnote{on pourrait aussi étudier la moyenne de $|x_i-\bar{x}|$, mais cela est moins pratique à étudier théoriquement.}.
 On définit donc la \textit{variance}, $v$, comme étant la moyenne des écarts quadratiques
 \begin{equation}
@@ -3658,8 +3658,8 @@ On jette une pièce de monnaie deux fois de suite. Les résultats possible pour 
 
 \subsection{Tirages multiples}
 
-Jusqu'ici on a lancer le dé une fois et calculé la probabilité liée à ce lancer unique. 
-A présent, on va tirer le dé plusieurs fois et calculer les probabilité d'obtenir des séquences 
+Jusqu'ici on a lancé le dé une fois et calculé la probabilité liée à ce lancer unique. 
+A présent, on va tirer le dé plusieurs fois et calculer les probabilités d'obtenir des séquences 
 de réalisations. Pour notre exemple on va prendre un cas où on tire le dé deux fois successivement.
 Ce type de tirage est appelé \textit{tirage successif avec remise}, car les deux tirages sont 
 successifs et indépendants entre eux (on va tirer deux fois le même dé). L'univers de 
@@ -3668,7 +3668,7 @@ cette expérience est la combinaison de tous les résultats obtenus avec chacun 
  \Omega=\{11,12,13,14,15,16,21,22,23,24,25,26,...,61,62,63,64,65,66\}.
 \end{equation}
 Il y a $6\times 6=6^2=36$ résultats possibles à ce tirage. Il faut noter ici que l'ordre dans lequel le tirage 
-a lieu est important; le tirage $26$ est différent du tirage $62$. On verra par la suite des exemples ou cela n'est pas le cas.
+a lieu est important; le tirage $26$ est différent du tirage $62$. On verra par la suite des exemples où cela n'est pas le cas.
 
 On cherche à savoir quelle est la probabilité d'obtenir l'événement $A=\{26\}$.
 
@@ -3845,7 +3845,7 @@ On tire un nombre fixé de jetons, disons 3. On souhaite déterminer la probabil
 une suite donnée de 2 numéros, disons $25$. Disons que pour cet exemple l'ordre du tirage a de l'importance
 (ce qui n'est pas le cas du lotto).
 
-Afin de calculer cette probabilité le fait qu'on effectue un tirage avec remise est promordial.
+Afin de calculer cette probabilité le fait qu'on effectue un tirage avec remise est primordial.
 En effet considérons le cas initial illustré dans la figure \ref{fig_loto}.
 \begin{figure}[htp]
 \includegraphics[height=1.8truecm]{figs/loto.pdf}
@@ -3856,7 +3856,7 @@ Pendant le premier tirage, nous tirons le numéro 2 (voir figure \ref{fig_loto2}
 \includegraphics[height=1.8truecm]{figs/loto2.pdf}
 \caption{Le numéro 2 est tiré lors du premier tirage.}\label{fig_loto2}
 \end{figure}
-Il est donc enlevé du sac et il nous reste uniquement 5 chiffres parmis lesquels choisir 
+Il est donc enlevé du sac et il nous reste uniquement 5 chiffres parmi lesquels choisir 
 (les chiffres $1$, $3$, $4$, $5$, et $6$, comme dans la figure \ref{fig_loto3}).
 \begin{figure}[htp]
 \includegraphics[height=1.8truecm]{figs/loto3.pdf}
@@ -3876,22 +3876,22 @@ On voit donc que la probabilité de tirer la suite ordonnée $25$ est de
 \end{equation}
 A présent, si nous considérons que l'ordre n'a pas d'importance, on a comme dans la section précédente
 que l'événement qui nous intéresse est $A=\{25,52\}$. On peut donc décomposer 
-ce cas en 2 et dire qu'on a dans un premier temps la probabilité de tirer $2$ ou $5$ parmis 
-$6$ nombres, puis on a la probabilité de tirer le $5$ ou le $2$ (respectrivement si on a tiré $2$ ou $5$) parmis 5.
-Les deux probabilité sont donc données respectivement par $p(\{2,5\})=\frac{2}{6}$ puis par $p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$.
+ce cas en 2 et dire qu'on a dans un premier temps la probabilité de tirer $2$ ou $5$ parmi 
+$6$ nombres, puis on a la probabilité de tirer le $5$ ou le $2$ (respectivement si on a tiré $2$ ou $5$) parmi 5.
+Les deux probabilités sont donc données respectivement par $p(\{2,5\})=\frac{2}{6}$ puis par $p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$.
 
 \begin{exercices}
 \hfill\break
  \begin{enumerate}
-  \item Le jeu Eruomillions consiste en un tirage de 5 numéros parmis 50 possible, puis par le tirage de 2 ``étoiles'' parmis 11 possibles.
+  \item Le jeu Euromillions consiste en un tirage de 5 numéros parmi 50 possible, puis par le tirage de 2 ``étoiles'' parmi 11 possibles.
   Déterminez la probabilité de trouver la bonne combinaison à un tirage.
-  \item Le jeu du swiss lotto, consiste au tirage de 5 numéros parmis 42 possibles, puis au tirage d'un numéros parmis 6. Calculez la probabilité de 
+  \item Le jeu du swiss lotto, consiste au tirage de 5 numéros parmi 42 possibles, puis au tirage d'un numéros parmi 6. Calculez la probabilité de 
   gagner au swiss lotto..
  \end{enumerate}
 \end{exercices}
 
 \section{Quelques exercices}
-Afin de continuner avec ces concepts de tirages aléatoires avec ou sans remise
+Afin de continuer avec ces concepts de tirages aléatoires avec ou sans remise
 de suite ordonnées ou non, nous allons faire quelques exercices. Il peut se révéler utile de dessiner un arbre pour ces exercices.
 \begin{enumerate}
  \item Dans une urne se trouvent 2 boules blanches et 3 boules noires. On tire successivement deux boules sans remise.
@@ -3919,7 +3919,7 @@ dans la boîte $A$, $B$ ou $C$.
 est de $p(G)=0.514$.
 \begin{itemize}
  \item[$\bullet$] Calculer et la probabilité qu'un enfant soit une fille.
- \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants sooient de même sexe.
+ \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants soient de même sexe.
  \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants soient de sexes opposés.
 \end{itemize}
 \end{enumerate}
@@ -3970,7 +3970,7 @@ Pour illustrer ce qui se passe, intéressons-nous au dernier exemple ci-dessus a
 Prenons ces trois questions une par une
 \begin{enumerate}
  \item Les deux façons d'obtenir $X=1$ est d'avoir les tirages $(p,f)$ ou $(f,p)$, soit $A=\{(p,f), (f,p)\}$. Les probabilités de chacun 
- des événement de l'univerrs étants équiprobables on a 
+ des événements de l'univers étants équiprobables on a 
  \begin{equation}
   p(X=1)=p(A)=1/2.
  \end{equation}
@@ -3978,7 +3978,7 @@ Prenons ces trois questions une par une
  \begin{equation}
 p(0.6\leq X\leq 3)=p(\bar B)=1-p(B)=\frac{3}{4}.
  \end{equation}
- \item De façon similaire les trois énénements donnant $X<2$ sont dans $C=\{(p,p), (p,f), (f,p)\}$. On a donc
+ \item De façon similaire les trois événements donnant $X<2$ sont dans $C=\{(p,p), (p,f), (f,p)\}$. On a donc
  \begin{equation}
   p(X<2)=p(C)=\frac{3}{4}.
  \end{equation}
@@ -3990,7 +3990,7 @@ est reliée à la probabilité d'obtenir un événement $D$ qui serait la préim
 On peut noter dans le cas général qu'on a $D=X^{-1}(I)$.
 
 \begin{definition}[Variable aléatoire] On dit que la fonction $X:\Omega\rightarrow\real$ est une \textit{variable aléatoire} si la 
-préimage de $X$ sur tout intervale, $I\subseteq\real$, est un événement $A\in \Omega$. La probabilité que $X$ prenne une valeur 
+préimage de $X$ sur tout intervalle, $I\subseteq\real$, est un événement $A\in \Omega$. La probabilité que $X$ prenne une valeur 
 dans l'intervalle $I$ est égale à la probabilité de réaliser l'événement $A$
 \begin{equation}
  p(X\in I)=p(A).
@@ -4046,7 +4046,7 @@ déterministe (les opérations faites à l'aide d'un ordinateur sont par défini
 reproductibles avec une chance d'erreur quasiment nulle). On parle donc de nombre pseudo-aléatoires.
 
 Néanmoins, bien que ces chiffres ne soient pas vraiment aléatoires, ils peuvent 
-être posséder des propriétés qui les rendent satisfaisants pour la plupart des applications. Cette suite de nombres doit avoir des propriétés particulières quand $n\rightarrow\infty$.
+posséder des propriétés qui les rendent satisfaisants pour la plupart des applications. Cette suite de nombres doit avoir des propriétés particulières quand $n\rightarrow\infty$.
 Sans entrer pour le moment trop dans les détails, on veut par exemple que 
 la moyenne des nombres tirés soit $m/2$, que la corrélation entre des 
 sous-suites de nombres doit être nulle, ou encore qu'il n'existe pas de séquence qui se 
@@ -4079,11 +4079,11 @@ $a=1$, $c=1$, $m=10$ et $X_0=0$, on va avoir comme suite de nombre aléatoire
  \{0,1,2,3,4,5,6,7,8,9,0,1,2,3,...\},
 \end{equation}
 ce qui n'est pas très aléatoire vous en conviendrez... Il est donc très important
-de tenter d'optimiser les valeur $a$, $c$ et $m$ pour
+de tenter d'optimiser les valeurs $a$, $c$ et $m$ pour
 avoir des séquences aussi ``aléatoires'' que possible.
 
 Une première chose à remarquer c'est que $m$ sera la valeur maximale de la période
-de notre générateur de nombre aléatoire (la période est le nombre de tirage qu'il faudra
+de notre générateur de nombre aléatoire (la période est le nombre de tirages qu'il faudra
 effectuer pour que la série se répète exactement).
 
 Quelques paramètres utilisés dans des générateurs connus sont par exemple
@@ -4157,7 +4157,7 @@ avec deux générateurs différents
  Y&=\{0,0,0,0,0,0,0,0,0,0\}.
 \end{align}
 On voit que la suite $Y$ semble beaucoup moins aléatoire que la suite $X$. 
-En effet, la probabilité de tirer 10 fois 0 en 10 tirages et de $p(Y)=1/2^{10}=1/1024$,
+En effet, la probabilité de tirer 10 fois 0 en 10 tirages est de $p(Y)=1/2^{10}=1/1024$,
 alors que la probabilité d'avoir autant de 0 que de 1 est de $p(X)=1/2$.
 De façon générale on aimerait que la répartition soit $35\%$-$65\%$ avec une probabilité
 de $90\%$.
@@ -4179,12 +4179,12 @@ toutes tendre vers $1$.
 
 Néanmoins, il est certain qu'aucun générateur ne peut être parfait. En effet,
 les nombres étant toujours représentés avec une précision finie, il est impossible
-d'être capable de représenter exactement toutes les propriétés d'une série de nombre
+d'être capable de représenter exactement toutes les propriétés d'une série de nombres
 vraiment aléatoires avec un générateur pseudo-aléatoire. On va donc plutôt
 considérer une autre définition pour la qualité d'un générateur algorithmique.
 
 Considérons une simulation nécessitant la génération de nombres aléatoires.
-Un ``bon'' générateur de nombres pseudo-aléatoire produit une série de nombre
+Un ``bon'' générateur de nombres pseudo-aléatoire produit une série de nombres
 qui peut être utilisée en lieu et place de vrai nombres aléatoires sans que la simulation
 n'en soit affectée. Par exemple, le calcul du nombre $\pi$ vu dans les exercices doit 
 être trouvé avec la précision désirée avec le générateur de nombre pseudo-aléatoires pour que celui-ci 
