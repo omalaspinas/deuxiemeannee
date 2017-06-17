@@ -851,7 +851,7 @@ Si la fonction à intégrer est une constante $f(x)=c$, alors l'intégration est
 Dans les deux cas ci-dessus on a évalué la fonction sur une des bornes. On peut améliorer la précision
 en utilisant le ``point du milieu'' pour évaluer l'aire du rectangle. L'approximation devient alors
 \begin{align}
- \int_a^bf(x)\dd x&\cong\sum_{i=1}^{N-1} \delta x f(a+(i+1/2)\cdot\delta x)+\mathcal{O}(\delta x^2).
+ \int_a^bf(x)\dd x&\cong\sum_{i=0}^{N-1} \delta x f(a+(i+1/2)\cdot\delta x)+\mathcal{O}(\delta x^2).
 \end{align}
 Cette astuce permet d'améliorer la précision de la méthode à très faible coût.
 En effet, la précision de la méthode des rectangles est améliorée et devient d'ordre 2.
