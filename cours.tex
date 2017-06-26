@@ -222,7 +222,7 @@ avec $y=(A-1)/(A+1)$. On a finalement que
 \begin{equation}
  \log(n)=\log(A\cdot 10^{p-1})=(p-1)\log(10)+2\sum_{k=0}^\infty \frac{y^{2k+1}}{2k+1}.
 \end{equation}
-La valeur de $y$ étant quelque chose de proche de 0, la somme converge vite vers une valeurs finie et on peut faire l'approximation
+La valeur de $y$ étant quelque chose de proche de 0, la somme converge vite vers une valeur finie et on peut faire l'approximation
 \begin{equation}
  \log(n)\cong(p-1)\log(10),
 \end{equation}
@@ -528,7 +528,7 @@ On a
 \begin{enumerate}
  \item La dérivée et l'intégrale ``s'annulent'' 
  \begin{equation}
-  \left[\int_a^x f(y)\dd y\right]'=f(x), \quad x\in D.
+  \left(\int_a^x f(x)\dd x\right)'=\left(F(x)-F(a)\right)'=F'(x)-\left(F(a)\right)'=F'(x)=f(x).
  \end{equation}
  \item La fonction $h=f+g$ admet aussi une primitive sur $D$, et on a
  \begin{equation}
@@ -790,7 +790,7 @@ Dans ce cas, on va approximer l'intégrale et donc commettre une erreur.
 Pour ce faire on va subdiviser l'espace d'intégration $[a,b]$ en $N$ pas équidistants (pour simplifier) $\delta x=(b-a)/N$,
 et approximer l'intégrale par une somme finie
 \begin{equation}
- \int_a^bf(x)\dd x=\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i,
+ \int_a^bf(x)\dd x=\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i,
 \end{equation}
 où $g_i$ est un coefficient qui va dépendre de la méthode d'intégration 
 que nous allons utiliser, $E$ est l'erreur commise par l'intégration numérique et va dépendre des bornes d'intégration, 
@@ -823,7 +823,7 @@ définir un critère qui va nous dire si notre intégrale est calculée avec une
 Si nous notons $I(N,a,b,f,g)$ l'approximation du calcul de l'intégrale entre $a$ et $b$ de la fonction $f$
 avec une résolution $N$ pour la méthode d'intégration $g$
 \begin{equation}
- I(N,a,b,f,g)=\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i,
+ I(N,a,b,f,g)=\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i,
 \end{equation}
 où $g_i$ est encore à préciser. Afin de déterminer si le nombre de points que nous avons choisi est suffisant, 
 après avoir évalué $I(N,a,b,f,g)$, nous évaluons $I(2\cdot N,a,b,f,g)$. En d'autres termes nous évaluons l'intégrales de la même fonction avec la même 
@@ -851,7 +851,7 @@ Si la fonction à intégrer est une constante $f(x)=c$, alors l'intégration est
 Dans les deux cas ci-dessus on a évalué la fonction sur une des bornes. On peut améliorer la précision
 en utilisant le ``point du milieu'' pour évaluer l'aire du rectangle. L'approximation devient alors
 \begin{align}
- \int_a^bf(x)\dd x&\cong\sum_{i=1}^{N-1} \delta x f(a+(i+1/2)\cdot\delta x)+\mathcal{O}(\delta x^2).
+ \int_a^bf(x)\dd x&\cong\sum_{i=0}^{N-1} \delta x f(a+(i+1/2)\cdot\delta x)+\mathcal{O}(\delta x^2).
 \end{align}
 Cette astuce permet d'améliorer la précision de la méthode à très faible coût.
 En effet, la précision de la méthode des rectangles est améliorée et devient d'ordre 2.
@@ -1294,9 +1294,9 @@ Nous voyons que ce système est d'ordre 1, mais que nous avons augmenté le nomb
 Cette propriété peut se généraliser de la façon suivante. 
 Soit une équation différentielle d'ordre $n$
 \begin{equation}
- F(x,y,y',...,y^{(n)}=0.
+ F(x,y,y',...,y^{(n)})=0.
 \end{equation}
-Nous pouvons définir $z_i=y^{(i-1})$ et on aura donc que $z_{i+1}=z_i'$. On peut donc 
+Nous pouvons définir $z_i=y^{(i-1)}$ et on aura donc que $z_{i+1}=z_i'$. On peut donc 
 réécrire l'équation différentielle d'ordre $n$ comme étant 
 \begin{align}
  &z_{i+1}=z_i',\ i=1,...,n-1\\
@@ -2018,7 +2018,7 @@ Sur ces nombres on peut définir à nouveau l'addition, la soustraction, la mult
 \end{align}
 On peut les écrire sous la forme de leurs équivalents des nombres réels sous la forme
 \begin{align}
-&(a,b)+(c,d)=(a+b,c+d),\label{eq_add}\\
+&(a,b)+(c,d)=(a+c,b+d),\label{eq_add}\\
 &(a,b)\cdot(c,d)=(a\cdot c-b\cdot d,a\cdot d+b\cdot c).\label{eq_mult}
 \end{align}
 On voit assez facilement que l'addition sur $\real^2$ a une forme très similaire 
@@ -2098,7 +2098,7 @@ faire la somme des vecteurs représentant chacun des nombres complexes à sommer
 \begin{center}
 \includegraphics[width=0.5\textwidth]{figs/complexPlaneSum.pdf}
 \end{center}
-\caption{Représentation de la somme de deux nombres complexes $z_1=a+ib$ et $z_2=c+id$. Le résultat est donné par $z_3=a+b+i(c+d)$.}\label{fig_complexPlaneSum}
+\caption{Représentation de la somme de deux nombres complexes $z_1=a+ib$ et $z_2=c+id$. Le résultat est donné par $z_3=a+c+i(b+d)$.}\label{fig_complexPlaneSum}
 \end{figure}
 
 Pour la multiplication cela s'avère un peu plus difficile à interpréter. Pour cela
@@ -2173,10 +2173,10 @@ de module égal, mais
 d'argument opposé. En d'autres termes, si $z=re^{i\vartheta}$, alors $\zbar=re^{-i\vartheta}$.
 
 
-On peut également écrire le module d'un nombre réel à l'aide de la notation 
+On peut également écrire le module d'un nombre complexe à l'aide de la notation 
 du complexe conjugué. Il est donné par 
 \begin{equation}
- |\zbar|=\sqrt{z\zbar}.
+ |z|=\sqrt{z\zbar}.
 \end{equation}
 Finalement, on peut également exprimer les parties réelle et imaginaires d'un nombre complexe à l'aide 
 de la notation du complexe conjugué
@@ -2261,7 +2261,7 @@ Dans notre cas $E$ sera $\real$ ou $\complex$ principalement.
   \item Dans ce qui suit dans ce cours, nous allons utiliser encore un autre espace vectoriel
   un peu moins intuitif que ceux que nous avons vus jusqu'ici. Il s'agit de l'espace des fonctions, ou espace fonctionnel.
   Nous définissons les applications de $W$ dans $V$ comme un espace vectoriel dans $E$ avec l'addition et la
-  multiplication par un scalaire définis commme suit. Soient $f:W\rightarrow V$ et $f:W\rightarrow V$, avec
+  multiplication par un scalaire définis commme suit. Soient $f:W\rightarrow V$ et $g:W\rightarrow V$, avec
   $\alpha\in E$, alors
   \begin{align}
    &(f+g)(x)=f(x)+g(x), \quad \forall x\in W,\\
@@ -2422,8 +2422,8 @@ de fréquence $\nu=1/T$. Ce genre de fonction a la propriété suivante
  f(t+T)=f(t),\quad \forall t.
 \end{equation}
 Nous cherchons à décomposer $f$ en un ensemble potentiellement infini de fonctions périodiques. Notons
-cet ensemble de fonctions $\{g_j\}_{0=1}^\infty$, où $g_j$ est une fonction périodique. En fait on cherche une décomposition
-où pour un ensemble unique de $\{\alpha_j\}_{i=0}^\infty$
+cet ensemble de fonctions $\{g_j\}_{j=0}^\infty$, où $g_j$ est une fonction périodique. En fait on cherche une décomposition
+où pour un ensemble unique de $\{\alpha_j\}_{j=0}^\infty$
 \begin{equation}
  f(t)=\sum_{j=0}^\infty \alpha_j g_j(t).
 \end{equation}
@@ -2432,7 +2432,7 @@ où les $g_j$ sont les vecteurs de la base et les $\alpha_j$ sont les coordonné
 
 La fonction de départ $f$ ayant une période $T$, on a obligatoirement que les fonctions $g_j$ ont une période 
 qui doit être une fraction entière de la période, $T/j$. Ces fonctions $g_j(t)$ peuvent en général
-avoir une forme quelconque, avec l'unique contrainte qu'elles sont périodiques avec période $T/i$. 
+avoir une forme quelconque, avec l'unique contrainte qu'elles sont périodiques avec période $T/j$. 
 \c Ca pourrait être un signal carré, triangulaire, etc. Dans les cas qui nous intéresse, on a un choix
 naturel qui s'impose comme fonctions périodiques: les sinus et cosinus.
 
@@ -2497,8 +2497,8 @@ En particulier si $j=0$, on a
 \begin{equation}
 a_0=0,\quad b_0=\frac{2}{T}\int_0^T f(t)\dd t.
 \end{equation}
-On constate que $a_0/2$ correspond à la valeur moyenne de $f(t)$ dans $[0,T]$. Cela 
-permet d'approximer des fonctions dons la valeur moyenne n'est pas nulle (les sinus et cosinus ont toujours
+On constate que $b_0/2$ correspond à la valeur moyenne de $f(t)$ dans $[0,T]$. Cela 
+permet d'approximer des fonctions dont la valeur moyenne n'est pas nulle (les sinus et cosinus ont toujours
 des moyennes nulles).
 
 Les coefficients $a_j,b_j$ peuvent être calculés directement à partir de $f(t)$,
@@ -2524,7 +2524,7 @@ entre $0$ et $T$, on obtient
 \end{align}
 où $\delta_{jk}$ est le ``delta de Kronecker'', dont la définition est
 \begin{equation}
- \delta_{ij}=\left\{\begin{array}{ll}
+ \delta_{jk}=\left\{\begin{array}{ll}
                 $1,$&$\mbox{ si }j=k$\\
                 $0,$&$\mbox{ sinon.}$
                \end{array}\right.
@@ -2713,7 +2713,7 @@ la transformée de Fourier sera périodique, soit
 \end{equation}
 Nous démontrons cette relation par la définition de la TFTD
 \begin{equation}
- \fh(\omega+2\pi)=\sum_{n=-\infty}^\infty f[n] e^{-i(\omega+2\pi) n}=\underbrace{e^{-i2\pi n}}_{=1}\sum_{n=-\infty}^\infty f[n] e^{-i\omega n}=\fh(\omega).
+ \fh(\omega+2\pi)=\sum_{n=-\infty}^\infty f[n] e^{-i(\omega+2\pi) n}=\underbrace{e^{-i2\pi}}_{=1}\sum_{n=-\infty}^\infty f[n] e^{-i\omega n}=\fh(\omega).
 \end{equation}
 D'une certaine façon nous voyons que nous avons une similarité entre la transformée de Fourier à temps discret et les séries de Fourier.
 Cette similarité va devenir plus claire dans ce qui suit.
@@ -2977,7 +2977,7 @@ que la fréquence de Nyquist de notre signal, on verra apparaître le phénomèn
 
 \section{Introduction à la statistique descriptive}
 
-En statistique, une \textit{population} est un ensemble d'objets (d'individus) possédants un ou plusieurs \textit{caractères} communs.
+En statistique, une \textit{population} est un ensemble d'objets (d'individus) possédant un ou plusieurs \textit{caractères} communs.
 L'étude des caractères d'une population a pour but de révéler des tendances au sein de la population. Ces études sont particulièrement
 intéressantes quand le nombre d'individus de notre population est trop élevé pour pouvoir être analysé en entier. On prélève alors un échantillon 
 représentatif de notre population au hasard 
@@ -2985,7 +2985,7 @@ et on mène l'analyse statistique sur ce sous ensemble. Les éventuelles conclus
 à l'ensemble de la population. Grâce au calcul de probabilité nous pourrons alors avoir une confiance plus ou moins grande dans les conclusions 
 tirées en fonction de la taille de l'échantillon. En effet plus celui-ci sera grand, plus la confiance dans les résultats sera élevée.
 
-Un exemple de ce genre d'étude qui est très à la mode ces temps est le sondages (concernant le résultats d'élections ou de votations). 
+Un exemple de ce genre d'étude qui est très à la mode ces temps est le sondage (concernant le résultat d'élections ou de votations). 
 Les sondeurs tentent en questionnant un sous-ensemble 
 d'environ 1000 d'électeurs d'un pays (citoyens de plus de 18, moitié d'hommes et de femmes plus ou moins, ...) de déterminer 
 les résultats d'élections ou de votations où participeront des millions d'électeurs potentiels. Il faut avouer que la tâche semble pour 
@@ -3112,7 +3112,7 @@ Les tableaux de fréquence des deux exemples précédents sont donnés par
   \hline
   60000 & 5 & $5/61\cong0.081967$ \\
   \hline
-  1000000 & 1 & $1/61\cong0.19568$ \\
+  1000000 & 1 & $1/61\cong0.016393$ \\
   \hline
   \end{tabular}
   \end{center}
@@ -3175,9 +3175,9 @@ qui présentent une valeur de caractère $x_i\leq x$. Les tableaux correspondant
   \hline
   50000 & 20 & $20/61\cong0.327869$ & $(20+35)/61\cong0.90164$\\
   \hline
-  60000 & 5 & $5/61\cong0.081967$ & $(20+35+5+1)/61\cong0.98361$\\
+  60000 & 5 & $5/61\cong0.081967$ & $(20+35+5)/61\cong0.98361$\\
   \hline
-  1000000 & 1 & $1/61\cong0.19568$ & $(20+35+5+1)/61=1$\\
+  1000000 & 1 & $1/61\cong0.016393$ & $(20+35+5+1)/61=1$\\
   \hline
   \end{tabular}
   \end{center}
@@ -3272,7 +3272,7 @@ Nous allons voir deux mesures différentes dans cette sous-section: la variance 
 Nous cherchons d'abord à calculer la moyenne des écarts à la moyenne. 
 Hors, comme on l'a vu dans la sous-section précédente l'écart à la moyenne $x_i-\bar{x}$ est nul en moyenne. Cette grandeurs ne nous apprend rien. 
 On peut donc s'intéresser plutôt à la moyenne de l'écart quadratique $(x_i-\bar{x})^2$ qui est une quantité toujours positive et donc la moyenne sera 
-de cette écart quadratique aura toujours une valeurs qui sera positive ou nulle (elle sera nulle uniquement si 
+de cette écart quadratique aura toujours une valeur qui sera positive ou nulle (elle sera nulle uniquement si 
 $x_i-\bar{x}=0,\forall i$)\footnote{on pourrait aussi étudier la moyenne de $|x_i-\bar{x}|$, mais cela est moins pratique à étudier théoriquement.}.
 On définit donc la \textit{variance}, $v$, comme étant la moyenne des écarts quadratiques
 \begin{equation}
@@ -3319,7 +3319,7 @@ on peut définir deux grandeurs, $Q_i\in\{x_i\}_{i=0}^{k-1}$ et $\alpha_i\in[0,1
 \begin{equation}
  F(Q_i)=\alpha_i.
 \end{equation}
-En d'autres termes $Q_i$ est la valeur pour laquelle la fréquence cumulée vaut $\alpha_i$. $Q_i$ correspond donc au nombre d'individus dons la fréquence cumulée est de $\alpha_i$. 
+En d'autres termes $Q_i$ est la valeur pour laquelle la fréquence cumulée vaut $\alpha_i$. $Q_i$ correspond donc au nombre d'individus dont la fréquence cumulée est de $\alpha_i$. 
 En particulier si $\alpha_i=1/2$, alors $Q_i=\tilde{x}$ ($Q_i$ est la médiane). Il est commun d'avoir $Q_i\in[0.25,0.5,0.75]$, on parle alors de quartiles. Avec $Q_1=0.25$ et $Q_3=0.75$, 
 le nombre d'individus entre $0.25$ et $0.75$ est donné par
 \begin{equation}
@@ -3363,14 +3363,14 @@ Un événement composé d'une seule éventualité est appelé \textit{événemen
 \end{definition}
 
 Le calcul des \textit{probabilités} de réalisation de certains événement est reliée à la \textit{fréquence} 
-que nous avons indroduit dans la section précédente. Soit un univers $\Omega$ et $A$, $B$ deux événements tels que $A\cap B=\emptyset$.
+que nous avons introduit dans la section précédente. Soit un univers $\Omega$ et $A$, $B$ deux événements tels que $A\cap B=\emptyset$.
 On effectue une $N$ expériences, donc $\Omega$ est réalisé $N$ fois. De plus on constate qu'on réalise $A$, $K$ fois et $B$, $M$ fois. 
 On a donc les fréquences suivantes que $A$, $B$ et $\Omega$ se réalisent
 \begin{align}
  f(A)&=\frac{K}{N},\\
  f(B)&=\frac{M}{N},\\
  f(\Omega)&=\frac{N}{N}=1,\\
- f(A\cap B)&=\frac{M+K}{N}=f(A)+f(B).
+ f(A\cup B)&=\frac{M+K}{N}=f(A)+f(B).
 \end{align}
 Les \textit{probabilités} de réalisation des événements ci-dessus peutvent être vues comme le passage à la limite
 $N\rightarrow\infty$ tel que $p(A),p(B)\in\real$ et
@@ -3378,7 +3378,7 @@ $N\rightarrow\infty$ tel que $p(A),p(B)\in\real$ et
  p(A)&=\lim_{\substack{N\rightarrow\infty,\\ K/N<\infty}}\frac{K}{N},\\
  p(B)&=\lim_{\substack{N\rightarrow\infty,\\ M/N<\infty}}\frac{M}{N},\\
  p(\Omega)&=1,\\
- p(A\cap B)&=p(A)+p(B).
+ p(A\cup B)&=p(A)+p(B).
 \end{align}
 
 Si maintenant nous voulons connaître la probabilité de tirer $6$, ou encore la probabilité de réaliser $A=\{6\}$.  
@@ -3482,7 +3482,7 @@ p(A)+p(\bar A)=1.
 \end{equation}
 On en déduit que 
 \begin{equation}
-p(\bar A)=1-p(\bar A)=1-\frac{1}{3}=\frac{2}{3}.
+p(A)=1-p(\bar A)=1-\frac{2}{3}=\frac{1}{3}.
 \end{equation}
 Dans ce cas on peut également calculer à priori $p(B)$
 \begin{equation}
@@ -3658,8 +3658,8 @@ On jette une pièce de monnaie deux fois de suite. Les résultats possible pour 
 
 \subsection{Tirages multiples}
 
-Jusqu'ici on a lancer le dé une fois et calculé la probabilité liée à ce lancer unique. 
-A présent, on va tirer le dé plusieurs fois et calculer les probabilité d'obtenir des séquences 
+Jusqu'ici on a lancé le dé une fois et calculé la probabilité liée à ce lancer unique. 
+A présent, on va tirer le dé plusieurs fois et calculer les probabilités d'obtenir des séquences 
 de réalisations. Pour notre exemple on va prendre un cas où on tire le dé deux fois successivement.
 Ce type de tirage est appelé \textit{tirage successif avec remise}, car les deux tirages sont 
 successifs et indépendants entre eux (on va tirer deux fois le même dé). L'univers de 
@@ -3668,7 +3668,7 @@ cette expérience est la combinaison de tous les résultats obtenus avec chacun 
  \Omega=\{11,12,13,14,15,16,21,22,23,24,25,26,...,61,62,63,64,65,66\}.
 \end{equation}
 Il y a $6\times 6=6^2=36$ résultats possibles à ce tirage. Il faut noter ici que l'ordre dans lequel le tirage 
-a lieu est important; le tirage $26$ est différent du tirage $62$. On verra par la suite des exemples ou cela n'est pas le cas.
+a lieu est important; le tirage $26$ est différent du tirage $62$. On verra par la suite des exemples où cela n'est pas le cas.
 
 On cherche à savoir quelle est la probabilité d'obtenir l'événement $A=\{26\}$.
 
@@ -3845,7 +3845,7 @@ On tire un nombre fixé de jetons, disons 3. On souhaite déterminer la probabil
 une suite donnée de 2 numéros, disons $25$. Disons que pour cet exemple l'ordre du tirage a de l'importance
 (ce qui n'est pas le cas du lotto).
 
-Afin de calculer cette probabilité le fait qu'on effectue un tirage avec remise est promordial.
+Afin de calculer cette probabilité le fait qu'on effectue un tirage avec remise est primordial.
 En effet considérons le cas initial illustré dans la figure \ref{fig_loto}.
 \begin{figure}[htp]
 \includegraphics[height=1.8truecm]{figs/loto.pdf}
@@ -3856,7 +3856,7 @@ Pendant le premier tirage, nous tirons le numéro 2 (voir figure \ref{fig_loto2}
 \includegraphics[height=1.8truecm]{figs/loto2.pdf}
 \caption{Le numéro 2 est tiré lors du premier tirage.}\label{fig_loto2}
 \end{figure}
-Il est donc enlevé du sac et il nous reste uniquement 5 chiffres parmis lesquels choisir 
+Il est donc enlevé du sac et il nous reste uniquement 5 chiffres parmi lesquels choisir 
 (les chiffres $1$, $3$, $4$, $5$, et $6$, comme dans la figure \ref{fig_loto3}).
 \begin{figure}[htp]
 \includegraphics[height=1.8truecm]{figs/loto3.pdf}
@@ -3876,22 +3876,22 @@ On voit donc que la probabilité de tirer la suite ordonnée $25$ est de
 \end{equation}
 A présent, si nous considérons que l'ordre n'a pas d'importance, on a comme dans la section précédente
 que l'événement qui nous intéresse est $A=\{25,52\}$. On peut donc décomposer 
-ce cas en 2 et dire qu'on a dans un premier temps la probabilité de tirer $2$ ou $5$ parmis 
-$6$ nombres, puis on a la probabilité de tirer le $5$ ou le $2$ (respectrivement si on a tiré $2$ ou $5$) parmis 5.
-Les deux probabilité sont donc données respectivement par $p(\{2,5\})=\frac{2}{6}$ puis par $p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$.
+ce cas en 2 et dire qu'on a dans un premier temps la probabilité de tirer $2$ ou $5$ parmi 
+$6$ nombres, puis on a la probabilité de tirer le $5$ ou le $2$ (respectivement si on a tiré $2$ ou $5$) parmi 5.
+Les deux probabilités sont donc données respectivement par $p(\{2,5\})=\frac{2}{6}$ puis par $p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$.
 
 \begin{exercices}
 \hfill\break
  \begin{enumerate}
-  \item Le jeu Eruomillions consiste en un tirage de 5 numéros parmis 50 possible, puis par le tirage de 2 ``étoiles'' parmis 11 possibles.
+  \item Le jeu Euromillions consiste en un tirage de 5 numéros parmi 50 possible, puis par le tirage de 2 ``étoiles'' parmi 11 possibles.
   Déterminez la probabilité de trouver la bonne combinaison à un tirage.
-  \item Le jeu du swiss lotto, consiste au tirage de 5 numéros parmis 42 possibles, puis au tirage d'un numéros parmis 6. Calculez la probabilité de 
-  gagner au swiss lotto..
+  \item Le jeu du swiss lotto, consiste au tirage de 5 numéros parmi 42 possibles, puis au tirage d'un numéros parmi 6. Calculez la probabilité de 
+  gagner au swiss lotto.
  \end{enumerate}
 \end{exercices}
 
 \section{Quelques exercices}
-Afin de continuner avec ces concepts de tirages aléatoires avec ou sans remise
+Afin de continuer avec ces concepts de tirages aléatoires avec ou sans remise
 de suite ordonnées ou non, nous allons faire quelques exercices. Il peut se révéler utile de dessiner un arbre pour ces exercices.
 \begin{enumerate}
  \item Dans une urne se trouvent 2 boules blanches et 3 boules noires. On tire successivement deux boules sans remise.
@@ -3919,7 +3919,7 @@ dans la boîte $A$, $B$ ou $C$.
 est de $p(G)=0.514$.
 \begin{itemize}
  \item[$\bullet$] Calculer et la probabilité qu'un enfant soit une fille.
- \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants sooient de même sexe.
+ \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants soient de même sexe.
  \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants soient de sexes opposés.
 \end{itemize}
 \end{enumerate}
@@ -3970,7 +3970,7 @@ Pour illustrer ce qui se passe, intéressons-nous au dernier exemple ci-dessus a
 Prenons ces trois questions une par une
 \begin{enumerate}
  \item Les deux façons d'obtenir $X=1$ est d'avoir les tirages $(p,f)$ ou $(f,p)$, soit $A=\{(p,f), (f,p)\}$. Les probabilités de chacun 
- des événement de l'univerrs étants équiprobables on a 
+ des événements de l'univers étants équiprobables on a 
  \begin{equation}
   p(X=1)=p(A)=1/2.
  \end{equation}
@@ -3978,7 +3978,7 @@ Prenons ces trois questions une par une
  \begin{equation}
 p(0.6\leq X\leq 3)=p(\bar B)=1-p(B)=\frac{3}{4}.
  \end{equation}
- \item De façon similaire les trois énénements donnant $X<2$ sont dans $C=\{(p,p), (p,f), (f,p)\}$. On a donc
+ \item De façon similaire les trois événements donnant $X<2$ sont dans $C=\{(p,p), (p,f), (f,p)\}$. On a donc
  \begin{equation}
   p(X<2)=p(C)=\frac{3}{4}.
  \end{equation}
@@ -3990,7 +3990,7 @@ est reliée à la probabilité d'obtenir un événement $D$ qui serait la préim
 On peut noter dans le cas général qu'on a $D=X^{-1}(I)$.
 
 \begin{definition}[Variable aléatoire] On dit que la fonction $X:\Omega\rightarrow\real$ est une \textit{variable aléatoire} si la 
-préimage de $X$ sur tout intervale, $I\subseteq\real$, est un événement $A\in \Omega$. La probabilité que $X$ prenne une valeur 
+préimage de $X$ sur tout intervalle, $I\subseteq\real$, est un événement $A\in \Omega$. La probabilité que $X$ prenne une valeur 
 dans l'intervalle $I$ est égale à la probabilité de réaliser l'événement $A$
 \begin{equation}
  p(X\in I)=p(A).
@@ -4046,7 +4046,7 @@ déterministe (les opérations faites à l'aide d'un ordinateur sont par défini
 reproductibles avec une chance d'erreur quasiment nulle). On parle donc de nombre pseudo-aléatoires.
 
 Néanmoins, bien que ces chiffres ne soient pas vraiment aléatoires, ils peuvent 
-être posséder des propriétés qui les rendent satisfaisants pour la plupart des applications. Cette suite de nombres doit avoir des propriétés particulières quand $n\rightarrow\infty$.
+posséder des propriétés qui les rendent satisfaisants pour la plupart des applications. Cette suite de nombres doit avoir des propriétés particulières quand $n\rightarrow\infty$.
 Sans entrer pour le moment trop dans les détails, on veut par exemple que 
 la moyenne des nombres tirés soit $m/2$, que la corrélation entre des 
 sous-suites de nombres doit être nulle, ou encore qu'il n'existe pas de séquence qui se 
@@ -4079,11 +4079,11 @@ $a=1$, $c=1$, $m=10$ et $X_0=0$, on va avoir comme suite de nombre aléatoire
  \{0,1,2,3,4,5,6,7,8,9,0,1,2,3,...\},
 \end{equation}
 ce qui n'est pas très aléatoire vous en conviendrez... Il est donc très important
-de tenter d'optimiser les valeur $a$, $c$ et $m$ pour
+de tenter d'optimiser les valeurs $a$, $c$ et $m$ pour
 avoir des séquences aussi ``aléatoires'' que possible.
 
 Une première chose à remarquer c'est que $m$ sera la valeur maximale de la période
-de notre générateur de nombre aléatoire (la période est le nombre de tirage qu'il faudra
+de notre générateur de nombre aléatoire (la période est le nombre de tirages qu'il faudra
 effectuer pour que la série se répète exactement).
 
 Quelques paramètres utilisés dans des générateurs connus sont par exemple
@@ -4157,7 +4157,7 @@ avec deux générateurs différents
  Y&=\{0,0,0,0,0,0,0,0,0,0\}.
 \end{align}
 On voit que la suite $Y$ semble beaucoup moins aléatoire que la suite $X$. 
-En effet, la probabilité de tirer 10 fois 0 en 10 tirages et de $p(Y)=1/2^{10}=1/1024$,
+En effet, la probabilité de tirer 10 fois 0 en 10 tirages est de $p(Y)=1/2^{10}=1/1024$,
 alors que la probabilité d'avoir autant de 0 que de 1 est de $p(X)=1/2$.
 De façon générale on aimerait que la répartition soit $35\%$-$65\%$ avec une probabilité
 de $90\%$.
@@ -4179,12 +4179,12 @@ toutes tendre vers $1$.
 
 Néanmoins, il est certain qu'aucun générateur ne peut être parfait. En effet,
 les nombres étant toujours représentés avec une précision finie, il est impossible
-d'être capable de représenter exactement toutes les propriétés d'une série de nombre
+d'être capable de représenter exactement toutes les propriétés d'une série de nombres
 vraiment aléatoires avec un générateur pseudo-aléatoire. On va donc plutôt
 considérer une autre définition pour la qualité d'un générateur algorithmique.
 
 Considérons une simulation nécessitant la génération de nombres aléatoires.
-Un ``bon'' générateur de nombres pseudo-aléatoire produit une série de nombre
+Un ``bon'' générateur de nombres pseudo-aléatoire produit une série de nombres
 qui peut être utilisée en lieu et place de vrai nombres aléatoires sans que la simulation
 n'en soit affectée. Par exemple, le calcul du nombre $\pi$ vu dans les exercices doit 
 être trouvé avec la précision désirée avec le générateur de nombre pseudo-aléatoires pour que celui-ci 
