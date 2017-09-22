@@ -11,6 +11,7 @@
 \usepackage[french]{babel}
 \usepackage{amsfonts,bm,amsmath,amssymb,graphicx,amsthm}
 \usepackage{cancel}
+\usepackage{mathtools}
 
 \setlength{\parindent}{0pt}
 
@@ -221,7 +222,7 @@ avec $y=(A-1)/(A+1)$. On a finalement que
 \begin{equation}
  \log(n)=\log(A\cdot 10^{p-1})=(p-1)\log(10)+2\sum_{k=0}^\infty \frac{y^{2k+1}}{2k+1}.
 \end{equation}
-La valeur de $y$ étant quelque chose de proche de 0, la somme converge vite vers une valeurs finie et on peut faire l'approximation
+La valeur de $y$ étant quelque chose de proche de 0, la somme converge vite vers une valeur finie et on peut faire l'approximation
 \begin{equation}
  \log(n)\cong(p-1)\log(10),
 \end{equation}
@@ -527,7 +528,7 @@ On a
 \begin{enumerate}
  \item La dérivée et l'intégrale ``s'annulent'' 
  \begin{equation}
-  \left[\int_a^x f(y)\dd y\right]'=f(x), \quad x\in D.
+  \left(\int_a^x f(x)\dd x\right)'=\left(F(x)-F(a)\right)'=F'(x)-\left(F(a)\right)'=F'(x)=f(x).
  \end{equation}
  \item La fonction $h=f+g$ admet aussi une primitive sur $D$, et on a
  \begin{equation}
@@ -789,7 +790,7 @@ Dans ce cas, on va approximer l'intégrale et donc commettre une erreur.
 Pour ce faire on va subdiviser l'espace d'intégration $[a,b]$ en $N$ pas équidistants (pour simplifier) $\delta x=(b-a)/N$,
 et approximer l'intégrale par une somme finie
 \begin{equation}
- \int_a^bf(x)\dd x=\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i,
+ \int_a^bf(x)\dd x=\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i,
 \end{equation}
 où $g_i$ est un coefficient qui va dépendre de la méthode d'intégration 
 que nous allons utiliser, $E$ est l'erreur commise par l'intégration numérique et va dépendre des bornes d'intégration, 
@@ -822,7 +823,7 @@ définir un critère qui va nous dire si notre intégrale est calculée avec une
 Si nous notons $I(N,a,b,f,g)$ l'approximation du calcul de l'intégrale entre $a$ et $b$ de la fonction $f$
 avec une résolution $N$ pour la méthode d'intégration $g$
 \begin{equation}
- I(N,a,b,f,g)=\sum_{i=0}^{N} \delta x f(a+i\delta x) g_i,
+ I(N,a,b,f,g)=\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i,
 \end{equation}
 où $g_i$ est encore à préciser. Afin de déterminer si le nombre de points que nous avons choisi est suffisant, 
 après avoir évalué $I(N,a,b,f,g)$, nous évaluons $I(2\cdot N,a,b,f,g)$. En d'autres termes nous évaluons l'intégrales de la même fonction avec la même 
@@ -850,7 +851,7 @@ Si la fonction à intégrer est une constante $f(x)=c$, alors l'intégration est
 Dans les deux cas ci-dessus on a évalué la fonction sur une des bornes. On peut améliorer la précision
 en utilisant le ``point du milieu'' pour évaluer l'aire du rectangle. L'approximation devient alors
 \begin{align}
- \int_a^bf(x)\dd x&\cong\sum_{i=1}^{N-1} \delta x f(a+(i+1/2)\cdot\delta x)+\mathcal{O}(\delta x^2).
+ \int_a^bf(x)\dd x&\cong\sum_{i=0}^{N-1} \delta x f(a+(i+1/2)\cdot\delta x)+\mathcal{O}(\delta x^2).
 \end{align}
 Cette astuce permet d'améliorer la précision de la méthode à très faible coût.
 En effet, la précision de la méthode des rectangles est améliorée et devient d'ordre 2.
@@ -1293,9 +1294,9 @@ Nous voyons que ce système est d'ordre 1, mais que nous avons augmenté le nomb
 Cette propriété peut se généraliser de la façon suivante. 
 Soit une équation différentielle d'ordre $n$
 \begin{equation}
- F(x,y,y',...,y^{(n)}=0.
+ F(x,y,y',...,y^{(n)})=0.
 \end{equation}
-Nous pouvons définir $z_i=y^{(i-1})$ et on aura donc que $z_{i+1}=z_i'$. On peut donc 
+Nous pouvons définir $z_i=y^{(i-1)}$ et on aura donc que $z_{i+1}=z_i'$. On peut donc 
 réécrire l'équation différentielle d'ordre $n$ comme étant 
 \begin{align}
  &z_{i+1}=z_i',\ i=1,...,n-1\\
@@ -2017,7 +2018,7 @@ Sur ces nombres on peut définir à nouveau l'addition, la soustraction, la mult
 \end{align}
 On peut les écrire sous la forme de leurs équivalents des nombres réels sous la forme
 \begin{align}
-&(a,b)+(c,d)=(a+b,c+d),\label{eq_add}\\
+&(a,b)+(c,d)=(a+c,b+d),\label{eq_add}\\
 &(a,b)\cdot(c,d)=(a\cdot c-b\cdot d,a\cdot d+b\cdot c).\label{eq_mult}
 \end{align}
 On voit assez facilement que l'addition sur $\real^2$ a une forme très similaire 
@@ -2097,7 +2098,7 @@ faire la somme des vecteurs représentant chacun des nombres complexes à sommer
 \begin{center}
 \includegraphics[width=0.5\textwidth]{figs/complexPlaneSum.pdf}
 \end{center}
-\caption{Représentation de la somme de deux nombres complexes $z_1=a+ib$ et $z_2=c+id$. Le résultat est donné par $z_3=a+b+i(c+d)$.}\label{fig_complexPlaneSum}
+\caption{Représentation de la somme de deux nombres complexes $z_1=a+ib$ et $z_2=c+id$. Le résultat est donné par $z_3=a+c+i(b+d)$.}\label{fig_complexPlaneSum}
 \end{figure}
 
 Pour la multiplication cela s'avère un peu plus difficile à interpréter. Pour cela
@@ -2172,10 +2173,10 @@ de module égal, mais
 d'argument opposé. En d'autres termes, si $z=re^{i\vartheta}$, alors $\zbar=re^{-i\vartheta}$.
 
 
-On peut également écrire le module d'un nombre réel à l'aide de la notation 
+On peut également écrire le module d'un nombre complexe à l'aide de la notation 
 du complexe conjugué. Il est donné par 
 \begin{equation}
- |\zbar|=\sqrt{z\zbar}.
+ |z|=\sqrt{z\zbar}.
 \end{equation}
 Finalement, on peut également exprimer les parties réelle et imaginaires d'un nombre complexe à l'aide 
 de la notation du complexe conjugué
@@ -2260,7 +2261,7 @@ Dans notre cas $E$ sera $\real$ ou $\complex$ principalement.
   \item Dans ce qui suit dans ce cours, nous allons utiliser encore un autre espace vectoriel
   un peu moins intuitif que ceux que nous avons vus jusqu'ici. Il s'agit de l'espace des fonctions, ou espace fonctionnel.
   Nous définissons les applications de $W$ dans $V$ comme un espace vectoriel dans $E$ avec l'addition et la
-  multiplication par un scalaire définis commme suit. Soient $f:W\rightarrow V$ et $f:W\rightarrow V$, avec
+  multiplication par un scalaire définis commme suit. Soient $f:W\rightarrow V$ et $g:W\rightarrow V$, avec
   $\alpha\in E$, alors
   \begin{align}
    &(f+g)(x)=f(x)+g(x), \quad \forall x\in W,\\
@@ -2421,8 +2422,8 @@ de fréquence $\nu=1/T$. Ce genre de fonction a la propriété suivante
  f(t+T)=f(t),\quad \forall t.
 \end{equation}
 Nous cherchons à décomposer $f$ en un ensemble potentiellement infini de fonctions périodiques. Notons
-cet ensemble de fonctions $\{g_j\}_{0=1}^\infty$, où $g_j$ est une fonction périodique. En fait on cherche une décomposition
-où pour un ensemble unique de $\{\alpha_j\}_{i=0}^\infty$
+cet ensemble de fonctions $\{g_j\}_{j=0}^\infty$, où $g_j$ est une fonction périodique. En fait on cherche une décomposition
+où pour un ensemble unique de $\{\alpha_j\}_{j=0}^\infty$
 \begin{equation}
  f(t)=\sum_{j=0}^\infty \alpha_j g_j(t).
 \end{equation}
@@ -2431,7 +2432,7 @@ où les $g_j$ sont les vecteurs de la base et les $\alpha_j$ sont les coordonné
 
 La fonction de départ $f$ ayant une période $T$, on a obligatoirement que les fonctions $g_j$ ont une période 
 qui doit être une fraction entière de la période, $T/j$. Ces fonctions $g_j(t)$ peuvent en général
-avoir une forme quelconque, avec l'unique contrainte qu'elles sont périodiques avec période $T/i$. 
+avoir une forme quelconque, avec l'unique contrainte qu'elles sont périodiques avec période $T/j$. 
 \c Ca pourrait être un signal carré, triangulaire, etc. Dans les cas qui nous intéresse, on a un choix
 naturel qui s'impose comme fonctions périodiques: les sinus et cosinus.
 
@@ -2496,8 +2497,8 @@ En particulier si $j=0$, on a
 \begin{equation}
 a_0=0,\quad b_0=\frac{2}{T}\int_0^T f(t)\dd t.
 \end{equation}
-On constate que $a_0/2$ correspond à la valeur moyenne de $f(t)$ dans $[0,T]$. Cela 
-permet d'approximer des fonctions dons la valeur moyenne n'est pas nulle (les sinus et cosinus ont toujours
+On constate que $b_0/2$ correspond à la valeur moyenne de $f(t)$ dans $[0,T]$. Cela 
+permet d'approximer des fonctions dont la valeur moyenne n'est pas nulle (les sinus et cosinus ont toujours
 des moyennes nulles).
 
 Les coefficients $a_j,b_j$ peuvent être calculés directement à partir de $f(t)$,
@@ -2523,7 +2524,7 @@ entre $0$ et $T$, on obtient
 \end{align}
 où $\delta_{jk}$ est le ``delta de Kronecker'', dont la définition est
 \begin{equation}
- \delta_{ij}=\left\{\begin{array}{ll}
+ \delta_{jk}=\left\{\begin{array}{ll}
                 $1,$&$\mbox{ si }j=k$\\
                 $0,$&$\mbox{ sinon.}$
                \end{array}\right.
@@ -2712,7 +2713,7 @@ la transformée de Fourier sera périodique, soit
 \end{equation}
 Nous démontrons cette relation par la définition de la TFTD
 \begin{equation}
- \fh(\omega+2\pi)=\sum_{n=-\infty}^\infty f[n] e^{-i(\omega+2\pi) n}=\underbrace{e^{-i2\pi n}}_{=1}\sum_{n=-\infty}^\infty f[n] e^{-i\omega n}=\fh(\omega).
+ \fh(\omega+2\pi)=\sum_{n=-\infty}^\infty f[n] e^{-i(\omega+2\pi) n}=\underbrace{e^{-i2\pi}}_{=1}\sum_{n=-\infty}^\infty f[n] e^{-i\omega n}=\fh(\omega).
 \end{equation}
 D'une certaine façon nous voyons que nous avons une similarité entre la transformée de Fourier à temps discret et les séries de Fourier.
 Cette similarité va devenir plus claire dans ce qui suit.
@@ -2974,21 +2975,362 @@ que la fréquence de Nyquist de notre signal, on verra apparaître le phénomèn
 
 \chapter{Probabilités et statistiques}
 
-Le but de ce chapitre est d'étudier des phénomènes (expériences) aléatoires; 
-de calculer les chances (ou la probabilité) qu'un événement 
-qui n'est pas déterministe se produise.
+\section{Introduction à la statistique descriptive}
 
-Il existe une très grande variétés de ces phénomènes. Il en existe 
-dans presque tous les phénomènes physiques, dans la météorologie, 
-l'écoulement de fluides, etc. L'étude des probabilité est évidemment également présente 
-dans l'analyse de risque pour les assurances. 
-En informatique également il existe un très vaste champs d'application des probabilités.
-Une application peut-être liée à la chance qu'un composant (processeur, mémoire, etc) 
-produise un résultat erroné. Cette théorie est également utilisée pour la cryptographie. 
+En statistique, une \textit{population} est un ensemble d'objets (d'individus) possédant un ou plusieurs \textit{caractères} communs.
+L'étude des caractères d'une population a pour but de révéler des tendances au sein de la population. Ces études sont particulièrement
+intéressantes quand le nombre d'individus de notre population est trop élevé pour pouvoir être analysé en entier. On prélève alors un échantillon 
+représentatif de notre population au hasard 
+et on mène l'analyse statistique sur ce sous ensemble. Les éventuelles conclusions tirées de l'étude statistique sur le sous ensemble seront ensuite appliquée
+à l'ensemble de la population. Grâce au calcul de probabilité nous pourrons alors avoir une confiance plus ou moins grande dans les conclusions 
+tirées en fonction de la taille de l'échantillon. En effet plus celui-ci sera grand, plus la confiance dans les résultats sera élevée.
 
-Les applications les plus courantes et peut-être les 
-plus intuitives sont les jeux de hasard (lancer de dé, roulette, blackjack, etc).
-Et c'est pas cela qu'on va commencer. 
+Un exemple de ce genre d'étude qui est très à la mode ces temps est le sondage (concernant le résultat d'élections ou de votations). 
+Les sondeurs tentent en questionnant un sous-ensemble 
+d'environ 1000 d'électeurs d'un pays (citoyens de plus de 18, moitié d'hommes et de femmes plus ou moins, ...) de déterminer 
+les résultats d'élections ou de votations où participeront des millions d'électeurs potentiels. Il faut avouer que la tâche semble pour 
+le moins complexe. Et la plus grande difficulté tient dans le ``représentatif de la population''.
+
+\subsection{Représentations}
+
+Il existe différentes façon de représenter les caractères d'une population selon que sa nature est \textit{discrète} 
+ou \textit{continue}. Dans le cas discret d'un caractère pouvant prendre $k\in\natural$ valeur différentes $\{x_i\}_{i=0}^{k-1}$,
+on représente le nombre d'individus pouvant prendre la valeur $x_i$ par le nombre $n_i$. On a donc un ensemble $\{n_i\}_{i=0}^{k-1}$
+d'individus pour les $k$ valeurs des caractères de la population. Dans le cas continu le nombre d'individus d'un caractère
+correspondrait à une subdivision en $k$ parties de l'ensemble des valeurs possibles pour le dit caractère.
+\begin{exemples}\hfill\break
+ \begin{enumerate}
+  \item Cas discret: On étudie la distribution de salaires annuels dans une entreprise. 
+  Les salaires possibles sont $40'000$, $50'000$, $60'000$ et $1'000'000$ de CHF.
+  \begin{itemize}
+   \item Il y a 35 personnes payées $40'000$ CHF. 
+   \item Il y a 20 personnes payées $50'000$ CHF. 
+   \item Il y a 5 personnes payées $60'000$ CHF. 
+   \item Il y a 1 personne payée $1'000'000$ CHF.
+  \end{itemize}
+
+  \item Cas continu: Lors du benchmark d'une application, $A$, nous effectuons plusieurs mesures (la population) du temps d'exécution (le caractère) de l'application.
+  Les résultats obtenus sont les suivants: 
+  \begin{itemize}
+   \item 7 exécutions ont pris entre 50 et 51 secondes.
+   \item 12 exécutions ont pris entre 51 et 52 secondes.
+   \item 8 exécutions ont pris entre 52 et 53 secondes.
+   \item 23 exécutions ont pris entre 53 et 54 secondes.
+  \end{itemize}
+
+ \end{enumerate}
+
+\end{exemples}
+Pour représenter de façon un peu plus parlante ces valeurs, deux méthodes principales existent: le tableau ou le graphique.
+Pour illustrer les exemples précédents sous forme de tableau on obtient pour le cas des salaires (voir Tabl.~\ref{fig_salaires})
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ Salaire & Nombre de salariés \\
+ \hline\hline
+ 40000 & 35 \\
+ \hline
+ 50000 & 20 \\
+ \hline
+ 60000 & 5 \\
+ \hline
+ 1000000 & 1 \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Tableau du nombre de salariés par salaire.}\label{table_salaires}
+\end{table}
+et du benchmark de l'application (voir Tabl.~\ref{fig_exec})
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ Temps d'exécution & Nombre \\
+ \hline\hline
+ [50,51) & 7 \\
+ \hline
+ [51,52) & 12 \\
+ \hline
+ [52,53) & 8 \\
+ \hline
+ [53,54) & 23 \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Tableau des temps d'exécution.}\label{table_exec}
+\end{table}
+Sous forme de graphique on peut représenter le tableau des salaires sous la forme d'un graphique bâton (voir Fig.~\ref{fig_salaires})
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{figs/graph_salaires.pdf}
+\caption{Nombre salariés en fonction du salaire.}\label{fig_salaires}
+\end{center}
+\end{figure}
+ou d'un histogramme pour le temps d'exécution de l'application (voir Fig.~\ref{fig_exec}).
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{figs/graph_exec.pdf}
+\caption{Nombre d'exécutions en fonction du temps d'exécution.}\label{fig_exec}
+\end{center}
+\end{figure}
+
+\subsection{Fréquences}
+
+Plutôt que de faire apparaître le nombre d'individus d'une population 
+possédant un caractère, il peut être plus intéressant et parlant de faire intervenir 
+la \textit{fréquence} ou le nombre relatif à la place. En effet, la fréquence donne 
+immédiatement la proportion d'individu plutôt qu'un nombre absolu qui n'est pas forcément 
+très interprétable tout seul. 
+
+La population totale, $n$, est donnée par
+\begin{equation}
+ n=\sum_{i=0}^{k-1}n_i.
+\end{equation}
+On peut donc définir la fréquence d'un caractère $i$, $f_i$ comme
+\begin{equation}
+ f_i=\frac{n_i}{n}.
+\end{equation}
+\begin{exemples}{Fréquence}
+
+Les tableaux de fréquence des deux exemples précédents sont donnés par
+ \begin{enumerate}
+  \item Cas discret: la population totale est de 
+  \begin{equation}
+%    n=40'000+50'000+60'000+1'000'000=1'150'000.
+   n=35+20+5+1=61.
+  \end{equation}
+  \begin{table}[htp]
+  \begin{center}
+  \begin{tabular}{|c|c|c|}
+  \hline
+  Salaire & Nombre de salariés & Fréquence\\
+  \hline\hline
+  40000 & 35 & $35/61\cong0.573770$\\
+  \hline
+  50000 & 20 & $20/61\cong0.327869$\\
+  \hline
+  60000 & 5 & $5/61\cong0.081967$ \\
+  \hline
+  1000000 & 1 & $1/61\cong0.016393$ \\
+  \hline
+  \end{tabular}
+  \end{center}
+  \caption{Tableau des salaires, du nombre de salariés et la fréquence.}
+  \end{table}
+
+  \item Cas continu: la population totale est de 
+  \begin{equation}
+   n=7+12+8+23=50.
+  \end{equation}
+  Le tableau \ref{table_exec_freq} affiche les différentes fréquences des temps d'exécution.
+  \begin{table}[htp]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+ Temps d'exécution & Nombre & Fréquence \\
+ \hline\hline
+ [50,51) & 7 & $7/50=0.14$\\
+ \hline
+ [51,52) & 12 & $12/50=0.24$ \\
+ \hline
+ [52,53) & 8 & $8/50=0.16$ \\
+ \hline
+ [53,54) & 23 & $23/50=0.46$ \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Tableau des temps d'exécution et la fréquence des temps d'exécution.}\label{table_exec_freq}
+\end{table}
+
+ \end{enumerate}
+\end{exemples}
+La fréquence possède un certain nombre de propriétés que nous retrouverons 
+dans les sections suivantes qui sont assez intuitives
+\begin{proprietes}{Propriétés de la fréquence}
+ \begin{enumerate}
+  \item Les fréquences sont toujours dans l'intervalle $[0,1]$
+  \begin{equation}
+    0\leq f_i\leq 1.
+  \end{equation}
+  \item La somme de toutes les fréquences donne toujours $1$
+  \begin{equation}
+  \sum_{i=0}^{k-1} f_i = 1.
+  \end{equation}
+
+ \end{enumerate}
+
+\end{proprietes}
+Relié avec la propriété $2$ ci-dessus, il peut également être intéressant d'obtenir la
+\textit{fréquence cumulée}, notée $F(x)$, d'un caractère qui se définit comme la fréquence des individus 
+qui présentent une valeur de caractère $x_i\leq x$. Les tableaux correspondants aux tableaux 
+\ref{table_salaires} et \ref{table_exec} (voir Tabls. \ref{table_salaires_freqcum} et \ref{table_exec_freqcum})
+  \begin{table}[htp]
+  \begin{center}
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Salaire & Nombre de salariés & Fréquence & Fréquence cumulée\\
+  \hline\hline
+  40000 & 35 & $35/61\cong0.573770$ & $35/61\cong0.573770$\\
+  \hline
+  50000 & 20 & $20/61\cong0.327869$ & $(20+35)/61\cong0.90164$\\
+  \hline
+  60000 & 5 & $5/61\cong0.081967$ & $(20+35+5)/61\cong0.98361$\\
+  \hline
+  1000000 & 1 & $1/61\cong0.016393$ & $(20+35+5+1)/61=1$\\
+  \hline
+  \end{tabular}
+  \end{center}
+  \caption{Tableau des salaires, du nombre de salariés, et la fréquence et fréquence cumulée des salaires.}\label{table_salaires_freqcum}
+  \end{table}
+  
+  \begin{table}[htp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+ Temps d'exécution & Nombre & Fréquence & Fréquence cumulée \\
+ \hline\hline
+ [50,51) & 7 & $7/50=0.14$ & $7/50=0.14$ \\
+ \hline
+ [51,52) & 12 & $12/50=0.24$ & $(7+12)/50=0.38$  \\
+ \hline
+ [52,53) & 8 & $8/50=0.16$ & $(7+12+8)/50=0.54$  \\
+ \hline
+ [53,54) & 23 & $23/50=0.46$ & $(7+12+8+23)/50=1$  \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Tableau des temps d'exécution et la fréquence et fréquences cumulées des temps d'exécution.}\label{table_exec_freqcum}
+\end{table}
+\begin{exercices}{Fréquence cumulée}
+\begin{enumerate}
+ \item Tracer les graphes de la fréquence cumulée pour les deux exemples que nous avons vus.
+ \item Que pouvons-nous déduire de la forme de la fonction (croissance, valeur maximale)?
+\end{enumerate}
+
+ 
+\end{exercices}
+
+
+\subsection{Mesures de tendance centrale}
+
+Jusqu'ici le nombre de valeurs étudiées était limité et il est assez simple d'avoir 
+une vue d'ensemble de la distribution des valeurs des caractères de notre population.
+Il est plus aisé d'utiliser une nombre de valeurs beaucoup plus restreint permettant
+de résumer les différents caractères et nous allons en voir deux différents qui nous donne une tendance dite centrale:
+la moyenne, la médiane.
+
+La \textit{moyenne}, notée $\bar{x}$ d'un jeu de données s'obtient par la formule suivante
+\begin{equation}
+ \bar{x}=\frac{1}{n}\sum_{i=0}^{k-1}x_i\cdot n_i.
+\end{equation}
+La moyenne peut également être calculée via les fréquences
+\begin{equation}
+ \bar{x}=\sum_{i=0}^{k-1}f_i\cdot x_i.
+\end{equation}
+\begin{exercices}{Propriétés de la moyenne}
+\begin{enumerate}
+ \item Démontrer la relation précédente.
+ \item Démontrer que la moyenne des écart $x_i-\bar{x}$ est nulle.
+\end{enumerate}
+\end{exercices}
+
+\begin{exemple}{Moyenne}
+
+Pour l'exemple des salaires la moyenne est donnée par
+\begin{equation}
+ \bar{x}_{\textrm{salaire}}=\frac{35\cdot40000+20\cdot50000+5\cdot60000+1\cdot1000000}{61}=60656.
+\end{equation}
+\end{exemple}
+On remarque ici que la moyenne des salaires donne une impression erronée de la situation car elle est très sensible aux valeurs extrême de la distribution.
+En effet, tous les salaires à l'exception d'un sont inférieurs à la moyenne. En effet, si on retire le salaire d'un million de notre ensemble de valeurs, 
+la moyenne de l'échantillon restant devient
+\begin{equation}
+ \bar{x}_{\textrm{salaire}}=\frac{35\cdot40000+20\cdot50000+5\cdot60000}{60}=45000.
+\end{equation}
+La différence est de l'ordre de $25\%$ par rapport aux $60'000$ CHF obtenus avec toute la population.
+Il est donc nécessaire d'utiliser une autre mesure pour illustrer mieux le salaire caractéristique de notre population.
+De façon plus générale la moyenne est peu robuste à des valeurs extrêmes dans l'étude d'échantillon.
+
+Une mesure qui est plus parlante est la \textit{médiane}, notée $\tilde{x}$. La médiane se définit comme la valeur $\tilde{x}$ qui est telle que
+la moitié des individus de la population sont ont un $x_i\leq \tilde{x}$ et le reste est telle que $x_i\geq\tilde{x}$.
+
+Pour l'exemple des salaires le salaire médian est de $40000 CHF$, ce qui reflète beaucoup mieux la distribution des salaire de notre population.
+\begin{exercice}{Moyenne, médiane}
+
+ Calculer la moyenne et la médiane pour l'exemple du temps d'exécution (prendre la borne inférieure des intervalles pour chaque temps 
+ d'exécution\footnote{Il y a 7 temps de 50s, 12 de 51s, 8 de 52s et 23 de 53s.}).
+\end{exercice}
+
+
+\subsection{Mesures de dispersion}
+
+Nous avons vu deux mesures donnant une tendance générale des caractères d'une population. Hors cette valeur ne nous dit absolument rien
+sur la manière dont ces caractères sont distribués. Sont-ils proches de la moyenne ou de la médiane? Ou en sont-ils au contraire éloignés?
+Nous allons voir deux mesures différentes dans cette sous-section: la variance (écart-type), et l'intervalle inter-quartile.
+
+Nous cherchons d'abord à calculer la moyenne des écarts à la moyenne. 
+Hors, comme on l'a vu dans la sous-section précédente l'écart à la moyenne $x_i-\bar{x}$ est nul en moyenne. Cette grandeurs ne nous apprend rien. 
+On peut donc s'intéresser plutôt à la moyenne de l'écart quadratique $(x_i-\bar{x})^2$ qui est une quantité toujours positive et donc la moyenne sera 
+de cette écart quadratique aura toujours une valeur qui sera positive ou nulle (elle sera nulle uniquement si 
+$x_i-\bar{x}=0,\forall i$)\footnote{on pourrait aussi étudier la moyenne de $|x_i-\bar{x}|$, mais cela est moins pratique à étudier théoriquement.}.
+On définit donc la \textit{variance}, $v$, comme étant la moyenne des écarts quadratiques
+\begin{equation}
+ v=\frac{1}{n}\sum_{i=0}^{k-1}n_i(x_i-\bar{x})^2.
+\end{equation}
+Si on considère plutôt la racine carrée de la variance, on obtient \textit{l'écart-type}
+\begin{equation}
+ s=\sqrt{v}.
+\end{equation}
+\begin{exercices}{Variance, écart-type}
+
+Démontrer les relations suivantes
+ \begin{enumerate}
+  \item On peut également calculer la variance avec la fréquence
+  \begin{equation}
+   v=\sum_{i=0}^{k-1}f_i(x_i-\bar{x})^2.
+  \end{equation}
+  \item On peut également calculer la variance à l'aide de la formule suivante
+  \begin{equation}
+   v=\frac{1}{n}\left(\sum_{i=0}^{k-1}n_ix_i^2\right)-\bar{x}^2.
+  \end{equation}
+ \end{enumerate}
+\end{exercices}
+Pour l'exemple du salaire on obtient pour la variance
+\begin{align}
+ v&=\frac{1}{61}\left(35\cdot(40000-60656)^2+35\cdot(50000-60656)^2\right.\nonumber\\
+ &\quad\quad\left.+35\cdot(60000-60656)^2+35\cdot(1000000-60656)^2\right)\nonumber\\
+ &=1.4747\cdot 10^{10},
+\end{align}
+et l'écart-type
+\begin{equation}
+ s=\sqrt{v}=121440.
+\end{equation}
+\begin{exercice}{Variance, écart-type}
+
+Calculer la variance et l'écart type à partir des valeurs du benchmark de l'application.
+\end{exercice}
+
+Encore une fois on constate que la valeur de l'écart-type des salaires est très dépendante de la valeur extrême de la distribution (1000000 CHF). 
+Si on l'enlève la valeur de l'écart type est de $s=6455$ (un facteur 20 plus petit que la valeur sur la population complète).
+
+Comme pour la moyenne et la médiane nous pouvons définir des valeurs plus représentatives. A partir de la fréquence cumulée, $F$,
+on peut définir deux grandeurs, $Q_i\in\{x_i\}_{i=0}^{k-1}$ et $\alpha_i\in[0,1]$ telles que
+\begin{equation}
+ F(Q_i)=\alpha_i.
+\end{equation}
+En d'autres termes $Q_i$ est la valeur pour laquelle la fréquence cumulée vaut $\alpha_i$. $Q_i$ correspond donc au nombre d'individus dont la fréquence cumulée est de $\alpha_i$. 
+En particulier si $\alpha_i=1/2$, alors $Q_i=\tilde{x}$ ($Q_i$ est la médiane). Il est commun d'avoir $Q_i\in[0.25,0.5,0.75]$, on parle alors de quartiles. Avec $Q_1=0.25$ et $Q_3=0.75$, 
+le nombre d'individus entre $0.25$ et $0.75$ est donné par
+\begin{equation}
+ \frac{Q_3-Q_1}{2}.
+\end{equation}
+Cette valeurs est appelée l'intervalle semi-inter-quartile.
+\begin{exercice}{Semi-inter quartile}
+
+Calculer les intervalles semi-inter-quartiles des exemples que nous avons vus plus tôt dans le cours.
+ 
+\end{exercice}
 
 \section{Exemple du jeu de dé}
 
@@ -2997,6 +3339,9 @@ on ne peut dire quel sera le résultat avant d'avoir effectué l'expérience.
 
 Avant de commencer à étudier les probabilités du lancer de dé, et les questions qu'on peut se poser, faisons d'abord un peu de vocabulaire
 qui sera utile pour la suite.
+
+\begin{definition}\hfill\break
+ 
 
 \begin{itemize}
 \item[$\bullet$] L'ensemble des résultats possibles du lancer de dé est $\Omega=\{1,2,3,4,5,6\}$ et cet ensemble est appelé l'\textit{univers} du lancer de dé.
@@ -3013,7 +3358,28 @@ Un événement composé d'une seule éventualité est appelé \textit{événemen
 \item[$\bullet$] \textit{L'événement impossible} est l'ensemble vide, $A=\emptyset$. Il correspondrait à l'événement obtenir $7$ ou plus en lançant un dé par exemple. 
 
 \item[$\bullet$] Si $A$ est un événement, on note $p(A)$ la \textit{probabilité} que $A$ soit réalisé.
+
 \end{itemize}
+\end{definition}
+
+Le calcul des \textit{probabilités} de réalisation de certains événement est reliée à la \textit{fréquence} 
+que nous avons introduit dans la section précédente. Soit un univers $\Omega$ et $A$, $B$ deux événements tels que $A\cap B=\emptyset$.
+On effectue une $N$ expériences, donc $\Omega$ est réalisé $N$ fois. De plus on constate qu'on réalise $A$, $K$ fois et $B$, $M$ fois. 
+On a donc les fréquences suivantes que $A$, $B$ et $\Omega$ se réalisent
+\begin{align}
+ f(A)&=\frac{K}{N},\\
+ f(B)&=\frac{M}{N},\\
+ f(\Omega)&=\frac{N}{N}=1,\\
+ f(A\cup B)&=\frac{M+K}{N}=f(A)+f(B).
+\end{align}
+Les \textit{probabilités} de réalisation des événements ci-dessus peutvent être vues comme le passage à la limite
+$N\rightarrow\infty$ tel que $p(A),p(B)\in\real$ et
+\begin{align}
+ p(A)&=\lim_{\substack{N\rightarrow\infty,\\ K/N<\infty}}\frac{K}{N},\\
+ p(B)&=\lim_{\substack{N\rightarrow\infty,\\ M/N<\infty}}\frac{M}{N},\\
+ p(\Omega)&=1,\\
+ p(A\cup B)&=p(A)+p(B).
+\end{align}
 
 Si maintenant nous voulons connaître la probabilité de tirer $6$, ou encore la probabilité de réaliser $A=\{6\}$.  
 Cela est assez intuitif pour le cas du dé. Nous avons $6$ éléments dans l'univers
@@ -3030,7 +3396,9 @@ alors on trouve
 \begin{equation}
  p(\mbox{tirer un nombre pair})=\frac{1}{2}.
 \end{equation}
-De façon générale pour le lancer de dé, on a que la probabilité de réaliser l'événement $A$ est
+De façon générale pour le lancer de dé, on a que la probabilité de réaliser l'événement $A$ est\footnote{De façon générale cela n'est pas vrai. Imaginons que nous
+ayons un sac avec 3 boules: 2 noires et une blanche. La probabilité de réaliser $A$: tirer une boule noire ($p(A)=2/3$) ou $B$: tirer une boule blanche ($p(B)=1/3$) 
+n'est pas donnné par $p(A)=\mbox{nombre d'éléments dans }A/\mbox{nombre total d'éléments}=1/2$, $p(B)=\mbox{nombre d'éléments dans }B/\mbox{nombre total d'éléments}=1/2$.}
 \begin{equation}
 p(A)=\frac{\mbox{nombre d'éléments dans }A}{\mbox{nombre d'éléments dans }\Omega}.
 \end{equation}
@@ -3114,7 +3482,7 @@ p(A)+p(\bar A)=1.
 \end{equation}
 On en déduit que 
 \begin{equation}
-p(\bar A)=1-p(\bar A)=1-\frac{1}{3}=\frac{2}{3}.
+p(A)=1-p(\bar A)=1-\frac{2}{3}=\frac{1}{3}.
 \end{equation}
 Dans ce cas on peut également calculer à priori $p(B)$
 \begin{equation}
@@ -3158,10 +3526,140 @@ Il en suit immédiatement que si $A\cap B=\emptyset$, alors
  p(A\cup B)=p(A)+p(B)-p(A\cap B)=p(A)+p(B)-p(\emptyset)=p(A)+p(B).
 \end{equation}
 
+\subsection{Axiomes des probabilités}
+Tous ces concepts que nous avons vus précédemments peuvent être vus comme la conséquences des trois axiomes des probabilités
+suivants
+\begin{definition}{Axiomes  des probabilités}
+Soit $\Omega$ un univers. La probabilité de réaliser un événement $A\subseteq\Omega$ est une fonction $p(A)$ qui associe à tout 
+événement de $A$ un nombre réel, qui satisfait les 3 axiomes suivants
+\begin{enumerate}
+ \item Une probabilité est TOUJOURS positive
+ \begin{equation}
+  p(A)\geq 0.
+ \end{equation}
+
+ \item La probabilité de l'événement certain vaut 1
+ \begin{equation}
+  p(\Omega)=1.
+ \end{equation}
+ \item Soit $B\subseteq\Omega$. Si $A\cap B=\emptyset$, alors 
+ \begin{equation}
+ p(A\cup B)=p(A)+p(B). 
+ \end{equation}
+ La probabilité de réalisation de deux évéenements incompatibles est égale à la somme de réalisation
+ de chacun d'entre eux.
+\end{enumerate}
+\end{definition}
+
+De ces axiomes découlent tout un tas de théorèmes
+\begin{theoreme}
+Pour $A,B\subseteq\Omega$ et $\Omega$ un univers et $p$ une probabilité.
+\begin{enumerate}
+ \item $p(B\cap\bar A)=p(B)-p(B\cap A).$
+ \item $p(\emptyset)=0.$
+ \item $p(\bar A)=1-p(A).$
+ \item $p(A\cup B)=p(A)+p(B)-p(A\cap B).$
+ \item $p(\bar A\cap \bar B)=1-p(A\cup B).$
+ \item Si $A$ et $B$ sont disjoints, alors $p(A\cup B)=p(A)+p(B).$ 
+ \item Si $A\subseteq B$, alors $p(B\cap \bar A)=p(B)-p(A).$ 
+ \item Si $A\subseteq B$, alors $p(A)\leq p(B).$ 
+ \item $\forall A$, $0\leq p(A)\leq 1.$ 
+\end{enumerate}
+
+ 
+\end{theoreme}
+
+\subsection{Probabilités conditionnelles}
+
+Imaginons à présent que nous ayons une information supplémentaire lorsque nous lançons notre dé. 
+Supposons par exemple que nous sachions lorsque nous lançons le dé que le résultat est pair. A partir de là
+la probabilité de tirer un $6$ est de 
+\begin{equation}
+p(6\mbox{ sachant que le résultat du lancer est un nombre pair})=1/3,
+\end{equation}
+alors que sans l'information sur la parité nous aurions eu $p(6)=1/6$.
+
+Lorsque nous rajoutons comme condition la réalisation préalable d'un événement $B$ à la réalisation d'un événement $A$,
+nous parlons de probabilité conditionnelle, notée $P(A|B)$ (probabilité conditionnelle de $A$ sachant que $B$ s'est produit).
+
+Essayons à présent de voir comment nous pouvons calculer de façon générale les probabilités conditionnelles avec notre exemple ci-dessus.
+Nous avons donc que nous cherchons à calculer $p(A|B)=p(6|{2,4,6})$. Nous avons dans ce cas que $p(A)=1/6$, $p(B)=1/2$ et $p(A\cap B)=p(6)=1/6$.
+Par ailleurs, nous pouvons remarquer que 
+\begin{equation}
+ p(A|B)=\frac{1}{3}=\frac{p(A\cap B)}{p(B)}=\frac{\frac{1}{6}}{\frac{1}{2}}.
+\end{equation}
+Nous pouvons vérifier cette relation sur un exemple un peu plus compliqué. Soit $A={1,2,4}$ et $B={2,4,6}$. La probabilité conditionnelle
+$p(A|B)$ revient au calcul de la probabilité de $p(A\cap B|B)=p({2,4}|{2,4,6})=2/3$. Avec notre formule, nous avons
+$p(A\cap B)=1/3$ et $p(B)=1/2$. Il vient donc
+\begin{equation}
+ p(A|B)=\frac{p(A\cap B)}{p(B)}=\frac{2}{3}.
+\end{equation}
+Cette formule peut en fait être vue comme la définition de la probabilité conditionnelle. 
+Si $p(B)\neq0$ alors on appelle probabilité conditionnelle le nombre $p(A|B)$, tel que
+\begin{equation}
+ p(A|B)=\frac{p(A\cap B)}{p(B)}.
+\end{equation}
+
+\begin{exercice}{Probabilités conditionnelles}
+
+Sur une population de 1000 hommes qui naissent, 922 atteignent l'âge de 50 ans et 665 l'âge de 70 ans. 
+\begin{enumerate}
+\item Quelle est la probabilité qu'un homme qui vient de naître soit encore en vie à 50 ans?
+\item Quelle est la probabilité qu'un homme qui vient de naître soit encore en vie à 70 ans?
+\item Quelle est la probabilité qu'un homme de 50 ans soit encore en vie à 70?
+\end{enumerate}
+\end{exercice}
+
+
+
+\subsection{Evénements indépendants}
+
+Prenons maintenant le cas ``pathologique'' où nous cherchons la probabilité conditionnelle $p(A|B)$, mais où 
+la réalisation de $B$ n'a aucune influence sur la réalisation de $A$. On a donc 
+\begin{equation}
+ p(A|B)=p(A).
+\end{equation}
+On a donc que 
+\begin{equation}
+ p(A|B)=\frac{p(A\cap B)}{p(B)}=p(A).
+\end{equation}
+On en déduit que 
+\begin{equation}
+p(A\cap B)=p(A)\cdot p(B).\label{eq_indep}
+\end{equation}
+Et donc on peut calculer $p(B|A)$
+\begin{equation}
+p(B|A)=\frac{p(A\cap B)}{p(A)}=\frac{p(A)\cdot p(B)}{p(A)}=p(B).
+\end{equation}
+On a donc que si $A$ ne dépend pas de $B$, alors la réciproque est vraie aussi.
+Les événements qui satisfonts la propriété de l'équation \eqref{eq_indep} sont appelés
+indépendants. Dans le cas contraire ils sont appelé dépendants.
+
+Afin d'illustrer l'indépendance, prenons à nouveau le jet de dé. Supposons que nous effectuions
+deux tirages de suite et que l'événement $A$ soit ``tirer un 6 au premier tirage'' et que l'événement $B$
+soit ``tirer un $2$ au deuxième tirage''. On a que 
+\begin{equation}
+ p(A)=\frac{1}{6},\quad p(B)=\frac{1}{6},\quad p(A\cap B)=\frac{1}{36}.
+\end{equation}
+On a donc bien $p(A\cap B)=p(A)\cdot p(B)$ et donc les événements sont indépendants. 
+Cela semble bien naturel étant donné que le premier tirage du dé ne va en rien influencer le résultat du deuxieme 
+tirage. Tout comme un tirage de l'euromillions d'une semaine ne va pas influencer le résultat de celui de la semaine suivante.
+
+\begin{exercice}{Evénements indépendants}
+On jette une pièce de monnaie deux fois de suite. Les résultats possible pour chaque jet sont: $P$, ou $F$.
+\begin{enumerate}
+ \item Ecrivez l'univers des événements.
+ \item Calculez les probabilités des événements $A$ ``face au premier jet'', $B$ ``pile au second jet''.
+ \item Calculez la probabilité $p(A\cap B)$. 
+ \item Est-ce que les jets sont indépendants?
+\end{enumerate}
+\end{exercice}
+
+
 \subsection{Tirages multiples}
 
-Jusqu'ici on a lancer le dé une fois et calculé la probabilité liée à ce lancer unique. 
-A présent, on va tirer le dé plusieurs fois et calculer les probabilité d'obtenir des séquences 
+Jusqu'ici on a lancé le dé une fois et calculé la probabilité liée à ce lancer unique. 
+A présent, on va tirer le dé plusieurs fois et calculer les probabilités d'obtenir des séquences 
 de réalisations. Pour notre exemple on va prendre un cas où on tire le dé deux fois successivement.
 Ce type de tirage est appelé \textit{tirage successif avec remise}, car les deux tirages sont 
 successifs et indépendants entre eux (on va tirer deux fois le même dé). L'univers de 
@@ -3170,7 +3668,7 @@ cette expérience est la combinaison de tous les résultats obtenus avec chacun 
  \Omega=\{11,12,13,14,15,16,21,22,23,24,25,26,...,61,62,63,64,65,66\}.
 \end{equation}
 Il y a $6\times 6=6^2=36$ résultats possibles à ce tirage. Il faut noter ici que l'ordre dans lequel le tirage 
-a lieu est important; le tirage $26$ est différent du tirage $62$. On verra par la suite des exemples ou cela n'est pas le cas.
+a lieu est important; le tirage $26$ est différent du tirage $62$. On verra par la suite des exemples où cela n'est pas le cas.
 
 On cherche à savoir quelle est la probabilité d'obtenir l'événement $A=\{26\}$.
 
@@ -3264,6 +3762,80 @@ le nombre restant est de $1/6$. On a donc que
 
 \end{exercices}
 
+\subsection{La distribution multinomiale}
+
+Plus nous allon rajouter des tirages successifs plus il va être compliqué de calculer les probabilités 
+de tirer une certaine combinaison de nombres. Il existe néanmoins une formule qui généralise les tirages successifs avec
+remise. Prenons le cas où nous avons un dé qui ne donne pas chaque nombre de façon équiprobable, mais avec probabilité $\{p_i\}_{i=1}^6$.
+Nous souhaitons savoir quelle est la probabilité de tirer deux fois le 1 et une fois le 2 lors de trois tirages successifs. 
+
+Dans ce tirage l'ordre dans lequel sont obtenus ces tirages ne sont pas importants. Il y a donc les tirages possibles qui sont
+admissibles
+\begin{equation}
+ [112]=\{112, 121, 211\}.
+\end{equation}
+On a donc que la probabilité associée est de
+\begin{equation}
+ p([112])=p(112)+p(121)+p(211).
+\end{equation}
+Ces trois probabilités sont données par
+\begin{align}
+ p(112)&=p_1\cdot p_1\cdot p_2=p_1^2\cdot p_2,\\
+ p(121)&=p_1\cdot p_2\cdot p_1=p_1^2\cdot p_2,\\
+ p(211)&=p_2\cdot p_1\cdot p_1=p_1^2\cdot p_2.
+\end{align}
+Les tirages étant indépendants (avec remise) on a que la probabilité de tirer $1$ ou $2$ est indépendante 
+du moment où ils sont tirés et donc ces trois probabilités sont égales.
+
+Finalement la probabilité de tirer deux 1 et un 2 est de
+\begin{equation}
+ p([112])=p(112)+p(121)+p(211)=3\cdot p_1^2\cdot p_2.
+\end{equation}
+Si à parésent nous considérons la probabilité de tirer $[1123]$ en 4 tirages. Les torages possibles sont
+\begin{equation}
+ [1123]=\{1123, 1132, 1213, 1231, 1312, 1321, 2113, 2131, 2311, 3112, 3121, 3211\}.
+\end{equation}
+Il y a donc 12 tirages possibles pour cette combinaison. De plus les tirages étant indépendants
+on a que toutes ces combinaisons sont équiprobables avec probabilité
+\begin{equation}
+ p(1123)=p_1^2p_2p_3.
+\end{equation}
+Finalement on a 
+\begin{equation}
+ p([1123])=12 p_1^2p_2p_3.
+\end{equation}
+Si nous définissons $n_i$ le nombre de fois où on obtient le résultat $i$ et qu'on cherche la probabilité de réaliser le tirage $[n_1,n_2,...,n_k]$,
+on constate que la probabilité de réaliser le tirage est proportionnelle à 
+$p_1^{n_1}p_2^{n_2}\cdots p_6^{n_6}$. Il nous reste à déterminer le facteur multiplicatif venant devant. 
+Pour le cas du tirage $1,1,2$, nous avons $[n_1n_2]$ avec $n_1=2$ et $n_2=1$ et le facteur devant le produit des probabilités est 
+donné par $3$. Pour le tirage $1,1,2,3$ il est de $12$ et nous avons $n_1=2$, $n_2=1$, $n_3=1$. Nous pouvons écrire 
+\begin{equation}
+ 3=\frac{3!}{1!2!}\mbox{ et } 12=\frac{4!}{1!1!2!}. 
+\end{equation}
+En fait on peut constater que
+\begin{equation}
+ \frac{n!}{n_1!n_2!\cdots n_6!},
+\end{equation}
+avec $n=\sum_{i=1}^6 n_i$. On a donc que 
+\begin{equation}
+ p([n_1,n_2,...,n_6])=\frac{n!}{n_1!\cdots n_6!}p_1^{n_1}\cdots p_6^{n_6}.
+\end{equation}
+De façon complètement générale ce genre de probabilité se calcule grâce à la \textit{distribution multinomiale}
+\begin{equation}
+ p([n_1,...,n_k])=\frac{n!}{n_1!\cdots n_k!}p_1^{n_1}\cdots p_k^{n_k}.
+\end{equation}
+
+\begin{exercices}
+\hfill\break
+  On lance un dé parfait 10 fois. Quelle est la probabilité d'obtenir:
+ \begin{enumerate}
+  \item 10 fois 6?
+  \item 4 fois 3, 3 fois 2 et 3 fois 1?
+  \item 2 fois 1, 2 fois 2, 2 fois 3, 1 fois 4, 1 fois 5, et 1 fois 6?
+ \end{enumerate}
+
+\end{exercices}
+
 \section{Exemple du lotto}
 Dans un lotto on a dans un sac un nombre de jetons numérotés, disons pour l'exemple entre 1 et 6, 
 qui sont tirés successivement. Une fois un jeton tiré, il ne sera pas remis dans le sac. 
@@ -3273,7 +3845,7 @@ On tire un nombre fixé de jetons, disons 3. On souhaite déterminer la probabil
 une suite donnée de 2 numéros, disons $25$. Disons que pour cet exemple l'ordre du tirage a de l'importance
 (ce qui n'est pas le cas du lotto).
 
-Afin de calculer cette probabilité le fait qu'on effectue un tirage avec remise est promordial.
+Afin de calculer cette probabilité le fait qu'on effectue un tirage avec remise est primordial.
 En effet considérons le cas initial illustré dans la figure \ref{fig_loto}.
 \begin{figure}[htp]
 \includegraphics[height=1.8truecm]{figs/loto.pdf}
@@ -3284,7 +3856,7 @@ Pendant le premier tirage, nous tirons le numéro 2 (voir figure \ref{fig_loto2}
 \includegraphics[height=1.8truecm]{figs/loto2.pdf}
 \caption{Le numéro 2 est tiré lors du premier tirage.}\label{fig_loto2}
 \end{figure}
-Il est donc enlevé du sac et il nous reste uniquement 5 chiffres parmis lesquels choisir 
+Il est donc enlevé du sac et il nous reste uniquement 5 chiffres parmi lesquels choisir 
 (les chiffres $1$, $3$, $4$, $5$, et $6$, comme dans la figure \ref{fig_loto3}).
 \begin{figure}[htp]
 \includegraphics[height=1.8truecm]{figs/loto3.pdf}
@@ -3304,22 +3876,22 @@ On voit donc que la probabilité de tirer la suite ordonnée $25$ est de
 \end{equation}
 A présent, si nous considérons que l'ordre n'a pas d'importance, on a comme dans la section précédente
 que l'événement qui nous intéresse est $A=\{25,52\}$. On peut donc décomposer 
-ce cas en 2 et dire qu'on a dans un premier temps la probabilité de tirer $2$ ou $5$ parmis 
-$6$ nombres, puis on a la probabilité de tirer le $5$ ou le $2$ (respectrivement si on a tiré $2$ ou $5$) parmis 5.
-Les deux probabilité sont donc données respectivement par $p(\{2,5\})=\frac{2}{6}$ puis par $p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$.
+ce cas en 2 et dire qu'on a dans un premier temps la probabilité de tirer $2$ ou $5$ parmi 
+$6$ nombres, puis on a la probabilité de tirer le $5$ ou le $2$ (respectivement si on a tiré $2$ ou $5$) parmi 5.
+Les deux probabilités sont donc données respectivement par $p(\{2,5\})=\frac{2}{6}$ puis par $p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$.
 
 \begin{exercices}
 \hfill\break
  \begin{enumerate}
-  \item Le jeu Eruomillions consiste en un tirage de 5 numéros parmis 50 possible, puis par le tirage de 2 ``étoiles'' parmis 11 possibles.
+  \item Le jeu Euromillions consiste en un tirage de 5 numéros parmi 50 possible, puis par le tirage de 2 ``étoiles'' parmi 11 possibles.
   Déterminez la probabilité de trouver la bonne combinaison à un tirage.
-  \item Le jeu du swiss lotto, consiste au tirage de 5 numéros parmis 42 possibles, puis au tirage d'un numéros parmis 6. Calculez la probabilité de 
-  gagner au swiss lotto..
+  \item Le jeu du swiss lotto, consiste au tirage de 5 numéros parmi 42 possibles, puis au tirage d'un numéros parmi 6. Calculez la probabilité de 
+  gagner au swiss lotto.
  \end{enumerate}
 \end{exercices}
 
 \section{Quelques exercices}
-Afin de continuner avec ces concepts de tirages aléatoires avec ou sans remise
+Afin de continuer avec ces concepts de tirages aléatoires avec ou sans remise
 de suite ordonnées ou non, nous allons faire quelques exercices. Il peut se révéler utile de dessiner un arbre pour ces exercices.
 \begin{enumerate}
  \item Dans une urne se trouvent 2 boules blanches et 3 boules noires. On tire successivement deux boules sans remise.
@@ -3347,423 +3919,98 @@ dans la boîte $A$, $B$ ou $C$.
 est de $p(G)=0.514$.
 \begin{itemize}
  \item[$\bullet$] Calculer et la probabilité qu'un enfant soit une fille.
- \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants sooient de même sexe.
+ \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants soient de même sexe.
  \item[$\bullet$] On considère la naissance de deux enfants. Calculer et la probabilité que les deux enfants soient de sexes opposés.
 \end{itemize}
 \end{enumerate}
 
+\section{Variables aléatoires}
 
+Lors d'une expérience aléatoire, il est assez commun de relier chaque événement de l'univers, $A\in\Omega$, à un nombre réel, $X(A)\in\real$. 
+Cette relation est définie par une fonction qui porte le nom de variable aléatoire et peut s'écrire mathématiquement sous la forme
+\begin{equation}
+ X:\Omega\rightarrow \real.
+\end{equation}
+Afin de mieux comprendre ce concept voyons quelques exemples
+\begin{enumerate}
+ \item[Le jeu de dé:] Lors d'un jet de dé unique l'univers est défini par $\Omega=\{1,2,3,4,5,6\}$. On peut de façon assez naturelle 
+ définir notre variable aléatoire comme
+ \begin{equation}
+  X:i\rightarrow i.
+ \end{equation}
+ \item[Pile ou face:] Si nous lançons une pièce de monnaie les deux issues possibles sont pile $p$, ou face $f$ ($\Omega={p,f}$). 
+ Nous pouvons définir la variable aléatoire $X$ comme
+ \begin{equation}
+  X:\left\{\begin{array}{l}
+                p\rightarrow 0\\
+                f\rightarrow 1
+               \end{array}\right.
+ \end{equation}
+ \item[Pile ou face$^2$:] Si nous lançons une pièce de monnaie à deux reprises, les issues possibles sont $(p,p)$, 
+ $(p,f)$, $(f,p)$, $(f,f)$. Nous pouvons définir la variable aléatoire $X$ comme
+ \begin{equation}
+  X:\left\{\begin{array}{l}
+                (p,p)\rightarrow 0\\
+                (p,f)\rightarrow 1\\
+                (f,p)\rightarrow 1\\
+                (f,f)\rightarrow 2
+               \end{array}\right.
+ \end{equation}
+\end{enumerate}
+Comme nous nous sommes posés la question de connaître la probabilité d'obtenir un certain résultat lors d'une expérience aléatoire, il en va de même 
+avec la probabilité que la variable aléatoire $X$ prenne une valeur donnée, $\alpha\in\real$ ou prenne une valeur incluse dans un intervalle $I\subseteq\real$. 
 
-\section{Un peu plus de théorie: le dénombrement}
+Pour illustrer ce qui se passe, intéressons-nous au dernier exemple ci-dessus avec le double pile ou face. On se pose les questions suivantes
+\begin{enumerate}
+ \item Quelle est la probabilité que $X$ prenne la valeur $1$?
+ \item Quelle est la probabilité que $X$ prenne une valeur incluse dans $I=[0.6,3]$?
+ \item Quelle est la probabilité que $X$ prenne une valeur inférieure à $2$?
+\end{enumerate}
 
-Dans les exemples précédents, nous avons vu comment déduire les probabilités de réaliser un événemnt lors du jeu de dé, 
-ou de lotto de façon intuitive (arbre, comptage, etc). Il existe des façons un peu plus théoriques de raisonner 
-qui peuvent rendre le travail plus simple. 
+Prenons ces trois questions une par une
+\begin{enumerate}
+ \item Les deux façons d'obtenir $X=1$ est d'avoir les tirages $(p,f)$ ou $(f,p)$, soit $A=\{(p,f), (f,p)\}$. Les probabilités de chacun 
+ des événements de l'univers étants équiprobables on a 
+ \begin{equation}
+  p(X=1)=p(A)=1/2.
+ \end{equation}
+ \item Le seul événement donnant un $X$ qui n'est pas dans l'intervalle $J=[0.6,3]$ est $B=(p,p)$ ($X(B)=0$). On a donc que 
+ \begin{equation}
+p(0.6\leq X\leq 3)=p(\bar B)=1-p(B)=\frac{3}{4}.
+ \end{equation}
+ \item De façon similaire les trois événements donnant $X<2$ sont dans $C=\{(p,p), (p,f), (f,p)\}$. On a donc
+ \begin{equation}
+  p(X<2)=p(C)=\frac{3}{4}.
+ \end{equation}
 
-Une probabilité de qu'un événement $A$ se produise dans un univers $\Omega$, est liée 
-au nombre d'éléments dans $A$ divisé par le nombre d'éléments dans $\Omega$
-\begin{equation*}
- p(A)=\frac{\card(A)}{\card(\Omega)},
-\end{equation*}
-où card est la \textit{cardinalité} d'un événement, en d'autres termes le nombre d'éléments qu'il contient.
-Il est donc important de pouvoir compter simplement le nombre d'éléments présent dans $A$ et dans $\Omega$.
+\end{enumerate}
+On constate au travers de ces trois exemples que la probabilité que la variable 
+aléatoire $X$ prenne une valeur particulière $\alpha$ ou soit dans un intervalle $I$ 
+est reliée à la probabilité d'obtenir un événement $D$ qui serait la préimage de $\alpha$ ou d'un intervalle $I$.
+On peut noter dans le cas général qu'on a $D=X^{-1}(I)$.
 
-Afin de pouvoir dénombrer ``facilement'' un événement, il faut d'avoir pouvoir identifier 
-à quel type il appartient. Nous avons vu que nous ne comptons pas de la même façon les événement 
-d'un tirage de lotto et d'un tirage de dés par exemple. 
-Il existe trois grande catégories d'événement que nous allons voir comment dénombrer.
-
-La théorie du dénombrement que nous allons voir ci-dessous, n'est pas propre uniquement aux probabilités, 
-mais s'applique en toute généralité aux ensemble.
-
-\subsection{Les permutations}
-
-\begin{definition}[Permutation]
-Soit $A$ un ensemble de cardinalité $n\in \natural$. Une permutation de $A$ est
-une suite des $n$ éléments dans $A$. De plus l'ordre dans lequel les éléments 
-sont mis dans la suite est important.
+\begin{definition}[Variable aléatoire] On dit que la fonction $X:\Omega\rightarrow\real$ est une \textit{variable aléatoire} si la 
+préimage de $X$ sur tout intervalle, $I\subseteq\real$, est un événement $A\in \Omega$. La probabilité que $X$ prenne une valeur 
+dans l'intervalle $I$ est égale à la probabilité de réaliser l'événement $A$
+\begin{equation}
+ p(X\in I)=p(A).
+\end{equation}
 \end{definition}
-\begin{exemple}[Permutation]
-Soit un ensemble de chiffres $A=\{1,2,3\}$. Une permutation possible de cet ensemble est $132$ (qui est différente de la permutation $321$).
-\end{exemple}
-Nous voulons maintenant compter le nombre de permutations existant dans un ensemble avec $n$ éléments.
-Pour ce faire, nous allons tenter de procéder par étapes en prenant des ensembles de plus en plus grands.
-\begin{itemize}
- \item[$\bullet$] Pour un élément $A=\{1\}$. Le nombre de permutations possibles est $1$.
- \item[$\bullet$] Pour deux éléments $A=\{1,2\}$. Les permutations possibles sont $12$ ou $21$. Il y en a donc $2$.
- \item[$\bullet$] Pour trois éléments $A=\{1,2,3\}$. Les permutations possibles sont $123$, $132$, $213$, $231$, $312$, ou $321$. Il y en a donc $6$.
- \item[$\bullet$] Pour quatre éléments $A=\{1,2,3,4\}$. Les permutations possibles sont $1234$, $1243$, $1324$, $1342$, $1423$, $1432$, $2134$, $2143$, $2314$, $2341$, $2413$, $2431$,
- $3214$, $3241$, $3124$, $3142$, $3421$, $3412$, $4231$, $4213$, $4321$, $4312$, $4123$, $4132$. Il y en a donc $24$.
- \item[$\bullet$] Pour cinq éléments $A=\{1,2,3,4,5\}$. Il y a $120$ permutations.
-\end{itemize}
-On peut déduire que la formule générale est que pour un ensemble contenant $n$ éléments, il y a $n!$
-permutations possibles. Pour prouver cette relation, nous allons procéder par récurrence.
-Pour commencer on vérifie que pour $n=1$, on a bien $1!=1$ une permutation. On suppose à présent que pour $n=m$,
-on a bien $m!$ permutations et on doit prouver que pour $n=m+1$ on a bien $(m+1)!$ permutations.
-Si nous écrivions l'ensemble des permutations des $m$ premiers entiers comme
-\begin{equation}
- \perm(m)=\underbrace{\{123...(m-1)m,123...m(m-1),...,m(m-1)...321\}}_{m!\textrm{ termes}}.\label{eq_permutations}
-\end{equation}
-Si nous rajoutons à une de ces permutations (disons $123...(m-1)m$) le nombre $m+1$ et qu'on regarde quelles sont les permutations possibles, on a 
-\begin{align}
- &(m+1)123...(m-1)m,1(m+1)23...(m-1)m,...,\nonumber\\
- &\quad 123...(m-1)(m+1)m,123...(m-1)m(m+1).
-\end{align}
-On voit donc qu'on a rajouté $m+1$ termes à cette permutation. Comme on a que pour chaque permutation de l'équation 
-\eqref{eq_permutations} on fait de même. On a que le nombre total de permutations doit être multiplié par $m+1$.
-On déduit donc que $\card(\perm(m+1))=(m+1)!$, et on a prouvé notre récurrence.
 
-Dans la pratique le terme ``nombre de permutations'' peut ne pas être très simple à interpréter. Pour tenter de le traduire
-dans un langage humain plus compréhensible, on peut se dire que le nombre de permutations d'un ensemble correspond au nombre de façon de classer 
-ses éléments sans remise et en tenant compte de l'ordre des éléments tirés.
-\begin{exercices}
- Résoudre les exercices suivants.
- \begin{enumerate}
-  \item Soit une voiture à $4$ places. On a $4$ passagers et toutes ont le permi de conduire. Combien y a-t-il de dispositions possibles dans la voiture?
-  \item Soient 5 étudiants dans une salle d'informatique possédant 5 ordinateurs
-  sur une table. Parmis ces étudiants, 2 utilisent l'éditeur \texttt{vi} et 3 l'éditeur \texttt{emacs}. Sachant que les utilisateur de \texttt{vi} et d'\texttt{emacs} ne peuvent se mélanger (s'intercaler)
-  combien de dispositions possibles y a-t-il pour asseoir les étudiants? (Indication: traîter d'abord indépendamment les utilisateuirs de \texttt{vi} et \texttt{emacs}, puis combiner les deux.)
-  \item On a un groupe de programmeurs assis autour d'une table ronde. Dans ce groupe il y a 5 programmeurs fortran, 4 programmeurs c++, et 3 programmeurs scala. Sachant que les programmeurs des différents langages ne peuvent se mélanger car ils se méprisent mutuellement pour leur goûts douteux de langages de programmation. Combien de dispositions autour de la table sont possibles? (Indication: procéder comme à l'exerice précédent.)
- \end{enumerate}
-
-\end{exercices}
-
-\subsection{Les arrangements}
-
-\begin{definition}[Le $n$-uplet]
-Soit $n\in \natural$  et $A$ un ensemble fini. Un $n$-uplet d'éléments de $A$
-est une suite ordonnée de $n$ éléments de $A$. Ces éléments peuvent être distincts 
-ou confondus.
-On note $A^n$ l'ensemble de tous les $n$-uplets de $A$.
-\end{definition} 
-\begin{definition}[Arrangement]
-Soit $n\in \natural$ et $A$ un ensemble fini. Un 
-arrangement de $n$ éléments de $A$
-est $n$-uplet d'éléments distincts de $A$.
-\end{definition} 
-Par rapport à la permutation d'un ensemble $A$, un arrangement de $A$ est plus général,
-car il n'est pas forcémnt composé de tous les éléments de $A$.
-
-Nous voulons maintenant dénombrer les arrangements d'un ensemble $A$. Pour ce faire on doit
-introduire une nouvelle notation. 
-
-On note $A_n$ un ensemble contenant $n$ éléments ($n\in \natural$). 
-Et on prend $0\leq p\leq n$ un autre entier. Finalement, on note 
-les arrangement de $p$ éléments dans l'arrangement $A_n$ comme $A^p_n$.
-On veut à présent dénombrer le nombres d'arrangement de $p$ éléments dans un ensemble 
-en contenant $n$. Comme dans la sous-section précédente, faisons un exemple.
-Considérons un ensemble à 4 éléments $A_4=\{1,2,3,4\}$. Il existe
-4 arrangements possibles qui soient non vides.
-\begin{enumerate}
- \item L'arrangement $A_4^1$. Cet arrangement contenant un unique élément est donné par
- $A_4^1=\{1,2,3,4\}$. Il est donc de cardinalité $4$. On peut aussi l'écrire
- \begin{equation*}
-  \card(A_4^1)=4.
- \end{equation*}
-
- \item L'arrangement $A_4^2$. Cet arrangement est donné par \\
- $A_4^2=\{12, 21, 13, 31, 14, 41, 23, 32, 24, 42, 34, 43\}$. Il est donc de cardinalité $12$.
- \begin{equation*}
-  \card(A_4^2)=4\cdot 3.
- \end{equation*}
- \item L'arrangement $A_4^3$. Cet arrangement est donné par
- \begin{align*}
- A_4^3=\{&123, 132, 213, 231, 312, 321, 124, 142, 214, 241, 412, 421, 134, 143,\\
-         &314, 341, 413, 431, 234, 243, 324, 342, 423, 432\}. 
- \end{align*}
- Il est donc de cardinalité $24$.
- \begin{equation*}
-  \card(A_4^3)=4\cdot 3\cdot 2.
- \end{equation*}
- \item L'arrangement $A_4^4$ est la même chose que la permutation de de quatre éléments. Et donc sa cardinalité est également 24.
- \begin{equation*}
-  \card(A_4^4)=4\cdot 3\cdot 2\cdot 1.
- \end{equation*}
-\end{enumerate}
-On peut déduire que le dénombrement de $A_n^p$ s'écrit
-\begin{equation}
- \card(A_n^p)=n(n-1)\cdots (n-p+1)=\frac{n!}{(n-p)!}.
-\end{equation}
-
-Dans la pratique le terme ``nombre d'arrangements $p$ parmis $n$'' peut ne pas être très simple à interpréter. Pour tenter de le traduire
-dans un langage humain plus compréhensible, on peut se dire que le nombre d'arrangements d'un ensemble correspond au nombre de façon de tirer au sort $p$ éléments parmis $n$
-sans remise en tenant compte de l'ordre des éléments tirés.
-\begin{exercices}
- Résoudre les exercices suivants.
- \begin{enumerate}
-  \item On a une salle avec 5 chaises. Entrent 3 étudiants. Combien de façon y a-t-il 
-  d'asseoir les étudians sur les chause?
-  \item On considère qu'on a un processeur possédant 8. Nous avons un programme qui 
-  exécute 5 tâches distinctes. Combien de répartitions existe-t-il pour ces tâches?
-  \item On considère un générateur de mot de passe qui peut utiliser les 26 lettres de l'alphabet. Combien de mots de passes de 6 caractères peuvent-ils être générés?  De 8 caractères? de 10 caractères?
-  \item On considère un générateur de mot de passe qui peut utiliser les 95 (estimation basse du nombre de caractères disponibles sur un clavier) lettres de l'alphabet. Combien de mots de passes de 6 caractères peuvent-ils être générés?
- \end{enumerate}
-
-\end{exercices}
-
-\subsection{Les combinaisons}
-
-\begin{definition}[Combinaison]
-Soient $p\in \natural$ et $n\in \natural$, avec $0\leq p\leq n$. Soit $A$ un ensemble
-contenant $n$ éléments. Une combinaison de $p$ éléments de $A$ est un sous-ensemble de $p$ éléments de $A$. L'ordre n'a aucune importance dans la notion de combinaison.
-On note la combinaison de $p$ parmis $n$, $C_n^p$.
+\begin{definition}[Fonction de répartition] On dit que la fonction $F:\real\rightarrow\real$ est une \textit{fonction de répartition}
+si $F(x)=p(X\leq x)$ pour tout $x\in\real$.
 \end{definition}
-Nous voulons connaître à présent le nombre d'élément dans une combinaison. Vous avez l'habitude de la marche à suivre. Nous allons faire un exemple pour essayer de
-déterminer une formule générale pour la combinaison de $p$ parmi $n$.
-Considérons un ensemble à 4 éléments $A_4=\{1,2,3,4\}$. Il existe
-4 combinaisons possibles qui soient non vides.
-\begin{enumerate}
- \item La combinaison $C_4^1$. Cette combinaison est donnée par
- \begin{equation*}
- C_4^1=\{1,2,3,4\}. 
- \end{equation*}
- Il est donc de cardinalité $4$. On peut aussi l'écrire comme 
- \begin{equation*}
- \card(C_4^1)=\card(A_4^1). 
- \end{equation*}
- \item La combinaison $C_4^2$. Cette combinaison est donnée par
- \begin{equation*}
- C_4^1=\{12, 13, 14, 23, 24, 34\}. 
- \end{equation*}
- Il est donc de cardinalité $6$. On peut aussi l'écrire comme 
- \begin{equation*}
- \card(C_4^2)=\frac{\card(A_4^2)}{2}. 
- \end{equation*}
- 
- \item La combinaison $C_4^2$. Cette combinaison est donnée par
- \begin{align*}
- C_4^3=\{123, 124, 134, 234\}. 
- \end{align*}
- Il est donc de cardinalité $4$. On peut aussi l'écrire comme 
- \begin{equation*}
- \card(C_4^3)=\frac{\card(A_4^3)}{6}=\frac{\card(A_4^3)}{2\cdot 3}. 
- \end{equation*}
- \item La combinaison $C_4^2$. Cette combinaison est donnée par
- \begin{align*}
- C_4^4=\{1234\}. 
- \end{align*}
- Il est donc de cardinalité $1$.  On peut aussi l'écrire comme 
- \begin{equation*}
- \card(C_4^4)=\frac{\card(A_4^4)}{24}=\frac{\card(A_4^4)}{2\cdot 3\cdot 4}. 
- \end{equation*}
-\end{enumerate}
-On peut donc déduire la formule pour la cardinalité d'une combinaison. 
-Elle s'écrit sous la forme
-\begin{equation}
- \card(C_n^p)=\frac{\card(A_n^p)}{p!}=\frac{n!}{p!(n-p)!}.
-\end{equation}
 
-Dans la pratique le terme ``nombre de combinaisons $p$ parmis $n$'' peut ne pas être très simple à interpréter. Pour tenter de le traduire
-dans un langage humain plus compréhensible, on peut se dire que le nombre de combinaisons d'un ensemble correspond au nombre de façon de tirer au sort $p$ éléments parmis $n$
-sans remise et ne tenant pas compte de l'ordre des éléments tirés.
-\begin{exercices}
- Résoudre les exercices suivants.
- \begin{enumerate}
-  \item On considère un nuage de $6$ points. Combien y a-t-il de droites reliants ces $6$ points?
-  \item Considérons une association de 20 membres. Cette association a un comité de direction formé de 3 membres. Un comité ne peut pas être identique à un comité passé. Combien d'année faut-il attendre pour que cette règle pose un problème si les membres de l'association ne changent pas?
-  \item Combien y a-t-il de tirages possibles au swiss lotto? Et à l'euromillions?
-  \item Combien y a-t-il de jeux possibles dans une partie de Jass, où chaque où le jeu complet contient 36 cartes et où il y a quatres joueurs qui reçoivent autant de cartes chacuns?
- \end{enumerate}
-\end{exercices}
-
-\section{Dénombrement et probabilités: mise en pratique}
-
-\begin{exercices}[L'examen d'ITI]
-Le champs de l'examen du cours de probabilités est composé de 40 sujets. 
-Sur ces 40 sujets 4 seront tirés au hasard pour l'examen.
- \begin{enumerate}
-  \item Combien d'examens sont organisables?
-  \item Un candidat n'ayant révisé que 25 sujets se présente à l'examen. Quelle est la probabilité qu'il puisse traiter tous les sujets? trois sujets? deux sujets? un sujet? aucun sujet?
-  \item Combien de sujets un étudiant doit-il réviser pour avoir une probabilité de 99\% de pouvoir tous les traîter?
- \end{enumerate}
-\end{exercices}
-
-\begin{exercices}[Faille du WPS]
-Le WPS (ou Wi-Fi protected setup) est un système qui permet de se connecter à un routeur
-sans utiliser l'identification WPA directement qui existe en 2007. Il existe 3-4 façons de l'appliquer. Celle qui nous intéresse 
-est celle constituée d'un code. Ce code PIN est un nombre à 8 chiffres.
- \begin{enumerate}
-  \item Calculer le nombre de PIN possibles. Combien d'essai sont nécessaires pour avoir 50\% de chances de trouver le PIN?
-  \item En fait le 8ème chiffre est un checksum des 7 premiers chiffres. Combien reste-t-il de PIN possibles?
-  Combien d'essai sont nécessaires pour avoir 50\% de chances de trouver le PIN?
-  \item En 2011, on a découvert (un certain Stefan Viehböck) que lorsqu'on fait une tentative 
-  de connexion avec le code PIN le routeur donne la validité des 4 premiers et 3 derniers chiffres indépendamment. Combien de 
-  possibilités reste-t-il? Combien d'essais sont nécessaires pour avoir 50\% de chances de trouver le PIN? En supposant qu'on ne peut faire 
-  qu'un essai par seconde, combien de temps faut-il pour pour effectuer ces essais?
- \end{enumerate}
- En fait ce que j'ai découvert en essayant l'utilitaire Reaver sur mon routeur, c'est que non seulement on peut hacker 
- un routeur en très peu de temps, mais en plus on obtient le mot de passe WPA du routeur. Si comme la plupart des gens l'utilisateur
- a configuré son wi-fi avec le même mot de passe que pour son mail, son compte en banque, etc. On peut vraiment accéder à 
- un nombre considérable de données...
-\end{exercices}
-% 
-\begin{exercices}[Les souris]
-Dans un laboratoire on a une cage contenant 100 souris. Elles présntent deux caractères qui sont
-importants pour nous, le sexe (mâle ou femelle) et la couleur (noire ou blanche). Il y a 87 mâles,
-57 sont blanches, et 55 sont mâles et blanches.
- \begin{enumerate}
-  \item Faire un tableau à double entrée avec le sexe et la couleur et mettre les effetifs dans chaque case.
-  \item Si on prend une souris au hasard, quelle est la probabilité qu'elle soit noire? Quelle est la probabilité qu'elle soit femelle?
-  Quelle est la probabilité qu'elle soit noire ou femelle?
-  \item Quelle est la probabilité de tirer 5 souris blanches avec remise? Et sans remise?
-  \item Combien de souris il faut tirer avec remise pour avoir 10\% de chances de tirer 5 souris blanches? Et sans remise?
- \end{enumerate}
-\end{exercices}
-
-\section{Probabilités conditionnelles}
-
-Commençons cette section par un exemple pour illustrer le concept de probabilités conditionnelles. 
-Prenons à nouveau un dé à six faces. Nous nous intéressons au calcul de la probabilité de réaliser les événements
-(notons les respectivement $A$ et $B$) \textit{tirer un nombre plus grand ou égal à trois} et \textit{tirer un nombre impair}.
-Les probabilités de réaliser $A$ et $B$ sont données par
-\begin{align}
- p(A)&=\frac{4}{6}=\frac{2}{3},\\
- p(B)&=\frac{3}{6}=\frac{1}{2}.
-\end{align}
-Cela n'a rien de nouveau c'est un calcul de probabilités tout ce qu'il y a de plus classique.
-
-Par contre, si on nous dit que nous avons déjà tiré un nombre impair. 
-Et qu'on veut savoir quelle est la probabilité d'obtenir un nombre plus grand ou égal à 3.
-Nous changeons un peu le problème. Nous supposons qu'on a tiré un nombre impair et on veut connaître la probabilité
-que ce nombre soit un nombre impair. En termes plus mathématiques, nous voulons savoir quelle est la probabilité que $A$
-soit réalisé, sachant que $B$ a été réalisé. Cette probabilité se note $p(A|B)$.
-
-Calculons à présent cette probabilité. Comme on sait que $B$ a été réalisé (nous avons tiré un nombre impair) l'univers
-a changé. Il est à présent composé de $\Omega=\{1,3,5\}$ (on a que $\card(\Omega)=3$). Dans cet univers on a deux possibilité de tirer 
-un nombre plus grand ou égal à trois ($A|B=\{3,5\}$). La probabilité $p(A|B)$ est donc donnée par
-\begin{equation}
- p(A|B)=\frac{2}{3}.
-\end{equation}
-Regardons maintenant à quoi correspondent les cardinalités présentent dans la franction ci-dessus.
-Le numérateur correspond au nombre d'éléments à la fois dans $A$ et dans $B$ (soit $A\cap B$). Le dénominateur lui
-est simplement la cardinalité de l'événement $B$. Donc on peut écrire la formule de façon 
-plus générale
-\begin{equation}
- p(A|B)=\frac{p(A\cap B)}{p(B)}.\label{eq_prob_cond}
-\end{equation}
-Vérifions que cela marche effectivement. Nous avons que 
-\begin{equation}
- p(A\cap B)=\frac{2}{6}=\frac{1}{3},
-\end{equation}
-et 
-\begin{equation}
- p(B)=\frac{1}{2}.
-\end{equation}
-Il vient donc que 
-\begin{equation}
- p(A|B)=\frac{p(A\cap B)}{p(B)}=\frac{1}{3}\cdot 2=\frac{2}{3}.
-\end{equation}
-L'équation \eqref{eq_prob_cond} est la formule de calcul de la probabilité conditionnelle de réalisé $A$ sachant 
-que $B$ a été réalisé. Il est important de noter que si $p(B)=0$ cette définition n'a aucun sens, car l'hypothèse de réalisation de $B$
-est impossible.
-
-Une autre façon d'écrire cette formule qui sera utile pour les exercices est 
-\begin{equation}
- p(A\cap B)=p(A|B)p(B).\label{eq_pab}
-\end{equation}
-Par aillurs, si on considère $p(B|A)\neq p(A|B)$, on a
-\begin{equation}
- p(B|A)=\frac{p(A\cap B)}{p(A)},
-\end{equation}
-et 
-\begin{equation}
- p(A\cap B)=p(B|A)p(A).\label{eq_pba}
-\end{equation}
-On a donc deux façons différentes de calculer $p(A\cap B)$ via $p(A|B)$ ou $p(B|A)$.
-On a également la propriété intéresssante qui relie les probabilités $p(A|B)$ et $p(B|A)$.
-En utilisant les équations \eqref{eq_pab} et \eqref{eq_pba}, il vient
-\begin{align}
- &p(B|A)p(A)=p(A|B)p(B),\nonumber\\
- &p(B|A)=p(A|B)\frac{p(B)}{p(A)},\\
- &p(A|B)=p(B|A)\frac{p(A)}{p(B)}.
-\end{align}
-En particulier on voit qu les probabilités conditionnelles $p(A|B)$ et $p(B|A)$ sont égales
-seulment si $p(A)=p(B)$.
-
-Les probabilités conditionnelles ont des probabilités très similaires aux probabilités 
-que nous avons vues jusqu'ici. En particulier
-\begin{itemize}
-\item[$\bullet$] La probabilité conditionnelle est une probabilité nous avons donc que $0\leq p(A|B)\leq 1$. 
-\item[$\bullet$] De façon similaire à $p(\bar A)=1-p(A)$, nous avons que $p(\bar A|B)=1-p(A|B)$.
-\item[$\bullet$] De façon triviale, nous avons que la probabilité conditionnelle $p(A|A)=1$.
-\item[$\bullet$] Si deux événements sont disjoints (on les appelle aussi incompatibles), c'est-à-dire que $A\cap B=\emptyset$,
-on a que
-\begin{equation}
-p(A|B)=\frac{p(A\cap B)}{p(B)}=\frac{p(\emptyset)}{p(B)}=0.
-\end{equation}
-\end{itemize}
-\begin{exercices}[Application de la formule]
-Soient deux événements tels que $p(A)=1/2$ et $p(B)=1/3$ et $p(A|B)=1/4$. 
-\begin{enumerate}
- \item Déterminer $p(B|A)$.
- \item Déterminer $p(B \cap A)$.
-\end{enumerate}
-\end{exercices}
-
-
-\subsection{Arbres pondérés}
-
-Sur notre arbre pondéré, nous mettons sur chaque branche les \textit{probabliltés conditionnelles}
-(voir la figure \ref{fig_arbre_pondere}).
-\begin{figure}[htp]
-\begin{center}
-\includegraphics[height=4.8truecm]{figs/arbre_pondere.pdf}
-\end{center}
-\caption{Exemple d'arbre pondéré avec des événements $A$, $B$, $C$, $D$, $E$. Sur les branches du noeuds de départ, nous avons les probabilité de réaliser $A$ et $B$.
-Sur toutes les branche en dessous, nous avons les probabilités conditionnelles de réaliser $C$, $D$, ou $E$ sachant que $A$ ou $B$ a été réalisé.}\label{fig_arbre_pondere}
-\end{figure}
-Nous avons donc que la probabilité reliée au produit de deux branches donne la probabilité de réalisation de l'intersection
-de deux événements. En effet, nous avons par exemple pour arriver à l'évenement $E$
-\begin{equation}
- p(B)p(E|B)=p(B\cap E).
-\end{equation}
-Si on augmente encore un peu la taille de l'arbre (voir figure \ref{fig_arbre_pondere_2}),
-\begin{figure}[htp]
-\begin{center}
-\includegraphics[height=4.8truecm]{figs/arbre_pondere_2.pdf}
-\end{center}
-\caption{Exemple d'arbre pondéré avec des événements $A$, $B$, $C$, $D$, $E$, $I$, $J$. Sur les branches du noeuds de départ, nous avons les probabilité de réaliser $A$ et $B$.
-Sur toutes les branche en dessous, nous avons les probabilités conditionnelles de réaliser $C$, $D$, ou $E$ sachant que $A$ ou $B$ a été réalisé, 
-puis nous avons encore un 3ème étage à notre arbre avec les événements $I$ et $J$.}\label{fig_arbre_pondere_2}
-\end{figure}
-De façon similaire si nous calculons le produit des probabilité pour arriver jusqu'à $I$, on obtient
-\begin{equation}
- p(B)p(E|B)p(I|B\cap E)=p(B\cap E)p(I|B\cap E)=p(I\cap B\cap E).
-\end{equation}
-Ce type d'arbre est donc très pratique pour déterminer les probabilités d'intersection d'événements.
-
-\begin{remarque}
-Jusqu'ici, nous avions construit certains arbres où les probabilités conditionnelles n'avaient pas d'importance. En effet, si on tire un dé
-deux fois.  Le premier lancer donne un chiffre (disons ``1'') avec une probabilité de rélisation de $1/6$, 
-la probabilité n'importe quel chiffre (disons ``1'' à nouveau) est toujours de $1/6$. Ici le fait d'avoir réalisé un événement,
-ne fait pas intervenir la probabilité conditionnelle. En revanche, de façon cachée, l'arbre correspondant au loto, lui fonctionne comme vu ci-dessus.
-\end{remarque}
-
-\begin{exercice}
-Pour décider de la réussite ou non de l'examen de mathématiques de dexuième année le professeur a décidé d'une façon originale de faire passer l'année.
-$20\%$ des élèves passent sur dossier (qualité de la photo sur IS-Academia, quantité de pizza mangée en moins de 30sec, ...). Ensuite
-les étudiants restants passent un examen écrit sur un sujet libre (anglais, histoire, ...). 
-Ceux qui ratent l'écrit sont éliminés. Le professeur
-a décidé que seul 75\% des étudiants réussissent l'écrit.
-Les étudiants restants passent un examen de chant. Là deux tiers réussissent et passent l'année.
-
-\begin{enumerate}
- \item Faire un arbre pondéré de cette situation ``réussi-raté'' .
- \item On choisit un étudiant au hasard. Déterminer la probabilité qu'il ait tenté et raté l'épreuve écrite.
- \item On choisit un étudiant au hasard. Déterminer la probabilité qu'il soit admis en ayant tenté l'épreuve écrite.
-\end{enumerate}
-\end{exercice}
-
-
+Nous distinguons deux sortes de variables aléatoires différentes: les variables aléatoires discrètes et continues. Nous les discuterons brièvement dans les deux sous-sections suivantes.
 
 
 \section{Nombres aléatoires}
 
 Les nombres aléatoires, bien que pas directement reliés aux probabilités, sont utilisés dans un certain nombre de domaines
-qui vont de la cryptographie aux simulations physiques. Nous allons voir une introdution simplifiée à la génération de nombres aléatoires
+qui vont de la cryptographie aux simulations physiques. Nous allons voir une introduction simplifiée à la génération de nombres aléatoires
 sur un ordinateur et les différentes problématiques reliées à leur génération.
 
-Une très bonne référence concernant les nombre aléatoires est le site \texttt{http://www.random.org}.
+Une très bonne référence concernant les nombre aléatoires est le site \break \texttt{http://www.random.org}.
 
 \subsection{Générateurs algorithmiques: une introduction (très) générale}
 
@@ -3779,7 +4026,7 @@ De plus, les nombres tirés ne doivent pas dépendre de l'histoire des nombres t
 
 Si on veut maintenant plutôt tirer des nombres réels uniformément distribués entre $[0,1]$, il suffit
 de diviser les nombres $X_i$ par $m$ après chaque tirage. De façon similaire, si nous voulons 
-tirer des nombres dans l'intervalle $[\alpha,\beta]$, on utilise la formule de remise à l'échalle suivante
+tirer des nombres dans l'intervalle $[\alpha,\beta]$, on utilise la formule de remise à l'échelle suivante
 \begin{equation}
  N_i=\alpha+(\beta-\alpha)X_i/m.
 \end{equation}
@@ -3790,16 +4037,16 @@ il existe des transformations beaucoup plus efficaces d'un point de vue computat
 pour changer l'intervalle des nombres aléatoires tirés.
 
 Sans entrer dans les détails, la génération de nombres aléatoires n'ayant pas une distribution
-uniforme s'obtient en effectuant une trasformation un peu plus complexe que celle ci-dessus
-en partant toujours de la suite de nombres aléatoies entiers.
+uniforme s'obtient en effectuant une transformation un peu plus complexe que celle ci-dessus
+en partant toujours de la suite de nombres aléatoires entiers.
 
 Les nombres aléatoires produits de façon algorithmique (donc avec un ordinateur)
-ne peuvent pas être vriament aléatoire, car ils sont obtenus avec une machine 
-déterministe (les opérations faites à l'aide d'un ordinateur snt par définition
-reproductibles avec une chance d'erreur qasiment nulle). On parle donc de nombre pseudo-aléatoires.
+ne peuvent pas être vraiment aléatoire, car ils sont obtenus avec une machine 
+déterministe (les opérations faites à l'aide d'un ordinateur sont par définition
+reproductibles avec une chance d'erreur quasiment nulle). On parle donc de nombre pseudo-aléatoires.
 
 Néanmoins, bien que ces chiffres ne soient pas vraiment aléatoires, ils peuvent 
-être posséder des propriétés qui les rendent satisfaisants pour la plupart des applications. Cette suite de nombres doit avoir des propriétés particulières quand $n\rightarrow\infty$.
+posséder des propriétés qui les rendent satisfaisants pour la plupart des applications. Cette suite de nombres doit avoir des propriétés particulières quand $n\rightarrow\infty$.
 Sans entrer pour le moment trop dans les détails, on veut par exemple que 
 la moyenne des nombres tirés soit $m/2$, que la corrélation entre des 
 sous-suites de nombres doit être nulle, ou encore qu'il n'existe pas de séquence qui se 
@@ -3813,7 +4060,7 @@ très robustes pour tester la qualité des nombres aléatoires algorithmiques.
 Pendant très longtemps, les générateurs de nombres aléatoires algorithmiques
 ont été des générateurs congruenciels linéaires, dont la génération est 
 donné par la formule suivante. Soit $X_i$ un nombre aléatoire,
-aors le prochain nombre de la série est donné par
+alors le prochain nombre de la série est donné par
 \begin{equation}
 X_{i+1}=(aX_i+c)\mod m,
 \end{equation}
@@ -3825,18 +4072,18 @@ Tous les autres nombres obtenus sont déterministes. Pour chaque valeur de grain
 on aura toujours la même séquence de nombre tirés.
 
 Il est très important de noter que la qualité des nombres aléatoires obtenus
-sont extrêment dépendants des valeurs de $a$, $c$ et $m$ choisies (et des 
+sont extrêmement dépendants des valeurs de $a$, $c$ et $m$ choisies (et des 
 relations entre elles). Si par exemple, on choisit 
 $a=1$, $c=1$, $m=10$ et $X_0=0$, on va avoir comme suite de nombre aléatoire
 \begin{equation}
  \{0,1,2,3,4,5,6,7,8,9,0,1,2,3,...\},
 \end{equation}
 ce qui n'est pas très aléatoire vous en conviendrez... Il est donc très important
-de tenter d'optimiser les valeur $a$, $c$ et $m$ pour
+de tenter d'optimiser les valeurs $a$, $c$ et $m$ pour
 avoir des séquences aussi ``aléatoires'' que possible.
 
 Une première chose à remarquer c'est que $m$ sera la valeur maximale de la période
-de notre générateur de nombre aléatoire (la période est le nombre de tirage qu'il faudra
+de notre générateur de nombre aléatoire (la période est le nombre de tirages qu'il faudra
 effectuer pour que la série se répète exactement).
 
 Quelques paramètres utilisés dans des générateurs connus sont par exemple
@@ -3858,7 +4105,7 @@ Quelques paramètres utilisés dans des générateurs connus sont par exemple
 Ce genre de générateur de nombres aléatoires est très efficace d'un point de vue computationnel
 mais la qualité des nombres aléatoires peut être insuffisante. Plusieurs améliorations
 ont été proposées. Par exemple, pour chaque étape, on peut générer $k$ nombres aléatoires
-avec un générateur congruentiel linéaire et combiner de les nombres.
+avec un générateur congruentiel linéaire et combiner les nombres.
 
 La méthode probablement la plus populaire consiste à utiliser 
 des récurrences matricielles sur la représentation binaire des nombres.
@@ -3868,8 +4115,8 @@ $\tilde X_{i+1}$ est donné par
  \tilde X_{i+1}=A \tilde X_i \mod 2,
 \end{equation}
 où $A$ est une matrice $k\times k$. Ce genre de générateur a l'énorme
-avantage d'être extrêment efficace. Ils sont à la base de l'agorithme Mersenne Twister.
-Ces générateurs ont généralement une période extrêment longue (qui a la particularité d'être
+avantage d'être extrêmement efficace. Ils sont à la base de l'algorithme Mersenne Twister.
+Ces générateurs ont généralement une période extrêmement longue (qui a la particularité d'être
 un nombre premier de type Mersenne dont la forme est $m=2^l-1$, avec $l\in\natural$).
 
 Bien que ne soyant pas parfaits ces générateurs ont le grand avantage d'être très rapides et peu
@@ -3882,7 +4129,7 @@ peut être d'un grand secours.
 \subsection{Les générateurs physiques}
 
 Une autre façon de générer des nombres aléatoires, serait d'utiliser des phénomènes physiques
-qui contiennent de façon inhériente des processus aléatoires. On peut imaginer 
+qui contiennent de façon inhérente des processus aléatoires. On peut imaginer 
 lancer un dé ``à la main'', mesurer les émissions radioactives d'atomes (mesurer leur spin), 
 etc... Ou encore effectuer des lancer de jeux aussi peu biaisés que possibles (roulette, dé, etc).
 
@@ -3910,7 +4157,7 @@ avec deux générateurs différents
  Y&=\{0,0,0,0,0,0,0,0,0,0\}.
 \end{align}
 On voit que la suite $Y$ semble beaucoup moins aléatoire que la suite $X$. 
-En effet, la probabilité de tirer 10 fois 0 en 10 tirages et de $p(Y)=1/2^{10}=1/1024$,
+En effet, la probabilité de tirer 10 fois 0 en 10 tirages est de $p(Y)=1/2^{10}=1/1024$,
 alors que la probabilité d'avoir autant de 0 que de 1 est de $p(X)=1/2$.
 De façon générale on aimerait que la répartition soit $35\%$-$65\%$ avec une probabilité
 de $90\%$.
@@ -3932,15 +4179,15 @@ toutes tendre vers $1$.
 
 Néanmoins, il est certain qu'aucun générateur ne peut être parfait. En effet,
 les nombres étant toujours représentés avec une précision finie, il est impossible
-d'être capable de représenter exactement toutes les propriétés d'une série de nombre
+d'être capable de représenter exactement toutes les propriétés d'une série de nombres
 vraiment aléatoires avec un générateur pseudo-aléatoire. On va donc plutôt
 considérer une autre définition pour la qualité d'un générateur algorithmique.
 
 Considérons une simulation nécessitant la génération de nombres aléatoires.
-Un ``bon'' générateur de nombres pseudo-aléatoire produit une série de nombre
+Un ``bon'' générateur de nombres pseudo-aléatoire produit une série de nombres
 qui peut être utilisée en lieu et place de vrai nombres aléatoires sans que la simulation
 n'en soit affectée. Par exemple, le calcul du nombre $\pi$ vu dans les exercices doit 
-être trouvé avec la précisino désirée avec le générateur de nombre pseudo-aléatoires pour que celui-ci 
+être trouvé avec la précision désirée avec le générateur de nombre pseudo-aléatoires pour que celui-ci 
 soit considéré comme bon.
 
 \subsection{Quelques règles générales}
@@ -3952,15 +4199,15 @@ qualités minimales pour les générateurs de nombres aléatoires.
 \subsubsection{La périodicité}
 
 Tout générateur de nombres pseudo-aléatoires va à un moment ou un autre devenir périodique (la séquence de nombres générés vont 
-se répéter à l'infi). Notons la période du générateur aléatoire $T$. 
+se répéter à l'infini). Notons la période du générateur aléatoire $T$. 
 Il est évident que dès qu'on atteint un nombre de tirages équivalent à la période ($\card(X)\sim T$), on va avoir des nombres 
 pseudo-aléatoires qui ne sont plus du tout satisfaisants. En fait on peut montrer que des problèmes apparaissent dès que
 le nombre de tirages atteint un nombre équivalent à $T^{1/3}$. 
 Une condition primordiale pour avoir un ``bon'' générateur de nombres pseudo-aléatoire est donc une période élevée.
-Pour des généraeurs aléatoires modernes, 
+Pour des générateurs aléatoires modernes, 
 un période $T<2^{100}$ n'est pas considéré comme satisfaisant pour la plupart des applications.
 
-Evidemment il est impossible de tester la périodicité de tels générateurs de façon 
+Évidemment il est impossible de tester la périodicité de tels générateurs de façon 
 expérimentale ($2^{100}\sim 10^{30}$). Cela ne peut se faire que par des études analytiques
 approfondies. Comme expliqué dans la section \ref{sec_congr}
 la période maximale d'un générateur congruentiel linéaire est $m$. Dans les 3 exemples
@@ -3973,7 +4220,7 @@ générateur de nombres pseudo-aléatoires est bon. En particulier on peut prend
  X_{i+1}=(X_i+1)\mod m,
 \end{equation}
 avec $m$ aussi grand qu'on veut (disons $m=2^{2000}$ par exemple) mais la séquence de
-nombres générés ne sera absolument pas aléatoire, étant doné qu'on aura
+nombres générés ne sera absolument pas aléatoire, étant donné qu'on aura
 \begin{equation}
  X=\{0, 1, 2, 3, 4, 5, 6, ..., 2^{2000}-1, 0, 1, 2, ...\},
 \end{equation}
@@ -3982,7 +4229,7 @@ si $X_0=0$. Cela pourrait ne pas être problématique en soit, si la séquence a
  X=\{1, 2, 3, 4, 5, 6, ..., 2^{2000}-1, 0, 1, 2, ...\}.
 \end{equation}
 Il est donc nécessaire d'avoir d'autres critères que la seule période.
-C'est le sujet de la sousection suivante.
+C'est le sujet de la sous-section suivante.
 
 \subsubsection{La discrépance}
 
@@ -3993,7 +4240,7 @@ Reprenons l'exemple du tirage entre $[0,1]$. Nous pouvons imaginer une suite tr�
 sans période avec des tirages aléatoires, mais avec beaucoup plus de 0 que de 1, ce qui évidemment serait problématique.
 
 On doit donc trouver un moyen de tester la répartition des nombres de façon plus quantitative.
-Une façon de le faire est de considérer l'ensemble des $k-$uplets de nombres définits par
+Une façon de le faire est de considérer l'ensemble des $k-$uplets de nombres définis par
 \begin{equation}
  X^k=\{X_1,X_2, ..., X_k\},
 \end{equation}
@@ -4003,10 +4250,16 @@ pour les $k-$uplets formés avec des nombres aléatoires dans $[0,1]^k$. En d'au
 génèrent des $k-$uplets différents pour toutes valeurs de $k$. 
 
 De nouveau ce genre de tests est très compliqué à tester expérimentalement pour $k$ de l'ordre de la période 
-du générateur de nombres aléatoires. Des analyses théoriques sont dèslors primordiales, mais bien en dehors 
+du générateur de nombres aléatoires. Des analyses théoriques sont dès lors primordiales, mais bien en dehors 
 du champs de ce cours...
 
 Il existe beaucoup d'autres tests possibles (il y a des recommandations sur le site \texttt{http://www.random.org} 
 pour tester des nombres aléatoires. 
+
+\chapter{Remerciements}
+
+Je voudrais remercier (par ordre alphabétique) les étudiants du cours qui ont contribué à améliorer ce polycopié. Merci à Messieurs Gay-Balmaz, Ibanez, Lovino et Sousa. 
+En espérant que cette liste continuera 
+à s'allonger avec les années.
 
 \end{document}
