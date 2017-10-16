@@ -1,8 +1,18 @@
 sudo: required
 dist: trusty
 before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-french
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-french
 script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cours.tex
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cours.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: da7A+RCbd4pfTKTYqqaEbTHgw6zs7GQpiCCT/ta/gRmGsSXQpcMJUHT1y5LJP7RvP5JcomcMsaWmQDagMVrO9AvSgUFqBP9Fsema4WzHEcGpGkj2TGLTc9MNtchTHvactq5hFtXJzOc0ObKxavX8oSOibiN8OVf4VfToHt2ERhO40jmzqVgWMdB44mhg299/Ma0dIH06+3d6VCtAI0VzGmxP5bguSwCmiuYTfToGjQprbAf1FM+8Uc1GasBqj8Y0doyjEnUUtvZPPRmzoemWtxlOix1LGzfxC4YJFVwGo/6kSNa7EjpZ9Z40iL9GIqpIXh3jpaLPUYTcUJnvgbYGquTmwyRxL3q7bWmkldqJD3D3wXJO+GSYvC8fAevvyMNoV8J+vaK34TAiQ6DIkNqIjksJ+Gqg0ts2hAWgrOAuhDaBasfUoiCFcFT4gC9hseOQ9X0lpahmKDDVmbw+k8j0SkNPcitKtf6oPjcGQQecy4cnGb2eIAP2tRPY8Q97ecDg4MKvxCf+LZN/npC0xf4LYdKGedVMh8a7orsZDqf7uI1xD1RKVz5qOJapFEo/9duwTTGBZ4KxFSwssJrr5YGvZAC8CkTJVwvleDa+vWDcH+bBwOQqIBXOh3/nDkx6MDQoiItzb2V+N0qTAiTb9d31JtzONsg+cjEnuwW+zdRzfH8=
+  file:
+  - _build/cours.pdf
+  skip_cleanup: true
+  on:
+    repo: mathintro/deuxiemeannee
