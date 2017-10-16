@@ -6,12 +6,12 @@ script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cours.tex
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cours.tex
-# deploy:
-#   provider: releases
-#   api_key:
-#     secure: [YOUR KEY]
-#   file:
-#   - _build/cours.pdf
-#   skip_cleanup: true
-#   on:
-#     tags: true
+deploy:
+  provider: releases
+  # api_key:
+    # secure: [YOUR KEY]
+  file:
+  - _build/cours.pdf
+  skip_cleanup: true
+  on:
+    tags: true
