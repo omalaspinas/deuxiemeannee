@@ -1,6 +1,4 @@
 ---
-codeBlockCaptions: True
-cref: False
 author:
 - Orestis Malaspinas
 title: Résumé du cours de Mathématiques
@@ -13,9 +11,14 @@ chapters: true
 numberSections: true
 chaptersDepth: 1
 sectionsDepth: 3
+lang: fr
+documentclass: book
+papersize: A4
+cref: false
 ---
 
-# Rappel 
+Rappel
+======
 
 
 Fonctions
@@ -1016,7 +1019,7 @@ pour les paramètres précédent la forme suivante sur une période de 100
 ans.
 
 ![L’évolution du capital $c$ en fonction du temps su 100
-ans.[]{data-label="fig_interets"}](figs/interets.pdf){width="50.00000%"}
+ans.](figs/interets.pdf){#fig:interets width="50.00000%"}
 
 Définitions et théorèmes principaux
 -----------------------------------
@@ -1684,7 +1687,7 @@ comme une “notation” de ${\mathbb{R}}^2$. On peut donc les représenter
 sur un plan bidimensionnel (voir la @fig:complexPlane).
 
 ![Représentation du nombre complexe
-$z=a+ib$.[]{data-label="fig_complexPlane"}](figs/complexPlane.pdf){width="35.00000%"}
+$z=a+ib$.](figs/complexPlane.pdf){#fig:complexPlane width="35.00000%"}
 
 La somme de deux nombres complexes s’interprête également facilement de
 façon graphique. On peut le voir sur la @fig:complexPlaneSum.
@@ -1693,7 +1696,7 @@ chacun des nombres complexes à sommer.
 
 ![Représentation de la somme de deux nombres complexes $z_1=a+ib$ et
 $z_2=c+id$. Le résultat est donné par
-$z_3=a+c+i(b+d)$.[]{data-label="fig_complexPlaneSum"}](figs/complexPlaneSum.pdf){width="50.00000%"}
+$z_3=a+c+i(b+d)$.](figs/complexPlaneSum.pdf){#fig:complexPlaneSum width="50.00000%"}
 
 Pour la multiplication cela s’avère un peu plus difficile à interpréter.
 Pour cela il est plus simple de passer par une représentation via des
@@ -1701,7 +1704,7 @@ sinus et des cosinus (en coordonnées cylindriques) des nombres complexes
 (voir la @fig:complexPlaneCyl.
 
 ![Représentation du nombre complexe
-$z=a+ib$.[]{data-label="fig_complexPlaneCyl"}](figs/complexPlaneCyl.pdf){width="35.00000%"}
+$z=a+ib$.](figs/complexPlaneCyl.pdf){#fig:complexPlaneCyl width="35.00000%"}
 
 En utilisant la représentation en termes de $\vartheta$ et $r$, on a que
 $z=r(\cos\vartheta+i\sin\vartheta)=a+ib$. On a immédiatement les
@@ -1862,7 +1865,7 @@ implicites. Par exemple, si $u=(4,5)$ cela signifie implicitement qu’on
 a $$u=4\cdot e_1+5\cdot e_2.$$
 
 ![Le vecteur $v$ dans la représentation
-cartésienne.[]{data-label="fig_baseCart"}](figs/baseCart.pdf){width="35.00000%"}
+cartésienne.](figs/baseCart.pdf){#fig:baseCart width="35.00000%"}
 
 De façon générale le vecteur $v=(v_1,v_2)$ est représenté implicitement
 par (voir la @fig:baseCart) $$v=v_1\cdot e_1+v_2\cdot e_2.$$ On
@@ -1876,7 +1879,7 @@ direction) peut être utilisée pour représenter un vecteur quelconque
 dans le plan (voir la @fig:baseNonCart).
 
 ![Le vecteur $v$ dans une représentation non
-cartésienne..[]{data-label="fig_baseNonCart"}](figs/baseNonCart.pdf){width="35.00000%"}
+cartésienne.](figs/baseNonCart.pdf){#fig:baseNonCart width="35.00000%"}
 
 Cette écriture en fonction de vecteurs de base, permet de faire
 facilement les additions de vecteurs
@@ -2546,28 +2549,30 @@ le cas des salaires (voir Tabl. @fig:salaires)
     60000            5
    1000000           1
 
-  : Tableau du nombre de salariés par
-  salaire.[]{data-label="table_salaires"}
+  : Tableau du nombre de salariés par salaire. {#tbl:salaires}
 
 et du benchmark de l’application (voir Tabl. @fig:exec)
 
-[|c|c|]{} Temps d’exécution & Nombre\
-\[50,51) & 7\
-\[51,52) & 12\
-\[52,53) & 8\
-\[53,54) & 23\
+    Temps d’exécution     Nombre
+   -------------------   --------
+        \[50,51)             7
+        \[51,52)            12
+        \[52,53)             8
+        \[53,54)            23
+
+  : Tableau du temps d'exécution et du nombre d'exécutions. {#tbl:exec}
 
 Sous forme de graphique on peut représenter le tableau des salaires sous
 la forme d’un graphique bâton (voir Fig. @fig:salaires)
 
 ![Nombre salariés en fonction du
-salaire.[]{data-label="fig_salaires"}](figs/graph_salaires.pdf){width="50.00000%"}
+salaire.](figs/graph_salaires.pdf){#fig:salaires width="50.00000%"}
 
 ou d’un histogramme pour le temps d’exécution de l’application (voir
 Fig. @fig:exec).
 
 ![Nombre d’exécutions en fonction du temps
-d’exécution.[]{data-label="fig_exec"}](figs/graph_exec.pdf){width="50.00000%"}
+d’exécution.](figs/graph_exec.pdf){#fig:exec width="50.00000%"}
 
 ### Fréquences
 
@@ -2601,11 +2606,14 @@ Les tableaux de fréquence des deux exemples précédents sont donnés par
     tableau @tbl:exec_freq affiche les différentes fréquences des
     temps d’exécution.
 
-    [|c|c|c|]{} Temps d’exécution & Nombre & Fréquence\
-    \[50,51) & 7 & $7/50=0.14$\
-    \[51,52) & 12 & $12/50=0.24$\
-    \[52,53) & 8 & $8/50=0.16$\
-    \[53,54) & 23 & $23/50=0.46$\
+       Temps d’exécution   Nombre     Fréquence
+      ------------------- -------- --------------
+           \[50,51)          7      $7/50=0.14$
+           \[51,52)         12      $12/50=0.24$
+           \[52,53)          8      $8/50=0.16$
+           \[53,54)         23      $23/50=0.46$
+
+      : Tableau des temps d'exécution et la fréquence des temps d'exécution. {#tbl:exec_freq}
 
 La fréquence possède un certain nombre de propriétés que nous
 retrouverons dans les sections suivantes qui sont assez intuitives
@@ -2622,8 +2630,8 @@ Relié avec la propriété $2$ ci-dessus, il peut également être
 intéressant d’obtenir la *fréquence cumulée*, notée $F(x)$, d’un
 caractère qui se définit comme la fréquence des individus qui présentent
 une valeur de caractère $x_i\leq x$. Les tableaux correspondants aux
-tableaux @tbl:salaires et @tbl:exec (voir Tabls.
-@tbl:salaires_freqcum et @tbl:exec_freqcum)
+tableaux @tbl:salaires et @tbl:exec (voir le 
+@tbl:salaires_freqcum et le @tbl:exec_freqcum)
 
    Salaire   Nombre de salariés        Fréquence             Fréquence cumulée
   --------- -------------------- ---------------------- ----------------------------
@@ -2632,15 +2640,16 @@ tableaux @tbl:salaires et @tbl:exec (voir Tabls.
     60000            5            $5/61\cong0.081967$    $(20+35+5)/61\cong0.98361$
    1000000           1            $1/61\cong0.016393$        $(20+35+5+1)/61=1$
 
-  : Tableau des salaires, du nombre de salariés, et la fréquence et
-  fréquence cumulée des salaires.[]{data-label="table_salaires_freqcum"}
+  : Tableau des salaires, du nombre de salariés, et la fréquence et fréquence cumulée des salaires. {#tbl:salaires_freqcum}
 
-[|c|c|c|c|]{} Temps d’exécution & Nombre & Fréquence & Fréquence
-cumulée\
-\[50,51) & 7 & $7/50=0.14$ & $7/50=0.14$\
-\[51,52) & 12 & $12/50=0.24$ & $(7+12)/50=0.38$\
-\[52,53) & 8 & $8/50=0.16$ & $(7+12+8)/50=0.54$\
-\[53,54) & 23 & $23/50=0.46$ & $(7+12+8+23)/50=1$\
+   Temps d’exécution   Nombre     Fréquence        Fréquence cumulée
+  ------------------- -------- ---------------- ----------------------
+     \[50,51)             7       $7/50=0.14$            $7/50=0.14$
+     \[51,52)            12      $12/50=0.24$       $(7+12)/50=0.38$
+     \[52,53)             8       $8/50=0.16$     $(7+12+8)/50=0.54$
+     \[53,54)            23      $23/50=0.46$     $(7+12+8+23)/50=1$
+
+  : Tableau des temps d'exécution et la fréquence et fréquences cumulées des temps d'exécution. {#tbl:exec_freqcum}
 
 [Fréquence cumulée]{}
 
@@ -3079,7 +3088,7 @@ réalisation est de l’écrire sous forme d’arbre (voir la figure
 @fig:arbre).
 
 ![Représentation du tirage $26$ sous forme
-d’arbre.[]{data-label="fig_arbre"}](figs/arbre.pdf){width="\textwidth"}
+d’arbre.](figs/arbre.pdf){#fig:arbre width="\textwidth"}
 
 Comme pour le cas à un tirage, tout tirage successif de dés est
 équiprobable et la probabilité de chaque tirage est de $1/36$.
@@ -3092,7 +3101,7 @@ probabilité de cet enchaînement est obtenu en multipliant les événements
 $$p(\{26\})=p(\{2\})\cdot p(\{6\})=\frac{1}{6}\cdot\frac{1}{6}.$$
 
 ![Représentation du tirage $26$ sous forme d’arbre avec les probabilités
-associées.[]{data-label="fig_arbre2"}](figs/arbre2.pdf){width="\textwidth"}
+associées.](figs/arbre2.pdf){#fig:arbre2 width="\textwidth"}
 
 Afin de calculer la probabilité du tirage $26$ il suffit de suivre le
 chemin menant de la racine à la feuille correspondante et de multiplier
@@ -3117,7 +3126,7 @@ simplement les probabilités de chacun des éléments de $A$ (voir figure
 d’arbre avec les probabilités associées. Toutes les probabilités et
 tirages possibles associés aux branches ne sont pas affichées pour
 simplifier
-l’affichage.[]{data-label="fig_arbre3"}](figs/arbre3.pdf){width="\textwidth"}
+l’affichage.](figs/arbre3.pdf){#fig:arbre3 width="\textwidth"}
 
 Comme vu dans la section @sec:disjoints, il suffit de prendre la
 somme des probabilités des événements élémentaires $$\begin{aligned}
@@ -3230,28 +3239,28 @@ remise est primordial. En effet considérons le cas initial illustré dans
 la @fig:loto.
 
 ![Les six numéros présents initialement dans le
-sac.[]{data-label="fig_loto"}](figs/loto.pdf){height="1.8truecm"}
+sac.](figs/loto.pdf){#fig:loto height="1.8truecm"}
 
 Pendant le premier tirage, nous tirons le numéro 2 (voir figure
 @fig:loto2). Notons que le tirage du 2 a une probabilité
 $\frac{1}{6}$.
 
 ![Le numéro 2 est tiré lors du premier
-tirage.[]{data-label="fig_loto2"}](figs/loto2.pdf){height="1.8truecm"}
+tirage.](figs/loto2.pdf){#fig:loto2 height="1.8truecm"}
 
 Il est donc enlevé du sac et il nous reste uniquement 5 chiffres parmi
 lesquels choisir (les chiffres $1$, $3$, $4$, $5$, et $6$, comme dans la
 @fig:loto3).
 
 ![Il ne reste que 5 chiffres dans le
-sac.[]{data-label="fig_loto3"}](figs/loto3.pdf){height="1.8truecm"}
+sac.](figs/loto3.pdf){#fig:loto3 height="1.8truecm"}
 
 Comme il ne nous reste que 5 chiffres, la probabilité de tirer un des
 nombres restant, disons le $5$, est de $\frac{1}{5}$ (voir la figure
 @fig:loto4).
 
 ![Il ne reste que 5 chiffres dans le sac et nous tirons le
-5.[]{data-label="fig_loto4"}](figs/loto4.pdf){height="1.8truecm"}
+5.](figs/loto4.pdf){#fig:loto4 height="1.8truecm"}
 
 Le 5 sera lui aussi retiré et il ne restera que 4 numéros dans le sac et
 ainsi de suite.
@@ -3297,7 +3306,7 @@ Il peut se révéler utile de dessiner un arbre pour ces exercices.
     @fig:bille)
 
     ![Une bille lâchée en $O$ tombe dans la boîte $A$, $B$, ou
-    $C$.[]{data-label="fig_bille"}](figs/bille.pdf){height="2.8truecm"}
+    $C$.](figs/bille.pdf){#fig:bille height="2.8truecm"}
 
     -   Calculer les probabilités $p(A)$, $p(B)$, $p(C)$ pour qu’une
         bille lâchée de O tombe respectivement dans la boîte $A$, $B$ ou
