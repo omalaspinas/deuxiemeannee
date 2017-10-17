@@ -1,4 +1,6 @@
 ---
+codeBlockCaptions: True
+cref: False
 author:
 - Orestis Malaspinas
 title: Résumé du cours de Mathématiques
@@ -7,10 +9,14 @@ autoEqnLabels: true
 eqnPrefix: 
   - "éq."
   - "éqs."
+chapters: true
+numberSections: true
+chaptersDepth: 1
+sectionsDepth: 3
 ---
 
-Rappel
-======
+# Rappel 
+
 
 Fonctions
 ---------
@@ -933,13 +939,14 @@ proportionnelle au nombre d’antilopes avec un taux $k_{a,g}$.
 
 Nous avons à faire ici à un système d’équations différentielles. Nous
 n’allons pas nous intéresser à la résolution de ce système mais
-simplement étudier la solution à ce problème (voir Figures @fig:lv et @fig:lk).
+simplement étudier la solution à ce problème (voir la @fig:lkA et @fig:lkB).
 
-![L’évolution au cours du temps de la population d’antilopes et de
-guépards (gauche) ainsi que la représentation
-paramétrique.}](figs/lv.pdf){#fig:lv width="50.00000%"}!
+<div id="fig:lk">
+![L’évolution au cours du temps de la population d’antilopes et de guépards.](figs/lv.pdf){#fig:lkA width="50%"}
+![Représentation paramétrique de l’évolution population d’antilopes et de guépards.](figs/lv_iso.pdf){#fig:lkB width=50%}
 
-[Représentation paramétrique de l’évolution population d’antilopes et de guépards.](figs/lv_iso.pdf){#fig:lk width="50.00000%"}
+Deux représentation du système de Lotka--Volterra.
+</div>
 
 #### Circuits électriques: le circuit RC
 
@@ -951,7 +958,7 @@ qui quand il est en position $(a)$ relie le circuit RC à la source, ce
 qui a pour effet de chargé la capacité. En position $(b)$ la capacité se
 décharge et son énergie est dissipée dans la résistance.
 
-![Le circuit RC.[]{data-label="fig_rc"}](figs/rc.pdf){width="50.00000%"}
+![Le circuit RC.](figs/rc.pdf){#fig:rc width="50.00000%"}
 
 Nous souhaitons étudier la variation de la chute de tension dans la
 capacité $U_c$ lorsque:
