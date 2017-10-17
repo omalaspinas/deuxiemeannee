@@ -1252,7 +1252,7 @@ Dans ce cas là, en effectuant le changement de variable suivant
 $$z=y^{1-n},$$ on obtient (exercice)
 $$z'(x)+(1-n)a(x)\cdot z(x)+(1-n)b(x)=0.$$ On a donc ramené l’équation
 de Bernouilli à une équation linéaire que nous savons résoudre à l’aide
-de la méthode de la section @sec:eq:lin.
+de la méthode de la section @sec:eq_lin.
 
 Résoudre l’équation de Bernouilli suivante $$y'-y-x\cdot y^6=0.$$ Avec
 la substitution $z=y^5$, on obtient $$z'-5z+5x=0.$$ Cette équation se
