@@ -15,6 +15,7 @@ lang: fr
 documentclass: book
 papersize: A4
 cref: false
+urlcolor: blue
 ---
 
 Rappel
