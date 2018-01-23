@@ -1,8 +1,8 @@
 ---
 # author:
 # - Orestis Malaspinas
-title: Contrôle continu de physique
-date: 22.12.2017
+title: Contrôle continu de mathématiques
+date: 
 autoSectionLabels: true
 autoEqnLabels: true
 eqnPrefix: 
