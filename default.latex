@@ -233,6 +233,15 @@ $if(institute)$
 $endif$
 \date{$date$}
 
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\integer}{\mathbb{Z}}
+\newcommand{\definition}{\textbf{Definition }}
+\newcommand{\exemples}{\textbf{Exemples }}
+\newcommand{\remarque}{\textbf{Remarque }}
+\newcommand{\proprietes}{\textbf{Propriétés }}
+\newcommand{\propriete}{\textbf{Propriété }}
+
 \begin{document}
 $if(title)$
 \maketitle
