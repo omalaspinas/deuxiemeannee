@@ -1,0 +1,168 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsfonts,bm,amsmath,amssymb,graphicx}
+\usepackage{cancel}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\integer}{\mathbb{Z}}
+\newcommand{\definition}{\textbf{Definition }}
+\newcommand{\exemples}{\textbf{Exemples }}
+\newcommand{\remarque}{\textbf{Remarque }}
+\newcommand{\proprietes}{\textbf{Propriétés }}
+\newcommand{\propriete}{\textbf{Propriété }}
+
+\title{Travaux pratiques: \'Equations différentielles ordinaires}
+% \author{Orestis Malaspinas}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Travaux pratiques: Équations différentielles}
+
+\subsection*{Rappel théorique : approximation numérique d’équations
+différentielles ordinaires}
+
+En général il n’existe pas de solutions analytiques pour les équations différentielles d’un intérêt pratique en ingénierie, 
+c’est pourquoi on est obligé d’utiliser des méthodes
+numériques pour approximer la solution.
+Nous présentons ici une famille de méthodes numériques : les méthodes de
+Runge-Kutta qui permettent d’approximer
+les solutions d’équations différentielles ordinaires
+\begin{equation*}
+ \frac{\dd y}{\dd t} = F(y,t), \quad y(t_0)=y_0,
+\end{equation*}
+où $F$ est une fonction qui dépend de $y$ et de $t$.
+
+\subsection*{Les méthodes de Runge-Kutta}
+
+Les méthodes de Runge--Kutta sont une famille de méthodes explicites pour résoudre des équations 
+différentielles ordinaires. Elles ont la forme général suivante
+\begin{equation}
+ y_{n+1}=y_0+\delta t\sum_{i=1}^s b_ik_i,
+\end{equation}
+où $\delta t$ est le pas de temps, $y_n\equiv y(t_n)$ ($t_n=t_0+n\delta t$). La valeur des 
+$k_i$ dépend de la précision de l'algorithme (et donc de la valeur du nombre ``d'étages'' $s$) et ils sont donnés
+de façon itérative par
+\begin{align*}
+ k_1&=F(y_n,t_n),\\
+ k_2&=F(y_n+a_{21}\delta t k_1,t_n+c_2\delta t),\\
+ &\cdots\\
+ k_s&=F(y_n+a_{s1}\delta t k_1+a_{s2}\delta t k_2+\cdots +a_{s,s-1}\delta t k_{s-1},t_n+c_s \delta t).
+\end{align*}
+et où les $a_{ij}$, $b_i$ et $c_i$ sont propres de nouveaux au nombre d'étages $s$ de la méthode.
+Pour $s=1$, on a simplement $c_1=0$, $b_1=1$ et donc il vient
+\begin{equation*}
+ y_{n+1}=y_n+\delta t F(y_n,t_n).
+\end{equation*}
+Cette méthode s'appelle également méthode d'Euler explicite (vous l'avez peut-être reconnue). 
+Pour $s=2$, on obtient $c_1=0$, $c_2=1/2$, $a_{21}=1/2$, $b_1=0$, et $b_2=1$. On a donc
+\begin{equation*}
+y_{n+1}=y_n+\delta t F\left(y_n+\frac{\delta t}{2}F(y_n,t_n),t_n+\frac{\delta t}{2}\right).
+\end{equation*}
+Cette méthode s'appelle également méthode de point du milieu (elle est proche de la méthode du point du milieu pour les intégrales).
+
+\section*{Équation de Lorenz}
+
+L'équation de Lorenz est un système d'équations différentielles ordinaires agissant sur une variable
+vectorielle à trois composantes $y(t)=(y_x(t),y_y(t),y_z(t))$
+\begin{align*}
+ \frac{\dd y_x}{\dd t}&=\sigma(y_y-y_x),\\
+ \frac{\dd y_y}{\dd t}&=y_x(\rho-y_z)-y_y,\\
+ \frac{\dd y_z}{\dd t}&=y_yy_x-\beta y_z,
+\end{align*}
+où les constantes sont données par $\beta=8/3$, $\sigma=10$, et $\rho=28$.
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{../figs/1024px-Lorenz_system_r28_s10_b2-6666.png}
+\caption{Solution dans le plan $x-z$ de l'équation de Lorenz pour une solution initiale donnée (image tirée de Wikipedia).}\label{fig_lorenz}
+\end{center}
+\end{figure}
+La solution de l'équation de Lorenz est dite \textit{chaotique}. Cela signifie que
+si nous considérons deux conditions initiales $y^1$ et $y^2$ qui sont très proches. 
+Elles s'éloigneront l'une de l'autre exponentiellement vite au cours du temps.
+
+Par ailleurs, comme on peut le constater sur la figure \ref{fig_lorenz} la solution a une structure de ``papillon''. 
+Cette structure est retrouvée indépendemment de la condition initiale (on aura toujours cette forme de solution)
+bien que la position à un temps donné ne soit pas la même pour deux conditions initiales différentes).
+
+\subsection*{Calcul d'erreur}
+
+L'erreur globale comise lors de l'intégration numérique d'une équation différentielle se calcule 
+de la façon suivante
+\begin{equation}
+ E=\frac{1}{N}\sqrt{\sum_{i=0}^{N-1} E_i^2},
+\end{equation}
+où $N$ est le nombre de points dans l'interval d'intégration, 
+et $E_i=y(t_n)-y_{n}$ est la différence entre la solution exacte au temps $t_n$ et la solution numérique 
+de l'équation différentielle au temps $t_n$.
+
+
+\section*{Travail à effectuer}
+
+\subsection*{Écriture des solveurs}
+
+Écrire un solveur pour la méthode d'Euler explicite (méthode de Runge--Kutta à
+un étage) et un pour la méthode de Runge--Kutta à deux étages. Veillez à ce que ces solveurs 
+marchent avec des grandeurs $y$ scalaires ou $n$-dimensionnelles. 
+
+\subsection*{Validation des solveurs}
+Valider ces solveurs sur une équation différentielle ``simple'', telle que
+\begin{equation*}
+ \frac{\dd y}{\dd t}=\nu\left(1-\frac{y}{C}\right)y,\quad y(t_0)=y_0.
+\end{equation*}
+dont la solution est donnée par 
+\begin{equation*}
+ y(t)=\frac{C}{1+\frac{C-y_0}{y_0}e^{-\nu t}}.
+\end{equation*}
+Choisir par exemple les paramètres suivants $y_0=10$ ($t_0=0$), $C=50$ et $\nu=1$. Au passage, cette équation 
+peut représenter la croissance/décroissance en présence d'une limite maximale de population de $C$ individus.
+
+\subsection*{Étude de convergence des solveurs}
+
+Pour chacun des solveurs, étudier l'erreur en fonction du temps $t$ entre $t_0=0$ et $t_{max}=10$ pour $\delta t=0.1$. 
+\begin{enumerate}
+\item Faire un graphique 
+pour la solution $y(t)$ obtenue avec les deux solveurs et la solution analytique en fonction du temps. 
+\item Effectuer un second graphique avec de l'erreur en fonction du temps (l'erreur est la différence entre la valeur de la solution approximée par les solveurs et la solution analytique).
+\item Finalement pour ces mêmes paramètres faire varier $\delta t$ ($\delta t=0.1,0.05, 0.025, 0.0125$). Pour chacune de ces valeurs de $\delta t$ calculer l'erreur à $t=t_{max}$
+et faire un graphique de l'erreur obtenue en fonction de $\delta t$ pour chacun des deux solveurs (les deux résultats sur le même graphique).
+Ce graphique doit être fait en échelle log-log. Que pouvez-vous dire sur l'ordre de l'erreur?
+\end{enumerate}
+
+\subsection*{Équation de Lorenz}
+
+Appliquer les deux solveurs à l'équation de Lorenz et reproduire une figure approchant celle de l'énoncé (faire un graphique éventuellement tri-dimmensionnel de la trajectoire obtenue
+pour une condition initiale quelconque).
+
+\subsection*{Orbite périodiques}
+
+L’attracteur de Lorenz contient des trajectoires périodiques sur lesquelles
+le système revient au point initial après un certain temps. Ces trajectoires sont dites
+``instables'', comme toute autre trajectoire de ce système : il suffit qu’on dévie un
+tout petit peu de la trajectoire, et on finit par s’en éloigner complètement. Le
+point suivant se trouve (dans la limite de la précision numérique fournie) sur
+une trajectoire périodique de période $t_{max}=1.5586522$:
+$y_0=(-0.9101673912,-1.922121396,18.18952097)$.
+Prendre ce point comme valeur initiale, et faites évoluer le système avec un pas de
+temps donné (par exemple $\delta t = 0.001$). Combien de temps arrivez-vous à rester
+sur l’orbite périodique avec chacun des solveurs?
+Tracez les deux trajectoires sur une figure 3D pour les comparer.
+
+\section*{Remarques}
+
+Le travail peut-être effectué en groupe de deux ou seul
+(n'oubliez pas de mentionner les deux noms sur le rapport et dans le code si le travail est fait à deux). 
+Je dois pouvoir exécuter le code
+afin de pouvoir reproduire les résultats présentés dans le rapport. Je dois aussi pouvoir 
+définir ma propre fonction à intégrer de façon simple.
+Le rapport (en PDF!) et le code doivent être déposés sur cyberlearn. De préférence déposez une archive avec le code et
+le pdf tel quel sur cyberlearn.
+
+La note sera une combinaison entre le code rendu et le rapport (moitié/moitié). 
+
+
+
+\end{document}
