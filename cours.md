@@ -1,4 +1,4 @@
-https://manjaro.org/---
+---
 author:
 - Orestis Malaspinas
 title: Résumé du cours de Mathématiques
