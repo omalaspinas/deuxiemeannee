@@ -1936,6 +1936,8 @@ vérifier la commutativité $$\begin{aligned}
 (a,b)\cdot(c,d)&=(a\cdot c-b\cdot d,a\cdot d+b\cdot c)\nonumber\\
 &=(c\cdot a-d\cdot b,d\cdot a+c\cdot b)=(c,d)\cdot (a,b).\end{aligned}$$
 
+Exercice +.#
+
 Vérifier l’associativité du produit sur notre ensemble ${\mathbb{R}}^2$.
 
 Regardons à présent ce qu’il se passe si on étudie les ensemble de
@@ -2070,14 +2072,26 @@ parties réelle et imaginaires d’un nombre complexe à l’aide de la
 notation du complexe conjugué
 $${\mathrm{Re}}(z)=\frac{1}{2}(z+{\bar{z}}),\quad {\mathrm{Im}}(z)=\frac{1}{2i}(z-{\bar{z}}).$$
 
+---
+
+Exercice +.#
+
 Démontrer les trois relations précédentes.
+
+---
 
 Rajoutons encore la relation entre $e^{i\theta}$ et les $\cos,\sin$.
 $$\begin{aligned}
  \cos(\theta)=\frac{e^{i\theta}+e^{-i\theta}}{2},\\
  \sin(\theta)=\frac{e^{i\theta}-e^{-i\theta}}{2i}.\end{aligned}$$
 
+---
+
+Exercice +.#
+
 Démontrer ces deux relations.
+
+---
 
 ### Espaces vectoriels
 
@@ -2086,6 +2100,8 @@ vectoriels et certaines notions d’algèbre linéaire. Pour ce faire nous
 allons considérer un ensemble $V$, sous ensemble d’un espace plus grand
 $E$ (muni d’une addition et d’une multiplication). Dans notre cas $E$
 sera ${\mathbb{R}}$ ou ${\mathbb{C}}$ principalement.
+
+Définition +.#
 
 On appelle espace vectoriel sur $E$, un ensemble $V$, dont les éléments
 appelés vecteur et notés $v$, sont sont munis des opérations opérations
@@ -2115,6 +2131,9 @@ propriétés suivantes
 
     3.  La multiplication par un scalaire admet un élément neutre, noté
         $1$, pour la multiplication à gauche $$1 \cdot v=v.$$
+
+
+Exemple (Espaces vectoriels) +.#
 
 1.  L’espace nul, $v=0$.
 
@@ -2188,6 +2207,10 @@ Cette écriture en fonction de vecteurs de base, permet de faire
 facilement les additions de vecteurs
 $$w=u+v=u_1\cdot e_1+u_2\cdot e_2+v_1\cdot e_1+v_2\cdot e_2=(u_1+v_1)\cdot e_1+(u_2+v_2)\cdot e_2.$$
 
+---
+
+Illustration  (Exemples de bases d'espaces vectoriels) +.#
+
 1.  Pour l’espace des fonctions polynomiales $f(x)=\sum_{i=0}^Na_ix^i$
     les fonction $e_i=x^i$ forment une base.
 
@@ -2195,13 +2218,19 @@ $$w=u+v=u_1\cdot e_1+u_2\cdot e_2+v_1\cdot e_1+v_2\cdot e_2=(u_1+v_1)\cdot e_1+(
     $\sin$ et $\cos$ forment une base (voir plus de détails dans ce qui
     suit).
 
+---
+
 Plus formellement nous allons introduire un certain nombre de concepts
-mathémqtiques pour définir une base. Considérons toujours $V$ un espace
+mathématiques pour définir une base. Considérons toujours $V$ un espace
 vectoriel sur $E$.
+
+Définition (Famille libre) +.#
 
 Soient $\{\alpha_i\}_{i=1}^n\in E$. On dit qu’un ensemble de vecteurs
 $\{v_i\}_{i=1}^n\in V$ est une famille libre si
 $$\sum_{i=1}^n \alpha_iv_i=0 \Rightarrow \alpha_i=0,\ \forall i.$$
+
+Exemple (Famille libre) +.#
 
 1.  $\{e_1\}$ est une famille libre de ${\mathbb{R}}^2$.
 
@@ -2216,11 +2245,15 @@ $$\sum_{i=1}^n \alpha_iv_i=0 \Rightarrow \alpha_i=0,\ \forall i.$$
     relie les deux. La relation est non-linéaire
     $\sin(x)=\sqrt{1-\cos^2(x)}$.
 
+Définition (Famille génératrice) +.#
+
 On dit qu’un ensemble de vecteurs $\{e_i\}_{i=1}^n\in V$ est une famille
 génératrice si
 $$\forall\ v\in V,\quad \exists \{\alpha_i\}_{i=1}^n\in E,\quad \mbox{t.q.}\quad v=\sum_{i=1}^n\alpha_i\cdot e_i.$$
 En d’autres termes, tout $v\in V$ peut s’exprimer comme une combinaison
 linéaire des vecteur $e_i$.
+
+Illustration (Familles génératrices) +.#
 
 1.  $\{e_1\}$ n’est une famille génératrice de ${\mathbb{R}}^2$. On ne
     peut pas représenter tous les vecteurs de la forme $v=(0,v_2)$,
@@ -2231,6 +2264,8 @@ linéaire des vecteur $e_i$.
 3.  $\{e_1,e_2,v\}$, avec $v=(1,1)$ est une famille génératrice de
     ${\mathbb{R}}^2$.
 
+Définition (Base) +.#
+
 Un ensemble de vecteurs $B=\{e_i\}_{i=1}^n$ forme une base si c’est une
 famille génératrice et une famille libre. En d’autres termes cela
 signifie qu’un vecteur $v\in V$ peut se représenter comme une
@@ -2238,6 +2273,8 @@ combinaison linéaire de $\{e_i\}_{i=1}^n$ et que cette représentation
 est unique
 $$\forall v\in V, \quad !\exists \{\alpha_i\}_{i=1}^n\in E,\quad t.q.\quad v=\sum_{i=1}^n\alpha_i v_i.$$
 Les $\alpha_i$ sont appelé les coordonnées de $v$ dans la base $B$.
+
+Illustration (Base de $\real ^2$) +.#
 
 1.  $\{e_1,e_2\}$ est une base de ${\mathbb{R}}^2$.
 
