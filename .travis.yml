@@ -26,6 +26,7 @@ deploy:
   api_key:
     secure: gG6EWLjurw00mPhn8ohckvK9HEvv+pkiL/7lHDA8u+vURy0feUWz8sR4okczWgMSx9/HHHFmDjOaCpIVU3HGsF0BrsaodpCwtB5tfJZEIHitrN99udEiSAlTAy4reqaar2omBlTql1Xu4gnLDv7UULTgz5/rR0b3KdXGTQJCAkNpvlE/Hl4VCJBwXxJn5Lt/84xWvncuF1Aa8tmpbgVnyy1m7qu/mnJrV+MKHS2s8AQWDshU/y0duI6NLXXTKZJXoXepj10iGd/DDV4VF96+Pckh2+HQWMwfWfGvmcEG7nUt+1TCIAg+HhM5OhrvReCIvLUKu3uXHZfLR8XKU2tGNdSwQP9hA0URju4bkuNvh04AHGFwsDSsE5WOZJiHh2cE1r4bjKSFS5eYHu9PJgDbEmW00WmNiYwTuhEDFshBp9kUKsWrYaz7C6SMx+zidw55lCSMC3Nr4etnhtrvJAylrUtxp15bukO2BJK6wzfAFnp9uoDXAhJrmDSPfSW3hzdrQZPQ4Vf9uJMFpRXMb1Sjrmr4lVx54f4GaWMisJ9vtxgkSaLNtY57PYe6eAOTHtL1xVxwnndyKBIWlPybF5BG+Gl2+TVDw1tUjxv/tG+P204hiVYZGjE9Grp/UtxkdGqEGpDVRLjp4iAhoXccdsEvvjZrvfXw40QHPiyeEpPOPh4=
   file: cours.pdf
+  skip_cleanup: true
   on:
     repo: mathintro/deuxiemeannee
     tags: true
