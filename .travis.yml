@@ -1,19 +1,31 @@
-sudo: required
-dist: trusty
-before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
-  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-french
+sudo: false
+os: linux
+language: haskell
+addons:
+  apt:
+    packages:
+    - texlive-latex-recommended lmodern texlive-fonts-recommended texlive-latex-extra
+      texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-french
+install:
+- wget https://github.com/jgm/pandoc/releases/download/2.0.6/pandoc-2.0.6-1-amd64.deb
+- sudo dpkg -i pandoc-2.0.6-1-amd64.deb
+- wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.0.1/linux-ghc80-pandoc20.tar.gz
+- mkdir pandoc-crossref
+- cd pandoc-crossref
+- mv ../linux-ghc80-pandoc20.tar.gz .
+- tar xzvf linux-ghc80-pandoc20.tar.gz
+- cd ..
+- export PATH=`pwd`/pandoc-crossref:$PATH
+- sudo pip install -U pip panflute pandocfilters  pandoc-numbering
+cache:
+- pip
 script:
-- mkdir _build
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cours.tex
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cours.tex
+- make
 deploy:
   provider: releases
   api_key:
-    secure: da7A+RCbd4pfTKTYqqaEbTHgw6zs7GQpiCCT/ta/gRmGsSXQpcMJUHT1y5LJP7RvP5JcomcMsaWmQDagMVrO9AvSgUFqBP9Fsema4WzHEcGpGkj2TGLTc9MNtchTHvactq5hFtXJzOc0ObKxavX8oSOibiN8OVf4VfToHt2ERhO40jmzqVgWMdB44mhg299/Ma0dIH06+3d6VCtAI0VzGmxP5bguSwCmiuYTfToGjQprbAf1FM+8Uc1GasBqj8Y0doyjEnUUtvZPPRmzoemWtxlOix1LGzfxC4YJFVwGo/6kSNa7EjpZ9Z40iL9GIqpIXh3jpaLPUYTcUJnvgbYGquTmwyRxL3q7bWmkldqJD3D3wXJO+GSYvC8fAevvyMNoV8J+vaK34TAiQ6DIkNqIjksJ+Gqg0ts2hAWgrOAuhDaBasfUoiCFcFT4gC9hseOQ9X0lpahmKDDVmbw+k8j0SkNPcitKtf6oPjcGQQecy4cnGb2eIAP2tRPY8Q97ecDg4MKvxCf+LZN/npC0xf4LYdKGedVMh8a7orsZDqf7uI1xD1RKVz5qOJapFEo/9duwTTGBZ4KxFSwssJrr5YGvZAC8CkTJVwvleDa+vWDcH+bBwOQqIBXOh3/nDkx6MDQoiItzb2V+N0qTAiTb9d31JtzONsg+cjEnuwW+zdRzfH8=
-  file:
-  - _build/cours.pdf
-  skip_cleanup: true
+    secure: gG6EWLjurw00mPhn8ohckvK9HEvv+pkiL/7lHDA8u+vURy0feUWz8sR4okczWgMSx9/HHHFmDjOaCpIVU3HGsF0BrsaodpCwtB5tfJZEIHitrN99udEiSAlTAy4reqaar2omBlTql1Xu4gnLDv7UULTgz5/rR0b3KdXGTQJCAkNpvlE/Hl4VCJBwXxJn5Lt/84xWvncuF1Aa8tmpbgVnyy1m7qu/mnJrV+MKHS2s8AQWDshU/y0duI6NLXXTKZJXoXepj10iGd/DDV4VF96+Pckh2+HQWMwfWfGvmcEG7nUt+1TCIAg+HhM5OhrvReCIvLUKu3uXHZfLR8XKU2tGNdSwQP9hA0URju4bkuNvh04AHGFwsDSsE5WOZJiHh2cE1r4bjKSFS5eYHu9PJgDbEmW00WmNiYwTuhEDFshBp9kUKsWrYaz7C6SMx+zidw55lCSMC3Nr4etnhtrvJAylrUtxp15bukO2BJK6wzfAFnp9uoDXAhJrmDSPfSW3hzdrQZPQ4Vf9uJMFpRXMb1Sjrmr4lVx54f4GaWMisJ9vtxgkSaLNtY57PYe6eAOTHtL1xVxwnndyKBIWlPybF5BG+Gl2+TVDw1tUjxv/tG+P204hiVYZGjE9Grp/UtxkdGqEGpDVRLjp4iAhoXccdsEvvjZrvfXw40QHPiyeEpPOPh4=
+  file: cours.pdf
   on:
     repo: mathintro/deuxiemeannee
     tags: true
