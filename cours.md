@@ -1,8 +1,8 @@
 ---
 author:
 - Orestis Malaspinas
-title: Résumé du cours de Mathématiques
-autoSectionLabels: true
+title: Résumé du cours de mathématiques
+autoSectionLabels: false
 autoEqnLabels: true
 eqnPrefix: 
   - "éq."
@@ -26,8 +26,11 @@ Fonctions
 ---------
 
 Une fonction $f$ de façon générale est un objet qui prend un (ou
-plusieurs) paramètres et qui lui (leur) associent un (ou plusieurs)
-résultats. $$\mbox{résultat}=f(\mbox{paramètres}).$$
+plusieurs) paramètres et qui lui (leur) associe (associent) un unique résultat. $$\mbox{résultat}=f(\mbox{paramètres}).$$
+
+---
+
+Exemple (Fonctions, généralités) +.#
 
 1.  La tension $U$ est une fonction de la résistance $R$ et du courant
     $I$ $$\begin{aligned}
@@ -39,12 +42,18 @@ résultats. $$\mbox{résultat}=f(\mbox{paramètres}).$$
     entier $x$ rend le prochain entier qui commence par la même lettre
     que $x$. $$f(2)=10,\ f(3)=13,\ ...$$
 
+---
+
 Dans ce cours nous allons nous intéresser à des fonctions à un seul
 paramètre (aussi appelé variable). Si on note la variable $x$ et le
 résultat $y$, de façon générale on peut écrire $$y = f(x).$$ Si par
 ailleurs on a une fonction $g$ et une fonction $f$, on peut effectuer
 des compositions de fonction, qu’on note $g\circ f$, ou encore
 $$y=g(f(x)).$$
+
+---
+
+Exemple (Fonctions) +.#
 
 1.  Soit $f(x)=2\cdot x$ et $g(x)=\sqrt{x}$, alors la composition des
     deux fonctions $$f(g(x))=f(\sqrt{x})=2\sqrt{x}.$$
@@ -53,9 +62,16 @@ $$y=g(f(x)).$$
     avec trois fonctions $f(x)=2x^2+3$, $g(x)=\cos(2\cdot x)$, et
     $h(x)=1/x$ $$f(g(h(x)))=f(g(1/x))=f(\cos(2/x))=2\cos^2(2/x)+3.$$
 
+---
+
 Pour certaines fonctions, notons les $f(x)$, on peut également définir
 une fonction inverse que l’on note $f^{-1}(x)$ dont la composition donne
 la variable de départ $$f(f^{-1}(x))=x.$$
+
+
+---
+
+Exemple (Fonction inverse) +.#
 
 1.  Soient $f(x)=2\cdot x$ et $f^{-1}(x)=x/2$, alors la composition des
     deux fonctions $$f(f^{-1}(x))=f(x/2)=2x/2=x.$$
@@ -65,11 +81,19 @@ la variable de départ $$f(f^{-1}(x))=x.$$
     $\sqrt{x}$ est l’inverse de $x^2$ uniquement pour les réels
     positifs. $f(x)=x^2$ n’a pas d’inverse pour les $x$ négatifs.
 
+---
+
 Domaine de définition
 ---------------------
 
+Définition (Domaine de définition) +.# 
+
 Le domaine de définition, noté $D\subseteq{\mathbb{R}}$, d’une fonction
 $f$, est l’ensemble de valeurs où $f$ admet une image.
+
+---
+
+Exemple (Domaine de définition) +.#
 
 1.  Le domaine de définition de $f(x)=x$ est $D={\mathbb{R}}$.
 
@@ -77,6 +101,8 @@ $f$, est l’ensemble de valeurs où $f$ admet une image.
 
 3.  Le domaine de définition de $f(x)=\sqrt{x+1}/(x-10)$ est
     $D=[-1;10[\cup]10;\infty[$.
+
+---
 
 Limites
 -------
@@ -86,22 +112,39 @@ Soit $f$ une fonction et $D\subseteq{\mathbb{R}}$ non-vide et non réduit
 
 ### Limite
 
+Définition (Limite) +.# 
+
 Pour $f$ définie en $D$, sauf peut-être en $a$, on dit que $b$ est la
 limite de $x$ en $a$ si $\lim\limits_{x\rightarrow a}f(x)=b$.
 C’est-à-dire si on a un voisinage de $b$ qui contient toutes la valeurs
 de $f(x)$ pour $x$ proche de $a$.
 
-Si $f$ est définie en $a$ alors on a
-$\lim\limits_{x\rightarrow a}=f(a)$.
+Remarque +.# 
 
-1.  Si $f(x)=x$, alors $\lim\limits_{x\rightarrow 0}f(x)=0$.
+Si $f$ est définie en $a$ alors on a $\lim\limits_{x\rightarrow a}=f(a)$.
+
+---
+
+Exemple (Limite) +.#
+
+Si $f(x)=x$, alors $\lim\limits_{x\rightarrow 0}f(x)=0$.
+
+---
+
+Définition (Limite, asymptote) +.#
 
 Pour $f$ définie en $D$, sauf peut-être en $a$, et $c$ un réel positif.
 On dit que la limite de $f(x)$ en $a$ tend vers l’infini si l’intervalle
 $[c;\infty[$ contient toutes les valeurs de $f(x)$ pour $x$ proche de
 $a$.
 
-1.  Si $f(x)=1/x^2$, alors $\lim\limits_{x\rightarrow 0}f(x)=\infty$.
+---
+
+Exemple (Limite, asymptote) +.#
+
+Si $f(x)=1/x^2$, alors $\lim\limits_{x\rightarrow 0}f(x)=\infty$.
+
+---
 
 ### Limite à gauche, limite à droite
 
@@ -109,17 +152,19 @@ Pour certaines fonctions, il est possible que le comportement de
 celles-ci soit différent selon qu’on approche par la gauche ou par la
 droite (i.e. $f(x)=1/x$).
 
-On note la limite à droite $\lim\limits{x\rightarrow a^+} f(x)$ ou
+On note la limite à droite $\lim\limits_{x\rightarrow a^+} f(x)$ ou
 $\lim\limits_{x\rightarrow a,x>a} f(x)$ et
-$\lim\limits{x\rightarrow a^-} f(x)$ ou
+$\lim\limits_{x\rightarrow a^-} f(x)$ ou
 $\lim\limits_{x\rightarrow a,x<a} f(x)$ la limite à gauche de la
 fonction $f$ en $a$.
 
 Si la fonction $f$ admet une limite en $a$, alors les deux limites
 doivent être égales.
 
-1.  Si $f(x)=1/x$, alors $\lim\limits_{x\rightarrow 0^+} f(x)=\infty$ et
-    $\lim\limits_{x\rightarrow 0^-} f(x)=-\infty$.
+Exemple (Limite à gauche/droite) +.#
+
+Si $f(x)=1/x$, alors $\lim\limits_{x\rightarrow 0^+} f(x)=\infty$ et
+$\lim\limits_{x\rightarrow 0^-} f(x)=-\infty$.
 
 ### Asymptotes
 
@@ -164,9 +209,13 @@ $$\lim_{n\rightarrow\infty}\frac{n}{\log(n)}=\frac{A}{\log(10)}\cdot\lim_{n\righ
 Continuité
 ----------
 
+Définition (Continuité) +.#
+
 Soit $f$ une fonction définie sur un intervalle ouvert $D$ contenant
 $a$. On dit que $f$ est continue en $a$ si et seulement si
 $\lim\limits_{x\rightarrow a}f(x)=f(a)$.
+
+Propriétés (Fonctions continues) +.#
 
 Soient $f$ et $g$ deux fonctions continues en $a$ alors et $b$ un réel:
 
@@ -178,17 +227,23 @@ Soient $f$ et $g$ deux fonctions continues en $a$ alors et $b$ un réel:
 
 4.  $h=g\circ f$ est continue en $a$.
 
+Définition (Continuité sur un intervalle) +.#
+
 Une fonction $f$ est dite continue dans un intervalle $D=]a;b[$ si et
 seulement si elle est continue en tout point de $D$. De plus, elle est
 continue sur $D=[a,b]$ si elle est continue sur $]a;b[$ et continue à
 droite en $a$ et à gauche en $b$.
 
-\[Théorème des valeurs intermédiaires\] Soit $f$ une fonction continue
+Théorème (Valeurs intermédiaires) +.#
+
+Soit $f$ une fonction continue
 sur $D$, et $a,b$ deux points contenus dans $D$ tels que $a<b$ et
 $f(a)<f(b)$, alors $$\forall y\in [f(a);f(b)],\ \exists\ c|f(c)=y.$$
 
 Dérivées
 --------
+
+Définition (Dérivée en un point) +.#
 
 Soit $f$ une fonction définie sur $D$ et $a\in D$. On dit que $f$ est
 dérivable en $a$ s’il existe un $b$ (appelé la dérivée de $f$ en $a$)
@@ -196,11 +251,17 @@ tel que $$\begin{aligned}
 &\lim\limits_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}=b,\hbox{ ou}\\
 &\lim\limits_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}=b.\end{aligned}$$
 
+Définition (Dérivée sur un intervalle) +.#
+
 Si $f$ est dérivable en tout point de $D=]a;b[$, alors on définit $f'$
 la fonction dérivée de $f$ dans l’intervalle $D$ qui associe en tout
 point $x$ de $D$ la valeur dérivée de $f$.
 
+Propriété +.# 
+
 Si $f$ est dérivable en $a$ alors $f$ est continue en $a$.
+
+Propriétés +.# 
 
 Soient $f$ et $g$ deux fonctions dérivables (dont les dérivées sont $f'$
 et $g'$), et $a\in{\mathbb{R}}$, alors
@@ -231,10 +292,14 @@ $C\in {\mathbb{R}}$, nous avons
 
 6.  $f(x)=\cos(x)$, $f'(x)=-\sin(x$).
 
+Définition (Dérivée seconde) +.#
+
 Si $f'$ est dérivable sur $D$, alors sa dérivée, notée $f''$, est
 appelée la dérivée seconde de $f$.
 
 ### Variation des fonctions
+
+Propriétés (Croissance/décroissance) +.# 
 
 Soit $f'$ la fonction dérivée de $f$ sur $D$
 
@@ -244,9 +309,13 @@ Soit $f'$ la fonction dérivée de $f$ sur $D$
 
 3.  Si $f'=0$ sur $D$, alors $f$ est constante sur $D$.
 
+Définition (Maximum/minimum local) +.# 
+
 Une fonction admet un maximum local (respectivement minimum local) sur
 un intervalle $D=]a;b[$ s’il existe un $x_0$ tel que $f(x_0)\geq f(x)$
 (respectivement $f(x_0)\leq f(x)$) pour tout $x\in D$.
+
+Propriété (Maximum/minimum) +.# 
 
 Soit $f$ une fonction dérivable sur $D=]a;b[$ et $x_0\in D$. Si $f$
 admet un maximum ou un minimum en $x_0$ alors $f'(x_0)=0$. De plus si
@@ -315,21 +384,31 @@ l’intervalle $[a,b]$ de deux façon:
 L’aire de sous la fonction $f(x)$ est donnée par la limite pour
 $n\rightarrow\infty$ de $A^i$ ou $A^s$ (si elle existe).
 
+Remarque +.#
+
 1.  Ces sommes peuvent être positives ou négatives en fonction du signe
     de $f$.
 
 2.  Une implantation informatique est immédiate.
 
-Une fonction est dite intégrable au sens de Riemann si
-$\lim\limits_{n\rightarrow\infty}A^i(n)=\lim\limits_{n\rightarrow\infty}A^s(n)=\int_a^b f(x){\mathrm{d}}x$.
+Définition (Intégrabilité au sens de Riemann) +.#
 
-Dans la formule $\int_a^b f(x){\mathrm{d}}x$ Ici $x$ est appelée
+Une fonction est dite intégrable au sens de Riemann si
+$$\lim\limits_{n\rightarrow\infty}A^i(n)=\lim\limits_{n\rightarrow\infty}A^s(n)=\int_a^b f(x){\mathrm{d}}x.$$
+
+Dans la formule 
+$$\int_a^b f(x){\mathrm{d}}x,$$ 
+$x$ est appelée
 variable d’intégration, $a$ et $b$ sont les bornes d’intégration. Pour
 des raisons de consistance dans les notations la variable d’intégration
 ne peut être désignée avec le même symbole qu’une des bornes
 d’intégration.
 
-Intégration de $f(x)=x$ dans intervalle $[0,1]$.
+Exemple (Intégration de Riemann) +.#
+
+Intégrer de $f(x)=x$ dans intervalle $[0,1]$.
+
+Solution (Intégration de Riemann) +.#
 
 Il est trivial de calculer que cette aire vaut $1/2$ (c’est l’aire d’un
 triangle rectangle de côté 1). Néanmoins, évaluons également cette aire
@@ -378,6 +457,8 @@ Si maintenant nous essayons de généraliser le calcul de l’intégrale
 d’une fonction, il s’avère que le calcul d’une intégrale est l’inverse
 du calcul d’une dérivée.
 
+Définition (Primitive) +.#
+
 Soit $f$ une fonction. On dit que $F$ est la primitive de $f$ sur
 l’intervalle $D\subseteq{\mathbb{R}}$ si $F'(x)=f(x)$ $\forall x\in D$.
 
@@ -387,12 +468,24 @@ primitive de $f$. On dit donc que la primitive de $f$ est définie à une
 constante additive près. En effet, si $F'=f$ on a
 $$G'=F'+\underbrace{C'}_{=0}=F'=f.$$
 
+Théorème (Unicité) +.#
+
 S’il existe $a\in D$ et $b\in{\mathbb{R}}$ alors il existe une unique
 primitive $F$ telle que $F(a)=b$.
+
+---
+
+Exemple (Unicité) +.#
 
 Soit $f(x)=x$, alors l’ensemble de primitives correspondantes est
 $G=x^2/2+C$. Si nous cherchons la primitive telle que $G(0)=0$, il vient
 que $C=0$ et donc la primitive est unique et vaut $F(x)=x^2/2$.
+
+---
+
+---
+
+Exercices (Primitives) +.#
 
 Calculez les primitives suivantes (*Indication: Il s’agit de trouver les
 fonctions $F(x)$ telles que $F'(x)=f(x)$*):
@@ -408,6 +501,8 @@ fonctions $F(x)$ telles que $F'(x)=f(x)$*):
 5.  $F(x)=\int \exp(x){\mathrm{d}}x$.
 
 6.  $F(x)=\int \sin(x){\mathrm{d}}x$.
+
+---
 
 Maintenant que vous avez calculé toutes ces primitives de base, nous
 pouvons récapituler des formules qui seront importantes pour la suite:
