@@ -2875,6 +2875,10 @@ caractères de la population. Dans le cas continu le nombre d’individus
 d’un caractère correspondrait à une subdivision en $k$ parties de
 l’ensemble des valeurs possibles pour le dit caractère.
 
+---
+
+Illustration +.#
+
 1.  Cas discret: On étudie la distribution de salaires annuels dans une
     entreprise. Les salaires possibles sont $40'000$, $50'000$, $60'000$
     et $1'000'000$ de CHF.
@@ -2899,6 +2903,8 @@ l’ensemble des valeurs possibles pour le dit caractère.
     -   8 exécutions ont pris entre 52 et 53 secondes.
 
     -   23 exécutions ont pris entre 53 et 54 secondes.
+
+---
 
 Pour représenter de façon un peu plus parlante ces valeurs, deux
 méthodes principales existent: le tableau ou le graphique. Pour
@@ -2950,7 +2956,9 @@ La population totale, $n$, est donnée par $$n=\sum_{i=0}^{k-1}n_i.$$ On
 peut donc définir la fréquence d’un caractère $i$, $f_i$ comme
 $$f_i=\frac{n_i}{n}.$$
 
-[Fréquence]{}
+---
+
+Exemple (Fréqunces) +.#
 
 Les tableaux de fréquence des deux exemples précédents sont donnés par
 
@@ -2978,16 +2986,22 @@ Les tableaux de fréquence des deux exemples précédents sont donnés par
 
       : Tableau des temps d'exécution et la fréquence des temps d'exécution. {#tbl:exec_freq}
 
+---
+
 La fréquence possède un certain nombre de propriétés que nous
 retrouverons dans les sections suivantes qui sont assez intuitives
 
-[Propriétés de la fréquence]{}
+---
+
+Propriété (Propriétés de la fréquence) +.#
 
 1.  Les fréquences sont toujours dans l’intervalle $[0,1]$
     $$0\leq f_i\leq 1.$$
 
 2.  La somme de toutes les fréquences donne toujours $1$
     $$\sum_{i=0}^{k-1} f_i = 1.$$
+
+---
 
 Relié avec la propriété $2$ ci-dessus, il peut également être
 intéressant d’obtenir la *fréquence cumulée*, notée $F(x)$, d’un
@@ -3014,7 +3028,7 @@ tableaux @tbl:salaires et @tbl:exec (voir le
 
   : Tableau des temps d'exécution et la fréquence et fréquences cumulées des temps d'exécution. {#tbl:exec_freqcum}
 
-[Fréquence cumulée]{}
+Exercice (Fréquence cumulée) +.#
 
 1.  Tracer les graphes de la fréquence cumulée pour les deux exemples
     que nous avons vus.
@@ -3036,16 +3050,26 @@ formule suivante $$\bar{x}=\frac{1}{n}\sum_{i=0}^{k-1}x_i\cdot n_i.$$ La
 moyenne peut également être calculée via les fréquences
 $$\bar{x}=\sum_{i=0}^{k-1}f_i\cdot x_i.$$
 
-[Propriétés de la moyenne]{}
+---
+
+Exercice (Propriétés de la moyenne) +.#
 
 1.  Démontrer la relation précédente.
 
 2.  Démontrer que la moyenne des écart $x_i-\bar{x}$ est nulle.
 
-[Moyenne]{}
+---
+
+---
+
+Illustration (Moyenne) +.#
 
 Pour l’exemple des salaires la moyenne est donnée par
 $$\bar{x}_{\textrm{salaire}}=\frac{35\cdot40000+20\cdot50000+5\cdot60000+1\cdot1000000}{61}=60656.$$
+
+
+---
+
 
 On remarque ici que la moyenne des salaires donne une impression erronée
 de la situation car elle est très sensible aux valeurs extrême de la
@@ -3068,7 +3092,7 @@ le reste est telle que $x_i\geq\tilde{x}$.
 Pour l’exemple des salaires le salaire médian est de $40000 CHF$, ce qui
 reflète beaucoup mieux la distribution des salaire de notre population.
 
-[Moyenne, médiane]{}
+Exercice (Moyenne, médiane) +.#
 
 Calculer la moyenne et la médiane pour l’exemple du temps d’exécution
 (prendre la borne inférieure des intervalles pour chaque temps
@@ -3096,7 +3120,9 @@ $$v=\frac{1}{n}\sum_{i=0}^{k-1}n_i(x_i-\bar{x})^2.$$ Si on considère
 plutôt la racine carrée de la variance, on obtient *l’écart-type*
 $$s=\sqrt{v}.$$
 
-[Variance, écart-type]{}
+---
+
+Exercice (Variance, écart-type) +.#
 
 Démontrer les relations suivantes
 
@@ -3107,16 +3133,22 @@ Démontrer les relations suivantes
     suivante
     $$v=\frac{1}{n}\left(\sum_{i=0}^{k-1}n_ix_i^2\right)-\bar{x}^2.$$
 
+---
+
 Pour l’exemple du salaire on obtient pour la variance $$\begin{aligned}
  v&=\frac{1}{61}\left(35\cdot(40000-60656)^2+35\cdot(50000-60656)^2\right.\nonumber\\
  &\quad\quad\left.+35\cdot(60000-60656)^2+35\cdot(1000000-60656)^2\right)\nonumber\\
  &=1.4747\cdot 10^{10},\end{aligned}$$ et l’écart-type
 $$s=\sqrt{v}=121440.$$
 
-[Variance, écart-type]{}
+---
+
+Exercice (Variance, écart-type) +.#
 
 Calculer la variance et l’écart type à partir des valeurs du benchmark
 de l’application.
+
+---
 
 Encore une fois on constate que la valeur de l’écart-type des salaires
 est très dépendante de la valeur extrême de la distribution (1000000
@@ -3136,10 +3168,15 @@ $Q_3=0.75$, le nombre d’individus entre $0.25$ et $0.75$ est donné par
 $$\frac{Q_3-Q_1}{2}.$$ Cette valeurs est appelée l’intervalle
 semi-inter-quartile.
 
-[Semi-inter quartile]{}
+
+---
+
+Exercice (Semi-inter quartile) +.#
 
 Calculer les intervalles semi-inter-quartiles des exemples que nous
 avons vus plus tôt dans le cours.
+
+---
 
 Exemple du jeu de dé
 --------------------
@@ -3151,6 +3188,10 @@ effectué l’expérience.
 Avant de commencer à étudier les probabilités du lancer de dé, et les
 questions qu’on peut se poser, faisons d’abord un peu de vocabulaire qui
 sera utile pour la suite.
+
+---
+
+Définition +.#
 
 -   L’ensemble des résultats possibles du lancer de dé est
     $\Omega=\{1,2,3,4,5,6\}$ et cet ensemble est appelé l’*univers* du
@@ -3176,6 +3217,8 @@ sera utile pour la suite.
 
 -   Si $A$ est un événement, on note $p(A)$ la *probabilité* que $A$
     soit réalisé.
+
+---
 
 Le calcul des *probabilités* de réalisation de certains événement est
 reliée à la *fréquence* que nous avons introduit dans la section
@@ -3307,7 +3350,11 @@ $$p(A\cup B)=p(A)+p(B)-p(A\cap B)=p(A)+p(B)-p(\emptyset)=p(A)+p(B).$$
 Tous ces concepts que nous avons vus précédemments peuvent être vus
 comme la conséquences des trois axiomes des probabilités suivants
 
-[Axiomes des probabilités]{} Soit $\Omega$ un univers. La probabilité de
+---
+
+Définition (Axiomes des probabilités) +.#
+
+Soit $\Omega$ un univers. La probabilité de
 réaliser un événement $A\subseteq\Omega$ est une fonction $p(A)$ qui
 associe à tout événement de $A$ un nombre réel, qui satisfait les 3
 axiomes suivants
@@ -3321,7 +3368,13 @@ axiomes suivants
     évéenements incompatibles est égale à la somme de réalisation de
     chacun d’entre eux.
 
+---
+
 De ces axiomes découlent tout un tas de théorèmes
+
+---
+
+Théorème +.#
 
 Pour $A,B\subseteq\Omega$ et $\Omega$ un univers et $p$ une probabilité.
 
@@ -3342,6 +3395,8 @@ Pour $A,B\subseteq\Omega$ et $\Omega$ un univers et $p$ une probabilité.
 8.  Si $A\subseteq B$, alors $p(A)\leq p(B).$
 
 9.  $\forall A$, $0\leq p(A)\leq 1.$
+
+---
 
 ### Probabilités conditionnelles
 
@@ -3373,7 +3428,9 @@ fait être vue comme la définition de la probabilité conditionnelle. Si
 $p(B)\neq0$ alors on appelle probabilité conditionnelle le nombre
 $p(A|B)$, tel que $$p(A|B)=\frac{p(A\cap B)}{p(B)}.$$
 
-[Probabilités conditionnelles]{}
+---
+
+Exercice (Probabilités conditionnelles) +.#
 
 Sur une population de 1000 hommes qui naissent, 922 atteignent l’âge de
 50 ans et 665 l’âge de 70 ans.
@@ -3386,6 +3443,8 @@ Sur une population de 1000 hommes qui naissent, 922 atteignent l’âge de
 
 3.  Quelle est la probabilité qu’un homme de 50 ans soit encore en vie à
     70?
+
+---
 
 ### Evénements indépendants
 
@@ -3412,7 +3471,11 @@ du dé ne va en rien influencer le résultat du deuxieme tirage. Tout
 comme un tirage de l’euromillions d’une semaine ne va pas influencer le
 résultat de celui de la semaine suivante.
 
-[Evénements indépendants]{} On jette une pièce de monnaie deux fois de
+---
+
+Exercice (Evénements indépendants) +.# 
+
+On jette une pièce de monnaie deux fois de
 suite. Les résultats possible pour chaque jet sont: $P$, ou $F$.
 
 1.  Ecrivez l’univers des événements.
@@ -3423,6 +3486,8 @@ suite. Les résultats possible pour chaque jet sont: $P$, ou $F$.
 3.  Calculez la probabilité $p(A\cap B)$.
 
 4.  Est-ce que les jets sont indépendants?
+
+---
 
 ### Tirages multiples
 
@@ -3511,6 +3576,10 @@ $6$ ou $6$ si on a d’abord tiré $2$). La probabilité de tirer $2$ ou $6$
 est de $1/3$, puis la probabilité de tirer le nombre restant est de
 $1/6$. On a donc que $$p(A)=\frac{1}{3}\cdot \frac{1}{6}=\frac{1}{18}.$$
 
+---
+
+Exercice +.#
+
 1.  Calculer la probabilité d’obtenir $2$ comme la somme des deux
     nombres tirés par deux dés.
 
@@ -3529,6 +3598,8 @@ $1/6$. On a donc que $$p(A)=\frac{1}{3}\cdot \frac{1}{6}=\frac{1}{18}.$$
     exemple). Quel est le nombre de combinaisons possibles si on tire
     $n$ fois? Pouvez-vous généraliser pour un tirage aléatoire offrant
     $m$ possibilités qu’on tire $n$ fois?
+
+---
 
 ### La distribution multinomiale
 
@@ -3577,6 +3648,10 @@ De façon complètement générale ce genre de probabilité se calcule grâce
 à la *distribution multinomiale*
 $$p([n_1,...,n_k])=\frac{n!}{n_1!\cdots n_k!}p_1^{n_1}\cdots p_k^{n_k}.$$
 
+---
+
+Exercice +.#
+
 On lance un dé parfait 10 fois. Quelle est la probabilité d’obtenir:
 
 1.  10 fois 6?
@@ -3584,6 +3659,8 @@ On lance un dé parfait 10 fois. Quelle est la probabilité d’obtenir:
 2.  4 fois 3, 3 fois 2 et 3 fois 1?
 
 3.  2 fois 1, 2 fois 2, 2 fois 3, 1 fois 4, 1 fois 5, et 1 fois 6?
+
+---
 
 Exemple du lotto
 ----------------
@@ -3639,14 +3716,20 @@ a tiré $2$ ou $5$) parmi 5. Les deux probabilités sont donc données
 respectivement par $p(\{2,5\})=\frac{2}{6}$ puis par
 $p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$.
 
+---
+
+Exerice +.#
+
 1.  Le jeu Euromillions consiste en un tirage de 5 numéros parmi 50
     possible, puis par le tirage de 2 “étoiles” parmi 11 possibles.
     Déterminez la probabilité de trouver la bonne combinaison à un
     tirage.
 
-2.  Le jeu du swiss lotto, consiste au tirage de 5 numéros parmi 42
+2.  Le jeu du swiss lotto, consiste au tirage de 6 numéros parmi 42
     possibles, puis au tirage d’un numéros parmi 6. Calculez la
     probabilité de gagner au swiss lotto.
+
+---
 
 Quelques exercices
 ------------------
@@ -3763,15 +3846,27 @@ dans un intervalle $I$ est reliée à la probabilité d’obtenir un
 événement $D$ qui serait la préimage de $\alpha$ ou d’un intervalle $I$.
 On peut noter dans le cas général qu’on a $D=X^{-1}(I)$.
 
+---
+
+Définition (Variable aléatoire) +.#
+
 On dit que la fonction $X:\Omega\rightarrow{\mathbb{R}}$ est une
 *variable aléatoire* si la préimage de $X$ sur tout intervalle,
 $I\subseteq{\mathbb{R}}$, est un événement $A\in \Omega$. La probabilité
 que $X$ prenne une valeur dans l’intervalle $I$ est égale à la
 probabilité de réaliser l’événement $A$ $$p(X\in I)=p(A).$$
 
+---
+
+---
+
+Définition (Fonction de répartition) +.#
+
 On dit que la fonction $F:{\mathbb{R}}\rightarrow{\mathbb{R}}$ est une
 *fonction de répartition* si $F(x)=p(X\leq x)$ pour tout
 $x\in{\mathbb{R}}$.
+
+---
 
 Nous distinguons deux sortes de variables aléatoires différentes: les
 variables aléatoires discrètes et continues. Nous les discuterons
@@ -4045,9 +4140,9 @@ Remerciements
 =============
 
 Je voudrais remercier (par ordre alphabétique) les étudiants du cours
-qui ont contribué à améliorer ce polycopié. Merci à Messieurs
-Gay-Balmaz, Ibanez, Lovino et Sousa. En espérant que cette liste
-continuera à s’allonger avec les années.
+qui ont contribué à améliorer ce polycopié. En espérant que cette liste
+continuera à s’allonger avec les années.Merci à Messieurs
+Gay-Balmaz, Ibanez, Lovino et Sousa. Je voudrais également remercier A. Malaspinas pour sa relecture et ses corrections. 
 
 [^1]: Pour ceux que ça intéresse cette série s’obtient à l’aide d’une
     série de Taylor.
