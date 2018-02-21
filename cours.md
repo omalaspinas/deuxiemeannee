@@ -1017,6 +1017,8 @@ $$x(t_0)=x_0=v\cdot t_0+B \Leftrightarrow B=x_0-v\cdot t_0.$$
 Finalement, la solution de l’équation différentielle est donnée par
 $$x(t)=v\cdot (t-t_0)+x_0.$$
 
+Remarque +.#
+
 La solution de l’équation différentielle $$x'(t)=v,\ x(t_0)=x_0,$$
 revient à calculer $$\begin{aligned}
  \int x'(t){\mathrm{d}}t=\int v {\mathrm{d}}t,\\
@@ -1053,6 +1055,8 @@ donc $$v(t_0)=v_0=a\cdot t_0+C \Leftrightarrow C=v_0-a\cdot t_0,$$ et
 $$x(t_0)=x_0=\frac{a}{2}\cdot t_0^2+D \Leftrightarrow D=x_0-\frac{a}{2}\cdot t_0^2.$$
 Finalement la solution est donc
 $$x(t)=\frac{a}{2}\cdot (t^2-t_0^2)+v_0\cdot (t-t_0)+x_0.$$
+
+Remarque +.#
 
 La solution de l’équation différentielle peut également se calculer de
 la façon suivante $$x''(t)=av,\ x(t_0)=x_0,\ v(t_0)=v_0.$$ revient à
@@ -1230,14 +1234,22 @@ ans.](figs/interets.pdf){#fig:interets width="50.00000%"}
 Définitions et théorèmes principaux
 -----------------------------------
 
+Définition (Équation différentielle ordinaire) +.#
+
 Soit $y$ une fonction dérivable $n$ fois et dépendant d’une seule
 variable. Une **équation différentielle ordinaire** est un équation de
 la forme $$F(x,y,y',y'',...,y^{(n)})=0,$$ où $F$ est une fonction, et
 $y'$, $y''$, ..., $y^{(n)}$ sont les dérivées premières, deuxièmes, ...,
 $n$-ème de $y$.
 
+---
+
+Illustation +.#
+
 L’équation suivante est une équation différentielle ordinaire
 $$y''+4y'+8y+3x^2+9=0.$$
+
+---
 
 Afin de résoudre cette équation, nous cherchons une solution de la forme
 $y=f(x)$. On dit également que nous cherchons à intégrer l’équation
@@ -1246,12 +1258,18 @@ différentielle.
 Afin de classifier les équation différentielles, considérons les deux
 définitions suivantes
 
+Définition (Ordre) +.# 
+
 L’ordre d’une équation différentielle est l’ordre le plus haut des
 dérivées de $y$ qui y apparaissent. L’ordre de l’équation différentielle
 $F(x,y,y',y'',...,y^{(n)})=0$ est de $n$, si $n\neq 0$.
 
+Illustration +.#
+
 L’équation différentielle suivante est d’ordre $3$
 $$4y'''+x\cdot y'+4y+6x=0.$$
+
+Définition (Condition initiale) +.#
 
 Une condition initiale pour une équation différentielle d’ordre $n$, est
 un ensemble de valeurs, $y_0$, $y_1$, ..., $y_{n-1}$ donnée telles que
@@ -1264,6 +1282,10 @@ pas vraiment écrire ni démontrer le théorème d’existence et d’unicité
 des équations différentielles ordinaires, mais simplement en donner une
 version approximative et la discuter
 
+---
+
+Théorème (Existence et unicité) +.#
+
 Soit $D\subseteq{\mathbb{R}}$ le domaine de définition de la fonction
 $y$. Soit $y:D\rightarrow E\subseteq {\mathbb{R}}$ une fonction à valeur
 réelle continue et dérivable sur $D$, et
@@ -1273,6 +1295,8 @@ Cauchy) $$\begin{aligned}
   &y'=f(y,x),\\
   &y(x=x_0)=y_0,
  \end{aligned}$$ admet une unique unique solution $y(x)$.
+
+---
 
 Ce théorème peut être étendu à une équation d’un ordre arbitraire $n$
 possédant $n-1$ conditions initiales. En effet, n’importe quel équation
@@ -1296,11 +1320,17 @@ $$\begin{aligned}
 Jusqu’ici $F$ peut être totalement arbitraire. Essayons de classifier un
 peu les équations différentielles en fonction des propriétés du $F$.
 
+---
+
+Définition (Linéarité) +.#
+
 Une équation différentielle ordinaire d’ordre $n$ est dite linéaire si
 on peut l’écrire sous la forme
 $$a_0(x)\cdot y(x)+a_1(x)\cdot y'(x)+...+a_n(x)\cdot y^{(n)}(x)=b(x).$$
 Si les coefficients $a_i$ ne dépendent pas de $x$, alors l’équation est
 dite à **coefficients constants**.
+
+---
 
 L’équation ci-dessus a les deux propriétés suivantes
 
@@ -1309,12 +1339,19 @@ L’équation ci-dessus a les deux propriétés suivantes
 
 2.  Les $y$ et toutes leur dérivées ont un degré 1.
 
-L’équation suivante est linéaire $$y''+4x\cdot y'=e^x.$$ L’équation
+Illustration +.#
+
+L’équation suivante est linéaire $$y''+4x\cdot y'=e^x.$$ 
+L’équation
 suivante n’est pas linéaire $$y\cdot y''+4x\cdot y'=e^x.$$
+
+Définition (Homogénéité) +.#
 
 Une équation différentielle ordinaire est dite homogène si le terme
 dépendant uniquement de $x$ est nul. Dans le cas où nous avons à faire à
 une équation différentielle linéaire, cela revient à dire que $b(x)=0$.
+
+Illustration (Homogénéité) +.#
 
 Les équations suivantes sont homogènes $$\begin{aligned}
   &y''+4x\cdot y\cdot y'+3x^2\cdot y^3=0,\\
@@ -1325,6 +1362,10 @@ $$\begin{aligned}
   &2y'''+5x^2\cdot y'=1.
  \end{aligned}$$
 
+---
+
+Exercice (Homogénéité) +.#
+
 Pour chacune de ces équations différentielles ordinaires suivantes
 donner tous les qualificatifs possibles. Si l’équation est inhomogène
 donner l’équation homogène associée. $$\begin{aligned}
@@ -1334,6 +1375,8 @@ donner l’équation homogène associée. $$\begin{aligned}
   &y'=y,\\
   &4y''+4x y=1.
  \end{aligned}$$
+
+---
 
 Lors de la résolution d’équation différence inhomogène la solution se
 trouve de la façon suivante.
@@ -1357,12 +1400,24 @@ un certain nombre.
 
 ### Équations à variables séparables
 
+---
+
+Définition (Équations à variable séparables) +.#
+
 On dit qu’une équation différentielle d’ordre 1 est à variables
 séparables, si elle peut s’écrire sous la forme suivante
 $$y' a(y)=b(x).$$
 
+---
+
+---
+
+Illustration +.#
+
 L’équation suivante est à variables séparables
 $$e^{x^2+y^2(x)}y'(x)=1.$$
+
+---
 
 Pour ce genre d’équations, la solution se trouve de la façon suivante.
 Nous commençons par écrire la dérivée, $y'={\mathrm{d}}y/{\mathrm{d}}x$
@@ -1375,7 +1430,15 @@ résoudre les intégrales nous obtenons une solution pour $y(x)$ (cette
 solution n’est peut-être pas explicite). Il existe le cas simple où
 $a(y)=1$ et il vient $$y=\int b(x){\mathrm{d}}x.$$
 
-Résoudre l’équation différentielle suivante $$n'(t)=r\cdot n(t).$$ En
+---
+
+Exemple +.#
+
+Résoudre l’équation différentielle suivante $$n'(t)=r\cdot n(t).$$ 
+
+Solution +.#
+
+En
 écrivant $n'={\mathrm{d}}n /{\mathrm{d}}t$, on réécrit l’équation
 différentielle sous la forme
 $$\frac{1}{n} {\mathrm{d}}n=r{\mathrm{d}}t,$$ qu’on intègre
@@ -1384,10 +1447,18 @@ $$\begin{aligned}
 \ln(n)&=r\cdot t+C,\nonumber\\
 n(t)&=e^{r\cdot t+C}=A\cdot e^{r\cdot t},\end{aligned}$$ où $A=e^C$.
 
+---
+
+---
+
+Exercice +.#
+
 1.  Résoudre l’équation différentielle suivante $$c'(t)=rc(t)+d.$$
 
 2.  Résoudre l’équation différentielle suivante
     $$x\cdot y(x) \cdot y'(x)=1.$$
+
+---
 
 ### Équations linéaires {#sec:eq_lin}
 
@@ -1432,8 +1503,14 @@ Finalement, on a que la solution de l’équation générale de l’équation
 inhomogène est
 $$y=y_p+y_h=\left(\int \frac{b(x)}{e^{\int a(x){\mathrm{d}}x}}{\mathrm{d}}x+C\right)e^{\int a(x){\mathrm{d}}x}.$$
 
+Exemple +.#
+
 Résoudre l’équation suivante
-$$U_C'(t)+\frac{U_C(t)}{RC}=\frac{U}{RC}.$${#eq:rc_inhom} On
+$$U_C'(t)+\frac{U_C(t)}{RC}=\frac{U}{RC}.$${#eq:rc_inhom} 
+
+Solution +.#
+
+On
 commence par résoudre l’équation homogène
 $${U_C}_h'(t)+\frac{{U_C}_h(t)}{RC}=0.$$ D’où on obtient
 $${U_C}_h=A\cdot e^{-\frac{1}{RC} t}.$$ Puis par variations des
@@ -1447,6 +1524,8 @@ où $C=D+A$. Pour le cas de la charge du condensateur, on a de plus
 $U_c(0)=0$. On peut donc fixer la constante $C=-U$.
 
 Résoudre les équations différentielles suivantes
+
+Exercice +.#
 
 1.  $$y'+2y=t^2$$
 
@@ -1470,7 +1549,13 @@ $$z'(x)+(1-n)a(x)\cdot z(x)+(1-n)b(x)=0.$$ On a donc ramené l’équation
 de Bernouilli à une équation linéaire que nous savons résoudre à l’aide
 de la méthode de la section @sec:eq_lin.
 
-Résoudre l’équation de Bernouilli suivante $$y'-y-x\cdot y^6=0.$$ Avec
+Exemple +.#
+
+Résoudre l’équation de Bernouilli suivante $$y'-y-x\cdot y^6=0.$$ 
+
+Solution +.#
+
+Avec
 la substitution $z=y^5$, on obtient $$z'-5z+5x=0.$$ Cette équation se
 résout avec se résout en trouvant d’abord la solution de l’équation
 homogène $$z_h'-5z_h=0,$$ qui est donnée par $$z_h=Ae^{5x}.$$ En
@@ -1500,9 +1585,15 @@ $$y_h'+a(x)+(b(x)+2y_p(x)c(x))\cdot y_h+c(x)\cdot y_h^2=0.$$ Cette
 équation est une équation de Bernouilli avec $n=2$. On sait donc comment
 la résoudre.
 
+--
+
+Exercice +.#
+
 Résoudre l’équation de Riccati suivante $$y'+y^2-\frac{2}{x^2}=0.$$
 Indication: la solution particulière a la forme $y=\frac{a}{x}$, avec
 $a$ une constante.
+
+--
 
 De plus, ce genre d’équation peut-être transformée via un changement de
 variables en une équation linéaire d’ordre deux. Si $c(x)$ est
@@ -1540,6 +1631,10 @@ comment résoudre cette équation.
 Ces équations ont des propriétés intéressantes dûes à la linéarité de
 l’équation différentielle.
 
+---
+
+Propriétés +.#
+
 Ces propriétés sont à démontrer en exercice.
 
 1.  Soit $f(x)$ une solution de l'@eq:edo2_cch, alors
@@ -1554,6 +1649,8 @@ Ces propriétés sont à démontrer en exercice.
     $f(x)$ et $g(x)$ deux solutions de l'@eq:edo2_cch,
     et $C_1,C_2\in{\mathbb{R}}$, alors on a que $h(x)=C_1f(x)+C_2g(x)$
     sont solution de l'@eq:edo2_cch.
+
+---
 
 Afin de simplifier la discussion prenons une EDO d’ordre deux à
 coefficients constants particulière $$y''+3y'+2y=0.$${#eq:edo2_ex}
