@@ -2499,6 +2499,10 @@ pouvoir calculer sa transformée de Fourier:
 
 3.  Elle doit avoir un nombre fini de discontinuités.
 
+---
+
+Exercice +.#
+
 Calculer les transformées de Fourier des fonctions suivantes
 
 1.  Le pulse symétrique $$f(t)=\left\{\begin{array}{ll}
@@ -2516,6 +2520,12 @@ Calculer les transformées de Fourier des fonctions suivantes
                     0,&\mbox{ sinon.}
                    \end{array}\right.$$
 
+---
+
+---
+
+Exercice +.#
+
 Calculer les transformées de Fourier inverse de la fonction suivante
 
 1.  Le pulse symétrique $$f(\omega)=\left\{\begin{array}{ll}
@@ -2523,11 +2533,13 @@ Calculer les transformées de Fourier inverse de la fonction suivante
                     0,&\mbox{ sinon.}
                    \end{array}\right.$$
 
+---
+
 ### Propriétés des transformées de Fourier
 
 La transformée de Fourier possède plusieurs propriétés intéressantes.
 
-[Propriétés]{}
+Propriété +.#
 
 1.  Linéarité. Soit une fonction $h(t)=af(t)+bg(t)$, alors sa
     transformée de Fourier est donnée par
@@ -2585,6 +2597,9 @@ l’intégrale et on a $$\begin{aligned}
  f[n]&=\frac{1}{2\pi}\left(\sum_{m=-\infty}^\infty f[m] \int_{-\pi}^\pi e^{-i\omega (m-n)} {\mathrm{d}}\omega\right),\nonumber\\
      &=\frac{1}{2\pi}\left(\sum_{m=-\infty}^\infty f[m] \delta_{mn} 2\pi\right),\nonumber\\
      &=f[n].\nonumber\end{aligned}$$
+
+
+Exercice +.# 
 
 Calculer les transformées de Fourier (inverses quand c’est approprié) en
 temps discret des fonctions suivantes
@@ -2725,7 +2740,15 @@ La transformée de Fourier discrète étant un échantillonage de la
 transformée de Fourier à temps discret, toutes les propriétés discutées
 pour la transformée de Fourier à temps discret restent valides. En
 particulier la transformée de Fourier discrète est périodique, de
-période $N$ $${\hat{f}}[k]={\hat{f}}[k+N].$$ A démontrer en exercice.
+période $N$ $${\hat{f}}[k]={\hat{f}}[k+N].$$ 
+
+---
+
+Exercice +.#
+
+A démontrer en exercice.
+
+---
 
 ### La transformée de Fourier rapide {#sec:tfr}
 
