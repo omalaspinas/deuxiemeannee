@@ -475,7 +475,7 @@ primitive $F$ telle que $F(a)=b$.
 
 ---
 
-Exemple (Unicité) +.#
+Illustration (Unicité) +.#
 
 Soit $f(x)=x$, alors l’ensemble de primitives correspondantes est
 $G=x^2/2+C$. Si nous cherchons la primitive telle que $G(0)=0$, il vient
@@ -518,7 +518,9 @@ pouvons récapituler des formules qui seront importantes pour la suite:
 
 5.  $\int \cos(x){\mathrm{d}}x=\sin(x)+C$.
 
-\[def_prim\] En définissant à présent l’intégrale à l’aide de la notion
+Théorème (Théorème fondamental du calcul intégral) +.#  
+
+En définissant à présent l’intégrale à l’aide de la notion
 de primitive, nous avons que pour $a,b\in{\mathbb{R}}$ et $a<b$
 $$\int_a^b f(x){\mathrm{d}}x=\left.F\right|_a^b=F(b)-F(a).$$
 
@@ -527,9 +529,15 @@ elle disparaît après que l’intégrale ait été effectuée. On peut donc
 écrire l’équation ci-dessus de façon équivalente en remplaçant le
 symbole $x$ par n’importe quelle autre lettre (sauf $a,b,f,F$).
 
+---
+
+Remarque +.#
+
 On notera que la constante additive $C$ a disparu de cette formule. En
 effet, remplaçons $F$ par $G=F+C$, il vient
 $$\int_a^b f(x){\mathrm{d}}x=G(b)-G(a)=F(b)+C-F(a)-C=F(b)-F(a).$$
+
+---
 
 De la définition \[def_prim\], il vient immédiatement que
 $$\int_a^af(x){\mathrm{d}}x=F(a)-F(a)=0$$ et que
@@ -538,6 +546,8 @@ $$\int_a^bf(x){\mathrm{d}}x= -\int_b^af(x){\mathrm{d}}x$$
 Nous pouvons à présent définir la fonction $G(x)$ telle que
 $$G(x)=\int_a^xf(y){\mathrm{d}}y=F(x)-F(a).$$ Nous avons donc que $G(x)$
 est la primitive de $f$ telle que $G(a)=0$.
+
+Propriétés +.#
 
 Soient $f$ et $g$ deux fonctions intégrables sur un intervalle
 $D=[a,b]\subseteq{\mathbb{R}}$, $c\in[a,b]$, et $\alpha\in{\mathbb{R}}$.
@@ -574,19 +584,40 @@ cas de figures suivants $$\begin{aligned}
  &\int_{-\infty}^b f(x){\mathrm{d}}x=\lim\limits_{a\rightarrow\infty}\int_{-a}^b f(x){\mathrm{d}}x,\\
  &\int_{-\infty}^\infty f(x){\mathrm{d}}x=\lim\limits_{a\rightarrow\infty}\int_{-a}^a f(x){\mathrm{d}}x.\end{aligned}$$
 
+
+---
+
+Exemple (Intégrale impropre) +.#
+
 Calculer l’intégrale suivante
-$$\int_0^\infty e^{-ax}{\mathrm{d}}x,\quad a>0.$$ Nous pouvons réécrire
+$$\int_0^\infty e^{-ax}{\mathrm{d}}x,\quad a>0.$$ 
+
+Solution (Intégrale impropre) +.#
+
+Nous pouvons réécrire
 l’intégrale ci-dessus comme
 $$\int_0^\infty e^{-ax}{\mathrm{d}}x=\lim\limits_{b\rightarrow \infty}\int_0^b e^{-ax}{\mathrm{d}}x=-\frac{1}{a}\lim\limits_{b\rightarrow\infty}\left[e^{-ax}\right]_0^b=-\frac{1}{a}\left[\lim\limits_{b\rightarrow \infty}e^{-ab}-1\right]=\frac{1}{a}.$$
 
+---
+
+---
+
+Exercice +.#
+
 Calculer l’intégrale suivante
 $$\int_1^\infty \frac{1}{x^2}{\mathrm{d}}x.$$
+
+---
 
 Lorsque nous avons une discontinuité dans la fonction $f$ au point
 $c\in[a,b]$ nous avons
 $$\int_a^b f(x){\mathrm{d}}x = \lim\limits_{\varepsilon\rightarrow 0}\int_a^{c-\varepsilon} f(x){\mathrm{d}}x +\int_{c+\varepsilon}^b f(x){\mathrm{d}}x.$$
 
+Exercice +.#
+
 Montrer que $$\int_{-1}^2\frac{1}{x}=\ln{2}.$$
+
+Définition (Valeur moyenne) +.#
 
 Soit une fonction $f$ admettant une primitive sur $[a,b]$ et $a<b$,
 alors on appelle la valeur moyenne de cette fonction sur $[a,b]$,
@@ -612,8 +643,14 @@ $\{a_i\}_{i=0}^{n}\in{\mathbb{R}}$ $$\begin{aligned}
  =&\int a_0{\mathrm{d}}x + \int a_1 x{\mathrm{d}}x + \int a_2 x^2{\mathrm{d}}x+\cdots+\int a_{n-1} x^{n-1}{\mathrm{d}}x+\int a_{n} x^{n}{\mathrm{d}}x\\
  =&a_0 x + \frac{a_1}{2}x^2+\frac{a_2}{3}x^3+\cdots+\frac{a_n}{n+1}x^{n+1}+c.\end{aligned}$$
 
+---
+
+Exercice +.#
+
 Intégrer la fonction suivante
 $$\int (x+2)(x^3+3x^2+4x-3){\mathrm{d}}x.$$
+
+---
 
 #### Application de la règle de chaîne pour l’intégration
 
@@ -628,14 +665,29 @@ $$\int \sin(x)\cos(x){\mathrm{d}}x=\frac{1}{2}\sin^2(x)+c.$$
 Une primitive de la forme
 $$\int \frac{f'(x)}{f(x)}{\mathrm{d}}x=\ln(f(x))+c.$$
 
+---
+
+Exemple +.#
+
+Calculer la primitive suivante
+$$
+\int \frac{1}{x}{\mathrm{d}}x.
+$$
+
+Solution +.#
+
 Le calcul de la primitive de suivante
 $$\int \frac{1}{x}{\mathrm{d}}x=\int \frac{(x)'}{x}{\mathrm{d}}x=\ln(x)+c.$$
 
+---
+
 #### Règle de chaîne
 
-De façon une des façons les plus simples de calculer une primitive est
+Une des façons les plus simples de calculer une primitive est
 de reconnaître la règle de chaîne dans le terme à intégrer
 $$\int g'(f(x))f'(x){\mathrm{d}}x=\int [g(f(x))]' {\mathrm{d}}x=g(f(x))+c.$$
+
+Illustration +.#
 
 Si $g$ est définie comme $g(x)=x^{-1}$ et $f(x)=3x^2+2$, alors la
 primitive
@@ -663,7 +715,17 @@ Des “règles” pour utiliser cette technique seraient que
 2.  $f=\int f'{\mathrm{d}}x$ soit facile à calculer et aurait une forme
     plus simple que $f'$.
 
+---
+
+Exemple +.# 
+
 Calculer les primitives suivantes
+
+1.  $\int x e^x{\mathrm{d}}x$.
+
+2.  $\int \cos(x)\sin(x){\mathrm{d}}x$. 
+
+Solution +.#
 
 1.  $\int x e^x{\mathrm{d}}x$. $g(x)=x$, $f'(x)=e^x$ et donc $g'(x)=1$,
     $f(x)=e^x$. Il vient
@@ -673,19 +735,37 @@ Calculer les primitives suivantes
     donc $g'(x)=-\sin(x)$, $f(x)=-\cos(x)$. Il vient $$\begin{aligned}
         &\int \cos(x)\sin(x){\mathrm{d}}x=\sin^2(x)-\int \cos(x)\sin(x){\mathrm{d}}x\nonumber\\
         \Rightarrow &\int \cos(x)\sin(x){\mathrm{d}}x=\frac{1}{2}\sin^2(x).
-      \end{aligned}$$ On voit que le résultat de l’intégration par
-    partie nous redonne l’intégrale de départ. Ceci nous permet
-    d’évaluer directement la dite intégrale.
+      \end{aligned}$$ 
+
+On voit que le résultat de l’intégration par
+partie nous redonne l’intégrale de départ. Ceci nous permet
+d’évaluer directement la dite intégrale.
+
+---
 
 Il est également possible d’enchaîner plusieurs intégrations par
 parties.
 
-L’intégrale de $\int x^2 e^x{\mathrm{d}}x$. En posant $g(x)=x^2$,
+---
+
+Exemple +.# 
+
+Calculer l’intégrale de $\int x^2 e^x{\mathrm{d}}x$. 
+
+Solution +.# 
+
+En posant $g(x)=x^2$,
 $f'(x)=e^x$ et donc $g'(x)=2x$, $f(x)=e^x$. Il vient
 $$\int x^2 e^x{\mathrm{d}}x=x^2e^x-2\int x e^x{\mathrm{d}}x.$$ On pose
 de façon similaire $g(x)=x$, $f'(x)=e^x$ et donc $g'(x)=1$, $f(x)=e^x$
 et il vient
 $$\int x^2 e^x{\mathrm{d}}x=x^2e^x-2\left(x e^x -\int e^x{\mathrm{d}}x\right)=x^2e^x-2x e^x +2e^x+c.$$
+
+---
+
+---
+
+Exercice +.#
 
 Calculer les primitives suivantes
 
@@ -695,6 +775,8 @@ Calculer les primitives suivantes
 
 3.  $\int e^x\sin(x){\mathrm{d}}x$
 
+---
+
 ### Intégration par changement de variables
 
 On observe que la dérivation de la composition de deux fonctions $F$ et
@@ -703,6 +785,8 @@ $$(F\circ g)'=(f\circ g)\cdot g',\mbox{ ou } [F(g(y))]'=f(g(y))\cdot g'(y),$$
 où $f=F'$. Si nous intégrons cette relation on obtient $$\begin{aligned}
  \int_a^b f(g(y))g'(y){\mathrm{d}}y = \int_a^b [F(g(y))]'{\mathrm{d}}y=\left.F(g(y))\right|_a^b=F(g(b))-F(g(a))=\int_{g(a)}^{g(b)}f(x){\mathrm{d}}x.\end{aligned}$$
 Cette relation nous mène au théorème suivant.
+
+Théorème (Intégration par changement de variables) +.#
 
 Soit $f$ une fonction continue presque partout, et $g$ une fonction dont
 la dérivée est continue presque partout sur un intervalle $[a,b]$. Soit
@@ -720,7 +804,13 @@ on ne calcule pas l’intégrale mais la primitive, on ne modifie
 la primitive il faut également appliquer la transformation $x=g^{-1}(z)$
 sur la solution.
 
+---
+
+Exemple (Changement de variable) +.#
+
 Intégrer par changement de variables $\int_1^3 6x\ln(x^2){\mathrm{d}}x$.
+
+Solution (Changement de variable) +.#
 
 En définissant $z=x^2$, nous avons ${\mathrm{d}}x={\mathrm{d}}z/(2x)$.
 Les bornes d’intégration deviennent $z(1)=1^2=1$ et $z(3)=3^2=9$. On
@@ -729,6 +819,12 @@ obtient donc $$\begin{aligned}
                           &=3\left[z\ln(z)-z\right]_1^9=3(9\ln(9)-9-\ln(1)+1)=27\ln(9)-24.
  \end{aligned}$$
 
+---
+
+---
+
+Exercice +.#
+
 Calculer les primitives suivantes par changement de variable
 
 1.  $\int \frac{1}{5x-7}{\mathrm{d}}x$
@@ -736,6 +832,8 @@ Calculer les primitives suivantes par changement de variable
 2.  $\int \sin(3-7x){\mathrm{d}}x$
 
 3.  $\int x e^{x^2}{\mathrm{d}}x$
+
+---
 
 Intégration numérique
 ---------------------
@@ -763,9 +861,19 @@ lesquelles nous évaluons les intégrale est finie, si $\delta x$ devient
 proche de la précision de la machine des erreurs d’arrondi vont dégrader
 dramatiquement la précision de l’intégration.
 
+---
+
+Remarque +.#
+
 De façon générale il est difficile de connaître à l’avance la valeur
 exacte de $E$. En revanche on est en capable de déterminer **l’ordre**
 de l’erreur.
+
+---
+
+---
+
+Définition (Ordre d'une méthode) +.#
 
 On dit qu’une méthode d’intégration est d’ordre $k$, si l’erreur commise
 par la méthode varie proportionnellement à $\delta x^k$. On note qu’une
@@ -774,6 +882,8 @@ Exemple: si une méthode est d’ordre deux, alors en diminuant $\delta x$
 d’un facteur $2$, l’erreur sera elle divisée par $2^2=4$. Si une méthode
 est d’ordre $3$, alors en diminuant $\delta x$ d’un facteur $2$, nous
 aurons que l’erreur est divisée par un facteur $2^3=8$. Etc.
+
+---
 
 Comme le calcul d’une intégrale de façon numérique ne donne en général
 pas un résultat exact, mais un résultat qui va dépendre d’un certain
