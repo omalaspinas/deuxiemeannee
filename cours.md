@@ -38,8 +38,8 @@ Exemple (Fonctions, généralités) +.#
 
 2.  Une fonction peut être quelque chose de beaucoup plus général (qu’on
     ne peut pas forcément représenter simplement avec des opérateurs
-    mathéma-tiques). Prenons le cas de la fonction qui pour un nombre
-    entier $x$ rend le prochain entier qui commence par la même lettre
+    mathématiques). Prenons le cas de la fonction qui pour un nombre
+    entier $x$ rend le prochain entier dont le nom commence par la même lettre
     que $x$. $$f(2)=10,\ f(3)=13,\ ...$$
 
 ---
