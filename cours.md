@@ -190,11 +190,16 @@ Un exemple peut être $f(x)=x-1$, $g(x)=x+1$ et donc $h(x)=(x-1)/(x+1)$
 $$\lim_{x\rightarrow\infty} \frac{x-1}{x+1}=\lim_{x\rightarrow\infty} \frac{x(1-1/x)}{x(1+1/x)}=1.$$
 De même quand on a $f(x)=3x^4-5x^3+1$, $g(x)=1$ et donc
 $h(x)=3x^4-5x^3+1$. Il vient donc
-$$\lim_{x\rightarrow\infty} 3x^4-5x^3+1=\lim_{x\rightarrow\infty}3x^4=\infty.$$
+$$\lim_{x\rightarrow\infty} 3x^4-5x^3+1=\lim_{x\rightarrow\infty}3x^4\left(1-\frac{5}{3x}+\frac{1}{3x^4}\right)=\infty.$$
 
 Si nous compliquons un peu l’exemple et que nous avons
 $f(x)=x^3+3x^2+1$, $g(x)=x^2$ et donc $h(x)=(x^3+3x^2+1)/x^2$
 $$\lim_{x\rightarrow\infty} (x^3+3x^2+1)/x^2=\lim_{x\rightarrow\infty} x=\infty.$$
+Un cas encore un peu plus complexe serait
+$f(x)=3x^3+1$, $g(x)=4x^3+2x^2+x$
+$$
+\lim_{x\rightarrow \infty}\frac{f(x)}{g(x)}=\lim_{x\rightarrow \infty}\frac{3x^3(1+1/3x^3)}{4x^3(1+1/2x^+1/4x^2)}=\frac{3}{4}.$$
+
 Ce genre d’estimations est imporant en informatique lors de l’analyse de
 performance des algorithmes. On peut prendre l’exemple des algorithmes
 de tri “bubble sort” et “quick sort”. Leur complexité respective moyenne
