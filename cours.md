@@ -123,7 +123,7 @@ de $f(x)$ nous avons un voisinage de $a$ qui contient les valeurs de $x$ (suffis
 
 La définition mathématique plus stricte est:
 
-*Pour tout $\varespilon > 0$, il existe un $\delta >0$, tel que, pour tout $x\in D$ tel que $|x-a|<\delta$, on ait $|f(x)-a|<\varespilon$.*
+*Pour tout $\varepsilon > 0$, il existe un $\delta >0$, tel que, pour tout $x\in D$ tel que $|x-a|<\delta$, on ait $|f(x)-a|<\varepsilon$.*
 
 Ou encore quand le but est d'écrire ça de la façon la plus compacte possible
 
