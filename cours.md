@@ -232,7 +232,7 @@ $\lim\limits_{x\rightarrow a}f(x)=f(a)$.
 
 Propriétés (Fonctions continues) +.#
 
-Soient $f$ et $g$ deux fonctions continues en $a$ alors et $b$ un réel:
+Soient $f$ et $g$ deux fonctions continues en $a$ et $b$ un réel:
 
 1.  $f+g$ est continue en $a$.
 
@@ -278,7 +278,7 @@ Si $f$ est dérivable en $a$ alors $f$ est continue en $a$.
 
 Propriétés +.# 
 
-Soient $f$ et $g$ deux fonctions dérivables (dont les dérivées sont $f'$
+Soient $f$ et $g$ deux fonctions dérivables sur $D$ (dont les dérivées sont $f'$
 et $g'$), et $a\in{\real}$, alors
 
 1.  $(f+g)'=f'+g'$.
@@ -299,9 +299,9 @@ $C\in {\real}$, nous avons
 
 2.  $f(x)=e^{C x}$, $f'(x)=Ce^{Cx}$.
 
-3.  $f(x)=\ln(x)$, $f'(x)=\frac{1}{x}$.
+3.  $f(x)=\ln(x)$, $f'(x)=1/x$.
 
-4.  $f(x)=C, $f’(x)=0.
+4.  $f(x)=C, $f'(x)=0.
 
 5.  $f(x)=\sin(x)$, $f'(x)=\cos(x)$.
 
