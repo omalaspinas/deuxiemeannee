@@ -192,7 +192,7 @@ De même quand on a $f(x)=3x^4-5x^3+1$, $g(x)=1$ et donc
 $h(x)=3x^4-5x^3+1$. Il vient donc
 $$\lim_{x\rightarrow\infty} 3x^4-5x^3+1=\lim_{x\rightarrow\infty}3x^4=\infty.$$
 
-Si nous compliquons un peu l’exemple, et que nous avons
+Si nous compliquons un peu l’exemple et que nous avons
 $f(x)=x^3+3x^2+1$, $g(x)=x^2$ et donc $h(x)=(x^3+3x^2+1)/x^2$
 $$\lim_{x\rightarrow\infty} (x^3+3x^2+1)/x^2=\lim_{x\rightarrow\infty} x=\infty.$$
 Ce genre d’estimations est imporant en informatique lors de l’analyse de
@@ -203,7 +203,7 @@ chaîne à trier. Si on fait le rapport pour de ces deux complexités on a
 $$\lim_{n\rightarrow\infty} \frac{n^2}{n\log(n)}=\lim_{n\rightarrow\infty} \frac{n}{\log(n)}.$$
 On peut simplement voir que ce rapport va tendre vers l’infini en
 dessinant la courbe $n/\log(n)$. Il existe un moyen “analytique”
-d’évaluerce rapport. Tout nombre $n$ peut s’écrire avec une précision
+d’évaluer ce rapport. Tout nombre $n$ peut s’écrire avec une précision
 $p$ comme $$n=A\cdot 10^{p-1},$$ où $p$ est le nombre de chiffres
 significatifs qu’on veut représenter, et $1\leq A< 10$. On a également
 que[^1]
@@ -214,7 +214,7 @@ La valeur de $y$ étant quelque chose de proche de 0, la somme converge
 vite vers une valeur finie et on peut faire l’approximation
 $$\log(n)\cong(p-1)\log(10),$$ pour $n$ grand (ce qui est équivalent à
 $p$ grand). On a donc que finalement le rapport $n/\log(n)$ va comme
-$$\lim_{n\rightarrow\infty}\frac{n}{\log(n)}=\frac{A}{\log(10)}\cdot\lim_{n\rightarrow\infty}\frac{10^{p-1}}{(p-1)}=\frac{A}{\log(10)}\cdot\lim_{n\rightarrow\infty}\frac{10^{p-1}}{p}=\infty.$$
+$$\lim_{n\rightarrow\infty}\frac{n}{\log(n)}=\frac{A}{\log(10)}\cdot\lim_{p\rightarrow\infty}\frac{10^{p-1}}{(p-1)}=\frac{A}{\log(10)}\cdot\lim_{p\rightarrow\infty}\frac{10^{p-1}}{p}=\infty.$$
 
 Continuité
 ----------
