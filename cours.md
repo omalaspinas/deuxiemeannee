@@ -119,8 +119,15 @@ Définition (Limite) +.#
 Pour $f$ définie en $D$,  on dit que $b$ est la
 limite de $x$ en $a$ si si au fur et à mesure que $x$ se rapproche de $a$, $f(x)$ se raproche de $b$ et nous notons  $\lim\limits_{x\rightarrow a}f(x)=b$.
 C’est-à-dire pour tout voisinage de $b$ qui contient toutes  les valeurs
-de $f(x)$ nous avons un voisinage de $a$ qui contient les valeurs de  $x$ (suffisament proches de $a$). 
-<!-- TODO C'est pas bon!!!! Fais un $epsilon$ , $delta$ pour que ça soit clair. De toute façon tu travailles dans $\real$ un espace métrique. -->
+de $f(x)$ nous avons un voisinage de $a$ qui contient les valeurs de $x$ (suffisament proches de $a$). 
+
+La définition mathématique plus stricte est:
+
+*Pour tout $\varespilon > 0$, il existe un $\delta >0$, tel que, pour tout $x\in D$ tel que $|x-a|<\delta$, on ait $|f(x)-a|<\varespilon$.*
+
+Ou encore quand le but est d'écrire ça de la façon la plus compacte possible
+
+$$\forall\varepsilon>0,\exists\delta>0\ |\ \forall x\in D,\ |x-a|<\delta\Rightarrow|f(x)-b|<\varepsilon.$$  
 
 Remarque +.# 
 Il n'est pas nécessaire que $a\in D$. Mais si c'est le cas et donc 
