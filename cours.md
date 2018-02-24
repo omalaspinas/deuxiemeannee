@@ -27,7 +27,7 @@ Fonctions
 
 Une fonction $f$ de façon générale est un objet qui prend un (ou
 plusieurs) paramètres et qui lui (leur) associe (associent) un résultat. $$\mbox{résultat}=f(\mbox{paramètres}).$$
-Nous pouvons aussi exprimer cette notion de la manière suivante. Considérons deux ensembles $A$ et $B$. Supposons qu'à chaque élément $x\in A$ est associé un élément dans $B$ que nous notons par $f(x)$. Alors on dit que $f$ est une fonction ou une application (de $A$ dans $B$). A ce niveau A et B sont arbitraires mais dans la suite nous allons nous intéresser surtout du cas où $A=\subset\mathbr{R}$. Les valeurs de $f$ constituent les {\it images} de $x$.
+Nous pouvons aussi exprimer cette notion de la manière suivante. Considérons deux ensembles $A$ et $B$. Supposons qu'à chaque élément $x\in A$ est associé un élément dans $B$ que nous notons par $f(x)$. Alors on dit que $f$ est une fonction ou une application (de $A$ dans $B$). A ce niveau A et B sont arbitraires mais dans la suite nous allons nous intéresser surtout du cas où $A=\subset\real$. Les valeurs de $f$ constituent les *images* de $x$.
 ---
 
 Exemple (Fonctions, généralités) +.#
@@ -91,16 +91,16 @@ Domaine de définition
 
 Définition (Domaine de définition) +.# 
 
-Le domaine de définition, noté $D\subset{\mathbb{R}}$, d’une fonction
+Le domaine de définition, noté $D\subset{\real}$, d’une fonction
 $f$, est l’ensemble de valeurs où $f$ admet une image.
 
 ---
 
 Exemple (Domaine de définition) +.#
 
-1.  Le domaine de définition de $f(x)=x$ est $D={\mathbb{R}}$.
+1.  Le domaine de définition de $f(x)=x$ est $D={\real}$.
 
-2.  Le domaine de définition de $f(x)=1/x$ est $D={\mathbb{R}}^\ast$.
+2.  Le domaine de définition de $f(x)=1/x$ est $D={\real}^\ast$.
 
 3.  Le domaine de définition de $f(x)=\sqrt{x+1}/(x-10)$ est
     $D=[-1;10[\cup]10;\infty[$.
@@ -110,7 +110,7 @@ Exemple (Domaine de définition) +.#
 Limites
 -------
 
-Soit $f$ une fonction et $D\subseteq{\mathbb{R}}$ non-vide  et soient $a$ et $b$ deux réels.
+Soit $f$ une fonction et $D\subseteq{\real}$ non-vide  et soient $a$ et $b$ deux réels.
 
 ### Limite
 
@@ -119,7 +119,8 @@ Définition (Limite) +.#
 Pour $f$ définie en $D$,  on dit que $b$ est la
 limite de $x$ en $a$ si si au fur et à mesure que $x$ se rapproche de $a$, $f(x)$ se raproche de $b$ et nous notons  $\lim\limits_{x\rightarrow a}f(x)=b$.
 C’est-à-dire pour tout voisinage de $b$ qui contient toutes  les valeurs
-de $f(x)$ nous avons un voisinage de $a$ qui contient les valeurs de  $x$ (suffisament proches de $a$). C'est pas bon!!!! Fais un $epsilon$ , $delta$ pour que ça soit clair. De toute façon tu travailles dans $\mathbr{R}$ un espace métrique.
+de $f(x)$ nous avons un voisinage de $a$ qui contient les valeurs de  $x$ (suffisament proches de $a$). 
+<!-- TODO C'est pas bon!!!! Fais un $epsilon$ , $delta$ pour que ça soit clair. De toute façon tu travailles dans $\real$ un espace métrique. -->
 
 Remarque +.# 
 Il n'est pas nécessaire que $a\in D$. Mais si c'est le cas et donc 
@@ -266,7 +267,7 @@ Si $f$ est dérivable en $a$ alors $f$ est continue en $a$.
 Propriétés +.# 
 
 Soient $f$ et $g$ deux fonctions dérivables (dont les dérivées sont $f'$
-et $g'$), et $a\in{\mathbb{R}}$, alors
+et $g'$), et $a\in{\real}$, alors
 
 1.  $(f+g)'=f'+g'$.
 
@@ -280,7 +281,7 @@ et $g'$), et $a\in{\mathbb{R}}$, alors
 
 Il existe quelques dérivées importantes que nous allons utiliser
 régulièrement dans la suite de ce cours. En supposons que
-$C\in {\mathbb{R}}$, nous avons
+$C\in {\real}$, nous avons
 
 1.  $f(x)=x^n$, $f'(x)=nx^{n-1}$ .
 
@@ -358,7 +359,7 @@ Interprétation géométrique
 Dans ce chapitre nous nous intéressons au calcul d’aires sous une
 fonction $f$. La fonction $f$ satisfait les hypothèses suivantes.
 
-1.  $f(x)$ est bornée dans l’intervalle $[a,b]\in{\mathbb{R}}$.
+1.  $f(x)$ est bornée dans l’intervalle $[a,b]\in{\real}$.
 
 2.  $f(x)$ est continue presque partout.
 
@@ -462,17 +463,17 @@ du calcul d’une dérivée.
 Définition (Primitive) +.#
 
 Soit $f$ une fonction. On dit que $F$ est la primitive de $f$ sur
-l’intervalle $D\subseteq{\mathbb{R}}$ si $F'(x)=f(x)$ $\forall x\in D$.
+l’intervalle $D\subseteq{\real}$ si $F'(x)=f(x)$ $\forall x\in D$.
 
 Si $F$ est une primitive de $f$, alors on peut définir la fonction $G$
-telle que $G(x)=F(x)+C$, $\forall C\in{\mathbb{R}}$ qui est aussi une
+telle que $G(x)=F(x)+C$, $\forall C\in{\real}$ qui est aussi une
 primitive de $f$. On dit donc que la primitive de $f$ est définie à une
 constante additive près. En effet, si $F'=f$ on a
 $$G'=F'+\underbrace{C'}_{=0}=F'=f.$$
 
 Théorème (Unicité) +.#
 
-S’il existe $a\in D$ et $b\in{\mathbb{R}}$ alors il existe une unique
+S’il existe $a\in D$ et $b\in{\real}$ alors il existe une unique
 primitive $F$ telle que $F(a)=b$.
 
 ---
@@ -494,7 +495,7 @@ fonctions $F(x)$ telles que $F'(x)=f(x)$*):
 
 1.  $F(x)=\int x^2{\mathrm{d}}x$.
 
-2.  $F(x)=\int x^n{\mathrm{d}}x$, $n\in {\mathbb{R}}\backslash\{-1\}$.
+2.  $F(x)=\int x^n{\mathrm{d}}x$, $n\in {\real}\backslash\{-1\}$.
 
 3.  $F(x)=\int \sqrt{x}{\mathrm{d}}x$.
 
@@ -510,7 +511,7 @@ Maintenant que vous avez calculé toutes ces primitives de base, nous
 pouvons récapituler des formules qui seront importantes pour la suite:
 
 1.  $\int x^n{\mathrm{d}}x=\frac{1}{n+1}x^{n+1}+C$,
-    $n\in {\mathbb{R}}\backslash\{-1\}$.
+    $n\in {\real}\backslash\{-1\}$.
 
 2.  $\int \frac{1}{x}{\mathrm{d}}x=\ln(x)+C$.
 
@@ -523,7 +524,7 @@ pouvons récapituler des formules qui seront importantes pour la suite:
 Théorème (Théorème fondamental du calcul intégral) +.#  
 
 En définissant à présent l’intégrale à l’aide de la notion
-de primitive, nous avons que pour $a,b\in{\mathbb{R}}$ et $a<b$
+de primitive, nous avons que pour $a,b\in{\real}$ et $a<b$
 $$\int_a^b f(x){\mathrm{d}}x=\left.F\right|_a^b=F(b)-F(a).$$
 
 On dit que $x$ est la variable d’intégration. Elle est dite “muette” car
@@ -552,7 +553,7 @@ est la primitive de $f$ telle que $G(a)=0$.
 Propriétés +.#
 
 Soient $f$ et $g$ deux fonctions intégrables sur un intervalle
-$D=[a,b]\subseteq{\mathbb{R}}$, $c\in[a,b]$, et $\alpha\in{\mathbb{R}}$.
+$D=[a,b]\subseteq{\real}$, $c\in[a,b]$, et $\alpha\in{\real}$.
 On a
 
 1.  La dérivée et l’intégrale “s’annulent”
@@ -640,7 +641,7 @@ fonctions particulières.
 #### Polynômes
 
 Les polynômes s’intègrent terme à terme. Pour
-$\{a_i\}_{i=0}^{n}\in{\mathbb{R}}$ $$\begin{aligned}
+$\{a_i\}_{i=0}^{n}\in{\real}$ $$\begin{aligned}
  &\int a_0 + a_1 x + a_2 x^2+\cdots+a_{n-1} x^{n-1}+a_{n} x^{n}{\mathrm{d}}x\\
  =&\int a_0{\mathrm{d}}x + \int a_1 x{\mathrm{d}}x + \int a_2 x^2{\mathrm{d}}x+\cdots+\int a_{n-1} x^{n-1}{\mathrm{d}}x+\int a_{n} x^{n}{\mathrm{d}}x\\
  =&a_0 x + \frac{a_1}{2}x^2+\frac{a_2}{3}x^3+\cdots+\frac{a_n}{n+1}x^{n+1}+c.\end{aligned}$$
@@ -1288,10 +1289,10 @@ version approximative et la discuter
 
 Théorème (Existence et unicité) +.#
 
-Soit $D\subseteq{\mathbb{R}}$ le domaine de définition de la fonction
-$y$. Soit $y:D\rightarrow E\subseteq {\mathbb{R}}$ une fonction à valeur
+Soit $D\subseteq{\real}$ le domaine de définition de la fonction
+$y$. Soit $y:D\rightarrow E\subseteq {\real}$ une fonction à valeur
 réelle continue et dérivable sur $D$, et
-$f:D\times E\rightarrow F\subseteq{\mathbb{R}}$ une fonction continue
+$f:D\times E\rightarrow F\subseteq{\real}$ une fonction continue
 sur $D\times E$. Alors, le système suivant (également appelé problème de
 Cauchy) $$\begin{aligned}
   &y'=f(y,x),\\
@@ -1540,7 +1541,7 @@ Il existe des équations particulières qui peuvent se ramener à des
 
 Une classe particulière sont les équations de Bernouilli, qui s’écrit
 $$y'(x)+a(x)\cdot y(x)+b(x)\cdot y^n(x)=0,$${#eq:bernouilli} où
-$r\in{\mathbb{R}}$.
+$r\in{\real}$.
 
 Cette équation peut également être réécrite sous la forme
 $$\frac{y'(x)}{y^n(x)}+\frac{a(x)}{y^{n-1}(x)}+b(x)=0.$${#eq:bernouilli_2}
@@ -1620,7 +1621,7 @@ différentielles que nous savons résoudre. Cela sera toujours des
 
 De façon générale ces équations s’écrivent
 $$a(x)y''(x)+b(x)y'(x)+c(x)y(x)=d(x),$$ où
-$a,b,c,d:{\mathbb{R}}\rightarrow{\mathbb{R}}$ sont des fonctions
+$a,b,c,d:{\real}\rightarrow{\real}$ sont des fonctions
 réelles. Avant de résoudre l’équation générale, nous allons considérer
 des plus simples.
 
@@ -1640,7 +1641,7 @@ Propriétés +.#
 Ces propriétés sont à démontrer en exercice.
 
 1.  Soit $f(x)$ une solution de l'@eq:edo2_cch, alors
-    on a aussi que pour $C\in{\mathbb{R}}$ $Cf(x)$ est également
+    on a aussi que pour $C\in{\real}$ $Cf(x)$ est également
     solution de @eq:edo2_cch.
 
 2.  Soient $f(x)$ et $g(x)$ deux solutions de l’équation
@@ -1649,7 +1650,7 @@ Ces propriétés sont à démontrer en exercice.
 
 3.  De ces deux propriétés, on déduit la propriété suivante. Soient
     $f(x)$ et $g(x)$ deux solutions de l'@eq:edo2_cch,
-    et $C_1,C_2\in{\mathbb{R}}$, alors on a que $h(x)=C_1f(x)+C_2g(x)$
+    et $C_1,C_2\in{\real}$, alors on a que $h(x)=C_1f(x)+C_2g(x)$
     sont solution de l'@eq:edo2_cch.
 
 ---
@@ -1703,7 +1704,7 @@ $\Delta < 0$.
 
 #### Le cas $\Delta>0$
 
-Dans ce cas, on a que $\lambda_1,\lambda_2\in{\mathbb{R}}$ sont réels.
+Dans ce cas, on a que $\lambda_1,\lambda_2\in{\real}$ sont réels.
 La solution est donc donnée par (comme on l’a vu au paravent)
 $$y(x)=C_1e^{\lambda_1 x}+C_2e^{\lambda_2 x}.$$
 
@@ -1712,7 +1713,7 @@ $$y(x)=C_1e^{\lambda_1 x}+C_2e^{\lambda_2 x}.$$
 Dans ce cas, on a que $\lambda_1=\lambda_2=\lambda=-b/(2a)$ et est réel.
 Dans ce cas-là les choses se compliquent un peu. Si on utilisait
 directement la formule ci-dessus, on aurait $$y(x)=Ce^{\lambda x},$$
-avec $C\in{\mathbb{R}}$. Par contre, cette solution ne peut pas
+avec $C\in{\real}$. Par contre, cette solution ne peut pas
 satisfaire deux conditions initiales comme nous avons vu précédemment.
 Il fau donc travailler un peu plus. Supposons que $y(x)$ est donné par
 la fonction suivante $$y(x)=z(x)e^{\lambda x},$$ avec $z(x)$ une
@@ -1737,7 +1738,7 @@ exponentielle, on a $$\begin{aligned}
  y_1&=e^{(u+iv)x}=e^{ux}e^{ivx},\\
  y_2&=e^{(u-iv)x}=e^{ux}e^{-ivx}.\end{aligned}$$ En se rappelant de la
 linéarité des solutions des EDO linéaires, on peut écrire la forme
-générale de la solution comme ($C_1,C_2\in {\mathbb{R}}$)
+générale de la solution comme ($C_1,C_2\in {\real}$)
 $$y=C_1y_1+C_2y_2=C_1e^{ux}e^{ivx}+C_2e^{ux}e^{-ivx}=e^{ux}(C_1e^{ivx}+C_2e^{-ivx}).$${#eq:sol2}
 
 En utilisant la formule d’Euler $$\begin{aligned}
@@ -1899,12 +1900,12 @@ seront beaucoup utilisés dans cette section.
 
 ### Les nombres réels
 
-L’ensemble des nombres réels, noté ${\mathbb{R}}$, possède un certain
+L’ensemble des nombres réels, noté ${\real}$, possède un certain
 nombre de fonctions (opérateurs) tels que l’addition, la soustraction,
 la multiplication, la division, etc qui prennent un couple de nombres
 réels et rendent un autre nombre réel $$\begin{aligned}
-& +:{\mathbb{R}}\times{\mathbb{R}}\rightarrow{\mathbb{R}},\\
-& \cdot:{\mathbb{R}}\times{\mathbb{R}}\rightarrow{\mathbb{R}},\\\end{aligned}$$
+& +:{\real}\times{\real}\rightarrow{\real},\\
+& \cdot:{\real}\times{\real}\rightarrow{\real},\\\end{aligned}$$
 On peut donc noter l’addition de deux nombres réels $7$ et $2$ et de la
 définition de l’addition on a $$+(7,2)=9.$$ On lui préfère la notation
 $$+(7,2)=7+2=9.$$ Intéressons nous plus particulièrement à la
@@ -1917,21 +1918,21 @@ $$\begin{aligned}
 
 ### Les couples de nombres réels
 
-Intéressons-nous à présent à un ensemble plus grand que ${\mathbb{R}}$,
-soit ${\mathbb{R}}^2\equiv{\mathbb{R}}\times{\mathbb{R}}$. Cet ensemble
+Intéressons-nous à présent à un ensemble plus grand que ${\real}$,
+soit ${\real}^2\equiv{\real}\times{\real}$. Cet ensemble
 est l’ensemble des des couples de nombres réels. Notons les nombres
-$z\in{\mathbb{R}}^2$ comme
-$$z=(a,b)\mbox{ tel que } a\in{\mathbb{R}}, \mbox{ et } b\in{\mathbb{R}}.$$
+$z\in{\real}^2$ comme
+$$z=(a,b)\mbox{ tel que } a\in{\real}, \mbox{ et } b\in{\real}.$$
 Sur ces nombres on peut définir à nouveau l’addition, la soustraction,
 la multiplication, ... $$\begin{aligned}
-& +:{\mathbb{R}}^2\times{\mathbb{R}}^2\rightarrow{\mathbb{R}}^2,\\
-& \cdot:{\mathbb{R}}^2\times{\mathbb{R}}^2\rightarrow{\mathbb{R}}^2.\end{aligned}$$
+& +:{\real}^2\times{\real}^2\rightarrow{\real}^2,\\
+& \cdot:{\real}^2\times{\real}^2\rightarrow{\real}^2.\end{aligned}$$
 On peut les écrire sous la forme de leurs équivalents des nombres réels
 sous la forme
 $$(a,b)+(c,d)=(a+c,b+d),$${#eq:add}
 $$(a,b)\cdot(c,d)=(a\cdot c-b\cdot d,a\cdot d+b\cdot c).$${#eq:mult}
-On voit assez facilement que l’addition sur ${\mathbb{R}}^2$ a une forme
-très similaire à celle sur ${\mathbb{R}}$ du point de vue de ses
+On voit assez facilement que l’addition sur ${\real}^2$ a une forme
+très similaire à celle sur ${\real}$ du point de vue de ses
 propriétés telles que la commutativité ou l’associativité. Cela est
 moins clair pour la multiplication. Il est néanmoins assez simple de
 vérifier la commutativité $$\begin{aligned}
@@ -1940,7 +1941,7 @@ vérifier la commutativité $$\begin{aligned}
 
 Exercice +.#
 
-Vérifier l’associativité du produit sur notre ensemble ${\mathbb{R}}^2$.
+Vérifier l’associativité du produit sur notre ensemble ${\real}^2$.
 
 Regardons à présent ce qu’il se passe si on étudie les ensemble de
 nombres où le deuxième nombre est nul tels que $(a,0)$. Si on additionne
@@ -1952,9 +1953,9 @@ $$(a,0)\cdot(b,0)=(a\cdot b-0\cdot 0,a\cdot 0+0\cdot b)=(a\cdot b,0).$$
 On voit que pour la multiplication également les ensembles de nombres
 dont le deuxième est nul, se comporte comme un nombre réel standard.
 
-En fait on peut montrer que ce sous-ensemble de ${\mathbb{R}}^2$ se
-comporte exactement comme ${\mathbb{R}}$. Il se trouve que
-${\mathbb{R}}^2$ est un ensemble de nombre plus grand que ${\mathbb{R}}$
+En fait on peut montrer que ce sous-ensemble de ${\real}^2$ se
+comporte exactement comme ${\real}$. Il se trouve que
+${\real}^2$ est un ensemble de nombre plus grand que ${\real}$
 et qui le contient entièrement.
 
 ### Les nombres complexes
@@ -1990,7 +1991,7 @@ Pour $z=a+ib$, on a donc ${\mathrm{Re}}(z)=a$ et ${\mathrm{Im}}(z)=b$.
 #### Interprétation géométrique
 
 Comme on l’a vu précédemment, les nombres complexes peuvent se voir
-comme une “notation” de ${\mathbb{R}}^2$. On peut donc les représenter
+comme une “notation” de ${\real}^2$. On peut donc les représenter
 sur un plan bidimensionnel (voir la @fig:complexPlane).
 
 ![Représentation du nombre complexe
@@ -2101,7 +2102,7 @@ Ici nous introduisons de façon très simplifiée les concepts d’espaces
 vectoriels et certaines notions d’algèbre linéaire. Pour ce faire nous
 allons considérer un ensemble $V$, sous ensemble d’un espace plus grand
 $E$ (muni d’une addition et d’une multiplication). Dans notre cas $E$
-sera ${\mathbb{R}}$ ou ${\mathbb{C}}$ principalement.
+sera ${\real}$ ou ${\mathbb{C}}$ principalement.
 
 Définition +.#
 
@@ -2139,7 +2140,7 @@ Exemple (Espaces vectoriels) +.#
 
 1.  L’espace nul, $v=0$.
 
-2.  L’ensemble $V=E$ lui-même. En particulier $V={\mathbb{R}}$ ou
+2.  L’ensemble $V=E$ lui-même. En particulier $V={\real}$ ou
     $V={\mathbb{C}}$ avec l’addition et la multiplication usuelle.
 
 3.  L’espace des $n-$uplets. Pour tout $n>0$, l’ensemble des $n-$uplets
@@ -2152,9 +2153,9 @@ Exemple (Espaces vectoriels) +.#
     $0_{E^n}=\underbrace{(0,0,...,0)}_{n}$. L’élément opposé de $v$ est
     $-v=(-v_1,-v_2,...,-v_n)$.
 
-    Si $E={\mathbb{R}}$, alors on a l’espace Euclidien. Vous avez
+    Si $E={\real}$, alors on a l’espace Euclidien. Vous avez
     l’habitude de l’utiliser en 2D ou 3D quand vous considérez des
-    vecteurs. Dans ce cas ${\mathbb{R}}^2$ ou ${\mathbb{R}}^3$ avec
+    vecteurs. Dans ce cas ${\real}^2$ ou ${\real}^3$ avec
     l’addition classique et la multiplication par un scalaire standard
     forme un espace vectoriel.
 
@@ -2182,7 +2183,7 @@ Nous avons introduit la notion très générale d’espace vectorielle et
 nous avons présenté quelques exemples. Reprenons l’exemple de l’espace
 Euclidien, soit l’espace des vecteurs comme vous en avez l’habitude.
 Limitons nous au cas où les vecteur sont bidimensionnels, soit
-$v=(v_1,v_2)$ avec $v_1,v_2\in{\mathbb{R}}$. D’habitude ces vecteurs
+$v=(v_1,v_2)$ avec $v_1,v_2\in{\real}$. D’habitude ces vecteurs
 sont représentés dans le système de coordonnées cartésien où on a deux
 vecteurs (de base) définis comme $e_1=(1,0)$ et $e_2=(0,1)$ qui sont
 implicites. Par exemple, si $u=(4,5)$ cela signifie implicitement qu’on
@@ -2193,8 +2194,8 @@ cartésienne.](figs/baseCart.pdf){#fig:baseCart width="35.00000%"}
 
 De façon générale le vecteur $v=(v_1,v_2)$ est représenté implicitement
 par (voir la @fig:baseCart) $$v=v_1\cdot e_1+v_2\cdot e_2.$$ On
-dit que $e_1$ et $e_2$ forme une *base* de l’espace ${\mathbb{R}}^2$. En
-d’autre terme n’importe quel vecteur $v\in{\mathbb{R}}^2$ peut être
+dit que $e_1$ et $e_2$ forme une *base* de l’espace ${\real}^2$. En
+d’autre terme n’importe quel vecteur $v\in{\real}^2$ peut être
 exprimé comme une combinaison linéaire de $e_1$ et $e_2$.
 
 Néanmoins, le choix de la base $e_1$ et $e_2$ est totalement arbitraire.
@@ -2234,12 +2235,12 @@ $$\sum_{i=1}^n \alpha_iv_i=0 \Rightarrow \alpha_i=0,\ \forall i.$$
 
 Exemple (Famille libre) +.#
 
-1.  $\{e_1\}$ est une famille libre de ${\mathbb{R}}^2$.
+1.  $\{e_1\}$ est une famille libre de ${\real}^2$.
 
-2.  $\{e_1,e_2\}$ est une famille libre de ${\mathbb{R}}^2$.
+2.  $\{e_1,e_2\}$ est une famille libre de ${\real}^2$.
 
 3.  $\{e_1,e_2,v\}$, avec $v=(1,1)$ n’est pas une famille libre de
-    ${\mathbb{R}}^2$. En effet,
+    ${\real}^2$. En effet,
     $$1\cdot e_1+1\cdot e_2-1\cdot v=(0,0).$$
 
 4.  $\{\sin(x),\cos(x)\}$ est une famille libre. On em peut pas écrire
@@ -2257,14 +2258,14 @@ linéaire des vecteur $e_i$.
 
 Illustration (Familles génératrices) +.#
 
-1.  $\{e_1\}$ n’est une famille génératrice de ${\mathbb{R}}^2$. On ne
+1.  $\{e_1\}$ n’est une famille génératrice de ${\real}^2$. On ne
     peut pas représenter tous les vecteurs de la forme $v=(0,v_2)$,
     $v_2\neq 0$.
 
-2.  $\{e_1,e_2\}$ est une famille génératrice de ${\mathbb{R}}^2$.
+2.  $\{e_1,e_2\}$ est une famille génératrice de ${\real}^2$.
 
 3.  $\{e_1,e_2,v\}$, avec $v=(1,1)$ est une famille génératrice de
-    ${\mathbb{R}}^2$.
+    ${\real}^2$.
 
 Définition (Base) +.#
 
@@ -2278,10 +2279,10 @@ Les $\alpha_i$ sont appelé les coordonnées de $v$ dans la base $B$.
 
 Illustration (Base de $\real ^2$) +.#
 
-1.  $\{e_1,e_2\}$ est une base de ${\mathbb{R}}^2$.
+1.  $\{e_1,e_2\}$ est une base de ${\real}^2$.
 
 2.  $\{e_1,e_2,e_3\}$, avec $e_3=(1,1)$, n’est pas une base de
-    ${\mathbb{R}}^2$, car ce n’est pas une famille libre. On a par
+    ${\real}^2$, car ce n’est pas une famille libre. On a par
     exemple que l’élément $v=(0,0)$ peut se représenter avec les
     coordonnées $\alpha=(0,0,0)$ et également les coordonnées
     $\beta=(1,1,-1)$.
@@ -2551,12 +2552,12 @@ Propriété +.#
     transformée de Fourier est donnée par
     $${\hat{g}}(\omega)={\hat{f}}(\omega)e^{i\omega t_0}.$$
 
-3.  Modulation en fréquence. Soit $\omega_0\in{\mathbb{R}}$ et une
+3.  Modulation en fréquence. Soit $\omega_0\in{\real}$ et une
     fonction $g(t)=e^{-i\omega_0 t}f(t)$, alors sa transformée de
     Fourier est donnée par
     $${\hat{g}}(\omega)={\hat{f}}(\omega+\omega_0).$$
 
-4.  Contraction temporelle. Soit $a\in{\mathbb{R}}^\ast$ et $g(t)=f(at)$
+4.  Contraction temporelle. Soit $a\in{\real}^\ast$ et $g(t)=f(at)$
     alors sa transformée de Fourier est donnée par
     $${\hat{g}}(\omega)=\frac{1}{|a|}{\hat{f}}(\omega/a).$$ En
     particulier, on a la propriété d’inversion du temps quand $a=-1$, on
@@ -3235,7 +3236,7 @@ $\Omega$ se réalisent $$\begin{aligned}
  f(A\cup B)&=\frac{M+K}{N}=f(A)+f(B).\end{aligned}$$ Les *probabilités*
 de réalisation des événements ci-dessus peutvent être vues comme le
 passage à la limite $N\rightarrow\infty$ tel que
-$p(A),p(B)\in{\mathbb{R}}$ et $$\begin{aligned}
+$p(A),p(B)\in{\real}$ et $$\begin{aligned}
  p(A)&=\lim_{\substack{N\rightarrow\infty,\\ K/N<\infty}}\frac{K}{N},\\
  p(B)&=\lim_{\substack{N\rightarrow\infty,\\ M/N<\infty}}\frac{M}{N},\\
  p(\Omega)&=1,\\
@@ -3785,9 +3786,9 @@ Variables aléatoires
 
 Lors d’une expérience aléatoire, il est assez commun de relier chaque
 événement de l’univers, $A\in\Omega$, à un nombre réel,
-$X(A)\in{\mathbb{R}}$. Cette relation est définie par une fonction qui
+$X(A)\in{\real}$. Cette relation est définie par une fonction qui
 porte le nom de variable aléatoire et peut s’écrire mathématiquement
-sous la forme $$X:\Omega\rightarrow {\mathbb{R}}.$$ Afin de mieux
+sous la forme $$X:\Omega\rightarrow {\real}.$$ Afin de mieux
 comprendre ce concept voyons quelques exemples
 
 1.  Lors d’un jet de dé unique l’univers est défini par
@@ -3813,8 +3814,8 @@ comprendre ce concept voyons quelques exemples
 Comme nous nous sommes posés la question de connaître la probabilité
 d’obtenir un certain résultat lors d’une expérience aléatoire, il en va
 de même avec la probabilité que la variable aléatoire $X$ prenne une
-valeur donnée, $\alpha\in{\mathbb{R}}$ ou prenne une valeur incluse dans
-un intervalle $I\subseteq{\mathbb{R}}$.
+valeur donnée, $\alpha\in{\real}$ ou prenne une valeur incluse dans
+un intervalle $I\subseteq{\real}$.
 
 Pour illustrer ce qui se passe, intéressons-nous au dernier exemple
 ci-dessus avec le double pile ou face. On se pose les questions
@@ -3852,9 +3853,9 @@ On peut noter dans le cas général qu’on a $D=X^{-1}(I)$.
 
 Définition (Variable aléatoire) +.#
 
-On dit que la fonction $X:\Omega\rightarrow{\mathbb{R}}$ est une
+On dit que la fonction $X:\Omega\rightarrow{\real}$ est une
 *variable aléatoire* si la préimage de $X$ sur tout intervalle,
-$I\subseteq{\mathbb{R}}$, est un événement $A\in \Omega$. La probabilité
+$I\subseteq{\real}$, est un événement $A\in \Omega$. La probabilité
 que $X$ prenne une valeur dans l’intervalle $I$ est égale à la
 probabilité de réaliser l’événement $A$ $$p(X\in I)=p(A).$$
 
@@ -3864,9 +3865,9 @@ probabilité de réaliser l’événement $A$ $$p(X\in I)=p(A).$$
 
 Définition (Fonction de répartition) +.#
 
-On dit que la fonction $F:{\mathbb{R}}\rightarrow{\mathbb{R}}$ est une
+On dit que la fonction $F:{\real}\rightarrow{\real}$ est une
 *fonction de répartition* si $F(x)=p(X\leq x)$ pour tout
-$x\in{\mathbb{R}}$.
+$x\in{\real}$.
 
 ---
 
