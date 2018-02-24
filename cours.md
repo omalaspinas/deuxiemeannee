@@ -181,13 +181,13 @@ $\lim\limits_{x\rightarrow 0^-} f(x)=-\infty$.
 Dans certains cas il peut être intéressant d’étudier le comportement des
 fonctions quand $x\rightarrow\pm\infty$. Dans ces cas-là on dit qu’on
 s’intéresse au comportement *asymptotique* d’une fonction. Ce concept
-est particulièrement relevant quand on étudie une fonction que a la
+est particulièrement pertinent quand on étudie une fonction qui a la
 forme d’une fraction $$h(x)=\frac{f(x)}{g(x)}.$$ Si on s’intéresse au
 comportement à l’infini de cette fonction on va prendre sa “limite”
 lorsque $x\rightarrow\infty$
 $$\lim_{x\rightarrow\infty} h(x)=\lim_{x\rightarrow\infty}\left(\frac{f(x)}{g(x)}\right).$$
 Un exemple peut être $f(x)=x-1$, $g(x)=x+1$ et donc $h(x)=(x-1)/(x+1)$
-$$\lim_{x\rightarrow\infty} \frac{x-1}{x+1}=\lim_{x\rightarrow\infty} \frac{x}{x}=1.$$
+$$\lim_{x\rightarrow\infty} \frac{x-1}{x+1}=\lim_{x\rightarrow\infty} \frac{x(1-1/x)}{x(1+1/x)}=1.$$
 De même quand on a $f(x)=3x^4-5x^3+1$, $g(x)=1$ et donc
 $h(x)=3x^4-5x^3+1$. Il vient donc
 $$\lim_{x\rightarrow\infty} 3x^4-5x^3+1=\lim_{x\rightarrow\infty}3x^4=\infty.$$
