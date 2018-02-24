@@ -232,7 +232,7 @@ $\lim\limits_{x\rightarrow a}f(x)=f(a)$.
 
 Propriétés (Fonctions continues) +.#
 
-Soient $f$ et $g$ deux fonctions continues en $a$ alors et $b$ un réel:
+Soient $f$ et $g$ deux fonctions continues en $a$ et $b$ un réel:
 
 1.  $f+g$ est continue en $a$.
 
