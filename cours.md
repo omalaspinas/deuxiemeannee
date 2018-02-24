@@ -26,8 +26,8 @@ Fonctions
 ---------
 
 Une fonction $f$ de façon générale est un objet qui prend un (ou
-plusieurs) paramètres et qui lui (leur) associe (associent) un unique résultat. $$\mbox{résultat}=f(\mbox{paramètres}).$$
-
+plusieurs) paramètres et qui lui (leur) associe (associent) un résultat. $$\mbox{résultat}=f(\mbox{paramètres}).$$
+Nous pouvons aussi exprimer cette notion de la manière suivante. Considérons deux ensembles $A$ et $B$. Supposons qu'à chaque élément $x\in A$ est associé un élément dans $B$ que nous notons par $f(x)$. Alors on dit que $f$ est une fonction ou une application (de $A$ dans $B$). A ce niveau A et B sont arbitraires mais dans la suite nous allons nous intéresser surtout du cas où $A=\subset\mathbr{R}$. Les valeurs de $f$ constituent les {\it images} de $x$.
 ---
 
 Exemple (Fonctions, généralités) +.#
@@ -56,7 +56,7 @@ $$y=g(f(x)).$$
 Exemple (Fonctions) +.#
 
 1.  Soit $f(x)=2\cdot x$ et $g(x)=\sqrt{x}$, alors la composition des
-    deux fonctions $$f(g(x))=f(\sqrt{x})=2\sqrt{x}.$$
+    deux fonctions $$(f\circ g)(x)=f(g(x))=f(\sqrt{x})=2\sqrt{x}.$$
 
 2.  On peut composer un nombre arbitraire de fonctions. Voyons le cas
     avec trois fonctions $f(x)=2x^2+3$, $g(x)=\cos(2\cdot x)$, et
@@ -80,6 +80,9 @@ Exemple (Fonction inverse) +.#
     deux fonctions $$f(f^{-1}(x))=f(\sqrt{x})=|x|.$$ On a donc que
     $\sqrt{x}$ est l’inverse de $x^2$ uniquement pour les réels
     positifs. $f(x)=x^2$ n’a pas d’inverse pour les $x$ négatifs.
+    On peut se convaincre qu'une fonction ne peu admettre une inverse que si elle 
+    elle satisfait la condition $x_1\neq x_2 \rightarrow f(x_1)\neq f(x_2)$.
+    Dans notre exemple $-1\neq 1$ mais (f(-1)=f(1)=1$
 
 ---
 
@@ -88,7 +91,7 @@ Domaine de définition
 
 Définition (Domaine de définition) +.# 
 
-Le domaine de définition, noté $D\subseteq{\mathbb{R}}$, d’une fonction
+Le domaine de définition, noté $D\subset{\mathbb{R}}$, d’une fonction
 $f$, est l’ensemble de valeurs où $f$ admet une image.
 
 ---
@@ -107,21 +110,20 @@ Exemple (Domaine de définition) +.#
 Limites
 -------
 
-Soit $f$ une fonction et $D\subseteq{\mathbb{R}}$ non-vide et non réduit
-à un point et soient $a$ et $b$ deux réels.
+Soit $f$ une fonction et $D\subseteq{\mathbb{R}}$ non-vide  et soient $a$ et $b$ deux réels.
 
 ### Limite
 
 Définition (Limite) +.# 
 
-Pour $f$ définie en $D$, sauf peut-être en $a$, on dit que $b$ est la
-limite de $x$ en $a$ si $\lim\limits_{x\rightarrow a}f(x)=b$.
-C’est-à-dire si on a un voisinage de $b$ qui contient toutes la valeurs
-de $f(x)$ pour $x$ proche de $a$.
+Pour $f$ définie en $D$,  on dit que $b$ est la
+limite de $x$ en $a$ si si au fur et à mesure que $x$ se rapproche de $a$, $f(x)$ se raproche de $b$ et nous notons  $\lim\limits_{x\rightarrow a}f(x)=b$.
+C’est-à-dire pour tout voisinage de $b$ qui contient toutes  les valeurs
+de $f(x)$ nous avons un voisinage de $a$ qui contient les valeurs de  $x$ (suffisament proches de $a$). C'est pas bon!!!! Fais un $epsilon$ , $delta$ pour que ça soit clair. De toute façon tu travailles dans $\mathbr{R}$ un espace métrique.
 
 Remarque +.# 
-
-Si $f$ est définie en $a$ alors on a $\lim\limits_{x\rightarrow a}=f(a)$.
+Il n'est pas nécessaire que $a\in D$. Mais si c'est le cas et donc 
+$f$ est définie en $a$ alors on a $\lim\limits_{x\rightarrow a}=f(a)$.
 
 ---
 
@@ -133,10 +135,10 @@ Si $f(x)=x$, alors $\lim\limits_{x\rightarrow 0}f(x)=0$.
 
 Définition (Limite, asymptote) +.#
 
-Pour $f$ définie en $D$, sauf peut-être en $a$, et $c$ un réel positif.
-On dit que la limite de $f(x)$ en $a$ tend vers l’infini si l’intervalle
-$[c;\infty[$ contient toutes les valeurs de $f(x)$ pour $x$ proche de
-$a$.
+Pour $f$ définie en $D$,
+on dit que la limite de $f(x)$ en $a$ est égale à l’infini si pour tout $c>0$ l’intervalle
+$[c;\infty[$ contient toutes les valeurs de $f(x)$ pour $x$ suffisament proche de
+$a$. On dit aussi que $f$ tend vers l'infini.
 
 ---
 
@@ -148,9 +150,9 @@ Si $f(x)=1/x^2$, alors $\lim\limits_{x\rightarrow 0}f(x)=\infty$.
 
 ### Limite à gauche, limite à droite
 
-Pour certaines fonctions, il est possible que le comportement de
-celles-ci soit différent selon qu’on approche par la gauche ou par la
-droite (i.e. $f(x)=1/x$).
+Il est possible que le comportement de certaines fonctions 
+soit différent selon qu’on approche $a$  par la gauche ou par la
+droite (i.e. $f(x)=1/x$, pour $a=0$).
 
 On note la limite à droite $\lim\limits_{x\rightarrow a^+} f(x)$ ou
 $\lim\limits_{x\rightarrow a,x>a} f(x)$ et
@@ -159,14 +161,14 @@ $\lim\limits_{x\rightarrow a,x<a} f(x)$ la limite à gauche de la
 fonction $f$ en $a$.
 
 Si la fonction $f$ admet une limite en $a$, alors les deux limites
-doivent être égales.
+sont égales.
 
 Exemple (Limite à gauche/droite) +.#
 
 Si $f(x)=1/x$, alors $\lim\limits_{x\rightarrow 0^+} f(x)=\infty$ et
 $\lim\limits_{x\rightarrow 0^-} f(x)=-\infty$.
 
-### Asymptotes
+### Comportement asymptotique
 
 Dans certains cas il peut être intéressant d’étudier le comportement des
 fonctions quand $x\rightarrow\pm\infty$. Dans ces cas-là on dit qu’on
