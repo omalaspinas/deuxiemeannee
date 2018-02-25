@@ -181,20 +181,25 @@ $\lim\limits_{x\rightarrow 0^-} f(x)=-\infty$.
 Dans certains cas il peut être intéressant d’étudier le comportement des
 fonctions quand $x\rightarrow\pm\infty$. Dans ces cas-là on dit qu’on
 s’intéresse au comportement *asymptotique* d’une fonction. Ce concept
-est particulièrement relevant quand on étudie une fonction que a la
+est particulièrement pertinent quand on étudie une fonction qui a la
 forme d’une fraction $$h(x)=\frac{f(x)}{g(x)}.$$ Si on s’intéresse au
 comportement à l’infini de cette fonction on va prendre sa “limite”
 lorsque $x\rightarrow\infty$
 $$\lim_{x\rightarrow\infty} h(x)=\lim_{x\rightarrow\infty}\left(\frac{f(x)}{g(x)}\right).$$
 Un exemple peut être $f(x)=x-1$, $g(x)=x+1$ et donc $h(x)=(x-1)/(x+1)$
-$$\lim_{x\rightarrow\infty} \frac{x-1}{x+1}=\lim_{x\rightarrow\infty} \frac{x}{x}=1.$$
+$$\lim_{x\rightarrow\infty} \frac{x-1}{x+1}=\lim_{x\rightarrow\infty} \frac{x(1-1/x)}{x(1+1/x)}=1.$$
 De même quand on a $f(x)=3x^4-5x^3+1$, $g(x)=1$ et donc
 $h(x)=3x^4-5x^3+1$. Il vient donc
-$$\lim_{x\rightarrow\infty} 3x^4-5x^3+1=\lim_{x\rightarrow\infty}3x^4=\infty.$$
+$$\lim_{x\rightarrow\infty} 3x^4-5x^3+1=\lim_{x\rightarrow\infty}3x^4\left(1-\frac{5}{3x}+\frac{1}{3x^4}\right)=\infty.$$
 
-Si nous compliquons un peu l’exemple, et que nous avons
+Si nous compliquons un peu l’exemple et que nous avons
 $f(x)=x^3+3x^2+1$, $g(x)=x^2$ et donc $h(x)=(x^3+3x^2+1)/x^2$
 $$\lim_{x\rightarrow\infty} (x^3+3x^2+1)/x^2=\lim_{x\rightarrow\infty} x=\infty.$$
+Un cas encore un peu plus complexe serait
+$f(x)=3x^3+1$, $g(x)=4x^3+2x^2+x$
+$$
+\lim_{x\rightarrow \infty}\frac{f(x)}{g(x)}=\lim_{x\rightarrow \infty}\frac{3x^3(1+1/3x^3)}{4x^3(1+1/2x^+1/4x^2)}=\frac{3}{4}.$$
+
 Ce genre d’estimations est imporant en informatique lors de l’analyse de
 performance des algorithmes. On peut prendre l’exemple des algorithmes
 de tri “bubble sort” et “quick sort”. Leur complexité respective moyenne
@@ -203,7 +208,7 @@ chaîne à trier. Si on fait le rapport pour de ces deux complexités on a
 $$\lim_{n\rightarrow\infty} \frac{n^2}{n\log(n)}=\lim_{n\rightarrow\infty} \frac{n}{\log(n)}.$$
 On peut simplement voir que ce rapport va tendre vers l’infini en
 dessinant la courbe $n/\log(n)$. Il existe un moyen “analytique”
-d’évaluerce rapport. Tout nombre $n$ peut s’écrire avec une précision
+d’évaluer ce rapport. Tout nombre $n$ peut s’écrire avec une précision
 $p$ comme $$n=A\cdot 10^{p-1},$$ où $p$ est le nombre de chiffres
 significatifs qu’on veut représenter, et $1\leq A< 10$. On a également
 que[^1]
@@ -214,7 +219,7 @@ La valeur de $y$ étant quelque chose de proche de 0, la somme converge
 vite vers une valeur finie et on peut faire l’approximation
 $$\log(n)\cong(p-1)\log(10),$$ pour $n$ grand (ce qui est équivalent à
 $p$ grand). On a donc que finalement le rapport $n/\log(n)$ va comme
-$$\lim_{n\rightarrow\infty}\frac{n}{\log(n)}=\frac{A}{\log(10)}\cdot\lim_{n\rightarrow\infty}\frac{10^{p-1}}{(p-1)}=\frac{A}{\log(10)}\cdot\lim_{n\rightarrow\infty}\frac{10^{p-1}}{p}=\infty.$$
+$$\lim_{n\rightarrow\infty}\frac{n}{\log(n)}=\frac{A}{\log(10)}\cdot\lim_{p\rightarrow\infty}\frac{10^{p-1}}{(p-1)}=\frac{A}{\log(10)}\cdot\lim_{p\rightarrow\infty}\frac{10^{p-1}}{p}=\infty.$$
 
 Continuité
 ----------
@@ -227,7 +232,7 @@ $\lim\limits_{x\rightarrow a}f(x)=f(a)$.
 
 Propriétés (Fonctions continues) +.#
 
-Soient $f$ et $g$ deux fonctions continues en $a$ alors et $b$ un réel:
+Soient $f$ et $g$ deux fonctions continues en $a$ et $b$ un réel:
 
 1.  $f+g$ est continue en $a$.
 
