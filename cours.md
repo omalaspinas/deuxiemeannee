@@ -396,12 +396,12 @@ l’intervalle $[a,b]$ de plusieurs  façons:
 2.  $A^s(n)=\sum_{i=0}^{n-1} \sup\limits_{[x_i,x_{i+1}]} f(x)\cdot (x_{i+1}-x_i)$
     comme étant l’aire supérieure.
     
-3. $A^R(n)=\sum_{i=0}^{n-1}  f(\xi_i)\cdot (x_{i+1}-x_i)$, $\xi_i\in [x_i,x_{i+1}] $   
+3. $A^R(n)=\sum_{i=0}^{n-1}  f(\xi_i)\cdot (x_{i+1}-x_i)$, $\xi_i\in [x_i,x_{i+1}]$   
 
 1 et 2 sont les sommes de Darboux, 3 est une somme de Riemann qui, dépendant des choix des $\xi_i$, peut être égale à 1 ou à 2.
 
 L’aire de sous la fonction $f(x)$ est donnée par la limite pour
-$n\rightarrow\infty$ de $A^i$ ou $A^s$ (si elle existe). Dans ce cas $n\rightarrow\infty$ $A^R$ (pris en sandwich entre $Aî$ et $A^n$)
+$n\rightarrow\infty$ de $A^i$ ou $A^s$ (si elle existe). Dans ce cas $n\rightarrow\infty$ $A^R$ (pris en sandwich entre $A^i$ et $A^n$)
 nous donne aussi l'aire sous la fonction.
 
 Remarque +.#
