@@ -327,13 +327,13 @@ Soit $f'$ la fonction dérivée de $f$ sur $D$
 Définition (Maximum/minimum local) +.# 
 
 Une fonction admet un maximum local (respectivement minimum local) sur
-un intervalle $D=]a;b[$ s’il existe un $x_0$ tel que $f(x_0)\geq f(x)$
+un intervalle $D=]a;b[$ s’il existe un $x_0\in D$ tel que $f(x_0)\geq f(x)$
 (respectivement $f(x_0)\leq f(x)$) pour tout $x\in D$.
 
 Propriété (Maximum/minimum) +.# 
 
-Soit $f$ une fonction dérivable sur $D=]a;b[$ et $x_0\in D$. Si $f$
-admet un maximum ou un minimum en $x_0$ alors $f'(x_0)=0$. De plus si
+Soient $f$ une fonction dérivable sur $D=]a;b[$ et $x_0\in D$. Si $f$
+admet un extremum en $x_0$ alors $f'(x_0)=0$. De plus si
 $f'(x_0)=0$ et $f'$ change de signe en $x_0$ alors $f(x_0)$ est un
 maximum ou un minimum de $f$.
 
@@ -373,31 +373,36 @@ fonction $f$. La fonction $f$ satisfait les hypothèses suivantes.
 
 1.  $f(x)$ est bornée dans l’intervalle $[a,b]\in{\real}$.
 
-2.  $f(x)$ est continue presque partout.
+2.  $f(x)$ est continue presque partout. 
 
 Nous définissions également l’infimum de $f$ sur un intervalle
-$[x_0,x_1]$, noté $$\inf\limits_{[x_0,x_1]} f(x)$$ comme étant la valeur
+$[x_0,x_1]$, noté $$\inf\limits_{[x_0,x_1]} f(x)$$ comme étant la plus grande valeur
 bornant par dessous toutes les valeurs prises par $f(x)$ dans
 l’intervalle $[x_0,x_1]$. Le suprémum sur un intervalle $[x_0,x_1]$,
-noté $$\sup\limits_{[x_0,x_1]} f(x)$$ comme étant la valeur bornant par
+noté $$\sup\limits_{[x_0,x_1]} f(x)$$ comme étant la plus petite valeur bornant par
 dessus toutes les valeurs prises par $f(x)$ dans l’intervalle
 $[x_0,x_1]$.
 
 Finalement nous définissons une subdivision
 $$\Delta_n=\{a=x_0<x_1<...<x_{n-1}<x_{n}=b\}$$ est une suite finie
-contenant $n$ termes dans $[a,b]$.
+contenant $n+1$ termes dans $[a,b]$.
 
 On peut à présent approximer l’aire sous la fonction $f(x)$ dans
-l’intervalle $[a,b]$ de deux façon:
+l’intervalle $[a,b]$ de plusieurs  façons:
 
-1.  $A^i(n)=\sum_{i=0}^{n-1} \inf\limits_{[x_i,x_{i+1}]} f(x) (x_{i+1}-x_i)$
+1.  $A^i(n)=\sum_{i=0}^{n-1} \inf\limits_{[x_i,x_{i+1}]} f(x)\cdot (x_{i+1}-x_i)$
     comme étant l’aire inférieure.
 
-2.  $A^s(n)=\sum_{i=0}^{n-1} \sup\limits_{[x_i,x_{i+1}]} f(x) (x_{i+1}-x_i)$
+2.  $A^s(n)=\sum_{i=0}^{n-1} \sup\limits_{[x_i,x_{i+1}]} f(x)\cdot (x_{i+1}-x_i)$
     comme étant l’aire supérieure.
+    
+3. $A^R(n)=\sum_{i=0}^{n-1}  f(\xi_i)\cdot (x_{i+1}-x_i)$, $\xi_i\in [x_i,x_{i+1}]$   
+
+1 et 2 sont les sommes de Darboux, 3 est une somme de Riemann qui, dépendant des choix des $\xi_i$, peut être égale à 1 ou à 2.
 
 L’aire de sous la fonction $f(x)$ est donnée par la limite pour
-$n\rightarrow\infty$ de $A^i$ ou $A^s$ (si elle existe).
+$n\rightarrow\infty$ de $A^i$ ou $A^s$ (si elle existe). Dans ce cas $n\rightarrow\infty$ $A^R$ (pris en sandwich entre $A^i$ et $A^n$)
+nous donne aussi l'aire sous la fonction.
 
 Remarque +.#
 
