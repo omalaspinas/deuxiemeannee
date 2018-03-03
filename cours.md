@@ -455,7 +455,7 @@ Interprétation physique
 Supposons que nous ayons une fonction, $x(t)$, qui donne la position
 d’un objet pour un intervalle de temps $t\in[a,b]$. Nous pouvons
 aisément en déduire la vitesse $v(t)$ de l’objet, comme étant la
-variation de $x(t)$ pour tout $t$. Autrement dit $v(t)=x'(t)$.
+variation de $x(t)$ quand  $t$ varie. Autrement dit $v(t)=x'(t)$.
 
 Supposons à présent que nous ne connaissions que la vitesse $v(t)$ de
 notre objet. Afin de déduire sa position nous prendrions un certain
@@ -465,9 +465,9 @@ pendant l’intervalle $\delta t_i$ et ainsi de suite. Afin d’améliorer
 l’approximation de la distance parcourue nous diminuerions la valeur de
 $\delta t_i$ jusqu’à ce que $\delta t_i\rightarrow 0$.
 
-Nous voyons donc que cette méthode, n’est autre qu’une façon “intuitive”
-d’intégrer la vitesse afin de trouver la position. Et que donc
-l’intégrale et la dérivée sont étroitement liée. La vitesse étant la
+Nous voyons ainsi que cette méthode, n’est autre qu’une façon “intuitive”
+d’intégrer la vitesse afin de trouver la position. Et que 
+l’intégrale et la dérivée sont étroitement liées: la vitesse étant la
 dérivée de la position et la position étant l’intégrale de la vitesse.
 
 Primitive
@@ -483,14 +483,14 @@ Soit $f$ une fonction. On dit que $F$ est la primitive de $f$ sur
 l’intervalle $D\subseteq{\real}$ si $F'(x)=f(x)$ $\forall x\in D$.
 
 Si $F$ est une primitive de $f$, alors on peut définir la fonction $G$
-telle que $G(x)=F(x)+C$, $\forall C\in{\real}$ qui est aussi une
-primitive de $f$. On dit donc que la primitive de $f$ est définie à une
+telle que $G(x)=F(x)+C$, $C\in{\real}$ qui est aussi une
+primitive de $f$. On dit que la primitive de $f$ est définie à une
 constante additive près. En effet, si $F'=f$ on a
 $$G'=F'+\underbrace{C'}_{=0}=F'=f.$$
 
 Théorème (Unicité) +.#
 
-S’il existe $a\in D$ et $b\in{\real}$ alors il existe une unique
+Pour $a\in D$ et $b\in{\real}$  il existe une unique
 primitive $F$ telle que $F(a)=b$.
 
 ---
@@ -507,7 +507,7 @@ que $C=0$ et donc la primitive est unique et vaut $F(x)=x^2/2$.
 
 Exercices (Primitives) +.#
 
-Calculez les primitives suivantes (*Indication: Il s’agit de trouver les
+Calculez les primitives suivantes (*indication: il s’agit de trouver les
 fonctions $F(x)$ telles que $F'(x)=f(x)$*):
 
 1.  $F(x)=\int x^2{\mathrm{d}}x$.
