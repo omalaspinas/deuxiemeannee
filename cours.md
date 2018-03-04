@@ -1011,30 +1011,30 @@ considérer pour commencer des systèmes qui évoluent dans le temps
 
 Imaginons que nous connaissons la fonction décrivant le vitesse d’une
 particle au cours du temps et notons la $v(t)$. Nous savons également
-que la vitesse d’une particule est relié à l’évolution au cours du temps
+que la vitesse d’une particule est reliée à l’évolution au cours du temps
 de sa position. Cette dernière peut être notée, $x(t)$. En particulier,
 nous avons que la vitesse n’est rien d’autre que la dérivée de la
-position. On peut onc écrire une équation reliant la vitesse à la
+position. On peut donc écrire une équation reliant la vitesse à la
 position $$x'(t)=v(t).$$ Cette équation est appelée *équation
 différentielle*, car elle fait intervernir non seulement les fonctions
 $x(t)$ et $v(t)$, mais également la dérivée de la fonction $x(t)$. Si
 maintenant nous précisons ce que vaut la fonction $v(t)$ nous pourrons
 résoudre cette équation. Comme le nom de la sous-section le laisse
 entendre, nous nous intéressons à un mouvement rectiligne uniforme, qui
-a la particularité de décrire le mouvement d’un objet qui se déplace à
-vitesse constante. On a donc $$v(t)=v.$$ Nous cherchons donc à résoudre
+décrit le mouvement d’un objet qui se déplace à
+vitesse constante, $$v(t)=v.$$ Nous cherchons donc à résoudre
 l’équation différentielle $$x'(t)=v.$$ Ou en d’autres termes, nous
-cherchons la fonction dont la dérivée donne $C$[^3]. Vous savez sans
+cherchons la fonction dont la dérivée est une constante. Vous savez sans
 doute que l’ensemble de fonctions satisfaisant la contrainte précédente
 est $$x(t)=v\cdot t+B,$$ où $B$ est une constante arbitraire. On a donc
 la solution générale de cette équation différentielle qui n’est pas
-unique, mais qui donne une infinité de solution (comme quand nous avons
+unique, mais qui donne une infinité de solutions (comme quand nous avons
 calculé la primitive d’une fonction au chapitre précédent). Afin de
 trouver une solution unique, nous devons imposer une “condition intiale”
 à notre équation différentielle. En effet, si nous imposons la condition
 intiale $$x(t_0)=x_0,$$ il vient
 $$x(t_0)=x_0=v\cdot t_0+B \Leftrightarrow B=x_0-v\cdot t_0.$$
-Finalement, la solution de l’équation différentielle est donnée par
+Finalement, la solution du problème est donnée par
 $$x(t)=v\cdot (t-t_0)+x_0.$$
 
 Remarque +.#
@@ -1054,34 +1054,32 @@ dérivée de la position, soit $$x''(t)=a(t),$$ ou encore la première
 dérivée de la vitesse. $$\begin{aligned}
 v'(t)&=a(t),\\
 x'(t)&=v(t).\end{aligned}$$
-
-Par simplicité supposons que l’accélération est constante, $a(t)=a$. On
-doit donc résoudre[^4] $$x''(t)=a,$$ ou $$\begin{aligned}
+Posons $a(t)=a$. On
+doit  résoudre[^4] $$x''(t)=a,$$ ou $$\begin{aligned}
 v'(t)&=a,\\
-x'(t)&=v(t).\end{aligned}$${#eq:xpv} Commençons pas le système
-d’équations ci-dessus. On commence par résoudre la première équation
+x'(t)&=v(t).\end{aligned}$${#eq:xpv}  On commence par résoudre la première équation
 pour $v(t)$ et on a $$v(t)=a\cdot t+C.$$ En substituant ce résultat dans
-l’@eq:xpv, on a $$x'(t)=a\cdot t+C.$$ On peut donc
+l’@eq:xpv, on a $$x'(t)=a\cdot t+C.$$ On peut 
 directement intégrer des deux côtés comme vu dans la sous-section
 précédente $$\begin{aligned}
- \int x'(t){\mathrm{d}}t&=\int a\cdot t+C{\mathrm{d}}t,\nonumber\\
- x(t)&=\frac{a}{2}\cdot t^2+C\cdot t + D.\end{aligned}$$ On a donc que
+ \int x'(t){\mathrm{d}}t&=\int (a\cdot t+C){\mathrm{d}}t,\nonumber\\
+ x(t)&=\frac{a}{2}\cdot t^2+C\cdot t + D.\end{aligned}$$ On voit  que
 la position d’un objet en mouvement rectiligne uniformément accéléré est
-donné par une parabole. Cette équation ci-dessus néanmoins a encore deux
-constante indéterminées. Pour les déterminer, on doit donc imposer deux
-conditions intiales. Une possibilité est d’imposer une condition
+donné par une parabole. Cette équation a néanmoins  encore deux
+constantes indéterminées. Pour les déterminer, on doit imposer deux
+conditions. Une possibilité est d’imposer une condition
 initiale par équation $$v(t_0)=v_0,\mbox{ et } x(t_0)=x_0.$$ On obtient
-donc $$v(t_0)=v_0=a\cdot t_0+C \Leftrightarrow C=v_0-a\cdot t_0,$$ et
+ $$v(t_0)=v_0=a\cdot t_0+C \Leftrightarrow C=v_0-a\cdot t_0,$$ et
 $$x(t_0)=x_0=\frac{a}{2}\cdot t_0^2+D \Leftrightarrow D=x_0-\frac{a}{2}\cdot t_0^2.$$
-Finalement la solution est donc
+Finalement la solution est donnée par
 $$x(t)=\frac{a}{2}\cdot (t^2-t_0^2)+v_0\cdot (t-t_0)+x_0.$$
 
 Remarque +.#
 
-La solution de l’équation différentielle peut également se calculer de
-la façon suivante $$x''(t)=av,\ x(t_0)=x_0,\ v(t_0)=v_0.$$ revient à
+La solution du problème différentiel peut également se calculer de
+la façon suivante $$x''(t)=a,\ x(t_0)=x_0,\ v(t_0)=v_0.$$ revient à
 calculer $$\begin{aligned}
- \int \int x''(t){\mathrm{d}}t{\mathrm{d}}t=\int \int a {\mathrm{d}}t{\mathrm{d}}t,\\
+ \int \int x''(t)=\int \int a,\\
  x(t)=\frac{a}{2}t^2+C\cdot t + D.\end{aligned}$$
 
 ### Évolution d’une population
