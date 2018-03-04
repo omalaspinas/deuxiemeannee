@@ -1107,7 +1107,7 @@ $$n(t_0+7200)=(1+1/3600 \cdot 7200)\cdot n(t_0)=3\cdot 1000=3000.$$ On
 voit que ces deux résultats ne sont pas égaux. Effectuer deux itérations
 de notre algorithme discret avec un pas d’itération de $\delta t$, ne
 correspond pas à effectuer une seule itération avec un pas deux fois
-plus grand ($2\delta t$). Néanmoins cela devrait être le cas plus
+plus grand ($2\delta t$). Néanmoins cela devrait être le cas pour
 $\delta t\rightarrow 0$.
 
 Pour nous en convaincre faisons l’exercice suivant. Reprenons l’@eq:comp que vous pouvons réécrire comme
@@ -1237,7 +1237,7 @@ après un intervalle $\delta t$ est de
 $$c(t+\delta t)=c(t)+(r\delta t )c(t)+d\delta t.$${#eq:cap_discr}
 Supposons qu’on a un capital de départ $1000 \mathrm{CHF}$, un taux
 d’intérêts annuel de $1\%$ et un dépôt annuel de $100\mathrm{CHF}$.
-Après deux mois ($\delta t=2/12=1/6$) on a donc que le capital devient
+Après deux mois ($\delta t=2/12=1/6$) le capital devient
 $$c(1/6)=1000+0.01/6\cdot 1000 +100/6=1018.3\mathrm{CHF}.$$ Si
 maintenant, nous voulons avoir la valeur du capital à n’importe quel
 moment dans le temps, nous allons prendre $\delta t\rightarrow 0$. En
@@ -1245,10 +1245,10 @@ divisant l'@eq:cap_discr par $\delta t$, et en
 réarrangeant les termes, on obtient $$c'(t)=rc(t)+d.$$ En supposant que
 $c(t=0)=c_0$ (le capital initial), cette équation différentielle a pour
 solution $$c(t)=\frac{d}{r}(e^{rt}-1)+c_0e^{r t}.$$ Cette solution a
-pour les paramètres précédent la forme suivante sur une période de 100
+pour les paramètres précédents la forme suivante sur une période de 100
 ans.
 
-![L’évolution du capital $c$ en fonction du temps su 100
+![L’évolution du capital $c$ en fonction du temps sur 100
 ans.](figs/interets.pdf){#fig:interets width="50.00000%"}
 
 Définitions et théorèmes principaux
@@ -1259,7 +1259,7 @@ Définition (Équation différentielle ordinaire) +.#
 Soit $y$ une fonction dérivable $n$ fois et dépendant d’une seule
 variable. Une **équation différentielle ordinaire** est un équation de
 la forme $$F(x,y,y',y'',...,y^{(n)})=0,$$ où $F$ est une fonction, et
-$y'$, $y''$, ..., $y^{(n)}$ sont les dérivées premières, deuxièmes, ...,
+$y'$, $y''$, ..., $y^{(n)}$ sont les dérivées première, deuxième, ...,
 $n$-ème de $y$.
 
 ---
@@ -1294,7 +1294,7 @@ Définition (Condition initiale) +.#
 Une condition initiale pour une équation différentielle d’ordre $n$, est
 un ensemble de valeurs, $y_0$, $y_1$, ..., $y_{n-1}$ donnée telles que
 pour une valeur $x_0$ donnée on a
-$$y(x_0)=y_0,\ y'(x_0)=y_1,\ ...,\ y^{(n-1)}=y_{n-1}.$$
+$$y(x_0)=y_0,\ y'(x_0)=y_1,\ ...,\ y^{(n-1)}(x_0)=y_{n-1}.$$
 
 Nous souhaitons maintenant savoir sous quelles conditions une équation
 différentielle admet une solution et si elle est unique. Nous n’allons
@@ -1306,15 +1306,14 @@ version approximative et la discuter
 
 Théorème (Existence et unicité) +.#
 
-Soit $D\subseteq{\real}$ le domaine de définition de la fonction
-$y$. Soit $y:D\rightarrow E\subseteq {\real}$ une fonction à valeur
-réelle continue et dérivable sur $D$, et
+Soit $y:D\rightarrow E\subseteq {\real}$ une fonction à valeurs
+réelles continue et dérivable sur $D$, et
 $f:D\times E\rightarrow F\subseteq{\real}$ une fonction continue
 sur $D\times E$. Alors, le système suivant (également appelé problème de
 Cauchy) $$\begin{aligned}
   &y'=f(y,x),\\
   &y(x=x_0)=y_0,
- \end{aligned}$$ admet une unique unique solution $y(x)$.
+ \end{aligned}$$ admet une unique solution $y(x)$.
 
 ---
 
@@ -1332,13 +1331,13 @@ mais que nous avons augmenté le nombre d’équations à résoudre.
 Cette propriété peut se généraliser de la façon suivante. Soit une
 équation différentielle d’ordre $n$ $$F(x,y,y',...,y^{(n)})=0.$$ Nous
 pouvons définir $z_i=y^{(i-1)}$ et on aura donc que $z_{i+1}=z_i'$. On
-peut donc réécrire l’équation différentielle d’ordre $n$ comme étant
+peut ainsi réécrire l’équation différentielle d’ordre $n$ comme étant
 $$\begin{aligned}
  &z_{i+1}=z_i',\ i=1,...,n-1\\
  F(x,y,y',..,y^{(n)})=0 \Rightarrow &G(x,z_1,z_2,...,z_n)=0.\end{aligned}$$
 
 Jusqu’ici $F$ peut être totalement arbitraire. Essayons de classifier un
-peu les équations différentielles en fonction des propriétés du $F$.
+peu les équations différentielles en fonction des propriétés de $F$.
 
 ---
 
@@ -1357,7 +1356,7 @@ L’équation ci-dessus a les deux propriétés suivantes
 1.  Les $a_i$ ne dépendent que de $x$ (ils ne peuvent pas dépendre de
     $y$).
 
-2.  Les $y$ et toutes leur dérivées ont un degré 1.
+2.  Les $y$ et toutes leur dérivées ont un degré (polynomial) 1.
 
 Illustration +.#
 
@@ -1386,7 +1385,7 @@ $$\begin{aligned}
 
 Exercice (Homogénéité) +.#
 
-Pour chacune de ces équations différentielles ordinaires suivantes
+Pour chacune de ces équations différentielles ordinaires 
 donner tous les qualificatifs possibles. Si l’équation est inhomogène
 donner l’équation homogène associée. $$\begin{aligned}
   &y^{(4)}+4x^2 y=0,\\
@@ -1443,7 +1442,7 @@ Pour ce genre d’équations, la solution se trouve de la façon suivante.
 Nous commençons par écrire la dérivée, $y'={\mathrm{d}}y/{\mathrm{d}}x$
 et on obtient $$\begin{aligned}
  \frac{{\mathrm{d}}y}{{\mathrm{d}}x} a(y)=b(x),\\
- a(y){\mathrm{d}}y=b(x){\mathrm{d}}x.\end{aligned}$$ On peut donc
+ a(y){\mathrm{d}}y=b(x){\mathrm{d}}x.\end{aligned}$$ On peut maintenant
 simplement intégrer des deux côtés et on obtient
 $$\int a(y){\mathrm{d}}y=\int b(x){\mathrm{d}}x.$$ Si nous parvenons à
 résoudre les intégrales nous obtenons une solution pour $y(x)$ (cette
