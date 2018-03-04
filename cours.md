@@ -862,8 +862,8 @@ Dans certains cas, il est impossible d’évaluer analytiquement une
 intégrale ou alors elle est très compliquée à calculer. Dans ce cas, on
 va approximer l’intégrale et donc commettre une erreur.
 
-Pour ce faire on va subdiviser l’espace d’intégration $[a,b]$ en $N$ pas
-équidistants (pour simplifier) $\delta x=(b-a)/N$, et approximer
+Pour ce faire on subdivise l’espace d’intégration $[a,b]$ en $N$ pas
+équidistants (pour simplifier) $\delta x=(b-a)/N$, et on approxime
 l’intégrale par une somme finie
 $$\int_a^bf(x){\mathrm{d}}x=\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i+E(a,b,\delta x)\cong\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i,$$
 où $g_i$ est un coefficient qui va dépendre de la méthode d’intégration
@@ -877,7 +877,7 @@ nombre de pas d’intégration), de la forme de $f(x)$ (combien est
 D’une façon générale plus $\delta x$ est petit ($N$ est grand) plus
 l’erreur sera petite et donc l’intégration sera précise (et plus le
 calcul sera long). Néanmoins, comme la précision des machines sur
-lesquelles nous évaluons les intégrale est finie, si $\delta x$ devient
+lesquelles nous évaluons les intégrales est finie, si $\delta x$ devient
 proche de la précision de la machine des erreurs d’arrondi vont dégrader
 dramatiquement la précision de l’intégration.
 
@@ -886,7 +886,7 @@ dramatiquement la précision de l’intégration.
 Remarque +.#
 
 De façon générale il est difficile de connaître à l’avance la valeur
-exacte de $E$. En revanche on est en capable de déterminer **l’ordre**
+exacte de $E$. En revanche on est capable de déterminer **l’ordre**
 de l’erreur.
 
 ---
@@ -911,7 +911,7 @@ nombre de paramètres utilisés pour l’intégration, il faut définir un
 critère qui va nous dire si notre intégrale est calculée avec une
 précision suffisante.
 
-Si nous notons $I(N,a,b,f,g)$ l’approximation du calcul de l’intégrale
+Notons $I(N,a,b,f,g)$ l’approximation du calcul de l’intégrale
 entre $a$ et $b$ de la fonction $f$ avec une résolution $N$ pour la
 méthode d’intégration $g$
 $$I(N,a,b,f,g)=\sum_{i=0}^{N-1} \delta x f(a+i\delta x) g_i,$$ où $g_i$
@@ -950,7 +950,7 @@ $$\begin{aligned}
  \int_a^bf(x){\mathrm{d}}x&\cong\sum_{i=0}^{N-1} \delta x f(a+(i+1/2)\cdot\delta x)+\mathcal{O}(\delta x^2).\end{aligned}$$
 Cette astuce permet d’améliorer la précision de la méthode à très faible
 coût. En effet, la précision de la méthode des rectangles est améliorée
-et devient d’ordre 2.
+et devient d’ordre 2. Elle est exacte pour les fonctions linéaires $f(x)=c\cdot x + d$.
 
 ### Méthode des trapèzes
 
@@ -960,22 +960,22 @@ rappel l’aire d’un trapèze, dont les côtés parallèles sont de longueurs
 $c$ et $d$ et la hauteur $h$, est donnée pas $$A=(c+d)h/2.$$ Cette
 approximation donne donc la formule suivante
 $$\int_a^bf(x){\mathrm{d}}x\cong\sum_{i=0}^{N-1} \delta x \frac{f(a+i\cdot\delta x)+f(a+(i+1)\cdot\delta x)}{2}+\mathcal{O}(\delta x^2).$$
-Cette méthode est d’ordre $2$. Cette méthode d’intégration est exacte
+Cette méthode est d’ordre $2$. Cette méthode d’intégration est aussi exacte
 pour les fonctions linéaires $f(x)=c\cdot x + d$.
 
 ### Méthode de Simpson
 
-Pour cette approximation, on approxime la fonction à intégrer dans un
+Pour cette méthode, on approxime la fonction à intégrer dans un
 intervalle par une parabole.
 
 Commençons par évaluer l’intégrale à l’aide d’une subdivision dans
 l’ensemble $[a,b]$.
 
-L’idée est la suivante. On pose $f(x)=c\cdot x^2+d\cdot x+e$. Donc, il
-nous faut déterminer $c$, $d$, et $e$. Il nous faut donc choisir 3
+L’idée est la suivante. On pose $f(x)=c\cdot x^2+d\cdot x+e$ et  il
+faut déterminer $c$, $d$, et $e$. Il  faut donc choisir 3
 points dans l’intervalle $[a,b]$ pour déterminer ces constantes. On
 choisit comme précédemment $f(a)$, $f(b)$, et le troisième point est
-pris comme étant le point du milieu $(f(a+b)/2)$. On se retrouve donc
+pris comme étant le point du milieu $(f(a+b)/2)$. On se retrouve ainsi
 avec trois équations à trois inconnues $$\begin{aligned}
  f(a)&=c\cdot a^2+d\cdot a+e,\\
  f(b)&=c\cdot b^2+d\cdot b+e,\\
@@ -985,7 +985,7 @@ pouvons à présent évaluer l’intégrale $$\begin{aligned}
  I&=\int_a^b f(x){\mathrm{d}}x\cong\int_a^b (cx^2+dx+e){\mathrm{d}}x,\nonumber\\
  &=\frac{b-a}{6}(f(a)+f(b)+4f((a+b)/2))+\mathcal{O}(\delta x^4).\end{aligned}$$
 
-On peut donc généraliser affiner cette formule en rajoutant des
+On peut  généraliser et affiner cette formule en rajoutant des
 intervalles comme précédemment et en répétant cette opération pour
 chaque intervalle.
 
@@ -993,7 +993,7 @@ Il vient donc que $$\begin{aligned}
  I&=\frac{\delta x}{6}\sum_{i=0}^{N-1}\left[f(a+i\cdot \delta x)+f(a+(i+1)\cdot\delta x)\right.\nonumber\\
  &\left.+4f(a+(i+1/2)\cdot\delta x)\right]+\mathcal{O}(\delta x^4).\end{aligned}$$
 
-Cette méthode permet d’évaluer exactement des polynômes d’ordre 4,
+Cette méthode permet d’évaluer exactement les intégrales des polynômes d’ordre 3,
 $f(x)=ax^3+bx^2+cx+d$.
 
 Équations différentielles ordinaires
