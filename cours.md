@@ -1011,7 +1011,7 @@ considérer pour commencer des systèmes qui évoluent dans le temps
 
 Imaginons que nous connaissons la fonction décrivant le vitesse d’une
 particle au cours du temps et notons la $v(t)$. Nous savons également
-que la vitesse d’une particule est relié à l’évolution au cours du temps
+que la vitesse d’une particule est reliée à l’évolution au cours du temps
 de sa position. Cette dernière peut être notée, $x(t)$. En particulier,
 nous avons que la vitesse n’est rien d’autre que la dérivée de la
 position. On peut onc écrire une équation reliant la vitesse à la
@@ -1020,21 +1020,21 @@ différentielle*, car elle fait intervernir non seulement les fonctions
 $x(t)$ et $v(t)$, mais également la dérivée de la fonction $x(t)$. Si
 maintenant nous précisons ce que vaut la fonction $v(t)$ nous pourrons
 résoudre cette équation. Comme le nom de la sous-section le laisse
-entendre, nous nous intéressons à un mouvement rectiligne uniforme, qui
-a la particularité de décrire le mouvement d’un objet qui se déplace à
-vitesse constante. On a donc $$v(t)=v.$$ Nous cherchons donc à résoudre
+entendre, nous nous intéressons à un mouvement rectiligne uniforme, qui décrit  
+le mouvement d’un objet qui se déplace à
+vitesse constante, $$v(t)=v.$$ Nous cherchons ainsi à résoudre
 l’équation différentielle $$x'(t)=v.$$ Ou en d’autres termes, nous
-cherchons la fonction dont la dérivée donne $C$[^3]. Vous savez sans
+cherchons la fonction dont la dérivée donne une constante[^3]. Vous savez sans
 doute que l’ensemble de fonctions satisfaisant la contrainte précédente
-est $$x(t)=v\cdot t+B,$$ où $B$ est une constante arbitraire. On a donc
-la solution générale de cette équation différentielle qui n’est pas
-unique, mais qui donne une infinité de solution (comme quand nous avons
+est $$x(t)=v\cdot t+B,$$ où $B$ est une constante arbitraire. Cette solution
+générale  n’est pas
+unique, car nous obtenons une infinité de solutions (comme quand nous avons
 calculé la primitive d’une fonction au chapitre précédent). Afin de
-trouver une solution unique, nous devons imposer une “condition intiale”
+trouver une solution unique, nous devons imposer une condtition, typiquement une “condition intiale”
 à notre équation différentielle. En effet, si nous imposons la condition
 intiale $$x(t_0)=x_0,$$ il vient
 $$x(t_0)=x_0=v\cdot t_0+B \Leftrightarrow B=x_0-v\cdot t_0.$$
-Finalement, la solution de l’équation différentielle est donnée par
+Finalement, la solution du problème différentiel est donnée par
 $$x(t)=v\cdot (t-t_0)+x_0.$$
 
 Remarque +.#
@@ -1055,25 +1055,26 @@ dérivée de la vitesse. $$\begin{aligned}
 v'(t)&=a(t),\\
 x'(t)&=v(t).\end{aligned}$$
 
-Par simplicité supposons que l’accélération est constante, $a(t)=a$. On
-doit donc résoudre[^4] $$x''(t)=a,$$ ou $$\begin{aligned}
+Par simplicité supposons que l’accélération est constante, $a(t)=a$, donc que le mouvement est uniformement accéléré.
+On
+doit  résoudre[^4] $$x''(t)=a,$$ ou $$\begin{aligned}
 v'(t)&=a,\\
-x'(t)&=v(t).\end{aligned}$${#eq:xpv} Commençons pas le système
-d’équations ci-dessus. On commence par résoudre la première équation
-pour $v(t)$ et on a $$v(t)=a\cdot t+C.$$ En substituant ce résultat dans
-l’@eq:xpv, on a $$x'(t)=a\cdot t+C.$$ On peut donc
+x'(t)&=v(t).\end{aligned}$${#eq:xpv} Pour résoudre ce système
+d’équations  nous résolvons la première équation
+pour $v(t)$ pour trouver $$v(t)=a\cdot t+C.$$ En substituant ce résultat dans
+l’@eq:xpv, on a $$x'(t)=a\cdot t+C.$$ On peut ainsi
 directement intégrer des deux côtés comme vu dans la sous-section
 précédente $$\begin{aligned}
  \int x'(t){\mathrm{d}}t&=\int a\cdot t+C{\mathrm{d}}t,\nonumber\\
  x(t)&=\frac{a}{2}\cdot t^2+C\cdot t + D.\end{aligned}$$ On a donc que
 la position d’un objet en mouvement rectiligne uniformément accéléré est
-donné par une parabole. Cette équation ci-dessus néanmoins a encore deux
-constante indéterminées. Pour les déterminer, on doit donc imposer deux
+donné par une parabole. Cette équation a néanmoins  encore deux
+constantes indéterminées. Pour les déterminer, on doit  imposer deux
 conditions intiales. Une possibilité est d’imposer une condition
 initiale par équation $$v(t_0)=v_0,\mbox{ et } x(t_0)=x_0.$$ On obtient
-donc $$v(t_0)=v_0=a\cdot t_0+C \Leftrightarrow C=v_0-a\cdot t_0,$$ et
+$$v(t_0)=v_0=a\cdot t_0+C \Leftrightarrow C=v_0-a\cdot t_0,$$ et
 $$x(t_0)=x_0=\frac{a}{2}\cdot t_0^2+D \Leftrightarrow D=x_0-\frac{a}{2}\cdot t_0^2.$$
-Finalement la solution est donc
+Finalement la solution est donnée par
 $$x(t)=\frac{a}{2}\cdot (t^2-t_0^2)+v_0\cdot (t-t_0)+x_0.$$
 
 Remarque +.#
@@ -1081,7 +1082,7 @@ Remarque +.#
 La solution de l’équation différentielle peut également se calculer de
 la façon suivante $$x''(t)=av,\ x(t_0)=x_0,\ v(t_0)=v_0.$$ revient à
 calculer $$\begin{aligned}
- \int \int x''(t){\mathrm{d}}t{\mathrm{d}}t=\int \int a {\mathrm{d}}t{\mathrm{d}}t,\\
+ \int \int x''=\int \int a,\\
  x(t)=\frac{a}{2}t^2+C\cdot t + D.\end{aligned}$$
 
 ### Évolution d’une population
@@ -1107,7 +1108,7 @@ $$n(t_0+7200)=(1+1/3600 \cdot 7200)\cdot n(t_0)=3\cdot 1000=3000.$$ On
 voit que ces deux résultats ne sont pas égaux. Effectuer deux itérations
 de notre algorithme discret avec un pas d’itération de $\delta t$, ne
 correspond pas à effectuer une seule itération avec un pas deux fois
-plus grand ($2\delta t$). Néanmoins cela devrait être le cas plus
+plus grand ($2\delta t$). Néanmoins cela devrait être le cas pour
 $\delta t\rightarrow 0$.
 
 Pour nous en convaincre faisons l’exercice suivant. Reprenons l’@eq:comp que vous pouvons réécrire comme
@@ -1134,12 +1135,12 @@ Nous pouvons à présent résoudre l’équation différentielle ci-dessus en
 se souvenant que la fonction dont la dérivée est proportionnelle à la
 fonction de départ est l’exponentielle. Il vient
 $$n(t)=C\exp(r t),$${#eq:sol_pop} où $C$ est une constante. Il est
-en effet trivial de montrer que cette solution satisfait l’@eq:cont. On voit également qu’il nous manque une condition pour
+en effet élémentaire de montrer que cette solution satisfait l’@eq:cont. On voit également qu’il nous manque une condition pour
 avoir l’unicité de la solution ci-dessus (on ne connaît toujours pas
 $C$). La constante peut-être obtenue à l’aide d’une condition initiale
-(correspondant au $n(t_0)$ de tout à l’heure). Si $n(t_0)=n_0$, on a
+(correspondant au $n(t_0)$ de tout à l’heure). Si $n(t_0)=n_0$, nous trouvons
 pour $C$ $$n(t_0)=C\exp(r t_0)=n_0 \Leftrightarrow C=n_0\exp(-r t_0).$$
-En substituant cette relation dans l'@eq:sol_pop, on
+substituant cette relation dans l'@eq:sol_pop, on
 obtient $$n(t)=n_0\exp(r (t-t_0)).$$
 
 ### Autres illustrations de l’utilisation des équations différentielles
@@ -1171,8 +1172,8 @@ $k_g$. Finalement le terme $(4)$ est la reproduction des guépards
 proportionnelle au nombre d’antilopes avec un taux $k_{a,g}$.
 
 Nous avons à faire ici à un système d’équations différentielles. Nous
-n’allons pas nous intéresser à la résolution de ce système mais
-simplement étudier la solution à ce problème (voir la @fig:lkA et @fig:lkB).
+n’allons pas nous intéresser aux détails de larésolution de ce système mais
+simplement étudier le comportement de la solution (voir la @fig:lkA et @fig:lkB).
 
 <div id="fig:lk">
 ![L’évolution au cours du temps de la population d’antilopes et de guépards.](figs/lv.pdf){#fig:lkA width="50%"}
@@ -1225,7 +1226,7 @@ position $(a)$ la solution est $$U_C(t)=U(1-\exp(-t/(RC))).$$ La tension
 augmente exponentiellement au début, puis au fur et à mesure que la
 capacité se charge il devient de plus en plus difficile de la charger.
 L’augmentation de la tension se fait donc de plus en plus lentement
-jusqu’à ce qu’on tende vers une asymptote horizontale en $U$.
+jusqu’à devenir une asymptote horizontale en $U$.
 
 #### Taux d’intérêts composés
 
@@ -1237,7 +1238,7 @@ après un intervalle $\delta t$ est de
 $$c(t+\delta t)=c(t)+(r\delta t )c(t)+d\delta t.$${#eq:cap_discr}
 Supposons qu’on a un capital de départ $1000 \mathrm{CHF}$, un taux
 d’intérêts annuel de $1\%$ et un dépôt annuel de $100\mathrm{CHF}$.
-Après deux mois ($\delta t=2/12=1/6$) on a donc que le capital devient
+Après deux mois ($\delta t=2/12=1/6$)  le capital devient
 $$c(1/6)=1000+0.01/6\cdot 1000 +100/6=1018.3\mathrm{CHF}.$$ Si
 maintenant, nous voulons avoir la valeur du capital à n’importe quel
 moment dans le temps, nous allons prendre $\delta t\rightarrow 0$. En
@@ -1275,7 +1276,7 @@ Afin de résoudre cette équation, nous cherchons une solution de la forme
 $y=f(x)$. On dit également que nous cherchons à intégrer l’équation
 différentielle.
 
-Afin de classifier les équation différentielles, considérons les deux
+Afin de classifier les équation différentielles, considérons les
 définitions suivantes
 
 Définition (Ordre) +.# 
@@ -1294,7 +1295,7 @@ Définition (Condition initiale) +.#
 Une condition initiale pour une équation différentielle d’ordre $n$, est
 un ensemble de valeurs, $y_0$, $y_1$, ..., $y_{n-1}$ donnée telles que
 pour une valeur $x_0$ donnée on a
-$$y(x_0)=y_0,\ y'(x_0)=y_1,\ ...,\ y^{(n-1)}=y_{n-1}.$$
+$$y(x_0)=y_0,\ y'(x_0)=y_1,\ ...,\ y^{(n-1)}(x_0)=y_{n-1}.$$
 
 Nous souhaitons maintenant savoir sous quelles conditions une équation
 différentielle admet une solution et si elle est unique. Nous n’allons
@@ -1309,16 +1310,16 @@ Théorème (Existence et unicité) +.#
 Soit $D\subseteq{\real}$ le domaine de définition de la fonction
 $y$. Soit $y:D\rightarrow E\subseteq {\real}$ une fonction à valeur
 réelle continue et dérivable sur $D$, et
-$f:D\times E\rightarrow F\subseteq{\real}$ une fonction continue
+$f:D\times E\rightarrow F\subseteq{\real}$ une fonction à deux variables continue
 sur $D\times E$. Alors, le système suivant (également appelé problème de
 Cauchy) $$\begin{aligned}
   &y'=f(y,x),\\
   &y(x=x_0)=y_0,
- \end{aligned}$$ admet une unique unique solution $y(x)$.
+ \end{aligned}$$ admet une unique solution $y(x)$.
 
 ---
 
-Ce théorème peut être étendu à une équation d’un ordre arbitraire $n$
+Ce théorème peut être étendu à une équation d’un ordre arbitraire, $n$,
 possédant $n-1$ conditions initiales. En effet, n’importe quel équation
 différentielle d’un ordre $n$ peut être réécrite sous la forme de $n$
 équations différentielles d’ordre $1$. Pour illustrer cette propriété
@@ -1352,12 +1353,12 @@ dite à **coefficients constants**.
 
 ---
 
-L’équation ci-dessus a les deux propriétés suivantes
+L’équation ci-dessus a les propriétés suivantes
 
 1.  Les $a_i$ ne dépendent que de $x$ (ils ne peuvent pas dépendre de
     $y$).
 
-2.  Les $y$ et toutes leur dérivées ont un degré 1.
+2.  Les $y$ et toutes leur dérivées ont un degré polynomial de 1.
 
 Illustration +.#
 
@@ -1386,7 +1387,7 @@ $$\begin{aligned}
 
 Exercice (Homogénéité) +.#
 
-Pour chacune de ces équations différentielles ordinaires suivantes
+Pour chacune de ces équations différentielles ordinaires 
 donner tous les qualificatifs possibles. Si l’équation est inhomogène
 donner l’équation homogène associée. $$\begin{aligned}
   &y^{(4)}+4x^2 y=0,\\
@@ -1398,10 +1399,10 @@ donner l’équation homogène associée. $$\begin{aligned}
 
 ---
 
-Lors de la résolution d’équation différence inhomogène la solution se
+La solution  des équations différencielles inhomogènes se
 trouve de la façon suivante.
 
-1.  Trouver la solution de l’équation différentielle homogène associée,
+1.  Trouver la solution générale de l’équation différentielle homogène associée,
     notons-la $y_h(x)$.
 
 2.  Trouver une solution particulière à l’équation inhomogène, notons-la
@@ -1485,10 +1486,10 @@ Exercice +.#
 Pour une équation du type $$y'(x)=a(x)\cdot y(x)+b(x),$${#eq:lin}
 on doit résoudre le problème en deux parties.
 
-Pour résoudre ce genre d’équation supposons que nous connaissons une
+supposons que nous connaissons une
 solution “particulière” à cette équation. Notons la $y_p$. Si nous
 faisons maintenant le changement de variables $y=y_h+y_p$ et remplaçons
-ce changement de variables dans l’équation ci-dessus
+ce changement de variables dans l’équation ci-dessus nous obtenons
 $$y_p'(x)+y_h'(x)=a(x)\cdot y_p(x)+a(x)\cdot y_h(x)+b(x).$${#eq:lin_hp}
 Comme $y_p$ est solution de l'@eq:lin on a
 $$y_p'(x)=a(x)\cdot y_p(x)+b(x).$$ En remplaçant cette relation dans
@@ -1496,7 +1497,7 @@ l'@eq:lin_hp il vient $$y_h'(x)=a(x)\cdot y_h(x).$$
 Cette équation différentielle n’est rien d’autre que l’équation homogène
 correspondant à @eq:lin.
 
-Nous voyons donc qu’une équation inhomogène se résout en trouvant la
+Nous voyons qu’une équation inhomogène se résout en trouvant la
 solution générale à l’équation homogène correspondante et en y ajoutant
 une solution particulière.
 
@@ -1509,15 +1510,15 @@ Puis nous devons chercher une solution dite particulière de l’équation
 inhomogène. Pour ce faire nous utilisons la méthode de la variation de
 la constante. Il s’agit de trouver une solution particulière qui aura la
 même forme que la solution de l’équation homogène, où $C$ dépendra de
-$x$ (méthode de variation de la constante)
+$x$ (d'où le nom de méthode de variation de la constante)
 $$y_p(x)=C(x)e^{\int a(x){\mathrm{d}}x}.$$ En remplaçant cette équation
 dans l'@eq:lin, on obtient $$\begin{aligned}
  C'(x)e^{\int a(x){\mathrm{d}}x}+C(x)\cdot a(x)e^{\int a(x){\mathrm{d}}x}&=a(x)\cdot C(x) e^{\int a(x){\mathrm{d}}x}+b(x),\nonumber\\
  C'(x)&=\frac{b(x)}{e^{\int a(x){\mathrm{d}}x}}.
  \end{aligned}$$ Il nous reste donc à résoudre cette équation
-différentielle pour $C(x)$ qui est une équation à variable séparable où
-on aurait un $a(c)=1$. On intègre donc directement cette équation et on
-obtient
+différentielle pour $C(x)$ qui est une équation à variables séparables où
+on aurait un $a(c)=1$. On intègre donc directement cette équation 
+pour obtienir
 $$C(x)=\int \frac{b(x)}{e^{\int a(x){\mathrm{d}}x}}{\mathrm{d}}x.$$
 Finalement, on a que la solution de l’équation générale de l’équation
 inhomogène est
@@ -1560,7 +1561,7 @@ Une classe particulière sont les équations de Bernouilli, qui s’écrit
 $$y'(x)+a(x)\cdot y(x)+b(x)\cdot y^n(x)=0,$${#eq:bernouilli} où
 $r\in{\real}$.
 
-Cette équation peut également être réécrite sous la forme
+Cette équation peut être réécrite sous la forme
 $$\frac{y'(x)}{y^n(x)}+\frac{a(x)}{y^{n-1}(x)}+b(x)=0.$${#eq:bernouilli_2}
 
 Dans ce cas là, en effectuant le changement de variable suivant
@@ -1577,7 +1578,7 @@ Solution +.#
 
 Avec
 la substitution $z=y^5$, on obtient $$z'-5z+5x=0.$$ Cette équation se
-résout avec se résout en trouvant d’abord la solution de l’équation
+résout en trouvant d’abord la solution de l’équation
 homogène $$z_h'-5z_h=0,$$ qui est donnée par $$z_h=Ae^{5x}.$$ En
 remarquant qu’une solution particulière à $z_p'-5z_p+5x=0$, peut être de
 la forme $z_p=x+B$ (avec $B$ une constante) on obtient $$\begin{aligned}
@@ -1627,13 +1628,13 @@ $$v(x)=-\frac{z'(x)}{z(x)},$$ on obtient que l’équation ci-dessus peut
 se réécrire comme
 $$z''(x)+e(x)\cdot z'(x)+d(x)\cdot z(x)=0.$${#eq:riccati_3}
 L’équation de Riccati (une équation d’ordre un non-linéaire et
-inhomogène) est donc transformée en une équation linéaire d’ordre deux.
+inhomogène) est ainsi transformée en une équation linéaire d’ordre deux.
 
 Equations différentielles ordinaires d’ordre deux
 -------------------------------------------------
 
 Dans cette section, nous allons étudier des cas particuliers d’équations
-différentielles que nous savons résoudre. Cela sera toujours des
+différentielles que nous savons intégrer. Cela sera toujours des
 équations linéaires.
 
 De façon générale ces équations s’écrivent
@@ -1642,7 +1643,7 @@ $a,b,c,d:{\real}\rightarrow{\real}$ sont des fonctions
 réelles. Avant de résoudre l’équation générale, nous allons considérer
 des plus simples.
 
-### EDO d’ordre deux à coefficients constants homogènes
+### EDO d’ordre deux homogène à coefficients constants 
 
 Ce genre d’équations s’écrit sous la forme
 $$a y''(x)+by'(x)+cy(x)=0.$${#eq:edo2_cch} Voyons maintenant
@@ -1655,20 +1656,20 @@ l’équation différentielle.
 
 Propriétés +.#
 
-Ces propriétés sont à démontrer en exercice.
+Ces propriétés (qui caractérisent le mot "linéaires") sont à démontrer en exercice.
 
 1.  Soit $f(x)$ une solution de l'@eq:edo2_cch, alors
-    on a aussi que pour $C\in{\real}$ $Cf(x)$ est également
+     pour $C\in{\real}$ $Cf(x)$ est également
     solution de @eq:edo2_cch.
 
 2.  Soient $f(x)$ et $g(x)$ deux solutions de l’équation
-    @eq:edo2_cch, alors on a aussi que pour $h(x)=f(x)+g(x)$
+    @eq:edo2_cch, alors $h(x)=f(x)+g(x)$
     est également solution de @eq:edo2_cch.
 
 3.  De ces deux propriétés, on déduit la propriété suivante. Soient
     $f(x)$ et $g(x)$ deux solutions de l'@eq:edo2_cch,
-    et $C_1,C_2\in{\real}$, alors on a que $h(x)=C_1f(x)+C_2g(x)$
-    sont solution de l'@eq:edo2_cch.
+    et $C_1,C_2\in{\real}$,  $h(x)=C_1f(x)+C_2g(x)$
+    est aussi  solution de l'@eq:edo2_cch.
 
 ---
 
@@ -1707,27 +1708,27 @@ $$y(x)=2e^{-x}-e^{-2x}.$$
 A présent, nous pouvons généraliser cette méthode pour l’équation
 @eq:edo2_cch $$a y''(x)+by'(x)+cy(x)=0.$$ En faisans la même
 subsitution que précédemment, $y=e^{\lambda x}$, on a $$\begin{aligned}
- &a y''(x)+by'(x)+cy(x)=0,\\
+ &a \lambda^2e^{\lambda x}+b\lambdae^{\lambda x} +ce^{\lambda x}=0,\\
  &a \lambda^2+\lambda b+c=0.\end{aligned}$$ L’équation ci-dessus doit
 être résolue pour $\lambda$. Nous savons comment résoudre ce genre
 d’équation du second degré. La solution est donnée par
 $$\lambda=\frac{-b\pm\sqrt{\Delta}}{2a},$$ où $\Delta = b^2-4ac$. On a
-donc deux solutions $$\begin{aligned}
+ deux solutions $$\begin{aligned}
  \lambda_1=\frac{-b-\sqrt{\Delta}}{2a},\\
  \lambda_2=\frac{-b+\sqrt{\Delta}}{2a}.\end{aligned}$$
 
-Il y a donc trois cas différents possibles: $\Delta > 0$, $\Delta = 0$,
+Il y a trois cas  possibles: $\Delta > 0$, $\Delta = 0$,
 $\Delta < 0$.
 
 #### Le cas $\Delta>0$
 
 Dans ce cas, on a que $\lambda_1,\lambda_2\in{\real}$ sont réels.
-La solution est donc donnée par (comme on l’a vu au paravent)
+La solution est donc donnée par (comme on l’a vu au paravant)
 $$y(x)=C_1e^{\lambda_1 x}+C_2e^{\lambda_2 x}.$$
 
 #### Le cas $\Delta=0$
 
-Dans ce cas, on a que $\lambda_1=\lambda_2=\lambda=-b/(2a)$ et est réel.
+Ici, $\lambda_1=\lambda_2=\lambda=-b/(2a)$ et $\lambda$ est réel.
 Dans ce cas-là les choses se compliquent un peu. Si on utilisait
 directement la formule ci-dessus, on aurait $$y(x)=Ce^{\lambda x},$$
 avec $C\in{\real}$. Par contre, cette solution ne peut pas
@@ -1743,11 +1744,11 @@ générale de l’équation différentielle $$y(x)=(C_1+C_2 x)e^{\lambda x}.$$
 #### Le cas $\Delta<0$
 
 Dans ce cas-là, on a deux solutions complexes (la racine d’une nombre
-négative n’est pas réelle). Les racines sont de la forme
+négatif n’est pas réelle). Les racines sont de la forme
 $$\begin{aligned}
  \lambda_1=\frac{-b+i\sqrt{|b^2-4ac|}}{2a},
- \lambda_2=\frac{-b-i\sqrt{|b^2-4ac|}}{2a},\end{aligned}$$ où $i$ est le
-nombre imaginaire. En écrivant $u=-b/(2a)$ et $v=\sqrt{|b^2-4ac|}/(2a)$,
+ \lambda_2=\frac{-b-i\sqrt{|b^2-4ac|}}{2a},\end{aligned}$$ où $i$ est l'unité
+imaginaire. En écrivant $u=-b/(2a)$ et $v=\sqrt{|b^2-4ac|}/(2a)$,
 on peut écrire $\lambda_1=u+iv$ et $\lambda_2=u-iv$. On a donc que
 $\lambda_2$ est le complexe conjugué de $\lambda_1$, ou
 $\lambda_1=\bar{\lambda}_2$. En utilisant ces notations dans notre
