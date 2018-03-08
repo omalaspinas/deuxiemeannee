@@ -1708,7 +1708,7 @@ $$y(x)=2e^{-x}-e^{-2x}.$$
 A présent, nous pouvons généraliser cette méthode pour l’équation
 @eq:edo2_cch $$a y''(x)+by'(x)+cy(x)=0.$$ En faisans la même
 subsitution que précédemment, $y=e^{\lambda x}$, on a $$\begin{aligned}
- &a \lambda^2e^{\lambda x}+b\lambdae^{\lambda x} +ce^{\lambda x}=0,\\
+ &a \lambda^2e^{\lambda x}+b\lambda e^{\lambda x} +ce^{\lambda x}=0,\\
  &a \lambda^2+\lambda b+c=0.\end{aligned}$$ L’équation ci-dessus doit
 être résolue pour $\lambda$. Nous savons comment résoudre ce genre
 d’équation du second degré. La solution est donnée par
