@@ -479,12 +479,12 @@ du calcul d’une dérivée.
 
 Définition (Primitive) +.#
 
-Soit $f$ une fonction. On dit que $F$ est la primitive de $f$ sur
+Soit $f$ une fonction. On dit que $F$ est une primitive de $f$ sur
 l’intervalle $D\subseteq{\real}$ si $F'(x)=f(x)$ $\forall x\in D$.
 
 Si $F$ est une primitive de $f$, alors on peut définir la fonction $G$
 telle que $G(x)=F(x)+C$, $C\in{\real}$ qui est aussi une
-primitive de $f$. On dit que la primitive de $f$ est définie à une
+primitive de $f$. On voit que la primitive de $f$ est définie à une
 constante additive près. En effet, si $F'=f$ on a
 $$G'=F'+\underbrace{C'}_{=0}=F'=f.$$
 
@@ -558,13 +558,12 @@ effet, remplaçons $F$ par $G=F+C$, il vient
 $$\int_a^b f(x){\mathrm{d}}x=G(b)-G(a)=F(b)+C-F(a)-C=F(b)-F(a).$$
 
 ---
-
-De la définition \[def_prim\], il vient immédiatement que
+Il suit de (2.9)  que
 $$\int_a^af(x){\mathrm{d}}x=F(a)-F(a)=0$$ et que
 $$\int_a^bf(x){\mathrm{d}}x= -\int_b^af(x){\mathrm{d}}x$$
 
 Nous pouvons à présent définir la fonction $G(x)$ telle que
-$$G(x)=\int_a^xf(y){\mathrm{d}}y=F(x)-F(a).$$ Nous avons donc que $G(x)$
+$$G(x)=\int_a^xf(y){\mathrm{d}}y=F(x)-F(a).$$ Il suit  que $G(x)$
 est la primitive de $f$ telle que $G(a)=0$.
 
 Propriétés +.#
@@ -639,9 +638,9 @@ Montrer que $$\int_{-1}^2\frac{1}{x}=\ln{2}.$$
 
 Définition (Valeur moyenne) +.#
 
-Soit une fonction $f$ admettant une primitive sur $[a,b]$ et $a<b$,
-alors on appelle la valeur moyenne de cette fonction sur $[a,b]$,
-$\bar{f}$, $$\bar{f}=\frac{1}{b-a}\int_a^bf(x){\mathrm{d}}x.$$
+Soit une fonction $f$ admettant une primitive sur $[a,b]$ avec $a<b$,
+alors la valeur moyenne $\bar{f}$ de cette fonction sur $[a,b]$, est définie par 
+$$\bar{f}=\frac{1}{b-a}\int_a^bf(x){\mathrm{d}}x.$$
 
 Méthodes d’intégration
 ----------------------
