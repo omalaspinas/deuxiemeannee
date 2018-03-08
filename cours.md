@@ -1014,7 +1014,7 @@ particle au cours du temps et notons la $v(t)$. Nous savons également
 que la vitesse d’une particule est reliée à l’évolution au cours du temps
 de sa position. Cette dernière peut être notée, $x(t)$. En particulier,
 nous avons que la vitesse n’est rien d’autre que la dérivée de la
-position. On peut onc écrire une équation reliant la vitesse à la
+position. On peut donc écrire une équation reliant la vitesse à la
 position $$x'(t)=v(t).$$ Cette équation est appelée *équation
 différentielle*, car elle fait intervernir non seulement les fonctions
 $x(t)$ et $v(t)$, mais également la dérivée de la fonction $x(t)$. Si
@@ -1065,8 +1065,8 @@ pour $v(t)$ pour trouver $$v(t)=a\cdot t+C.$$ En substituant ce résultat dans
 l’@eq:xpv, on a $$x'(t)=a\cdot t+C.$$ On peut ainsi
 directement intégrer des deux côtés comme vu dans la sous-section
 précédente $$\begin{aligned}
- \int x'(t){\mathrm{d}}t&=\int a\cdot t+C{\mathrm{d}}t,\nonumber\\
- x(t)&=\frac{a}{2}\cdot t^2+C\cdot t + D.\end{aligned}$$ On a donc que
+ \int x'(t){\mathrm{d}}t&=\int (a\cdot t+C){\mathrm{d}}t,\nonumber\\
+ x(t)&=\frac{a}{2}\cdot t^2+C\cdot t + D.\end{aligned}$$ On voit  que
 la position d’un objet en mouvement rectiligne uniformément accéléré est
 donné par une parabole. Cette équation a néanmoins  encore deux
 constantes indéterminées. Pour les déterminer, on doit  imposer deux
@@ -1079,8 +1079,8 @@ $$x(t)=\frac{a}{2}\cdot (t^2-t_0^2)+v_0\cdot (t-t_0)+x_0.$$
 
 Remarque +.#
 
-La solution de l’équation différentielle peut également se calculer de
-la façon suivante $$x''(t)=av,\ x(t_0)=x_0,\ v(t_0)=v_0.$$ revient à
+La solution du problème différentiel peut également se calculer de
+la façon suivante $$x''(t)=a,\ x(t_0)=x_0,\ v(t_0)=v_0.$$ revient à
 calculer $$\begin{aligned}
  \int \int x''=\int \int a,\\
  x(t)=\frac{a}{2}t^2+C\cdot t + D.\end{aligned}$$
@@ -1246,10 +1246,10 @@ divisant l'@eq:cap_discr par $\delta t$, et en
 réarrangeant les termes, on obtient $$c'(t)=rc(t)+d.$$ En supposant que
 $c(t=0)=c_0$ (le capital initial), cette équation différentielle a pour
 solution $$c(t)=\frac{d}{r}(e^{rt}-1)+c_0e^{r t}.$$ Cette solution a
-pour les paramètres précédent la forme suivante sur une période de 100
+pour les paramètres précédents la forme suivante sur une période de 100
 ans.
 
-![L’évolution du capital $c$ en fonction du temps su 100
+![L’évolution du capital $c$ en fonction du temps sur 100
 ans.](figs/interets.pdf){#fig:interets width="50.00000%"}
 
 Définitions et théorèmes principaux
@@ -1260,7 +1260,7 @@ Définition (Équation différentielle ordinaire) +.#
 Soit $y$ une fonction dérivable $n$ fois et dépendant d’une seule
 variable. Une **équation différentielle ordinaire** est un équation de
 la forme $$F(x,y,y',y'',...,y^{(n)})=0,$$ où $F$ est une fonction, et
-$y'$, $y''$, ..., $y^{(n)}$ sont les dérivées premières, deuxièmes, ...,
+$y'$, $y''$, ..., $y^{(n)}$ sont les dérivées première, deuxième, ...,
 $n$-ème de $y$.
 
 ---
@@ -1333,13 +1333,13 @@ mais que nous avons augmenté le nombre d’équations à résoudre.
 Cette propriété peut se généraliser de la façon suivante. Soit une
 équation différentielle d’ordre $n$ $$F(x,y,y',...,y^{(n)})=0.$$ Nous
 pouvons définir $z_i=y^{(i-1)}$ et on aura donc que $z_{i+1}=z_i'$. On
-peut donc réécrire l’équation différentielle d’ordre $n$ comme étant
+peut ainsi réécrire l’équation différentielle d’ordre $n$ comme étant
 $$\begin{aligned}
  &z_{i+1}=z_i',\ i=1,...,n-1\\
  F(x,y,y',..,y^{(n)})=0 \Rightarrow &G(x,z_1,z_2,...,z_n)=0.\end{aligned}$$
 
 Jusqu’ici $F$ peut être totalement arbitraire. Essayons de classifier un
-peu les équations différentielles en fonction des propriétés du $F$.
+peu les équations différentielles en fonction des propriétés de $F$.
 
 ---
 
@@ -1444,7 +1444,7 @@ Pour ce genre d’équations, la solution se trouve de la façon suivante.
 Nous commençons par écrire la dérivée, $y'={\mathrm{d}}y/{\mathrm{d}}x$
 et on obtient $$\begin{aligned}
  \frac{{\mathrm{d}}y}{{\mathrm{d}}x} a(y)=b(x),\\
- a(y){\mathrm{d}}y=b(x){\mathrm{d}}x.\end{aligned}$$ On peut donc
+ a(y){\mathrm{d}}y=b(x){\mathrm{d}}x.\end{aligned}$$ On peut maintenant
 simplement intégrer des deux côtés et on obtient
 $$\int a(y){\mathrm{d}}y=\int b(x){\mathrm{d}}x.$$ Si nous parvenons à
 résoudre les intégrales nous obtenons une solution pour $y(x)$ (cette
