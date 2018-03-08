@@ -542,7 +542,7 @@ Théorème (Théorème fondamental du calcul intégral) +.#
 
 En définissant à présent l’intégrale à l’aide de la notion
 de primitive, nous avons que pour $a,b\in{\real}$ et $a<b$
-$$\int_a^b f(x){\mathrm{d}}x=\left.F\right|_a^b=F(b)-F(a).$$
+$$\int_a^b f(x){\mathrm{d}}x=\left.F\right|_a^b=F(b)-F(a).$${#eq:thm_fond}
 
 On dit que $x$ est la variable d’intégration. Elle est dite “muette” car
 elle disparaît après que l’intégrale ait été effectuée. On peut donc
@@ -558,7 +558,8 @@ effet, remplaçons $F$ par $G=F+C$, il vient
 $$\int_a^b f(x){\mathrm{d}}x=G(b)-G(a)=F(b)+C-F(a)-C=F(b)-F(a).$$
 
 ---
-Il suit de (2.9)  que
+
+Il suit de l'@eq:thm_fond  que
 $$\int_a^af(x){\mathrm{d}}x=F(a)-F(a)=0$$ et que
 $$\int_a^bf(x){\mathrm{d}}x= -\int_b^af(x){\mathrm{d}}x$$
 
@@ -677,7 +678,7 @@ Une primitive d'une fonction de la forme $f(x)f'(x)$ se calcule aisement
 $$\int f(x)f'(x){\mathrm{d}}x=\frac{1}{2}f(x)^2+c.$$
 
 Nous calculons par exemple
-$$\int \sin(x)\cos(x){\mathrm{d}}x=\frac{1}{2}\sin^2(x)+c=-\frac{1}{2}\cos^2(x)+c'.$$
+$$\int \sin(x)\cos(x){\mathrm{d}}x=\frac{1}{2}\sin^2(x)+c=-\frac{1}{2}\cos^2(x)+c'.$${#eq:sin_cos}
 
 #### Inverse de la dérivation logarithmique
 
@@ -758,7 +759,7 @@ Solution +.#
 
 On voit que le résultat de l’intégration par
 partie nous redonne l’intégrale de départ. Ceci nous permet
-d’évaluer directement la dite intégrale pour retrouver le résultat (2.30)
+d’évaluer directement la dite intégrale pour retrouver le résultat de l'@eq:sin_cos
 
 ---
 
