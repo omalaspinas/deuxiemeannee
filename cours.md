@@ -409,7 +409,7 @@ Remarque +.#
 1.  Ces sommes peuvent être positives ou négatives en fonction du signe
     de $f$.
 
-2.  Une implantation informatique est immédiate.
+2.  Une implantation informatique est immédiate, en particulier pour la somme de Riemann.
 
 Définition (Intégrabilité au sens de Riemann) +.#
 
@@ -430,7 +430,7 @@ Intégrer de $f(x)=x$ dans intervalle $[0,1]$.
 
 Solution (Intégration de Riemann) +.#
 
-Il est trivial de calculer que cette aire vaut $1/2$ (c’est l’aire d’un
+Il est élémentaire de calculer que cette aire vaut $1/2$ (c’est l’aire d’un
 triangle rectangle de côté 1). Néanmoins, évaluons également cette aire
 à l’aide de $A^i$ et $A^s$. Commençons par subdiviser $[0,1]$ en $n$
 intervalles égaux de longueur $\delta=1/n$. Comme $f(x)$ est strictement
@@ -542,7 +542,7 @@ Théorème (Théorème fondamental du calcul intégral) +.#
 
 En définissant à présent l’intégrale à l’aide de la notion
 de primitive, nous avons que pour $a,b\in{\real}$ et $a<b$
-$$\int_a^b f(x){\mathrm{d}}x=\left.F\right|_a^b=F(b)-F(a).$$
+$$\int_a^b f(x){\mathrm{d}}x=\left.F\right|_a^b=F(b)-F(a).$${#eq:thm_fond}
 
 On dit que $x$ est la variable d’intégration. Elle est dite “muette” car
 elle disparaît après que l’intégrale ait été effectuée. On peut donc
@@ -558,7 +558,8 @@ effet, remplaçons $F$ par $G=F+C$, il vient
 $$\int_a^b f(x){\mathrm{d}}x=G(b)-G(a)=F(b)+C-F(a)-C=F(b)-F(a).$$
 
 ---
-Il suit de (2.9)  que
+
+Il suit de l'@eq:thm_fond  que
 $$\int_a^af(x){\mathrm{d}}x=F(a)-F(a)=0$$ et que
 $$\int_a^bf(x){\mathrm{d}}x= -\int_b^af(x){\mathrm{d}}x$$
 
@@ -657,9 +658,9 @@ fonctions particulières.
 #### Polynômes
 
 Les polynômes s’intègrent terme à terme. Pour
-$\{a_i\}_{i=0}^{n}\in{\real}$ $$\begin{aligned}
+$(\{a_i\}_{i=0}^{n}\in{\real}$ $$\begin{aligned}
  &\int a_0 + a_1 x + a_2 x^2+\cdots+a_{n-1} x^{n-1}+a_{n} x^{n}{\mathrm{d}}x\\
- =&\int a_0{\mathrm{d}}x + \int a_1 x{\mathrm{d}}x + \int a_2 x^2{\mathrm{d}}x+\cdots+\int a_{n-1} x^{n-1}{\mathrm{d}}x+\int a_{n} x^{n}{\mathrm{d}}x\\
+ =&\int a_0{\mathrm{d}}x + \int a_1 x{\mathrm{d}}x + \int a_2 x^2{\mathrm{d}}x+\cdots+\int a_{n-1} x^{n-1}{\mathrm{d}}x+\int a_{n} x^{n}){\mathrm{d}}x\\
  =&a_0 x + \frac{a_1}{2}x^2+\frac{a_2}{3}x^3+\cdots+\frac{a_n}{n+1}x^{n+1}+c.\end{aligned}$$
 
 ---
@@ -673,11 +674,11 @@ $$\int (x+2)(x^3+3x^2+4x-3){\mathrm{d}}x.$$
 
 #### Application de la règle de chaîne pour l’intégration
 
-Une primitive de la forme
+Une primitive d'une fonction de la forme $f(x)f'(x)$ se calcule aisement
 $$\int f(x)f'(x){\mathrm{d}}x=\frac{1}{2}f(x)^2+c.$$
 
-Le calcul de la primitive suivante
-$$\int \sin(x)\cos(x){\mathrm{d}}x=\frac{1}{2}\sin^2(x)+c.$$
+Nous calculons par exemple
+$$\int \sin(x)\cos(x){\mathrm{d}}x=\frac{1}{2}\sin^2(x)+c=-\frac{1}{2}\cos^2(x)+c'.$${#eq:sin_cos}
 
 #### Inverse de la dérivation logarithmique
 
@@ -710,15 +711,15 @@ Illustration +.#
 
 Si $g$ est définie comme $g(x)=x^{-1}$ et $f(x)=3x^2+2$, alors la
 primitive
-$$\int \frac{f'(x)}{g'(f(x))}{\mathrm{d}}x=\int -\frac{6 x}{(3x^2+2)^2}{\mathrm{d}}x=\frac{1}{3x^2+2}.$$
+$$\int \frac{f'(x)}{g'(f(x))}{\mathrm{d}}x=\int -\frac{6 x}{(3x^2+2)^2}{\mathrm{d}}x=\frac{1}{3x^2+2}+c.$$
 
 ### Intégration par parties
 
-La dérivation d’un produit de fonction $f\cdot g$ s’écrit
+La dérivation d’un produit de fonctions $f\cdot g$ s’écrit
 $$(f(x)g(x))'=f'(x) g(x)+f(x) g'(x).$$ En intégrant cette équation on
 obtient
 $$f(x)g(x)=\int f'(x) g(x){\mathrm{d}}x+\int f(x) g'(x){\mathrm{d}}x.$$
-Une primitive de la forme $\int f'(x) g(x){\mathrm{d}}x$ peut se
+Une primitive de la forme $\int f'(x) g(x){\mathrm{d}}x$ peut ainsi se
 calculer de la façon suivante
 $$\int f'(x) g(x){\mathrm{d}}x=f(x)g(x)-\int f(x) g'(x){\mathrm{d}}x.$$
 De façon similaire si nous nous intéressons à une intégrale définie
@@ -731,7 +732,7 @@ Des “règles” pour utiliser cette technique seraient que
 
 1.  $g'$ soit facile à calculer et aurait une forme plus simple que $g$.
 
-2.  $f=\int f'{\mathrm{d}}x$ soit facile à calculer et aurait une forme
+2.  $\int f'{\mathrm{d}}x$ soit facile à calculer et aurait une forme
     plus simple que $f'$.
 
 ---
@@ -758,7 +759,7 @@ Solution +.#
 
 On voit que le résultat de l’intégration par
 partie nous redonne l’intégrale de départ. Ceci nous permet
-d’évaluer directement la dite intégrale.
+d’évaluer directement la dite intégrale pour retrouver le résultat de l'@eq:sin_cos
 
 ---
 
