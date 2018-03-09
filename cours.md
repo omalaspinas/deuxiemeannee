@@ -2161,20 +2161,20 @@ Exemple (Espaces vectoriels) +.#
 2.  L’ensemble $V=E$ lui-même. En particulier $V={\real}$ ou
     $V={\mathbb{C}}$ avec l’addition et la multiplication usuelle.
 
-3.  L’espace des $n-$uplets. Pour tout $n>0$, l’ensemble des $n-$uplets
-    d’éléments de $E$, $v=(v_1,v_2,...,v_n),\ \{v_i\}_{i=1}^n\in E$,
-    noté $E^n$. Sur cet espace l’addition se définit ($u,v\in E^n$)
+3.  Espaces de $n-uplets$. Soit $V$ un espace vectoriel sur $E$.L’espace des $n-$uplets. Pour t$n>0$, l’ensemble des $n-$uplets
+    d’éléments de $V$, $v=(v_1,v_2,...,v_n),\ \{v_i\in E}_1^n$,
+    est noté $V^n$. Sur cet espace l’addition se définit ($u,v\in V^n$)
     $$u+v=(u_1+v_1,u_2+v_2,...,u_v+v_n),$$ et la mutliplication par un
-    scalaire comme ($\alpha\in E$)
+    scalaire $\alpha\in E$
     $$\alpha v=(\alpha v_1,\alpha v_2,...,\alpha v_n).$$ On a donc que
     l’élément neutre de l’addition est le vecteur
     $0_{E^n}=\underbrace{(0,0,...,0)}_{n}$. L’élément opposé de $v$ est
     $-v=(-v_1,-v_2,...,-v_n)$.
 
-    Si $E={\real}$, alors on a l’espace Euclidien. Vous avez
+    Si $V={\real}$, alors on a l’espace Euclidien. Vous avez
     l’habitude de l’utiliser en 2D ou 3D quand vous considérez des
     vecteurs. Dans ce cas ${\real}^2$ ou ${\real}^3$ avec
-    l’addition classique et la multiplication par un scalaire standard
+    l’addition classique et la multiplication par un réel
     forme un espace vectoriel.
 
 4.  Dans ce qui suit dans ce cours, nous allons utiliser encore un autre
