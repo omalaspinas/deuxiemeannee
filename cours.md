@@ -2866,11 +2866,11 @@ possédant un ou plusieurs *caractères* communs. L’étude des caractères
 d’une population a pour but de révéler des tendances au sein de la
 population. Ces études sont particulièrement intéressantes quand le
 nombre d’individus de notre population est trop élevé pour pouvoir être
-analysé en entier. On prélève alors un échantillon représentatif de
+analysé en entier. On prélève alors un échantillon "représentatif" de
 notre population au hasard et on mène l’analyse statistique sur ce sous
-ensemble. Les éventuelles conclusions tirées de l’étude statistique sur
-le sous ensemble seront ensuite appliquée à l’ensemble de la population.
-Grâce au calcul de probabilité nous pourrons alors avoir une confiance
+ensemble. Les éventuelles conclusions de l’étude statistique sur
+le sous ensemble seront ensuite appliquées à l’ensemble de la population.
+Grâce au calcul des probabilités nous pourrons  avoir une confiance
 plus ou moins grande dans les conclusions tirées en fonction de la
 taille de l’échantillon. En effet plus celui-ci sera grand, plus la
 confiance dans les résultats sera élevée.
@@ -2879,7 +2879,7 @@ Un exemple de ce genre d’étude qui est très à la mode ces temps est le
 sondage (concernant le résultat d’élections ou de votations). Les
 sondeurs tentent en questionnant un sous-ensemble d’environ 1000
 d’électeurs d’un pays (citoyens de plus de 18, moitié d’hommes et de
-femmes plus ou moins, ...) de déterminer les résultats d’élections ou de
+femmes plus ou moins, ...) de prévoir les résultats d’élections ou de
 votations où participeront des millions d’électeurs potentiels. Il faut
 avouer que la tâche semble pour le moins complexe. Et la plus grande
 difficulté tient dans le “représentatif de la population”.
@@ -2902,7 +2902,7 @@ Illustration +.#
 
 1.  Cas discret: On étudie la distribution de salaires annuels dans une
     entreprise. Les salaires possibles sont $40'000$, $50'000$, $60'000$
-    et $1'000'000$ de CHF.
+    et $1'000'000$ CHF.
 
     -   Il y a 35 personnes payées $40'000$ CHF.
 
@@ -2967,9 +2967,9 @@ d’exécution.](figs/graph_exec.pdf){#fig:exec width="50.00000%"}
 ### Fréquences
 
 Plutôt que de faire apparaître le nombre d’individus d’une population
-possédant un caractère, il peut être plus intéressant et parlant de
+possédant un caractère, il peut être plus intéressant  de
 faire intervenir la *fréquence* ou le nombre relatif à la place. En
-effet, la fréquence donne immédiatement la proportion d’individu plutôt
+effet, la fréquence donne immédiatement la proportion d’individus plutôt
 qu’un nombre absolu qui n’est pas forcément très interprétable tout
 seul.
 
