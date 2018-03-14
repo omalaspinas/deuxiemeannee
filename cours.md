@@ -3061,7 +3061,7 @@ Exercice (Fréquence cumulée) +.#
 
 Jusqu’ici le nombre de valeurs étudiées était limité et il est assez
 simple d’avoir une vue d’ensemble de la distribution des valeurs des
-caractères de notre population. Il est plus aisé d’utiliser une nombre
+caractères de notre population. Mais en général il est plus aisé d’utiliser une nombre
 de valeurs beaucoup plus restreint permettant de résumer les différents
 caractères et nous allons en voir deux différents qui nous donne une
 tendance dite centrale: la moyenne, la médiane.
@@ -3095,7 +3095,7 @@ $$\bar{x}_{\textrm{salaire}}=\frac{35\cdot40000+20\cdot50000+5\cdot60000+1\cdot1
 On remarque ici que la moyenne des salaires donne une impression erronée
 de la situation car elle est très sensible aux valeurs extrême de la
 distribution. En effet, tous les salaires à l’exception d’un sont
-inférieurs à la moyenne. En effet, si on retire le salaire d’un million
+inférieurs à la moyenne. Il suffit  de retirer le salaire d’un million
 de notre ensemble de valeurs, la moyenne de l’échantillon restant
 devient
 $$\bar{x}_{\textrm{salaire}}=\frac{35\cdot40000+20\cdot50000+5\cdot60000}{60}=45000.$$
@@ -3103,11 +3103,11 @@ La différence est de l’ordre de $25\%$ par rapport aux $60'000$ CHF
 obtenus avec toute la population. Il est donc nécessaire d’utiliser une
 autre mesure pour illustrer mieux le salaire caractéristique de notre
 population. De façon plus générale la moyenne est peu robuste à des
-valeurs extrêmes dans l’étude d’échantillon.
+valeurs extrêmes dans l’étude d’échantillons.
 
 Une mesure qui est plus parlante est la *médiane*, notée $\tilde{x}$. La
 médiane se définit comme la valeur $\tilde{x}$ qui est telle que la
-moitié des individus de la population sont ont un $x_i\leq \tilde{x}$ et
+moitié des individus de la population ont un $x_i\leq \tilde{x}$ et
 le reste est telle que $x_i\geq\tilde{x}$.
 
 Pour l’exemple des salaires le salaire médian est de $40000 CHF$, ce qui
@@ -3122,7 +3122,7 @@ d’exécution[^7]).
 ### Mesures de dispersion
 
 Nous avons vu deux mesures donnant une tendance générale des caractères
-d’une population. Hors cette valeur ne nous dit absolument rien sur la
+d’une population. Hors ces valeurs ne nous disent absolument rien sur la
 manière dont ces caractères sont distribués. Sont-ils proches de la
 moyenne ou de la médiane? Ou en sont-ils au contraire éloignés? Nous
 allons voir deux mesures différentes dans cette sous-section: la
@@ -3133,12 +3133,12 @@ Hors, comme on l’a vu dans la sous-section précédente l’écart à la
 moyenne $x_i-\bar{x}$ est nul en moyenne. Cette grandeurs ne nous
 apprend rien. On peut donc s’intéresser plutôt à la moyenne de l’écart
 quadratique $(x_i-\bar{x})^2$ qui est une quantité toujours positive et
-donc la moyenne sera de cette écart quadratique aura toujours une valeur
-qui sera positive ou nulle (elle sera nulle uniquement si
+dont la moyenne  aura toujours une valeur
+positive ou nulle (elle sera nulle uniquement si
 $x_i-\bar{x}=0,\forall i$)[^8]. On définit donc la *variance*, $v$,
 comme étant la moyenne des écarts quadratiques
 $$v=\frac{1}{n}\sum_{i=0}^{k-1}n_i(x_i-\bar{x})^2.$$ Si on considère
-plutôt la racine carrée de la variance, on obtient *l’écart-type*
+la racine carrée de la variance, on obtient *l’écart-type*
 $$s=\sqrt{v}.$$
 
 ---
@@ -3147,18 +3147,18 @@ Exercice (Variance, écart-type) +.#
 
 Démontrer les relations suivantes
 
-1.  On peut également calculer la variance avec la fréquence
+1.  On peut également calculer la variance avec les fréquences
     $$v=\sum_{i=0}^{k-1}f_i(x_i-\bar{x})^2.$$
 
 2.  On peut également calculer la variance à l’aide de la formule
     suivante
-    $$v=\frac{1}{n}\left(\sum_{i=0}^{k-1}n_ix_i^2\right)-\bar{x}^2.$$
+    $$v=\frac{1}{n}\left(\sum_{i=0}^{k-1}n_ix_i^2\right)-\bar{x}^2= \bar{x^2}-\bar{x}^2$$
 
 ---
 
 Pour l’exemple du salaire on obtient pour la variance $$\begin{aligned}
- v&=\frac{1}{61}\left(35\cdot(40000-60656)^2+35\cdot(50000-60656)^2\right.\nonumber\\
- &\quad\quad\left.+35\cdot(60000-60656)^2+35\cdot(1000000-60656)^2\right)\nonumber\\
+ v&=\frac{1}{61}\left(35\cdot(40000-60656)^2+20\cdot(50000-60656)^2\right.\nonumber\\
+ &\quad\quad\left.+5\cdot(60000-60656)^2+1\cdot(1000000-60656)^2\right)\nonumber\\
  &=1.4747\cdot 10^{10},\end{aligned}$$ et l’écart-type
 $$s=\sqrt{v}=121440.$$
 
