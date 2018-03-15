@@ -3244,7 +3244,7 @@ Définition +.#
 Le calcul des *probabilités* de réalisation de certains événement est
 reliée à la *fréquence* que nous avons introduit dans la section
 précédente. Soit un univers $\Omega$ et $A$, $B$ deux événements tels
-que $A\cap B=\emptyset$. On effectue une $N$ expériences, donc $\Omega$
+que $A\cap B=\emptyset$. On effectue  $N$ expériences, donc $\Omega$
 est réalisé $N$ fois. De plus on constate qu’on réalise $A$, $K$ fois et
 $B$, $M$ fois. On a donc les fréquences suivantes que $A$, $B$ et
 $\Omega$ se réalisent $$\begin{aligned}
@@ -3285,7 +3285,7 @@ On voit ici une propriété fondamentale des probabilités qui est que
 $0\leq p(A)\leq 1,\ \forall A$.
 
 La probabilité de ne pas tirer un 6 donc de réaliser l’événement
-$\bar A=\{1,2,3,4,5\}$ est donné par $1$ moins la probabilité de
+$\bar A=\{1,2,3,4,5\}$ est donnée par $1$ moins la probabilité de
 réaliser $A=\{6\}$, il vient $$p(\bar A)=1-p(A)=\frac{5}{6}.$$ De même
 la probabilité de tirer un nombre impair, est donnée par $1$ moins la
 probabilité de réaliser l’événement pair
@@ -3322,7 +3322,7 @@ Nous pouvons facilement décomposer $A$ en deux sous événements
 élémentaires, $A=\{1\}\cup \{2\}$. On a donc une autre façon de calculer
 $p(A)$
 $$p(A)=p(\{1\})+p(\{2\})=\frac{1}{6}+\frac{1}{6}=\frac{2}{6}=\frac{1}{3}.$$
-On a donc que la probabilité de réaliser un événement est la somme des
+On a que la probabilité de réaliser un événement est la somme des
 événements élémentaires qui le composent.
 
 ### Evénements complémentaires
@@ -3332,8 +3332,7 @@ $B=\Omega\backslash \{1,2\}=\{3,4,5,6\}$. L’événement $B$ est appelé
 *l’événement complémentaire* de $A$. Il est noté $B=\bar A$. Les
 probabilité de réaliser $A$ ou de réaliser $\bar A$ est la même chose
 que de réaliser l’événement certain, car $A\cup \bar A=\Omega$. On
-vérifie aisément dans ce cas que $$\Omega=\{1,2\}\cup\{3,4,5,6\}.$$ On a
-donc $$p(A\cup \bar A)=p(\Omega)=1.$$ De plus de ce qu’on a vu
+vérifie aisément dans ce cas que $$\Omega=\{1,2\}\cup\{3,4,5,6\}$$ et $$p(A\cup \bar A)=p(\Omega)=1.$$ De plus de ce qu’on a vu
 précédemment, on a que $$p(A\cup \bar A)=p(A)+p(\bar A).$$ En combinant
 ces deux derniers résultats, il vient que $$p(A)+p(\bar A)=1.$$ On en
 déduit que $$p(A)=1-p(\bar A)=1-\frac{2}{3}=\frac{1}{3}.$$ Dans ce cas
