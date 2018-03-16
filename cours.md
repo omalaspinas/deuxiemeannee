@@ -3472,12 +3472,12 @@ Sur une population de 1000 hommes qui naissent, 922 atteignent l’âge de
 Prenons maintenant le cas “pathologique” où nous cherchons la
 probabilité conditionnelle $p(A|B)$, mais où la réalisation de $B$ n’a
 aucune influence sur la réalisation de $A$. On a donc $$p(A|B)=p(A).$$
-On a donc que $$p(A|B)=\frac{p(A\cap B)}{p(B)}=p(A).$$ On en déduit que
-$$p(A\cap B)=p(A)\cdot p(B).$${#eq:indep} Et donc on peut calculer
+Il vient $$p(A|B)=\frac{p(A\cap B)}{p(B)}=p(A).$$ On en déduit que
+$$p(A\cap B)=p(A)\cdot p(B).$${#eq:indep} On calcule aussi 
 $p(B|A)$
-$$p(B|A)=\frac{p(A\cap B)}{p(A)}=\frac{p(A)\cdot p(B)}{p(A)}=p(B).$$ On
-a donc que si $A$ ne dépend pas de $B$, alors la réciproque est vraie
-aussi. Les événements qui satisfonts la propriété de l’équation
+$$p(B|A)=\frac{p(A\cap B)}{p(A)}=\frac{p(A)\cdot p(B)}{p(A)}=p(B).$$ 
+Donc si $A$ ne dépend pas de $B$, alors la réciproque est vraie
+aussi. Les événements qui satisfont la propriété de l’équation
 @eq:indep sont appelés indépendants. Dans le cas contraire ils
 sont appelé dépendants.
 
@@ -3486,7 +3486,7 @@ Supposons que nous effectuions deux tirages de suite et que l’événement
 $A$ soit “tirer un 6 au premier tirage” et que l’événement $B$ soit
 “tirer un $2$ au deuxième tirage”. On a que
 $$p(A)=\frac{1}{6},\quad p(B)=\frac{1}{6},\quad p(A\cap B)=\frac{1}{36}.$$
-On a donc bien $p(A\cap B)=p(A)\cdot p(B)$ et donc les événements sont
+On a donc bien $p(A\cap B)=p(A)\cdot p(B)$ et les événements sont
 indépendants. Cela semble bien naturel étant donné que le premier tirage
 du dé ne va en rien influencer le résultat du deuxieme tirage. Tout
 comme un tirage de l’euromillions d’une semaine ne va pas influencer le
@@ -3615,7 +3615,7 @@ Exercice +.#
 5.  Déterminer le nombre de combinaisons possibles avec 3, 4, 5 dés.
     Pouvez vous généraliser à $n$ dés?
 
-6.  Soit un tirage aléatoire offrant 2 possibilité (pile ou face par
+6.  Soit un tirage aléatoire offrant 2 possibilités (pile ou face par
     exemple). Quel est le nombre de combinaisons possibles si on tire
     $n$ fois? Pouvez-vous généraliser pour un tirage aléatoire offrant
     $m$ possibilités qu’on tire $n$ fois?
@@ -3640,14 +3640,14 @@ données par $$\begin{aligned}
  p(112)&=p_1\cdot p_1\cdot p_2=p_1^2\cdot p_2,\\
  p(121)&=p_1\cdot p_2\cdot p_1=p_1^2\cdot p_2,\\
  p(211)&=p_2\cdot p_1\cdot p_1=p_1^2\cdot p_2.\end{aligned}$$ Les
-tirages étant indépendants (avec remise) on a que la probabilité de
+tirages étant indépendants  on a que la probabilité de
 tirer $1$ ou $2$ est indépendante du moment où ils sont tirés et donc
 ces trois probabilités sont égales.
 
 Finalement la probabilité de tirer deux 1 et un 2 est de
-$$p([112])=p(112)+p(121)+p(211)=3\cdot p_1^2\cdot p_2.$$ Si à parésent
+$$p([112])=p(112)+p(121)+p(211)=3\cdot p_1^2\cdot p_2.$$ A présent
 nous considérons la probabilité de tirer $[1123]$ en 4 tirages. Les
-torages possibles sont
+tirages possibles sont
 $$[1123]=\{1123, 1132, 1213, 1231, 1312, 1321, 2113, 2131, 2311, 3112, 3121, 3211\}.$$
 Il y a donc 12 tirages possibles pour cette combinaison. De plus les
 tirages étant indépendants on a que toutes ces combinaisons sont
