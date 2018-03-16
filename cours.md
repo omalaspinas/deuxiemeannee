@@ -1914,18 +1914,18 @@ Rappel sur les nombres complexes
 --------------------------------
 
 Dans cette section, on fait un rappel sur les nombres complexes qui
-seront beaucoup utilisés dans cette section.
+seront beaucoup utilisés dans la suite.
 
 ### Les nombres réels
 
-L’ensemble des nombres réels, noté ${\real}$, possède un certain
-nombre de fonctions (opérateurs) tels que l’addition, la soustraction,
-la multiplication, la division, etc qui prennent un couple de nombres
+L’ensemble des nombres réels, noté ${\real}$, est doté  d'un certain
+nombre de fonctions (opérateurs) tels que l’addition,
+la multiplication etc qui prennent un couple de nombres
 réels et rendent un autre nombre réel $$\begin{aligned}
 & +:{\real}\times{\real}\rightarrow{\real},\\
-& \cdot:{\real}\times{\real}\rightarrow{\real},\\\end{aligned}$$
-On peut donc noter l’addition de deux nombres réels $7$ et $2$ et de la
-définition de l’addition on a $$+(7,2)=9.$$ On lui préfère la notation
+& \ \cdot:{\real}\times{\real}\rightarrow{\real},\\\end{aligned}$$
+De la définition de  l’addition de deux nombres réels il vient par exemple que
+$$+(7,2)=9.$$ On  préfère la notation
 $$+(7,2)=7+2=9.$$ Intéressons nous plus particulièrement à la
 multiplication et à l’addition. Ces opérations ont les propriétés
 d’associativité et de commutativité. Cela veut dire que
@@ -1941,12 +1941,12 @@ soit ${\real}^2\equiv{\real}\times{\real}$. Cet ensemble
 est l’ensemble des des couples de nombres réels. Notons les nombres
 $z\in{\real}^2$ comme
 $$z=(a,b)\mbox{ tel que } a\in{\real}, \mbox{ et } b\in{\real}.$$
-Sur ces nombres on peut définir à nouveau l’addition, la soustraction,
+Sur ces nombres on peut définir à nouveau l’addition,
 la multiplication, ... $$\begin{aligned}
 & +:{\real}^2\times{\real}^2\rightarrow{\real}^2,\\
 & \cdot:{\real}^2\times{\real}^2\rightarrow{\real}^2.\end{aligned}$$
 On peut les écrire sous la forme de leurs équivalents des nombres réels
-sous la forme
+comme
 $$(a,b)+(c,d)=(a+c,b+d),$${#eq:add}
 $$(a,b)\cdot(c,d)=(a\cdot c-b\cdot d,a\cdot d+b\cdot c).$${#eq:mult}
 On voit assez facilement que l’addition sur ${\real}^2$ a une forme
@@ -1961,9 +1961,9 @@ Exercice +.#
 
 Vérifier l’associativité du produit sur notre ensemble ${\real}^2$.
 
-Regardons à présent ce qu’il se passe si on étudie les ensemble de
-nombres où le deuxième nombre est nul tels que $(a,0)$. Si on additionne
-deux tels nombres ont obtient $$(a,0)+(b,0)=(a+b,0).$$On constate donc
+Regardons à présent ce qui se passe si on étudie les ensemble de
+nombres dans ${\real}^2$ où le deuxième nombre du couple est nul tels que $(a,0)$. Si on additionne
+deux tels nombres ont obtient $$(a,0)+(b,0)=(a+b,0).$$ On constate donc
 que ce genre de nombre se comporte exactement comme un nombre réel
 normal du point de vue de l’addition. Que se passe-t-il quand on
 multiplie deux tels nombres
@@ -1972,8 +1972,8 @@ On voit que pour la multiplication également les ensembles de nombres
 dont le deuxième est nul, se comporte comme un nombre réel standard.
 
 En fait on peut montrer que ce sous-ensemble de ${\real}^2$ se
-comporte exactement comme ${\real}$. Il se trouve que
-${\real}^2$ est un ensemble de nombre plus grand que ${\real}$
+comporte exactement comme ${\real}$. Il se trouve donc que
+${\real}^2$ est un ensemble plus grand que ${\real}$
 et qui le contient entièrement.
 
 ### Les nombres complexes
@@ -1999,17 +1999,17 @@ donc que pour que cette équation soit égale à l’équation
 la définition formelle du nombre imaginaire. Dans les réels $i$ ne peut
 pas exister. En revanche dans l’espace plus grand des complexes $i$ a
 une existence tout à fait naturelle et raisonnable. En fait le nombre
-$i$ est associé au couple $(0,1)$.
+$i$ est associé au couple $(0,1)$ comme on voit par $(0,19\cdot (0,1)=(-1,0)$.
 
 On appelle partie réelle d’un nombre complexe $z$, la partie pas
-multipliée par $i$ (on la note ${\mathrm{Re}}(z)$) et la partie
+multipliée par $i$ (on la note ${\mathrm{Re}}(z)$) et  partie
 imaginaire celle multipliée par $i$ (on la note ${\mathrm{Im}}(z)$).
 Pour $z=a+ib$, on a donc ${\mathrm{Re}}(z)=a$ et ${\mathrm{Im}}(z)=b$.
 
 #### Interprétation géométrique
 
 Comme on l’a vu précédemment, les nombres complexes peuvent se voir
-comme une “notation” de ${\real}^2$. On peut donc les représenter
+comme une “notation” de ${\real}^2$. On peut ainsi les représenter
 sur un plan bidimensionnel (voir la @fig:complexPlane).
 
 ![Représentation du nombre complexe
@@ -2026,7 +2026,7 @@ $z_3=a+c+i(b+d)$.](figs/complexPlaneSum.pdf){#fig:complexPlaneSum width="50.0000
 
 Pour la multiplication cela s’avère un peu plus difficile à interpréter.
 Pour cela il est plus simple de passer par une représentation via des
-sinus et des cosinus (en coordonnées cylindriques) des nombres complexes
+sinus et des cosinus (en coordonnées polaires) des nombres complexes
 (voir la @fig:complexPlaneCyl.
 
 ![Représentation du nombre complexe
@@ -2051,16 +2051,17 @@ En utilisant les relations trigonométriques suivantes $$\begin{aligned}
 il vient $$\begin{aligned}
  z_3=r_1r_2\left(\cos(\vartheta_1+\vartheta_2)+i(\sin(\vartheta_1+\vartheta_2)\right).\end{aligned}$$
 On a donc comme interprétation géométrique que le produit de deux
-nombres complexe donne un nombre complexe dont la longueur est le
+nombres complexe donne un nombre complexe dont la longueur (module) est le
 produit des longueurs des nombres complexes originaux et dont
-l’orientation est la somme des angles des nombres complexes originaux.
+l’orientation (argument) est la somme des angles des nombres complexes originaux.
 
 Cette propriété du produit nous amène à la notation sous forme
 d’exponentielle des nombres complexes. L’exponentielle, possède la
 propriété intéressante suivante $$e^a e^b=e^{a+b}.$$ Ou encore quand on
 multiplie deux nombres représentés par une exponentielle, on peut
 représenter le résultat par l’exponentielle de la somme de leurs
-arguments. Comme pour les nombre complexes en somme. On a donc que
+arguments. Comme pour les nombre complexes en somme. Il en découle des ces considérations 
+que
 $$z=re^{i\vartheta}=r(\cos\vartheta+i\sin\vartheta).$$
 
 On peut démontrer de façon plus rigoureuse cette relation grâce aux
@@ -2070,7 +2071,7 @@ solution $f(x)=e^{\alpha x}$ ($\alpha\in{\mathbb{C}}$). Si on remplace
 $\alpha$ par $i$, on a $f=e^{ix}$. Par ailleurs, avec $\alpha=i$, on
 peut également vérifier que $f(x)=r(\cos x+i\sin x)$ satisfait
 l’équation différentielle ci-dessus. On a donc bien que les deux formes
-sont égales.
+sont égales.Remarquons que $e^{ix}=\cos(x)+i\sin(x), x\in \real$ est la fameuse formule d'Euler.
 
 #### Quelques notations et définitions
 
@@ -2097,7 +2098,7 @@ $${\mathrm{Re}}(z)=\frac{1}{2}(z+{\bar{z}}),\quad {\mathrm{Im}}(z)=\frac{1}{2i}(
 
 Exercice +.#
 
-Démontrer les trois relations précédentes.
+Démontrer ces trois relations.
 
 ---
 
@@ -2110,23 +2111,23 @@ $$\begin{aligned}
 
 Exercice +.#
 
-Démontrer ces deux relations.
+Démontrer ces relations.
 
 ---
 
 ### Espaces vectoriels
 
-Ici nous introduisons de façon très simplifiée les concepts d’espaces
-vectoriels et certaines notions d’algèbre linéaire. Pour ce faire nous
-allons considérer un ensemble $V$, sous ensemble d’un espace plus grand
-$E$ (muni d’une addition et d’une multiplication). Dans notre cas $E$
-sera ${\real}$ ou ${\mathbb{C}}$ principalement.
+Ici nous introduisons de façon très simplifiée le concept d’espace
+vectoriel et certaines notions d’algèbre linéaire. Pour ce faire nous
+allons considérer un ensemble $V$ muni d’une addition et d’une multiplication par un scalaire, c'est à dire par un nombre appartenant 
+à un ensemble $E$.  Dans notre cas $E$
+sera ${\real}$ ou ${\mathbb{C}}$ (l'ensemble des nombres complexes)  principalement.
 
 Définition +.#
 
 On appelle espace vectoriel sur $E$, un ensemble $V$, dont les éléments
-appelés vecteur et notés $v$, sont sont munis des opérations opérations
-$+$ (l’addition) et $\cdot$ (la multiplication par un scalaire) ont les
+appelés vecteurs et notés $v$, sont sont munis des opérations 
+$+$ (l’addition) et $\cdot$ (la multiplication par un scalaire) qui ont les
 propriétés suivantes
 
 -    
@@ -2158,8 +2159,8 @@ Exemple (Espaces vectoriels) +.#
 
 1.  L’espace nul, $v=0$.
 
-2.  L’ensemble $V=E$ lui-même. En particulier $V={\real}$ ou
-    $V={\mathbb{C}}$ avec l’addition et la multiplication usuelle.
+2.  $V={\real}$ ou
+    $V={\mathbb{C}}$ avec $E=\real$.
 
 3.  L’espace des $n-$uplets. Pour tout $n>0$, l’ensemble des $n-$uplets
     d’éléments de $E$, $v=(v_1,v_2,...,v_n),\ \{v_i\}_{i=1}^n\in E$,
@@ -2185,7 +2186,7 @@ Exemple (Espaces vectoriels) +.#
     par un scalaire définis commme suit. Soient $f:W\rightarrow V$ et
     $g:W\rightarrow V$, avec $\alpha\in E$, alors $$\begin{aligned}
        &(f+g)(x)=f(x)+g(x), \quad \forall x\in W,\\
-       &f(\alpha\cdot x)=\alpha\cdot f(x), \quad \forall x\in W.
+       &(\alpha\cdotf)(x)=\alpha\cdot f(x), \quad \forall x\in W.
       \end{aligned}$$
 
 5.  Espace des applications linéaires. Soit $f$ une fonction de
