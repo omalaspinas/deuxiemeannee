@@ -3686,13 +3686,14 @@ On lance un dé parfait 10 fois. Quelle est la probabilité d’obtenir:
 Exemple du lotto
 ----------------
 
-Dans un lotto on a dans un sac un nombre de jetons numérotés, disons
+Dans un lotto on a dans une urne (souvent une machine spécialement conçue contenant de petites bales numérotées)  
+un nombre de jetons numérotés, disons
 pour l’exemple entre 1 et 6, qui sont tirés successivement. Une fois un
 jeton tiré, il ne sera pas remis dans le sac. On appelle ce genre de
 tirage *sans remise*. Contrairement au cas des dés vus dans la section
 précédente qui était ‘*avec remise*. On tire un nombre fixé de jetons,
 disons 3. On souhaite déterminer la probabilité d’obtenir une suite
-donnée de 2 numéros, disons $25$. Disons que pour cet exemple l’ordre du
+donnée de 2 numéros, disons $25$. Disons aussi que pour cet exemple l’ordre du
 tirage a de l’importance (ce qui n’est pas le cas du lotto).
 
 Afin de calculer cette probabilité le fait qu’on effectue un tirage avec
@@ -3735,7 +3736,7 @@ un premier temps la probabilité de tirer $2$ ou $5$ parmi $6$ nombres,
 puis on a la probabilité de tirer le $5$ ou le $2$ (respectivement si on
 a tiré $2$ ou $5$) parmi 5. Les deux probabilités sont donc données
 respectivement par $p(\{2,5\})=\frac{2}{6}$ puis par
-$p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$.
+$p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$ pour trouver la probabilité $\frac{1}{15}$.
 
 ---
 
@@ -3756,7 +3757,7 @@ Quelques exercices
 ------------------
 
 Afin de continuer avec ces concepts de tirages aléatoires avec ou sans
-remise de suite ordonnées ou non, nous allons faire quelques exercices.
+remise de suites ordonnées ou non, nous allons faire quelques exercices.
 Il peut se révéler utile de dessiner un arbre pour ces exercices.
 
 1.  Dans une urne se trouvent 2 boules blanches et 3 boules noires. On
@@ -3797,7 +3798,7 @@ Il peut se révéler utile de dessiner un arbre pour ces exercices.
         probabilité que les deux enfants soient de même sexe.
 
     -   On considère la naissance de deux enfants. Calculer et la
-        probabilité que les deux enfants soient de sexes opposés.
+        probabilité que les deux enfants soient de sexes différents.
 
 Variables aléatoires
 --------------------
@@ -3889,7 +3890,7 @@ $x\in{\real}$.
 
 ---
 
-Nous distinguons deux sortes de variables aléatoires différentes: les
+Nous distinguons deux sortes de variables aléatoires: les
 variables aléatoires discrètes et continues. Nous les discuterons
 brièvement dans les deux sous-sections suivantes.
 
@@ -3909,12 +3910,12 @@ Une très bonne référence concernant les nombre aléatoires est le site
 
 Le but des générateurs de nombres aléatoires est de produire une suite
 de nombres entiers, ($n\in{\mathbb{N}}$) $$\{X_0,X_1,...,X_n\},$$ avec
-$X_i\in A$, où $A=[0,M]$, avec $m\in {\mathbb{N}}$ (dans le cas de la
+$X_i\in A$, où $A=[0,m]$, avec $m\in {\mathbb{N}}$ (dans le cas de la
 fonction `rand()` de $C$, $M$ est donné par la constante prédéfinie
 `RAND_MAX` qui and certains cas est $2^{31}-1$). La probabilité de tirer
-chacun des nombres dans l’intervalle est égale. On dit que la
+chacun des nombres dans l’intervalle $A$ est égale. On dit que la
 distribution des nombres est uniforme. De plus, les nombres tirés ne
-doivent pas dépendre de l’histoire des nombres tirés précédemment.
+doivent pas dépendre de l’histoire des nombres tirés précédemment et on dit que les nombres sont idépendants.
 
 Si on veut maintenant plutôt tirer des nombres réels uniformément
 distribués entre $[0,1]$, il suffit de diviser les nombres $X_i$ par $m$
@@ -3927,7 +3928,7 @@ nécessaire que $(\beta-\alpha)<M$.
 Les transformations que je donne ici ne sont pas toujours celles
 implémentées. En effet, il existe des transformations beaucoup plus
 efficaces d’un point de vue computationnel pour changer l’intervalle des
-nombres aléatoires tirés.
+nombres aléatoires.
 
 Sans entrer dans les détails, la génération de nombres aléatoires
 n’ayant pas une distribution uniforme s’obtient en effectuant une
@@ -3935,7 +3936,7 @@ transformation un peu plus complexe que celle ci-dessus en partant
 toujours de la suite de nombres aléatoires entiers.
 
 Les nombres aléatoires produits de façon algorithmique (donc avec un
-ordinateur) ne peuvent pas être vraiment aléatoire, car ils sont obtenus
+ordinateur) ne peuvent pas être vraiment aléatoires, car ils sont obtenus
 avec une machine déterministe (les opérations faites à l’aide d’un
 ordinateur sont par définition reproductibles avec une chance d’erreur
 quasiment nulle). On parle donc de nombre pseudo-aléatoires.
@@ -3943,13 +3944,13 @@ quasiment nulle). On parle donc de nombre pseudo-aléatoires.
 Néanmoins, bien que ces chiffres ne soient pas vraiment aléatoires, ils
 peuvent posséder des propriétés qui les rendent satisfaisants pour la
 plupart des applications. Cette suite de nombres doit avoir des
-propriétés particulières quand $n\rightarrow\infty$. Sans entrer pour le
+propriétés particulières quand $m\rightarrow\infty$. Sans entrer pour le
 moment trop dans les détails, on veut par exemple que la moyenne des
 nombres tirés soit $m/2$, que la corrélation entre des sous-suites de
-nombres doit être nulle, ou encore qu’il n’existe pas de séquence qui se
+nombres soit nulle, ou encore qu’il n’existe pas de séquence qui se
 répète (ou au moins que la période de répétition soit très très longue).
 Néanmoins, il est assez compliqué de définir des tests très robustes
-pour tester la qualité des nombres aléatoires algorithmiques.
+pour évaluer la qualité des nombres aléatoires algorithmiques.
 
 ### Les générateurs congruenciels linéaires {#sec:congr}
 
@@ -3991,8 +3992,8 @@ exemple
     $$a=65539,\quad c=0,\quad m=2^{32}.$$
 
 Ce genre de générateur de nombres aléatoires est très efficace d’un
-point de vue computationnel mais la qualité des nombres aléatoires peut
-être insuffisante. Plusieurs améliorations ont été proposées. Par
+point de vue computationnel mais la qualité des nombres aléatoires est en général 
+insuffisante. Plusieurs améliorations ont été proposées. Par
 exemple, pour chaque étape, on peut générer $k$ nombres aléatoires avec
 un générateur congruentiel linéaire et combiner les nombres.
 
@@ -4006,7 +4007,7 @@ Mersenne Twister. Ces générateurs ont généralement une période
 extrêmement longue (qui a la particularité d’être un nombre premier de
 type Mersenne dont la forme est $m=2^l-1$, avec $l\in{\mathbb{N}}$).
 
-Bien que ne soyant pas parfaits ces générateurs ont le grand avantage
+Bien que ne soyant pas parfaits ces générateurs ont aussi le grand avantage
 d’être très rapides et peu gourmands en ressources de calcul. La
 facilité de description et d’utilisation de tels générateurs, permet des
 tests très poussés quant à leur qualités et leurs limites par la
@@ -4051,7 +4052,7 @@ $$\begin{aligned}
 semble beaucoup moins aléatoire que la suite $X$. En effet, la
 probabilité de tirer 10 fois 0 en 10 tirages est de
 $p(Y)=1/2^{10}=1/1024$, alors que la probabilité d’avoir autant de 0 que
-de 1 est de $p(X)=1/2$. De façon générale on aimerait que la répartition
+de 1 est de $1/2$. De façon générale on aimerait que la répartition
 soit $35\%$-$65\%$ avec une probabilité de $90\%$.
 
 Néanmoins, ce critère n’est pas suffisant. En effet la suite
