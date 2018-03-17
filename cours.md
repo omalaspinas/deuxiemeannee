@@ -2190,7 +2190,7 @@ Exemple (Espaces vectoriels) +.#
       \end{aligned}$$
 
 5.  Espace des applications linéaires. Soit $f$ une fonction de
-    $f:W\rightarrow V$, avec $W,V\in E$ des espaces vectoriels, alors
+    $f:W\rightarrow V$, avec $W,V$  des espaces vectoriels sur $E$, alors
     une application est dite linéaire si $$\begin{aligned}
        &f(x+y)=f(x)+f(y),\quad \forall x,y\in W,\\
        &f(\alpha \cdot x)=\alpha \cdot f(x),\quad \forall \alpha\in E,\ \mbox{et}\ x\in W.
@@ -2198,23 +2198,23 @@ Exemple (Espaces vectoriels) +.#
 
 ### Base
 
-Nous avons introduit la notion très générale d’espace vectorielle et
+Nous avons introduit la notion très générale d’espace vectoriel et
 nous avons présenté quelques exemples. Reprenons l’exemple de l’espace
 Euclidien, soit l’espace des vecteurs comme vous en avez l’habitude.
 Limitons nous au cas où les vecteur sont bidimensionnels, soit
 $v=(v_1,v_2)$ avec $v_1,v_2\in{\real}$. D’habitude ces vecteurs
 sont représentés dans le système de coordonnées cartésien où on a deux
 vecteurs (de base) définis comme $e_1=(1,0)$ et $e_2=(0,1)$ qui sont
-implicites. Par exemple, si $u=(4,5)$ cela signifie implicitement qu’on
-a $$u=4\cdot e_1+5\cdot e_2.$$
+implicites. Par exemple, si $u=(4,5)$ cela signifie implicitement que 
+$$u=4\cdot e_1+5\cdot e_2.$$
 
 ![Le vecteur $v$ dans la représentation
 cartésienne.](figs/baseCart.pdf){#fig:baseCart width="35.00000%"}
 
-De façon générale le vecteur $v=(v_1,v_2)$ est représenté implicitement
+De façon générale tout vecteur $v=(v_1,v_2)$ est représenté implicitement
 par (voir la @fig:baseCart) $$v=v_1\cdot e_1+v_2\cdot e_2.$$ On
 dit que $e_1$ et $e_2$ forme une *base* de l’espace ${\real}^2$. En
-d’autre terme n’importe quel vecteur $v\in{\real}^2$ peut être
+d’autres termes n’importe quel vecteur $v\in{\real}^2$ peut être
 exprimé comme une combinaison linéaire de $e_1$ et $e_2$.
 
 Néanmoins, le choix de la base $e_1$ et $e_2$ est totalement arbitraire.
@@ -2262,7 +2262,7 @@ Exemple (Famille libre) +.#
     ${\real}^2$. En effet,
     $$1\cdot e_1+1\cdot e_2-1\cdot v=(0,0).$$
 
-4.  $\{\sin(x),\cos(x)\}$ est une famille libre. On em peut pas écrire
+4.  $\{\sin(x),\cos(x)\}$ est une famille libre. On ne peut pas écrire
     $\sin(x)=\alpha\cos(x)+\beta$. Il n’y a pas de relation linéaire qui
     relie les deux. La relation est non-linéaire
     $\sin(x)=\sqrt{1-\cos^2(x)}$.
@@ -2277,8 +2277,8 @@ linéaire des vecteur $e_i$.
 
 Illustration (Familles génératrices) +.#
 
-1.  $\{e_1\}$ n’est une famille génératrice de ${\real}^2$. On ne
-    peut pas représenter tous les vecteurs de la forme $v=(0,v_2)$,
+1.  $\{e_1\}$ n’est pas une famille génératrice de ${\real}^2$. On ne
+    peut pas représenter  les vecteurs de la forme $v=(0,v_2)$,
     $v_2\neq 0$.
 
 2.  $\{e_1,e_2\}$ est une famille génératrice de ${\real}^2$.
@@ -2347,7 +2347,7 @@ problèmes physiques existant et qui ont des contraintes particulières.
 
 Nous allons considérer une fonction $f(t)$ qui est une fonction
 périodique, de période $T$, de pulsation $\omega=2\pi/T$ et de fréquence
-$\nu=1/T$. Ce genre de fonction a la propriété suivante
+$\nu=1/T$. La périodicité signifie que 
 $$f(t+T)=f(t),\quad \forall t.$$ Nous cherchons à décomposer $f$ en un
 ensemble potentiellement infini de fonctions périodiques. Notons cet
 ensemble de fonctions $\{g_j\}_{j=0}^\infty$, où $g_j$ est une fonction
@@ -2372,35 +2372,35 @@ deux degrés de libertés des sinus dont la période est imposée, soit
 l’amplitude $A_j$ et la phase $\phi_j$. On va donc écrire $f(t)$ comme
 $$f(t)=\sum_{j=0}^\infty A_j\sin(j\omega t+\phi_j).$${#eq:sin_phase_ampl}
 Cette forme n’est pas pratique du tout comme décomposition, en
-particulier à cause de la phase $\phi_j$. On utilise donc la relation
+particulier à cause de la phase $\phi_j$. On utilise alors la relation
 trigonométrique (déjà utilisée pour interpréter le produit de deux
 nombres complexes)
 $$\sin(\theta+\phi)=\sin(\theta)\cos(\phi)+\cos(\theta)\sin(\phi).$$ Il
-vient donc $$\begin{aligned}
+vient  $$\begin{aligned}
  f(t)=\sum_{j=0}^\infty A_j\left(\sin(j\omega t)\cos(\phi_j)+\cos(j\omega t)\sin(\phi_j)\right).\end{aligned}$$
 En renommant $$\begin{aligned}
 a_j&\equiv A_j\cos(\phi_j),\\
 b_j&\equiv A_j\sin(\phi_j),\end{aligned}$$ on obtient
 $$f(t)=\sum_{j=0}^\infty \left(a_j\sin(j\omega t)+b_j\cos(j\omega t)\right). $${#eq:decomp_sincos}
-On a donc transformé une équation où on devait déterminer une amplitude
-et une phase, ce qui est très compliqué, en une autre équation où on
+On a ainsi transformé une équation où on devait déterminer une amplitude
+et une phase, ce qui est plutôt compliqué, en une autre équation où on
 doit déterminer uniquement deux amplitude. Par ailleurs, comme $\cos$ et
 $\sin$ sont indépendants, on peut calculer les $a_j$ et $b_j$ de façon
 également indépendantes.
 
-Nous voulons donc à présent calculer $a_n$ et $b_n$ pour avoir les
+Nous voulons à présent calculer $a_n$ et $b_n$ pour avoir les
 coordonnées de $f$ dans la base des $\sin$ et des $\cos$. Pour ce faire,
-on va tenter de trouver les amplitudes $a_j,b_j$ tels que les
+nous allons  tenter de trouver les amplitudes $a_j,b_j$ tels que les
 $a_j\cos(j\omega t)$ et $b_j\sin(j\omega t)$ approximent au mieux la
 fonction $f$.
 
-On va donc considérer les fonctions d’erreur suivantes
+Nous allons considérer les fonctions d’erreur suivantes
 $$E^s_j=\int_0^T(f(t)-a_j\sin(j\omega t))^2{\mathrm{d}}t,\quad E^c_j=\int_0^T(f(t)-b_j\cos(j\omega t))^2{\mathrm{d}}t.$$
 Puis on va déterminer $a_j,b_j$ tels que $E_j^s$ et $E_j^c$ sont
 minimales. Pour ce faire on va utiliser les dérivées et déterminer nos
 coefficients en résolvant les équations
-$${\frac{{\mathrm{d}}E^s_j}{{\mathrm{d}}b_j}}=0,$${#eq:deriv_bj}
-$${\frac{{\mathrm{d}}E^c_j}{{\mathrm{d}}a_j}}=0.$${#eq:deriv_aj}
+$${\frac{{\mathrm{d}}E^s_j}{{\mathrm{d}}a_j}}=0,$${#eq:deriv_aj}
+$${\frac{{\mathrm{d}}E^c_j}{{\mathrm{d}}b_j}}=0.$${#eq:deriv_bj}
 Pour l'@eq:deriv_aj, on a $$\begin{aligned}
  {\frac{{\mathrm{d}}E^c_j}{{\mathrm{d}}b_j}}&={\frac{{\mathrm{d}}\int_0^T(f(t)-b_j\cos(j\omega t))^2{\mathrm{d}}t}{{\mathrm{d}}b_j}},\nonumber\\
  &=\underbrace{{\frac{{\mathrm{d}}(\int_0^Tf^2(t){\mathrm{d}}t)}{{\mathrm{d}}b_j}}}_{=0}+{\frac{{\mathrm{d}}(b_j^2\int_0^T(\cos^2(j\omega t){\mathrm{d}}t))}{{\mathrm{d}}b_j}}-{\frac{{\mathrm{d}}(2b_j\int_0^T(f(t)\cos(j\omega t){\mathrm{d}}t))}{{\mathrm{d}}b_j}},\nonumber\\
@@ -2465,7 +2465,7 @@ $$f(t)=\sum_{j=-\infty}^\infty c_je^{ij\omega t}.$$ En multipliant cette
 relation par $\frac{1}{T}e^{-ik\omega t}$ et en intégrant entre
 $-\frac{T}{2}$ et $\frac{T}{2}$, on obtient
 $$\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f(t)e^{-ik\omega t}{\mathrm{d}}t=\frac{1}{T}\sum_{j=-\infty}^\infty c_j\int_{-\frac{T}{2}}^{\frac{T}{2}}e^{ij\omega t}e^{-ik\omega t}{\mathrm{d}}t.$$
-Pour évaluer le membre de droite de cette équation nous transformer les
+Pour évaluer le membre de droite de cette équation nous transformons les
 exponentielles en sinus/cosinus. L’intégrale du membre de droite devient
 $$\begin{aligned}
 \int_{-\frac{T}{2}}^{\frac{T}{2}}e^{ij\omega t}e^{-ik\omega t}{\mathrm{d}}t&=\int_{-\frac{T}{2}}^{\frac{T}{2}}\left(\cos(j\omega t)+i\sin(j\omega t)\right)\left(\cos(-k\omega t)+i\sin(-k\omega t)\right){\mathrm{d}}t,\nonumber\\
