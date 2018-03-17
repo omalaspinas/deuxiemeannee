@@ -2186,7 +2186,7 @@ Exemple (Espaces vectoriels) +.#
     par un scalaire définis commme suit. Soient $f:W\rightarrow V$ et
     $g:W\rightarrow V$, avec $\alpha\in E$, alors $$\begin{aligned}
        &(f+g)(x)=f(x)+g(x), \quad \forall x\in W,\\
-       &(\alpha\cdotf)(x)=\alpha\cdot f(x), \quad \forall x\in W.
+       &(\alpha\cdot f)(x)=\alpha\cdot f(x), \quad \forall x\in W.
       \end{aligned}$$
 
 5.  Espace des applications linéaires. Soit $f$ une fonction de
