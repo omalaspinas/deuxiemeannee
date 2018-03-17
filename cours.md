@@ -2591,13 +2591,13 @@ La transformée de Fourier à temps discret (TFTD)
 
 Nous allons maintenant plus considérer une fonction continue, mais une
 série de valeurs discrètes. Notons $f[n]$ une série de nombres, avec
-$n\in{\mathbb{Z}}$. Nous voulons définir l’équivalent de la transformée
+$n\in{\mathbb{N}}$. Nous voulons définir l’équivalent de la transformée
 de Fourier de l'@eq:fourier_transform pour ce genre de
 séries de points. Une façon naturelle de définir l’équivalent à temps
 discret de cette équation est
 $${\hat{f}}(\omega)=\sum_{n=-\infty}^\infty f[n] e^{-i\omega n}.$${#eq:tftd}
-Pour les transformées de Fourier à temps continu et non périodique, nous
-avons que la transformée de Fourier est continue et en général non
+Pour les fonctions à "temps continu" et non périodiques, nous
+savons que la transformée de Fourier est continue et en général non
 périodique. Pour le cas de la transformée de Fourier à temps discret la
 transformée de Fourier sera périodique, soit
 $${\hat{f}}(\omega+2\pi)={\hat{f}}(\omega).$$ Nous démontrons cette
@@ -2660,7 +2660,7 @@ discrète qui aura les propriétés suivantes
 ### Applications
 
 Avant de voir en détail comment on calcule la transformée de Fourier
-discrète, on peut discuter quelle est son application. La TFD est
+discrète, on peut discuter quelle sont ses applications. La TFD est
 utilisée tout le temps en traitement du signal. En gros c’est une
 approximation de la transformée de Fourier à temps discret. A chaque
 fois qu’on désire connaître le comportement d’une fonction dans l’espace
@@ -2682,7 +2682,7 @@ données (jpg, mp3, ...).
 
 ### La transformée de Fourier discrète à proprement parler
 
-Soit $f[n]$ un séquence de points $N$ points, $n=0..N-1$. Pour se
+Soit $f[n]$ un séquence de $N$ points, $n=0..N-1$. Pour se
 ramener au cas de la transformée de Fourier à temps discret, on peut
 aussi se dire qu’on a une séquence infinie de points, mais où $f[n]=0$,
 pour $n\geq N$. On dit qu’on a $N$ échantillons de $f$.
@@ -2710,7 +2710,7 @@ $[-\pi,\pi)$.
 
 Nous pouvons à présent définir mathématiquement cet échantillonage de
 ${\hat{f}}(\omega)$ comme étant une suite de points, notée
-$\{{\hat{f}}(\omega_k)\}_{k=0}^{N-1}$, où $\omega_k=k/(2\pi)$. Cette
+$\{{\hat{f}}(\omega_k)\}_{k=0}^{N-1}$, où $\omega_k=2\pi k/N$. Cette
 suite sera notée ${\hat{f}}[k]$ et appelée la *transformée de Fourier
 discrète* de $f[n]$.
 
@@ -2748,9 +2748,9 @@ où $w = e^{-\frac{2 \pi i}{N}}$. On peut donc de façon plus compacte
 l’écrire $$\hat{\bm{f}}=\bm{W}\cdot \bm{f}.$$ Les éléments de la matrice
 $\bm{W}$ peuvent être précalculés et il reste donc à calculer uniquement
 le produit matrice vecteur $\bm{W}\cdot\bm{f}$. Pour ce faire il faut
-pour chaque ligne de $\hat{\bm{f}}$ induit le calcul de $N$ produit et
+pour chaque ligne de $\hat{\bm{f}}$ faire le calcul de $N$ produits et
 $N$ sommes (donc une complexité $N$). Comme il y a $N$ lignes à
-$\hat{\bm{f}}$, il y a donc $N\cdot N$ de complexité.
+$\hat{\bm{f}}$, la complexité est $N\cdot N$.
 
 Il existe des algorithmes beaucoup plus efficaces pour effectuer de
 genre de calculs que nous allons brièvement discuter maintenant. Ils
