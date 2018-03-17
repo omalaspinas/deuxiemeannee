@@ -2163,7 +2163,7 @@ Exemple (Espaces vectoriels) +.#
     $V={\mathbb{C}}$ avec $E=\real$.
 
 3.  Espaces de $n-uplets$. Soit $V$ un espace vectoriel sur $E$.L’espace des $n-$uplets. Pour t$n>0$, l’ensemble des $n-$uplets
-    d’éléments de $V$, $v=(v_1,v_2,...,v_n),\ \{v_i\in E}_1^n$,
+    d’éléments de $V$, $v=(v_1,v_2,...,v_n),\ \{v_i\in E\}_1^n$,
     est noté $V^n$. Sur cet espace l’addition se définit ($u,v\in V^n$)
     $$u+v=(u_1+v_1,u_2+v_2,...,u_v+v_n),$$ et la mutliplication par un
     scalaire $\alpha\in E$
