@@ -16,27 +16,26 @@ documentclass: book
 papersize: A4
 cref: false
 urlcolor: blue
+
 ---
+# Rappel
 
-Rappel
-======
+## Fonctions
 
-
-Fonctions
----------
-
-Une fonction $f$ de façon générale est un objet qui prend un (ou
-plusieurs) paramètres et qui lui (leur) associe (associent) un résultat. $$\mbox{résultat}=f(\mbox{paramètres}).$$
+Une fonction $f$ de façon générale est un objet qui prend un (ou plusieurs) paramètres et qui lui (leur) associe (associent) un résultat
+$$
+\mbox{résultat}=f(\mbox{paramètres}).
+$$
 Nous pouvons aussi exprimer cette notion de la manière suivante. Considérons deux ensembles $A$ et $B$. Supposons qu'à chaque élément $x\in A$ est associé un élément dans $B$ que nous notons par $f(x)$. Alors on dit que $f$ est une fonction ou une application (de $A$ dans $B$). A ce niveau A et B sont arbitraires mais dans la suite nous allons nous intéresser surtout du cas où $A=\subset\real$. Les valeurs de $f$ constituent les *images* de $x$.
 ---
 
 Exemple (Fonctions, généralités) +.#
 
-1.  La tension $U$ est une fonction de la résistance $R$ et du courant
+1. La tension $U$ est une fonction de la résistance $R$ et du courant
     $I$ $$\begin{aligned}
     U=f(R,I)=R\cdot I.\end{aligned}$$
 
-2.  Une fonction peut être quelque chose de beaucoup plus général (qu’on
+2. Une fonction peut être quelque chose de beaucoup plus général (qu’on
     ne peut pas forcément représenter simplement avec des opérateurs
     mathématiques). Prenons le cas de la fonction qui pour un nombre
     entier $x$ rend le prochain entier dont le nom commence par la même lettre
@@ -55,10 +54,10 @@ $$y=g(f(x)).$$
 
 Exemple (Fonctions) +.#
 
-1.  Soit $f(x)=2\cdot x$ et $g(x)=\sqrt{x}$, alors la composition des
+1. Soit $f(x)=2\cdot x$ et $g(x)=\sqrt{x}$, alors la composition des
     deux fonctions $$(f\circ g)(x)=f(g(x))=f(\sqrt{x})=2\sqrt{x}.$$
 
-2.  On peut composer un nombre arbitraire de fonctions. Voyons le cas
+2. On peut composer un nombre arbitraire de fonctions. Voyons le cas
     avec trois fonctions $f(x)=2x^2+3$, $g(x)=\cos(2\cdot x)$, et
     $h(x)=1/x$ $$f(g(h(x)))=f(g(1/x))=f(\cos(2/x))=2\cos^2(2/x)+3.$$
 
@@ -68,28 +67,27 @@ Pour certaines fonctions, notons les $f(x)$, on peut également définir
 une fonction inverse que l’on note $f^{-1}(x)$ dont la composition donne
 la variable de départ $$f(f^{-1}(x))=x.$$
 
-
 ---
 
 Exemple (Fonction inverse) +.#
 
-1.  Soient $f(x)=2\cdot x$ et $f^{-1}(x)=x/2$, alors la composition des
+1. Soient $f(x)=2\cdot x$ et $f^{-1}(x)=x/2$, alors la composition des
     deux fonctions $$f(f^{-1}(x))=f(x/2)=2x/2=x.$$
 
-2.  Soient $f(x)=x^2$ et $f^{-1}(x)=\sqrt{x}$, alors la composition des
+2. Soient $f(x)=x^2$ et $f^{-1}(x)=\sqrt{x}$, alors la composition des
     deux fonctions $$f(f^{-1}(x))=f(\sqrt{x})=|x|.$$ On a donc que
     $\sqrt{x}$ est l’inverse de $x^2$ uniquement pour les réels
     positifs. $f(x)=x^2$ n’a pas d’inverse pour les $x$ négatifs.
-    On peut se convaincre qu'une fonction ne peu admettre une inverse que si elle 
+    On peut se convaincre qu'une fonction ne peu admettre une inverse que si elle
     elle satisfait la condition $x_1\neq x_2 \rightarrow f(x_1)\neq f(x_2)$.
     Dans notre exemple $-1\neq 1$ mais (f(-1)=f(1)=1$
 
 ---
 
-Domaine de définition
----------------------
+## Domaine de définition
 
-Définition (Domaine de définition) +.# 
+
+Définition (Domaine de définition) +.#
 
 Le domaine de définition, noté $D\subset{\real}$, d’une fonction
 $f$, est l’ensemble de valeurs où $f$ admet une image.
@@ -98,28 +96,27 @@ $f$, est l’ensemble de valeurs où $f$ admet une image.
 
 Exemple (Domaine de définition) +.#
 
-1.  Le domaine de définition de $f(x)=x$ est $D={\real}$.
+1. Le domaine de définition de $f(x)=x$ est $D={\real}$.
 
-2.  Le domaine de définition de $f(x)=1/x$ est $D={\real}^\ast$.
+2. Le domaine de définition de $f(x)=1/x$ est $D={\real}^\ast$.
 
-3.  Le domaine de définition de $f(x)=\sqrt{x+1}/(x-10)$ est
+3. Le domaine de définition de $f(x)=\sqrt{x+1}/(x-10)$ est
     $D=[-1;10[\cup]10;\infty[$.
 
 ---
 
-Limites
--------
+## Limites
 
 Soit $f$ une fonction et $D\subseteq{\real}$ non-vide  et soient $a$ et $b$ deux réels.
 
 ### Limite
 
-Définition (Limite) +.# 
+Définition (Limite) +.#
 
 Pour $f$ définie en $D$,  on dit que $b$ est la
 limite de $x$ en $a$ si si au fur et à mesure que $x$ se rapproche de $a$, $f(x)$ se raproche de $b$ et nous notons  $\lim\limits_{x\rightarrow a}f(x)=b$.
 C’est-à-dire pour tout voisinage de $b$ qui contient toutes  les valeurs
-de $f(x)$ nous avons un voisinage de $a$ qui contient les valeurs de $x$ (suffisament proches de $a$). 
+de $f(x)$ nous avons un voisinage de $a$ qui contient les valeurs de $x$ (suffisament proches de $a$).
 
 La définition mathématique plus stricte est:
 
@@ -127,10 +124,10 @@ La définition mathématique plus stricte est:
 
 Ou encore quand le but est d'écrire ça de la façon la plus compacte possible
 
-$$\forall\varepsilon>0,\exists\delta>0\ |\ \forall x\in D,\ |x-a|<\delta\Rightarrow|f(x)-b|<\varepsilon.$$  
+$$\forall\varepsilon>0,\exists\delta>0\ |\ \forall x\in D,\ |x-a|<\delta\Rightarrow|f(x)-b|<\varepsilon.$$
 
-Remarque +.# 
-Il n'est pas nécessaire que $a\in D$. Mais si c'est le cas et donc 
+Remarque +.#
+Il n'est pas nécessaire que $a\in D$. Mais si c'est le cas et donc
 $f$ est définie en $a$ alors on a $\lim\limits_{x\rightarrow a}=f(a)$.
 
 ---
@@ -158,7 +155,7 @@ Si $f(x)=1/x^2$, alors $\lim\limits_{x\rightarrow 0}f(x)=\infty$.
 
 ### Limite à gauche, limite à droite
 
-Il est possible que le comportement de certaines fonctions 
+Il est possible que le comportement de certaines fonctions
 soit différent selon qu’on approche $a$  par la gauche ou par la
 droite (i.e. $f(x)=1/x$, pour $a=0$).
 
@@ -221,8 +218,7 @@ $$\log(n)\cong(p-1)\log(10),$$ pour $n$ grand (ce qui est équivalent à
 $p$ grand). On a donc que finalement le rapport $n/\log(n)$ va comme
 $$\lim_{n\rightarrow\infty}\frac{n}{\log(n)}=\frac{A}{\log(10)}\cdot\lim_{p\rightarrow\infty}\frac{10^{p-1}}{(p-1)}=\frac{A}{\log(10)}\cdot\lim_{p\rightarrow\infty}\frac{10^{p-1}}{p}=\infty.$$
 
-Continuité
-----------
+## Continuité
 
 Définition (Continuité) +.#
 
@@ -234,13 +230,13 @@ Propriétés (Fonctions continues) +.#
 
 Soient $f$ et $g$ deux fonctions continues en $a$ et $b$ un réel:
 
-1.  $f+g$ est continue en $a$.
+1. $f+g$ est continue en $a$.
 
-2.  $b f$ est continue en $a$.
+2. $b f$ est continue en $a$.
 
-3.  si $g(a)\neq 0$, $f/g$ est continue en $a$.
+3. si $g(a)\neq 0$, $f/g$ est continue en $a$.
 
-4.  $h=g\circ f$ est continue en $a$.
+4. $h=g\circ f$ est continue en $a$.
 
 Définition (Continuité sur un intervalle) +.#
 
@@ -255,8 +251,7 @@ Soit $f$ une fonction continue
 sur $D$, et $a,b$ deux points contenus dans $D$ tels que $a<b$ et
 $f(a)<f(b)$, alors $$\forall y\in [f(a);f(b)],\ \exists\ c|f(c)=y.$$
 
-Dérivées
---------
+## Dérivées
 
 Définition (Dérivée en un point) +.#
 
@@ -272,40 +267,40 @@ Si $f$ est dérivable en tout point de $D=]a;b[$, alors on définit $f'$
 la fonction dérivée de $f$ dans l’intervalle $D$ qui associe en tout
 point $x$ de $D$ la valeur dérivée de $f$.
 
-Propriété +.# 
+Propriété +.#
 
 Si $f$ est dérivable en $a$ alors $f$ est continue en $a$.
 
-Propriétés +.# 
+Propriétés +.#
 
 Soient $f$ et $g$ deux fonctions dérivables sur $D$ (dont les dérivées sont $f'$
 et $g'$), et $a\in{\real}$, alors
 
-1.  $(f+g)'=f'+g'$.
+1. $(f+g)'=f'+g'$.
 
-2.  $(af)'=a f'$.
+2. $(af)'=a f'$.
 
-3.  $(f\cdot g)'=f'g+fg'$.
+3. $(f\cdot g)'=f'g+fg'$.
 
-4.  Si $g$ ne s’annule pas $(f/g)'=(f'g-fg')/g^2$.
+4. Si $g$ ne s’annule pas $(f/g)'=(f'g-fg')/g^2$.
 
-5.  $(g\circ f)'=(g'\circ f)\cdot f'$.
+5. $(g\circ f)'=(g'\circ f)\cdot f'$.
 
 Il existe quelques dérivées importantes que nous allons utiliser
 régulièrement dans la suite de ce cours. En supposons que
 $C\in {\real}$, nous avons
 
-1.  $f(x)=x^n$, $f'(x)=nx^{n-1}$ .
+1. $f(x)=x^n$, $f'(x)=nx^{n-1}$ .
 
-2.  $f(x)=e^{C x}$, $f'(x)=Ce^{Cx}$.
+2. $f(x)=e^{C x}$, $f'(x)=Ce^{Cx}$.
 
-3.  $f(x)=\ln(x)$, $f'(x)=1/x$.
+3. $f(x)=\ln(x)$, $f'(x)=1/x$.
 
-4.  $f(x)=C, $f'(x)=0.
+4. $f(x)=C, $f'(x)=0.
 
-5.  $f(x)=\sin(x)$, $f'(x)=\cos(x)$.
+5. $f(x)=\sin(x)$, $f'(x)=\cos(x)$.
 
-6.  $f(x)=\cos(x)$, $f'(x)=-\sin(x$).
+6. $f(x)=\cos(x)$, $f'(x)=-\sin(x$).
 
 Définition (Dérivée seconde) +.#
 
@@ -314,66 +309,63 @@ appelée la dérivée seconde de $f$.
 
 ### Variation des fonctions
 
-Propriétés (Croissance/décroissance) +.# 
+Propriétés (Croissance/décroissance) +.#
 
 Soit $f'$ la fonction dérivée de $f$ sur $D$
 
-1.  Si $f'>0$ sur $D$, alors $f$ est croissante sur $D$.
+1. Si $f'>0$ sur $D$, alors $f$ est croissante sur $D$.
 
-2.  Si $f'<0$ sur $D$, alors $f$ est décroissante sur $D$.
+2. Si $f'<0$ sur $D$, alors $f$ est décroissante sur $D$.
 
-3.  Si $f'=0$ sur $D$, alors $f$ est constante sur $D$.
+3. Si $f'=0$ sur $D$, alors $f$ est constante sur $D$.
 
-Définition (Maximum/minimum local) +.# 
+Définition (Maximum/minimum local) +.#
 
 Une fonction admet un maximum local (respectivement minimum local) sur
 un intervalle $D=]a;b[$ s’il existe un $x_0\in D$ tel que $f(x_0)\geq f(x)$
 (respectivement $f(x_0)\leq f(x)$) pour tout $x\in D$.
 
-Propriété (Maximum/minimum) +.# 
+Propriété (Maximum/minimum) +.#
 
 Soient $f$ une fonction dérivable sur $D=]a;b[$ et $x_0\in D$. Si $f$
 admet un extremum en $x_0$ alors $f'(x_0)=0$. De plus si
 $f'(x_0)=0$ et $f'$ change de signe en $x_0$ alors $f(x_0)$ est un
 maximum ou un minimum de $f$.
 
-Etude de fonction
------------------
+## Etude de fonction
 
 Effectuer l’étude de fonction de la fonction suivante
 $$f(x)=\frac{x^3}{x^2-4}.$$
 
-1.  Déterminer le domaine de définition.
+1. Déterminer le domaine de définition.
 
-2.  Déterminer la parité de la fonction. Rappel: $$\begin{aligned}
+2. Déterminer la parité de la fonction. Rappel: $$\begin{aligned}
       f(-x)&=f(x),\ \mbox{paire},\\
       f(-x)&=-f(x),\ \mbox{impaire}.
      \end{aligned}$$
 
-3.  Trouver les zéros de la fonction (Indication: trouver les $x$ tels
+3. Trouver les zéros de la fonction (Indication: trouver les $x$ tels
     que $f(x)=0$).
 
-4.  Trouver les éventuelles asymptotes verticales ou disconsinuités,
+4. Trouver les éventuelles asymptotes verticales ou disconsinuités,
     ainsi que les asymptotes affines.
 
-5.  Caluler $f'(x)$ et déterminer sa croissance et points critiques
+5. Caluler $f'(x)$ et déterminer sa croissance et points critiques
     (déterminer où la fonction est croissante, décroissante, atteint un
     extremum, etc).
 
-6.  Faire un croquis de $f(x)$.
+6. Faire un croquis de $f(x)$.
 
-Intégrales
-==========
+# Intégrales
 
-Interprétation géométrique
---------------------------
+## Interprétation géométrique
 
 Dans ce chapitre nous nous intéressons au calcul d’aires sous une
 fonction $f$. La fonction $f$ satisfait les hypothèses suivantes.
 
-1.  $f(x)$ est bornée dans l’intervalle $[a,b]\in{\real}$.
+1. $f(x)$ est bornée dans l’intervalle $[a,b]\in{\real}$.
 
-2.  $f(x)$ est continue presque partout. 
+2. $f(x)$ est continue presque partout.
 
 Nous définissions également l’infimum de $f$ sur un intervalle
 $[x_0,x_1]$, noté $$\inf\limits_{[x_0,x_1]} f(x)$$ comme étant la plus grande valeur
@@ -390,13 +382,13 @@ contenant $n+1$ termes dans $[a,b]$.
 On peut à présent approximer l’aire sous la fonction $f(x)$ dans
 l’intervalle $[a,b]$ de plusieurs  façons:
 
-1.  $A^i(n)=\sum_{i=0}^{n-1} \inf\limits_{[x_i,x_{i+1}]} f(x)\cdot (x_{i+1}-x_i)$
+1. $A^i(n)=\sum_{i=0}^{n-1} \inf\limits_{[x_i,x_{i+1}]} f(x)\cdot (x_{i+1}-x_i)$
     comme étant l’aire inférieure.
 
-2.  $A^s(n)=\sum_{i=0}^{n-1} \sup\limits_{[x_i,x_{i+1}]} f(x)\cdot (x_{i+1}-x_i)$
+2. $A^s(n)=\sum_{i=0}^{n-1} \sup\limits_{[x_i,x_{i+1}]} f(x)\cdot (x_{i+1}-x_i)$
     comme étant l’aire supérieure.
-    
-3. $A^R(n)=\sum_{i=0}^{n-1}  f(\xi_i)\cdot (x_{i+1}-x_i)$, $\xi_i\in [x_i,x_{i+1}]$   
+
+3. $A^R(n)=\sum_{i=0}^{n-1}  f(\xi_i)\cdot (x_{i+1}-x_i)$, $\xi_i\in [x_i,x_{i+1}]$
 
 1 et 2 sont les sommes de Darboux, 3 est une somme de Riemann qui, dépendant des choix des $\xi_i$, peut être égale à 1 ou à 2.
 
@@ -406,18 +398,18 @@ nous donne aussi l'aire sous la fonction.
 
 Remarque +.#
 
-1.  Ces sommes peuvent être positives ou négatives en fonction du signe
+1. Ces sommes peuvent être positives ou négatives en fonction du signe
     de $f$.
 
-2.  Une implantation informatique est immédiate, en particulier pour la somme de Riemann.
+2. Une implantation informatique est immédiate, en particulier pour la somme de Riemann.
 
 Définition (Intégrabilité au sens de Riemann) +.#
 
 Une fonction est dite intégrable au sens de Riemann si
 $$\lim\limits_{n\rightarrow\infty}A^i(n)=\lim\limits_{n\rightarrow\infty}A^s(n)=\int_a^b f(x){\mathrm{d}}x.$$
 
-Dans la formule 
-$$\int_a^b f(x){\mathrm{d}}x,$$ 
+Dans la formule
+$$\int_a^b f(x){\mathrm{d}}x,$$
 $x$ est appelée
 variable d’intégration, $a$ et $b$ sont les bornes d’intégration. Pour
 des raisons de consistance dans les notations la variable d’intégration
@@ -437,11 +429,11 @@ intervalles égaux de longueur $\delta=1/n$. Comme $f(x)$ est strictement
 croissante, on a que $\inf\limits_{[x_i,x_{i+1}]}f(x)=f(x_i)$ et que
 $\sup\limits_{[x_i,x_{i+1}]}f(x)=f(x_{i+1})$. On a donc que
 
-1.  $A^i(n)=\delta\sum_{i=0}^{n-1} x_i=\delta\sum_{i=0}^{n-1}\frac{i}{n}=\frac{n(n-1)}{2n^2}=\frac{n-1}{2n}$[^2].
+1. $A^i(n)=\delta\sum_{i=0}^{n-1} x_i=\delta\sum_{i=0}^{n-1}\frac{i}{n}=\frac{n(n-1)}{2n^2}=\frac{n-1}{2n}$[^2].
     Et donc en prenant la limite pour $n\rightarrow\infty$ il vient
     $$A^i=\lim\limits_{n\rightarrow\infty}\frac{n-1}{2n}=\frac{1}{2}.$$
 
-2.  $A^s(n)=\delta\sum_{i=0}^{n-1} x_{i+1}=\delta\sum_{i=0}^{n-1}\frac{i+1}{n}=\delta\sum_{i=0}^{n}\frac{i}{n}=\frac{n(n+1)}{2n^2}=\frac{n+1}{2n}$.
+2. $A^s(n)=\delta\sum_{i=0}^{n-1} x_{i+1}=\delta\sum_{i=0}^{n-1}\frac{i+1}{n}=\delta\sum_{i=0}^{n}\frac{i}{n}=\frac{n(n+1)}{2n^2}=\frac{n+1}{2n}$.
     Et donc en prenant la limite pour $n\rightarrow\infty$ il vient
     $$A^s=\lim\limits_{n\rightarrow\infty}\frac{n+1}{2n}=\frac{1}{2}.$$
 
@@ -466,7 +458,7 @@ l’approximation de la distance parcourue nous diminuerions la valeur de
 $\delta t_i$ jusqu’à ce que $\delta t_i\rightarrow 0$.
 
 Nous voyons ainsi que cette méthode, n’est autre qu’une façon “intuitive”
-d’intégrer la vitesse afin de trouver la position. Et que 
+d’intégrer la vitesse afin de trouver la position. Et que
 l’intégrale et la dérivée sont étroitement liées: la vitesse étant la
 dérivée de la position et la position étant l’intégrale de la vitesse.
 
@@ -510,35 +502,35 @@ Exercices (Primitives) +.#
 Calculez les primitives suivantes (*indication: il s’agit de trouver les
 fonctions $F(x)$ telles que $F'(x)=f(x)$*):
 
-1.  $F(x)=\int x^2{\mathrm{d}}x$.
+1. $F(x)=\int x^2{\mathrm{d}}x$.
 
-2.  $F(x)=\int x^n{\mathrm{d}}x$, $n\in {\real}\backslash\{-1\}$.
+2. $F(x)=\int x^n{\mathrm{d}}x$, $n\in {\real}\backslash\{-1\}$.
 
-3.  $F(x)=\int \sqrt{x}{\mathrm{d}}x$.
+3. $F(x)=\int \sqrt{x}{\mathrm{d}}x$.
 
-4.  $F(x)=\int \frac{1}{x}{\mathrm{d}}x$.
+4. $F(x)=\int \frac{1}{x}{\mathrm{d}}x$.
 
-5.  $F(x)=\int \exp(x){\mathrm{d}}x$.
+5. $F(x)=\int \exp(x){\mathrm{d}}x$.
 
-6.  $F(x)=\int \sin(x){\mathrm{d}}x$.
+6. $F(x)=\int \sin(x){\mathrm{d}}x$.
 
 ---
 
 Maintenant que vous avez calculé toutes ces primitives de base, nous
 pouvons récapituler des formules qui seront importantes pour la suite:
 
-1.  $\int x^n{\mathrm{d}}x=\frac{1}{n+1}x^{n+1}+C$,
+1. $\int x^n{\mathrm{d}}x=\frac{1}{n+1}x^{n+1}+C$,
     $n\in {\real}\backslash\{-1\}$.
 
-2.  $\int \frac{1}{x}{\mathrm{d}}x=\ln(x)+C$.
+2. $\int \frac{1}{x}{\mathrm{d}}x=\ln(x)+C$.
 
-3.  $\int \exp(x){\mathrm{d}}x=\exp(x)+C$.
+3. $\int \exp(x){\mathrm{d}}x=\exp(x)+C$.
 
-4.  $\int \sin(x){\mathrm{d}}x=-\cos(x)+C$.
+4. $\int \sin(x){\mathrm{d}}x=-\cos(x)+C$.
 
-5.  $\int \cos(x){\mathrm{d}}x=\sin(x)+C$.
+5. $\int \cos(x){\mathrm{d}}x=\sin(x)+C$.
 
-Théorème (Théorème fondamental du calcul intégral) +.#  
+Théorème (Théorème fondamental du calcul intégral) +.#
 
 En définissant à présent l’intégrale à l’aide de la notion
 de primitive, nous avons que pour $a,b\in{\real}$ et $a<b$
@@ -573,24 +565,24 @@ Soient $f$ et $g$ deux fonctions intégrables sur un intervalle
 $D=[a,b]\subseteq{\real}$, $c\in[a,b]$, et $\alpha\in{\real}$.
 On a
 
-1.  La dérivée et l’intégrale “s’annulent”
+1. La dérivée et l’intégrale “s’annulent”
     $$\left(\int_a^x f(x){\mathrm{d}}x\right)'=\left(F(x)-F(a)\right)'=F'(x)-\left(F(a)\right)'=F'(x)=f(x).$$
 
-2.  La fonction $h=f+g$ admet aussi une primitive sur $D$, et on a
+2. La fonction $h=f+g$ admet aussi une primitive sur $D$, et on a
     $$\int_a^b(f(x)+g(x)){\mathrm{d}}x=\int_a^b f(x){\mathrm{d}}x+\int_a^b g(x){\mathrm{d}}x.$$
 
-3.  La fonction $h=\alpha f$ admet aussi une primitive sur $D$, et on a
+3. La fonction $h=\alpha f$ admet aussi une primitive sur $D$, et on a
     $$\int_a^b\alpha f(x){\mathrm{d}}x=\alpha\int_a^b f(x){\mathrm{d}}x.$$
 
-4.  Relation de Chasles (faire la démonstration en exercice)
+4. Relation de Chasles (faire la démonstration en exercice)
     $$\int_a^c f(x){\mathrm{d}}x=\int_a^b f(x){\mathrm{d}}x+\int_b^c f(x){\mathrm{d}}x.$$
     De cette relation on déduit qu’on peut calculer l’intégrale d’une
     fonction continue par morceaux sur $[a,b]$.
 
-5.  Si $f$ est paire alors
+5. Si $f$ est paire alors
     $$\int_{-a}^a f(x){\mathrm{d}}x = 2\int_0^a f(x){\mathrm{d}}x.$$
 
-6.  Si $f$ est impaire alors $$\int_{-a}^a f(x){\mathrm{d}}x = 0.$$
+6. Si $f$ est impaire alors $$\int_{-a}^a f(x){\mathrm{d}}x = 0.$$
 
 ### Intégrales impropres
 
@@ -604,13 +596,12 @@ cas de figures suivants $$\begin{aligned}
  &\int_{-\infty}^b f(x){\mathrm{d}}x=\lim\limits_{a\rightarrow\infty}\int_{-a}^b f(x){\mathrm{d}}x,\\
  &\int_{-\infty}^\infty f(x){\mathrm{d}}x=\lim\limits_{a\rightarrow\infty}\int_{-a}^a f(x){\mathrm{d}}x.\end{aligned}$$
 
-
 ---
 
 Exemple (Intégrale impropre) +.#
 
 Calculer l’intégrale suivante
-$$\int_0^\infty e^{-ax}{\mathrm{d}}x,\quad a>0.$$ 
+$$\int_0^\infty e^{-ax}{\mathrm{d}}x,\quad a>0.$$
 
 Solution (Intégrale impropre) +.#
 
@@ -640,7 +631,7 @@ Montrer que $$\int_{-1}^2\frac{1}{x}=\ln{2}.$$
 Définition (Valeur moyenne) +.#
 
 Soit une fonction $f$ admettant une primitive sur $[a,b]$ avec $a<b$,
-alors la valeur moyenne $\bar{f}$ de cette fonction sur $[a,b]$, est définie par 
+alors la valeur moyenne $\bar{f}$ de cette fonction sur $[a,b]$, est définie par
 $$\bar{f}=\frac{1}{b-a}\int_a^bf(x){\mathrm{d}}x.$$
 
 Méthodes d’intégration
@@ -730,9 +721,9 @@ on connaîtrait la solution.
 
 Des “règles” pour utiliser cette technique seraient que
 
-1.  $g'$ soit facile à calculer et aurait une forme plus simple que $g$.
+1. $g'$ soit facile à calculer et aurait une forme plus simple que $g$.
 
-2.  $\int f'{\mathrm{d}}x$ soit facile à calculer et aurait une forme
+2. $\int f'{\mathrm{d}}x$ soit facile à calculer et aurait une forme
     plus simple que $f'$.
 
 ---
@@ -741,17 +732,17 @@ Exemple +.#
 
 Calculer les primitives suivantes
 
-1.  $\int x e^x{\mathrm{d}}x$.
+1. $\int x e^x{\mathrm{d}}x$.
 
-2.  $\int \cos(x)\sin(x){\mathrm{d}}x$. 
+2. $\int \cos(x)\sin(x){\mathrm{d}}x$. 
 
 Solution +.#
 
-1.  $\int x e^x{\mathrm{d}}x$. $g(x)=x$, $f'(x)=e^x$ et donc $g'(x)=1$,
+1. $\int x e^x{\mathrm{d}}x$. $g(x)=x$, $f'(x)=e^x$ et donc $g'(x)=1$,
     $f(x)=e^x$. Il vient
     $$\int x e^x=x e^x-\int e^x{\mathrm{d}}x=x e^x-e^x+c.$$
 
-2.  $\int \cos(x)\sin(x){\mathrm{d}}x$. $g= \cos(x)$, $f'(x)=\sin(x)$ et
+2. $\int \cos(x)\sin(x){\mathrm{d}}x$. $g= \cos(x)$, $f'(x)=\sin(x)$ et
     donc $g'(x)=-\sin(x)$, $f(x)=-\cos(x)$. Il vient $$\begin{aligned}
         &\int \cos(x)\sin(x){\mathrm{d}}x=\sin^2(x)-\int \cos(x)\sin(x){\mathrm{d}}x\nonumber\\
         \Rightarrow &\int \cos(x)\sin(x){\mathrm{d}}x=\frac{1}{2}\sin^2(x).
@@ -789,11 +780,11 @@ Exercice +.#
 
 Calculer les primitives suivantes
 
-1.  $\int \ln(x){\mathrm{d}}x$
+1. $\int \ln(x){\mathrm{d}}x$
 
-2.  $\int x^2 \sin(x){\mathrm{d}}x$
+2. $\int x^2 \sin(x){\mathrm{d}}x$
 
-3.  $\int e^x\sin(x){\mathrm{d}}x$
+3. $\int e^x\sin(x){\mathrm{d}}x$
 
 ---
 
@@ -847,11 +838,11 @@ Exercice +.#
 
 Calculer les primitives suivantes par changement de variable
 
-1.  $\int \frac{1}{5x-7}{\mathrm{d}}x$
+1. $\int \frac{1}{5x-7}{\mathrm{d}}x$
 
-2.  $\int \sin(3-7x){\mathrm{d}}x$
+2. $\int \sin(3-7x){\mathrm{d}}x$
 
-3.  $\int x e^{x^2}{\mathrm{d}}x$
+3. $\int x e^{x^2}{\mathrm{d}}x$
 
 ---
 
@@ -1197,9 +1188,9 @@ décharge et son énergie est dissipée dans la résistance.
 Nous souhaitons étudier la variation de la chute de tension dans la
 capacité $U_c$ lorsque:
 
-1.  nous mettons l’interrupteur en position $(a)$.
+1. nous mettons l’interrupteur en position $(a)$.
 
-2.  puis lorsque la capacité est chargée, nous mettons l’interrupteur en
+2. puis lorsque la capacité est chargée, nous mettons l’interrupteur en
     position $(b)$.
 
 Les chutes de tension dans la capacité et la résistance sont
@@ -1355,10 +1346,10 @@ dite à **coefficients constants**.
 
 L’équation ci-dessus a les propriétés suivantes
 
-1.  Les $a_i$ ne dépendent que de $x$ (ils ne peuvent pas dépendre de
+1. Les $a_i$ ne dépendent que de $x$ (ils ne peuvent pas dépendre de
     $y$).
 
-2.  Les $y$ et toutes leur dérivées ont un degré polynomial de 1.
+2. Les $y$ et toutes leur dérivées ont un degré polynomial de 1.
 
 Illustration +.#
 
@@ -1402,10 +1393,10 @@ donner l’équation homogène associée. $$\begin{aligned}
 La solution  des équations différencielles inhomogènes se
 trouve de la façon suivante.
 
-1.  Trouver la solution générale de l’équation différentielle homogène associée,
+1. Trouver la solution générale de l’équation différentielle homogène associée,
     notons-la $y_h(x)$.
 
-2.  Trouver une solution particulière à l’équation inhomogène, notons-la
+2. Trouver une solution particulière à l’équation inhomogène, notons-la
     $y_0(x)$.
 
 La solution sera donnée par la somme de ces deux solutions
@@ -1474,9 +1465,9 @@ n(t)&=e^{r\cdot t+C}=A\cdot e^{r\cdot t},\end{aligned}$$ où $A=e^C$.
 
 Exercice +.#
 
-1.  Résoudre l’équation différentielle suivante $$c'(t)=rc(t)+d.$$
+1. Résoudre l’équation différentielle suivante $$c'(t)=rc(t)+d.$$
 
-2.  Résoudre l’équation différentielle suivante
+2. Résoudre l’équation différentielle suivante
     $$x\cdot y(x) \cdot y'(x)=1.$$
 
 ---
@@ -1548,9 +1539,9 @@ Résoudre les équations différentielles suivantes
 
 Exercice +.#
 
-1.  $$y'+2y=t^2$$
+1. $$y'+2y=t^2$$
 
-2.  $$y'+y=\frac{1}{1+e^t}.$$
+2. $$y'+y=\frac{1}{1+e^t}.$$
 
 ### Équations de Bernouilli
 
@@ -1658,15 +1649,15 @@ Propriétés +.#
 
 Ces propriétés (qui caractérisent le mot "linéaires") sont à démontrer en exercice.
 
-1.  Soit $f(x)$ une solution de l'@eq:edo2_cch, alors
+1. Soit $f(x)$ une solution de l'@eq:edo2_cch, alors
      pour $C\in{\real}$ $Cf(x)$ est également
     solution de @eq:edo2_cch.
 
-2.  Soient $f(x)$ et $g(x)$ deux solutions de l’équation
+2. Soient $f(x)$ et $g(x)$ deux solutions de l’équation
     @eq:edo2_cch, alors $h(x)=f(x)+g(x)$
     est également solution de @eq:edo2_cch.
 
-3.  De ces deux propriétés, on déduit la propriété suivante. Soient
+3. De ces deux propriétés, on déduit la propriété suivante. Soient
     $f(x)$ et $g(x)$ deux solutions de l'@eq:edo2_cch,
     et $C_1,C_2\in{\real}$,  $h(x)=C_1f(x)+C_2g(x)$
     est aussi  solution de l'@eq:edo2_cch.
@@ -1770,13 +1761,13 @@ définit $C_3\equiv C_1+C_2$ et $C_4\equiv i(C_1-C_2)$.
 
 Résoudre les EDO d’ordre 2 à coefficiens constants suivantes:
 
-1.  $y''+y'+y=0$,
+1. $y''+y'+y=0$,
 
-2.  $y''+4y'+5y=0$, $y(0)=1$, $y'(0)=0$.
+2. $y''+4y'+5y=0$, $y(0)=1$, $y'(0)=0$.
 
-3.  $y''+5y'+6y=0$, $y(0)=2$, $y'(0)=3$.
+3. $y''+5y'+6y=0$, $y(0)=2$, $y'(0)=3$.
 
-4.  $2y''-5y'+2y=0$, $y(0)=0$, $y'(0)=1$.
+4. $2y''-5y'+2y=0$, $y(0)=0$, $y'(0)=1$.
 
 Résolution numérique d’équations différentielles ordinaires
 -----------------------------------------------------------
@@ -2120,7 +2111,7 @@ Démontrer ces relations.
 Ici nous introduisons de façon très simplifiée le concept d’espace
 vectoriel et certaines notions d’algèbre linéaire. Pour ce faire nous
 allons considérer un ensemble $V$ muni d’une addition et d’une multiplication par un scalaire, c'est à dire par un nombre appartenant 
-à un ensemble $E$.  Dans notre cas $E$
+à un ensemble $E$. Dans notre cas $E$
 sera ${\real}$ ou ${\mathbb{C}}$ (l'ensemble des nombres complexes)  principalement.
 
 Définition +.#
@@ -2132,37 +2123,37 @@ propriétés suivantes
 
 -    
 
-    1.  L’addition est associative et commutative. Soient $u,v,w\in V$,
+    1. L’addition est associative et commutative. Soient $u,v,w\in V$,
         alors $$u+v=v+u,\quad \mbox{ et }\quad (u+v)+w=u+(v+w).$$
 
-    2.  L’addition admet un élément neutre additif, noté $0_V$, tel que
+    2. L’addition admet un élément neutre additif, noté $0_V$, tel que
         $$0_V+v=v.$$
 
-    3.  Tout $v$ admet un opposé, noté $-v$ tel que $$v+(-v)=0_V.$$
+    3. Tout $v$ admet un opposé, noté $-v$ tel que $$v+(-v)=0_V.$$
 
 -    
 
-    1.  La multiplication par un scalaire est distributive à gauche sur
+    1. La multiplication par un scalaire est distributive à gauche sur
         l’addition (et à droite sur $E$). Pour $u,v\in V$ et
         $\alpha\in E$, on a
         $$\alpha\cdot(u+v)=\alpha\cdot u+\alpha\cdot v.$$
 
-    2.  La multiplication est associative par rapport à la
+    2. La multiplication est associative par rapport à la
         multiplication de $E$. Soient $\alpha,\beta\in E$
         $$(\alpha\cdot\beta)\cdot v=\alpha\cdot(\beta\cdot v).$$
 
-    3.  La multiplication par un scalaire admet un élément neutre, noté
+    3. La multiplication par un scalaire admet un élément neutre, noté
         $1$, pour la multiplication à gauche $$1 \cdot v=v.$$
 
 
 Exemple (Espaces vectoriels) +.#
 
-1.  L’espace nul, $v=0$.
+1. L’espace nul, $v=0$.
 
-2.  $V={\real}$ ou
+2. $V={\real}$ ou
     $V={\mathbb{C}}$ avec $E=\real$.
 
-3.  Espaces de $n-uplets$. Soit $V$ un espace vectoriel sur $E$.L’espace des $n-$uplets. Pour t$n>0$, l’ensemble des $n-$uplets
+3. Espaces de $n-uplets$. Soit $V$ un espace vectoriel sur $E$.L’espace des $n-$uplets. Pour t$n>0$, l’ensemble des $n-$uplets
     d’éléments de $V$, $v=(v_1,v_2,...,v_n),\ \{v_i\in E\}_1^n$,
     est noté $V^n$. Sur cet espace l’addition se définit ($u,v\in V^n$)
     $$u+v=(u_1+v_1,u_2+v_2,...,u_v+v_n),$$ et la mutliplication par un
@@ -2178,7 +2169,7 @@ Exemple (Espaces vectoriels) +.#
     l’addition classique et la multiplication par un réel
     forme un espace vectoriel.
 
-4.  Dans ce qui suit dans ce cours, nous allons utiliser encore un autre
+4. Dans ce qui suit dans ce cours, nous allons utiliser encore un autre
     espace vectoriel un peu moins intuitif que ceux que nous avons vus
     jusqu’ici. Il s’agit de l’espace des fonctions, ou espace
     fonctionnel. Nous définissons les applications de $W$ dans $V$ comme
@@ -2189,7 +2180,7 @@ Exemple (Espaces vectoriels) +.#
        &(\alpha\cdot f)(x)=\alpha\cdot f(x), \quad \forall x\in W.
       \end{aligned}$$
 
-5.  Espace des applications linéaires. Soit $f$ une fonction de
+5. Espace des applications linéaires. Soit $f$ une fonction de
     $f:W\rightarrow V$, avec $W,V$  des espaces vectoriels sur $E$, alors
     une application est dite linéaire si $$\begin{aligned}
        &f(x+y)=f(x)+f(y),\quad \forall x,y\in W,\\
@@ -2233,10 +2224,10 @@ $$w=u+v=u_1\cdot e_1+u_2\cdot e_2+v_1\cdot e_1+v_2\cdot e_2=(u_1+v_1)\cdot e_1+(
 
 Illustration  (Exemples de bases d'espaces vectoriels) +.#
 
-1.  Pour l’espace des fonctions polynomiales $f(x)=\sum_{i=0}^Na_ix^i$
+1. Pour l’espace des fonctions polynomiales $f(x)=\sum_{i=0}^Na_ix^i$
     les fonction $e_i=x^i$ forment une base.
 
-2.  Pour l’espace vectoriel des fonctions périodiques les fonctions
+2. Pour l’espace vectoriel des fonctions périodiques les fonctions
     $\sin$ et $\cos$ forment une base (voir plus de détails dans ce qui
     suit).
 
@@ -2254,15 +2245,15 @@ $$\sum_{i=1}^n \alpha_iv_i=0 \Rightarrow \alpha_i=0,\ \forall i.$$
 
 Exemple (Famille libre) +.#
 
-1.  $\{e_1\}$ est une famille libre de ${\real}^2$.
+1. $\{e_1\}$ est une famille libre de ${\real}^2$.
 
-2.  $\{e_1,e_2\}$ est une famille libre de ${\real}^2$.
+2. $\{e_1,e_2\}$ est une famille libre de ${\real}^2$.
 
-3.  $\{e_1,e_2,v\}$, avec $v=(1,1)$ n’est pas une famille libre de
+3. $\{e_1,e_2,v\}$, avec $v=(1,1)$ n’est pas une famille libre de
     ${\real}^2$. En effet,
     $$1\cdot e_1+1\cdot e_2-1\cdot v=(0,0).$$
 
-4.  $\{\sin(x),\cos(x)\}$ est une famille libre. On ne peut pas écrire
+4. $\{\sin(x),\cos(x)\}$ est une famille libre. On ne peut pas écrire
     $\sin(x)=\alpha\cos(x)+\beta$. Il n’y a pas de relation linéaire qui
     relie les deux. La relation est non-linéaire
     $\sin(x)=\sqrt{1-\cos^2(x)}$.
@@ -2277,13 +2268,13 @@ linéaire des vecteur $e_i$.
 
 Illustration (Familles génératrices) +.#
 
-1.  $\{e_1\}$ n’est pas une famille génératrice de ${\real}^2$. On ne
+1. $\{e_1\}$ n’est pas une famille génératrice de ${\real}^2$. On ne
     peut pas représenter  les vecteurs de la forme $v=(0,v_2)$,
     $v_2\neq 0$.
 
-2.  $\{e_1,e_2\}$ est une famille génératrice de ${\real}^2$.
+2. $\{e_1,e_2\}$ est une famille génératrice de ${\real}^2$.
 
-3.  $\{e_1,e_2,v\}$, avec $v=(1,1)$ est une famille génératrice de
+3. $\{e_1,e_2,v\}$, avec $v=(1,1)$ est une famille génératrice de
     ${\real}^2$.
 
 Définition (Base) +.#
@@ -2298,9 +2289,9 @@ Les $\alpha_i$ sont appelé les coordonnées de $v$ dans la base $B$.
 
 Illustration (Base de $\real ^2$) +.#
 
-1.  $\{e_1,e_2\}$ est une base de ${\real}^2$.
+1. $\{e_1,e_2\}$ est une base de ${\real}^2$.
 
-2.  $\{e_1,e_2,e_3\}$, avec $e_3=(1,1)$, n’est pas une base de
+2. $\{e_1,e_2,e_3\}$, avec $e_3=(1,1)$, n’est pas une base de
     ${\real}^2$, car ce n’est pas une famille libre. On a par
     exemple que l’élément $v=(0,0)$ peut se représenter avec les
     coordonnées $\alpha=(0,0,0)$ et également les coordonnées
@@ -2513,13 +2504,13 @@ fonction originale $f(t)$.
 La fonction $f(t)$ doit satisfaire un certain nombre de contraintes pour
 pouvoir calculer sa transformée de Fourier:
 
-1.  Elle doit être de carré intégrable
+1. Elle doit être de carré intégrable
     $$\int_{-\infty}^\infty |f(t)|^2{\mathrm{d}}t < \infty$$
 
-2.  Elle doit avoir un nombre fini d’extrema (ne doit pas varier trop
+2. Elle doit avoir un nombre fini d’extrema (ne doit pas varier trop
     vite).
 
-3.  Elle doit avoir un nombre fini de discontinuités.
+3. Elle doit avoir un nombre fini de discontinuités.
 
 ---
 
@@ -2527,17 +2518,15 @@ Exercice +.#
 
 Calculer les transformées de Fourier des fonctions suivantes
 
-1.  Le pulse symétrique $$f(t)=\left\{\begin{array}{ll}
+1. Le pulse symétrique $$f(t)=\left\{\begin{array}{ll}
                     1,&\mbox{ si }-t_c<t<t_c\\
                     0,&\mbox{ sinon.}
                    \end{array}\right.$$
-
-2.  Le pulse asymétrique $$f(t)=\left\{\begin{array}{ll}
+2. Le pulse asymétrique $$f(t)=\left\{\begin{array}{ll}
                     1,&\mbox{ si } 0<t<2t_c\\
                     0,&\mbox{ sinon.}
                    \end{array}\right.$$
-
-3.  L’exponentielle décroissante $$f(t)=\left\{\begin{array}{ll}
+3. L’exponentielle décroissante $$f(t)=\left\{\begin{array}{ll}
                     e^{-at},&\mbox{ si } t>0\\
                     0,&\mbox{ sinon.}
                    \end{array}\right.$$
@@ -2550,7 +2539,7 @@ Exercice +.#
 
 Calculer les transformées de Fourier inverse de la fonction suivante
 
-1.  Le pulse symétrique $$f(\omega)=\left\{\begin{array}{ll}
+1. Le pulse symétrique $$f(\omega)=\left\{\begin{array}{ll}
                     1,&\mbox{ si }-\omega_c<\omega<\omega_c\\
                     0,&\mbox{ sinon.}
                    \end{array}\right.$$
@@ -2563,26 +2552,26 @@ La transformée de Fourier possède plusieurs propriétés intéressantes.
 
 Propriété +.#
 
-1.  Linéarité. Soit une fonction $h(t)=af(t)+bg(t)$, alors sa
+1. Linéarité. Soit une fonction $h(t)=af(t)+bg(t)$, alors sa
     transformée de Fourier est donnée par
     $${\hat{h}}(\omega)=a{\hat{f}}(\omega)+b{\hat{g}}(\omega).$$
 
-2.  Translation temporelle. Soit une fonction $g(t)=f(t+t_0)$, alors sa
+2. Translation temporelle. Soit une fonction $g(t)=f(t+t_0)$, alors sa
     transformée de Fourier est donnée par
     $${\hat{g}}(\omega)={\hat{f}}(\omega)e^{i\omega t_0}.$$
 
-3.  Modulation en fréquence. Soit $\omega_0\in{\real}$ et une
+3. Modulation en fréquence. Soit $\omega_0\in{\real}$ et une
     fonction $g(t)=e^{-i\omega_0 t}f(t)$, alors sa transformée de
     Fourier est donnée par
     $${\hat{g}}(\omega)={\hat{f}}(\omega+\omega_0).$$
 
-4.  Contraction temporelle. Soit $a\in{\real}^\ast$ et $g(t)=f(at)$
+4. Contraction temporelle. Soit $a\in{\real}^\ast$ et $g(t)=f(at)$
     alors sa transformée de Fourier est donnée par
     $${\hat{g}}(\omega)=\frac{1}{|a|}{\hat{f}}(\omega/a).$$ En
     particulier, on a la propriété d’inversion du temps quand $a=-1$, on
     a $h(t)=f(-t)\Rightarrow{\hat{h}}(\omega)={\hat{f}}(-\omega)$.
 
-5.  Spectres de fonctions paires/impaires. Soit $f(t)$ une fonction
+5. Spectres de fonctions paires/impaires. Soit $f(t)$ une fonction
     paire (impaire), alors ${\hat{f}}(\omega)$ sera une fonction paire
     (impaire).
 
@@ -2626,12 +2615,12 @@ Exercice +.#
 Calculer les transformées de Fourier (inverses quand c’est approprié) en
 temps discret des fonctions suivantes
 
-1.  Le pulse symétrique $${\hat{f}}(\omega)=\left\{\begin{array}{ll}
+1. Le pulse symétrique $${\hat{f}}(\omega)=\left\{\begin{array}{ll}
                     1,&\mbox{ si }-\omega_c<\omega<\omega_c\\
                     0,&\mbox{ sinon.}
                    \end{array}\right.$$
 
-2.  Le pulse discret $$f[n]=\left\{\begin{array}{ll}
+2. Le pulse discret $$f[n]=\left\{\begin{array}{ll}
                     1,&\mbox{ si }n=0\\
                     0,&\mbox{ sinon.}
                    \end{array}\right.$$
@@ -2653,9 +2642,9 @@ discret, la transformée de Fourier est une fonction continue. Cela n’est
 pourquoi il est nécessaire de définir une transformée de Fourier
 discrète qui aura les propriétés suivantes
 
-1.  Elle transformera un signal discret de longueur finie.
+1. Elle transformera un signal discret de longueur finie.
 
-2.  La transformée de Fourier sera discrète et de longueur finie.
+2. La transformée de Fourier sera discrète et de longueur finie.
 
 ### Applications
 
@@ -2901,7 +2890,7 @@ l’ensemble des valeurs possibles pour le dit caractère.
 
 Illustration +.#
 
-1.  Cas discret: On étudie la distribution de salaires annuels dans une
+1. Cas discret: On étudie la distribution de salaires annuels dans une
     entreprise. Les salaires possibles sont $40'000$, $50'000$, $60'000$
     et $1'000'000$ CHF.
 
@@ -2913,7 +2902,7 @@ Illustration +.#
 
     -   Il y a 1 personne payée $1'000'000$ CHF.
 
-2.  Cas continu: Lors du benchmark d’une application, $A$, nous
+2. Cas continu: Lors du benchmark d’une application, $A$, nous
     effectuons plusieurs mesures (la population) du temps d’exécution
     (le caractère) de l’application. Les résultats obtenus sont les
     suivants:
@@ -2984,7 +2973,7 @@ Exemple (Fréqunces) +.#
 
 Les tableaux de fréquence des deux exemples précédents sont donnés par
 
-1.  Cas discret: la population totale est de $$n=35+20+5+1=61.$$
+1. Cas discret: la population totale est de $$n=35+20+5+1=61.$$
 
        Salaire   Nombre de salariés        Fréquence
       --------- -------------------- ----------------------
@@ -2995,7 +2984,7 @@ Les tableaux de fréquence des deux exemples précédents sont donnés par
 
       : Tableau des salaires, du nombre de salariés et la fréquence.
 
-2.  Cas continu: la population totale est de $$n=7+12+8+23=50.$$ Le
+2. Cas continu: la population totale est de $$n=7+12+8+23=50.$$ Le
     tableau @tbl:exec_freq affiche les différentes fréquences des
     temps d’exécution.
 
@@ -3017,10 +3006,10 @@ retrouverons dans les sections suivantes qui sont assez intuitives
 
 Propriété (Propriétés de la fréquence) +.#
 
-1.  Les fréquences sont toujours dans l’intervalle $[0,1]$
+1. Les fréquences sont toujours dans l’intervalle $[0,1]$
     $$0\leq f_i\leq 1.$$
 
-2.  La somme de toutes les fréquences donne toujours $1$
+2. La somme de toutes les fréquences donne toujours $1$
     $$\sum_{i=0}^{k-1} f_i = 1.$$
 
 ---
@@ -3052,10 +3041,10 @@ tableaux @tbl:salaires et @tbl:exec (voir le
 
 Exercice (Fréquence cumulée) +.#
 
-1.  Tracer les graphes de la fréquence cumulée pour les deux exemples
+1. Tracer les graphes de la fréquence cumulée pour les deux exemples
     que nous avons vus.
 
-2.  Que pouvons-nous déduire de la forme de la fonction (croissance,
+2. Que pouvons-nous déduire de la forme de la fonction (croissance,
     valeur maximale)?
 
 ### Mesures de tendance centrale
@@ -3076,9 +3065,9 @@ $$\bar{x}=\sum_{i=0}^{k-1}f_i\cdot x_i.$$
 
 Exercice (Propriétés de la moyenne) +.#
 
-1.  Démontrer la relation précédente.
+1. Démontrer la relation précédente.
 
-2.  Démontrer que la moyenne des écart $x_i-\bar{x}$ est nulle.
+2. Démontrer que la moyenne des écart $x_i-\bar{x}$ est nulle.
 
 ---
 
@@ -3089,9 +3078,7 @@ Illustration (Moyenne) +.#
 Pour l’exemple des salaires la moyenne est donnée par
 $$\bar{x}_{\textrm{salaire}}=\frac{35\cdot40000+20\cdot50000+5\cdot60000+1\cdot1000000}{61}=60656.$$
 
-
 ---
-
 
 On remarque ici que la moyenne des salaires donne une impression erronée
 de la situation car elle est très sensible aux valeurs extrême de la
@@ -3148,10 +3135,10 @@ Exercice (Variance, écart-type) +.#
 
 Démontrer les relations suivantes
 
-1.  On peut également calculer la variance avec les fréquences
+1. On peut également calculer la variance avec les fréquences
     $$v=\sum_{i=0}^{k-1}f_i(x_i-\bar{x})^2.$$
 
-2.  On peut également calculer la variance à l’aide de la formule
+2. On peut également calculer la variance à l’aide de la formule
     suivante
     $$v=\frac{1}{n}\left(\sum_{i=0}^{k-1}n_ix_i^2\right)-\bar{x}^2= \bar{x^2}-\bar{x}^2$$
 
@@ -3302,14 +3289,14 @@ Comme $A$ et $B$ n’ont pas d’éléments en commun, on dit que c’est deux
  p(B)&=\frac{3}{6}=\frac{1}{2}.\end{aligned}$$ On va se poser deux
 questions à présent
 
-1.  On cherche à savoir quelle est la probabilité de réaliser $A$ ou de
+1. On cherche à savoir quelle est la probabilité de réaliser $A$ ou de
     réaliser $B$, donc de tirer un dé dont le résultat sera dans
     l’ensemble $C=A\cup B=\{1,2,3,4,5\}$. Le résultat est
     $$p(C)=\frac{5}{6}.$$ Une coincidence intéressante (qui n’est en
     fait pas une coincidence) est que
     $$p(C)=p(A)+p(B)=\frac{1}{3}+\frac{1}{2}=\frac{5}{6}.$$
 
-2.  On cherche à savoir quelle est la probabilité de réaliser $A$ et
+2. On cherche à savoir quelle est la probabilité de réaliser $A$ et
     réaliser $B$ en même temps, donc de tirer un dé qui sera dans
     l’ensemble $C=A\cap B=\emptyset$. Ici on a déjà vu que la
     probabilité $p(\emptyset)=0$.
@@ -3380,11 +3367,11 @@ réaliser un événement $A\subseteq\Omega$ est une fonction $p(A)$ qui
 associe à tout événement de $A$ un nombre réel, qui satisfait les 3
 axiomes suivants
 
-1.  Une probabilité est TOUJOURS positive $$p(A)\geq 0.$$
+1. Une probabilité est TOUJOURS positive $$p(A)\geq 0.$$
 
-2.  La probabilité de l’événement certain vaut 1 $$p(\Omega)=1.$$
+2. La probabilité de l’événement certain vaut 1 $$p(\Omega)=1.$$
 
-3.  Soit $B\subseteq\Omega$. Si $A\cap B=\emptyset$, alors
+3. Soit $B\subseteq\Omega$. Si $A\cap B=\emptyset$, alors
     $$p(A\cup B)=p(A)+p(B).$$ La probabilité de réalisation de deux
     évéenements incompatibles est égale à la somme de réalisation de
     chacun d’entre eux.
@@ -3399,23 +3386,23 @@ Théorème +.#
 
 Pour $A,B\subseteq\Omega$ et $\Omega$ un univers et $p$ une probabilité.
 
-1.  $p(B\cap\bar A)=p(B)-p(B\cap A).$
+1. $p(B\cap\bar A)=p(B)-p(B\cap A).$
 
-2.  $p(\emptyset)=0.$
+2. $p(\emptyset)=0.$
 
-3.  $p(\bar A)=1-p(A).$
+3. $p(\bar A)=1-p(A).$
 
-4.  $p(A\cup B)=p(A)+p(B)-p(A\cap B).$
+4. $p(A\cup B)=p(A)+p(B)-p(A\cap B).$
 
-5.  $p(\bar A\cap \bar B)=1-p(A\cup B).$
+5. $p(\bar A\cap \bar B)=1-p(A\cup B).$
 
-6.  Si $A$ et $B$ sont disjoints, alors $p(A\cup B)=p(A)+p(B).$
+6. Si $A$ et $B$ sont disjoints, alors $p(A\cup B)=p(A)+p(B).$
 
-7.  Si $A\subseteq B$, alors $p(B\cap \bar A)=p(B)-p(A).$
+7. Si $A\subseteq B$, alors $p(B\cap \bar A)=p(B)-p(A).$
 
-8.  Si $A\subseteq B$, alors $p(A)\leq p(B).$
+8. Si $A\subseteq B$, alors $p(A)\leq p(B).$
 
-9.  $\forall A$, $0\leq p(A)\leq 1.$
+9. $\forall A$, $0\leq p(A)\leq 1.$
 
 ---
 
@@ -3456,13 +3443,13 @@ Exercice (Probabilités conditionnelles) +.#
 Sur une population de 1000 hommes qui naissent, 922 atteignent l’âge de
 50 ans et 665 l’âge de 70 ans.
 
-1.  Quelle est la probabilité qu’un homme qui vient de naître soit
+1. Quelle est la probabilité qu’un homme qui vient de naître soit
     encore en vie à 50 ans?
 
-2.  Quelle est la probabilité qu’un homme qui vient de naître soit
+2. Quelle est la probabilité qu’un homme qui vient de naître soit
     encore en vie à 70 ans?
 
-3.  Quelle est la probabilité qu’un homme de 50 ans soit encore en vie à
+3. Quelle est la probabilité qu’un homme de 50 ans soit encore en vie à
     70?
 
 ---
@@ -3499,14 +3486,14 @@ Exercice (Evénements indépendants) +.#
 On jette une pièce de monnaie deux fois de
 suite. Les résultats possible pour chaque jet sont: $P$, ou $F$.
 
-1.  Ecrivez l’univers des événements.
+1. Ecrivez l’univers des événements.
 
-2.  Calculez les probabilités des événements $A$ “face au premier jet”,
+2. Calculez les probabilités des événements $A$ “face au premier jet”,
     $B$ “pile au second jet”.
 
-3.  Calculez la probabilité $p(A\cap B)$.
+3. Calculez la probabilité $p(A\cap B)$.
 
-4.  Est-ce que les jets sont indépendants?
+4. Est-ce que les jets sont indépendants?
 
 ---
 
@@ -3601,21 +3588,21 @@ $1/6$. On a donc que $$p(A)=\frac{1}{3}\cdot \frac{1}{6}=\frac{1}{18}.$$
 
 Exercice +.#
 
-1.  Calculer la probabilité d’obtenir $2$ comme la somme des deux
+1. Calculer la probabilité d’obtenir $2$ comme la somme des deux
     nombres tirés par deux dés.
 
-2.  Calculer la probabilité d’obtenir $3,4,5,6,7,8,9,10,11,12$ comme la
+2. Calculer la probabilité d’obtenir $3,4,5,6,7,8,9,10,11,12$ comme la
     somme des deux nombres tirés par deux dés.
 
-3.  Calculer la probabilité d’obtenir $7$ comme la somme des deux
+3. Calculer la probabilité d’obtenir $7$ comme la somme des deux
     nombres tirés par deux dés.
 
-4.  Calculer la probabilité d’obtenir $6$ soit avec 1 soit avec 2 dés.
+4. Calculer la probabilité d’obtenir $6$ soit avec 1 soit avec 2 dés.
 
-5.  Déterminer le nombre de combinaisons possibles avec 3, 4, 5 dés.
+5. Déterminer le nombre de combinaisons possibles avec 3, 4, 5 dés.
     Pouvez vous généraliser à $n$ dés?
 
-6.  Soit un tirage aléatoire offrant 2 possibilités (pile ou face par
+6. Soit un tirage aléatoire offrant 2 possibilités (pile ou face par
     exemple). Quel est le nombre de combinaisons possibles si on tire
     $n$ fois? Pouvez-vous généraliser pour un tirage aléatoire offrant
     $m$ possibilités qu’on tire $n$ fois?
@@ -3675,11 +3662,11 @@ Exercice +.#
 
 On lance un dé parfait 10 fois. Quelle est la probabilité d’obtenir:
 
-1.  10 fois 6?
+1. 10 fois 6?
 
-2.  4 fois 3, 3 fois 2 et 3 fois 1?
+2. 4 fois 3, 3 fois 2 et 3 fois 1?
 
-3.  2 fois 1, 2 fois 2, 2 fois 3, 1 fois 4, 1 fois 5, et 1 fois 6?
+3. 2 fois 1, 2 fois 2, 2 fois 3, 1 fois 4, 1 fois 5, et 1 fois 6?
 
 ---
 
@@ -3742,12 +3729,12 @@ $p(\{5,2\}\backslash \{2\mbox{ ou }5)=\frac{1}{5}$ pour trouver la probabilité 
 
 Exerice +.#
 
-1.  Le jeu Euromillions consiste en un tirage de 5 numéros parmi 50
+1. Le jeu Euromillions consiste en un tirage de 5 numéros parmi 50
     possible, puis par le tirage de 2 “étoiles” parmi 11 possibles.
     Déterminez la probabilité de trouver la bonne combinaison à un
     tirage.
 
-2.  Le jeu du swiss lotto, consiste au tirage de 6 numéros parmi 42
+2. Le jeu du swiss lotto, consiste au tirage de 6 numéros parmi 42
     possibles, puis au tirage d’un numéros parmi 6. Calculez la
     probabilité de gagner au swiss lotto.
 
@@ -3760,7 +3747,7 @@ Afin de continuer avec ces concepts de tirages aléatoires avec ou sans
 remise de suites ordonnées ou non, nous allons faire quelques exercices.
 Il peut se révéler utile de dessiner un arbre pour ces exercices.
 
-1.  Dans une urne se trouvent 2 boules blanches et 3 boules noires. On
+1. Dans une urne se trouvent 2 boules blanches et 3 boules noires. On
     tire successivement deux boules sans remise. Calculer et comparer
     les probabilités des deux événements suivants
 
@@ -3768,7 +3755,7 @@ Il peut se révéler utile de dessiner un arbre pour ces exercices.
 
     -   Tirer deux boules de couleurs différentes.
 
-2.  Une bille, lâchée en $O$ tombe dans l’une des trois boîtes $A$, $B$,
+2. Une bille, lâchée en $O$ tombe dans l’une des trois boîtes $A$, $B$,
     ou $C$. A chaque bifurcation, la bille tombe à gauche avec la
     probabilité de 0.25 et à droite avec la probabilité de 0.75 (voir
     @fig:bille)
@@ -3789,7 +3776,7 @@ Il peut se révéler utile de dessiner un arbre pour ces exercices.
     -   On lâche dix billes en $O$. Calculer la probabilité d’avoir au
         moins trois billes dans la boîte B.
 
-3.  A la naissance, la probabilité qu’un enfant soit un garçon est de
+3. A la naissance, la probabilité qu’un enfant soit un garçon est de
     $p(G)=0.514$.
 
     -   Calculer et la probabilité qu’un enfant soit une fille.
@@ -3810,18 +3797,18 @@ porte le nom de variable aléatoire et peut s’écrire mathématiquement
 sous la forme $$X:\Omega\rightarrow {\real}.$$ Afin de mieux
 comprendre ce concept voyons quelques exemples
 
-1.  Lors d’un jet de dé unique l’univers est défini par
+1. Lors d’un jet de dé unique l’univers est défini par
     $\Omega=\{1,2,3,4,5,6\}$. On peut de façon assez naturelle définir
     notre variable aléatoire comme $$X:i\rightarrow i.$$
 
-2.  Si nous lançons une pièce de monnaie les deux issues possibles sont
+2. Si nous lançons une pièce de monnaie les deux issues possibles sont
     pile $p$, ou face $f$ ($\Omega={p,f}$). Nous pouvons définir la
     variable aléatoire $X$ comme $$X:\left\{\begin{array}{l}
                     p\rightarrow 0\\
                     f\rightarrow 1
                    \end{array}\right.$$
 
-3.  Si nous lançons une pièce de monnaie à deux reprises, les issues
+3. Si nous lançons une pièce de monnaie à deux reprises, les issues
     possibles sont $(p,p)$, $(p,f)$, $(f,p)$, $(f,f)$. Nous pouvons
     définir la variable aléatoire $X$ comme $$X:\left\{\begin{array}{l}
                     (p,p)\rightarrow 0\\
@@ -3840,26 +3827,26 @@ Pour illustrer ce qui se passe, intéressons-nous au dernier exemple
 ci-dessus avec le double pile ou face. On se pose les questions
 suivantes
 
-1.  Quelle est la probabilité que $X$ prenne la valeur $1$?
+1. Quelle est la probabilité que $X$ prenne la valeur $1$?
 
-2.  Quelle est la probabilité que $X$ prenne une valeur incluse dans
+2. Quelle est la probabilité que $X$ prenne une valeur incluse dans
     $I=[0.6,3]$?
 
-3.  Quelle est la probabilité que $X$ prenne une valeur inférieure à
+3. Quelle est la probabilité que $X$ prenne une valeur inférieure à
     $2$?
 
 Prenons ces trois questions une par une
 
-1.  Les deux façons d’obtenir $X=1$ est d’avoir les tirages $(p,f)$ ou
+1. Les deux façons d’obtenir $X=1$ est d’avoir les tirages $(p,f)$ ou
     $(f,p)$, soit $A=\{(p,f), (f,p)\}$. Les probabilités de chacun des
     événements de l’univers étants équiprobables on a
     $$p(X=1)=p(A)=1/2.$$
 
-2.  Le seul événement donnant un $X$ qui n’est pas dans l’intervalle
+2. Le seul événement donnant un $X$ qui n’est pas dans l’intervalle
     $J=[0.6,3]$ est $B=(p,p)$ ($X(B)=0$). On a donc que
     $$p(0.6\leq X\leq 3)=p(\bar B)=1-p(B)=\frac{3}{4}.$$
 
-3.  De façon similaire les trois événements donnant $X<2$ sont dans
+3. De façon similaire les trois événements donnant $X<2$ sont dans
     $C=\{(p,p), (p,f), (f,p)\}$. On a donc $$p(X<2)=p(C)=\frac{3}{4}.$$
 
 On constate au travers de ces trois exemples que la probabilité que la
@@ -4164,7 +4151,7 @@ Remerciements
 Je voudrais remercier (par ordre alphabétique) les étudiants du cours
 qui ont contribué à améliorer ce polycopié. En espérant que cette liste
 continuera à s’allonger avec les années.Merci à Messieurs
-Gay-Balmaz, Ibanez, Lovino et Sousa. Je voudrais également remercier A. Malaspinas pour sa relecture et ses corrections. 
+Gay-Balmaz, Ibanez, Lovino et Sousa. Je voudrais également remercier A. Malaspinas pour sa relecture et ses corrections.
 
 [^1]: Pour ceux que ça intéresse cette série s’obtient à l’aide d’une
     série de Taylor.
