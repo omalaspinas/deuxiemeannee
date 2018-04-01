@@ -22,11 +22,11 @@ urlcolor: blue
 
 ## Fonctions
 
-Une fonction $f$ de façon générale est un objet qui prend un (ou plusieurs) paramètres et qui lui (leur) associe (associent) un résultat
+Une fonction $f$ de façon générale est un objet qui prend un (ou plusieurs) paramètres et qui lui (leur) associe un résultat
 $$
 \mbox{résultat}=f(\mbox{paramètres}).
 $$
-Nous pouvons aussi exprimer cette notion de la manière suivante. Considérons deux ensembles $A$ et $B$. Supposons qu'à chaque élément $x\in A$ est associé un élément dans $B$ que nous notons par $f(x)$. Alors on dit que $f$ est une fonction ou une application (de $A$ dans $B$). A ce niveau A et B sont arbitraires mais dans la suite nous allons nous intéresser surtout du cas où $A=\subset\real$. Les valeurs de $f$ constituent les *images* de $x$.
+Nous pouvons aussi exprimer cette notion de la manière suivante. Considérons deux ensembles $A$ et $B$. Supposons qu'à chaque élément $x\in A$ est associé un élément dans $B$ que nous notons par $f(x)$. Alors on dit que $f$ est une fonction ou une application (de $A$ dans $B$). A ce niveau A et B sont arbitraires mais dans la suite nous allons nous intéresser surtout du cas où $A\subseteq\real$. $A$ est le {\it domaine de définition} de $f$. Les valeurs de $f$ constituent les *images* de $x$.
 ---
 
 Exemple (Fonctions, généralités) +.#
@@ -80,7 +80,7 @@ Exemple (Fonction inverse) +.#
     positifs. $f(x)=x^2$ n’a pas d’inverse pour les $x$ négatifs.
     On peut se convaincre qu'une fonction ne peu admettre une inverse que si elle
     elle satisfait la condition $x_1\neq x_2 \rightarrow f(x_1)\neq f(x_2)$.
-    Dans notre exemple $-1\neq 1$ mais (f(-1)=f(1)=1$
+    Dans notre exemple $-1\neq 1$ mais $(f(-1)=f(1)=1$
 
 ---
 
@@ -249,7 +249,8 @@ Théorème (Valeurs intermédiaires) +.#
 
 Soit $f$ une fonction continue
 sur $D$, et $a,b$ deux points contenus dans $D$ tels que $a<b$ et
-$f(a)<f(b)$, alors $$\forall y\in [f(a);f(b)],\ \exists\ c|f(c)=y.$$
+$f(a)<f(b)$, alors $$\forall y\in [f(a);f(b)],\ \exists\ c\in [a,b] |f(c)=y.$$
+Nous pouvons bien sûr énoncer un résultat similaire dans le cas $f(a9>f(b)$.
 
 ## Dérivées
 
@@ -282,9 +283,9 @@ et $g'$), et $a\in{\real}$, alors
 
 3. $(f\cdot g)'=f'g+fg'$.
 
-4. Si $g$ ne s’annule pas $(f/g)'=(f'g-fg')/g^2$.
+4. Si $g$ ne s'annule pas  $(f/g)'=(f'g-fg')/g^2$.
 
-5. $(g\circ f)'=(g'\circ f)\cdot f'$.
+5. $(g\circ f)'=(g'\circ f)\cdot f'$, autrement dit pour $x\in D$, $(g(f(x)))'=g'(f(x)\cdot f'(x)$.
 
 Il existe quelques dérivées importantes que nous allons utiliser
 régulièrement dans la suite de ce cours. En supposons que
@@ -296,7 +297,7 @@ $C\in {\real}$, nous avons
 
 3. $f(x)=\ln(x)$, $f'(x)=1/x$.
 
-4. $f(x)=C, $f'(x)=0.
+4. $f(x)=C$, $f'(x)=0$.
 
 5. $f(x)=\sin(x)$, $f'(x)=\cos(x)$.
 
@@ -327,8 +328,8 @@ un intervalle $D=]a;b[$ s’il existe un $x_0\in D$ tel que $f(x_0)\geq f(x)$
 
 Propriété (Maximum/minimum) +.#
 
-Soient $f$ une fonction dérivable sur $D=]a;b[$ et $x_0\in D$. Si $f$
-admet un extremum en $x_0$ alors $f'(x_0)=0$. De plus si
+Soient $f$ une fonction dérivable sur $D=]a;b[$ et $x_0\in D$. On dit que $f$
+admet un extremum en $x_0$ si $f'(x_0)=0$. De plus si
 $f'(x_0)=0$ et $f'$ change de signe en $x_0$ alors $f(x_0)$ est un
 maximum ou un minimum de $f$.
 
