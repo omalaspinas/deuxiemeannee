@@ -4090,12 +4090,12 @@ problèmes apparaissent dès que le nombre de tirages atteint un nombre
 équivalent à $T^{1/3}$. Une condition primordiale pour avoir un “bon”
 générateur de nombres pseudo-aléatoire est donc une période élevée. Pour
 des générateurs aléatoires modernes, un période $T<2^{100}$ n’est pas
-considéré comme satisfaisant pour la plupart des applications.
+considérée comme satisfaisante pour la plupart des applications.
 
 Évidemment il est impossible de tester la périodicité de tels
 générateurs de façon expérimentale ($2^{100}\sim 10^{30}$). Cela ne peut
 se faire que par des études analytiques approfondies. Comme expliqué
-dans la section @sec:congr la période maximale d’un générateur
+dans la  @sec:congr la période maximale d’un générateur
 congruentiel linéaire est $m$. Dans les 3 exemples donnés la période est
 respectivement de $2^{32}$, $2^{48}$, ou $2^{32}$. Ils ne devraient donc
 plus être utilisés dans des applications modernes. A titre de
@@ -4109,7 +4109,7 @@ avec $m$ aussi grand qu’on veut (disons $m=2^{2000}$ par exemple) mais
 la séquence de nombres générés ne sera absolument pas aléatoire, étant
 donné qu’on aura
 $$X=\{0, 1, 2, 3, 4, 5, 6, ..., 2^{2000}-1, 0, 1, 2, ...\},$$ si
-$X_0=0$. Cela pourrait ne pas être problématique en soit, si la séquence
+$X_0=0$. Cela pourrait ne pas être problématique en soi, si la séquence
 avec une graine $X_0=1$ n’était pas si similaire
 $$X=\{1, 2, 3, 4, 5, 6, ..., 2^{2000}-1, 0, 1, 2, ...\}.$$ Il est donc
 nécessaire d’avoir d’autres critères que la seule période. C’est le
@@ -4142,15 +4142,15 @@ expérimentalement pour $k$ de l’ordre de la période du générateur de
 nombres aléatoires. Des analyses théoriques sont dès lors primordiales,
 mais bien en dehors du champs de ce cours...
 
-Il existe beaucoup d’autres tests possibles (il y a des recommandations
-sur le site `http://www.random.org` pour tester des nombres aléatoires.
+Il existe beaucoup d’autres possiblités (il y a des recommandations
+sur le site `http://www.random.org`) pour tester des nombres aléatoires.
 
 Remerciements
 =============
 
 Je voudrais remercier (par ordre alphabétique) les étudiants du cours
 qui ont contribué à améliorer ce polycopié. En espérant que cette liste
-continuera à s’allonger avec les années.Merci à Messieurs
+continuera à s’allonger avec les années. Merci à Messieurs
 Gay-Balmaz, Ibanez, Lovino et Sousa. Je voudrais également remercier A. Malaspinas pour sa relecture et ses corrections.
 
 [^1]: Pour ceux que ça intéresse cette série s’obtient à l’aide d’une
