@@ -26,7 +26,8 @@ Une fonction $f$ de façon générale est un objet qui prend un (ou plusieurs) p
 $$
 \mbox{résultat}=f(\mbox{paramètres}).
 $$
-Nous pouvons aussi exprimer cette notion de la manière suivante. Considérons deux ensembles $A$ et $B$. Supposons qu'à chaque élément $x\in A$ est associé un élément dans $B$ que nous notons par $f(x)$. Alors on dit que $f$ est une fonction ou une application (de $A$ dans $B$). A ce niveau A et B sont arbitraires mais dans la suite nous allons nous intéresser surtout du cas où $A\subseteq\real$. $A$ est le {\it domaine de définition} de $f$. Les valeurs de $f$ constituent les *images* de $x$.
+Nous pouvons aussi exprimer cette notion de la manière suivante. Considérons deux ensembles $A$ et $B$. Supposons qu'à chaque élément $x\in A$ est associé un élément dans $B$ que nous notons par $f(x)$. Alors on dit que $f$ est une fonction ou une application (de $A$ dans $B$). A ce niveau A et B sont arbitraires mais dans la suite nous allons nous intéresser surtout du cas où $A\subseteq\real$. $A$ est le *domaine de définition* de $f$. Les valeurs de $f$ constituent les *images* de $x$.
+
 ---
 
 Exemple (Fonctions, généralités) +.#
