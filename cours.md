@@ -8,7 +8,7 @@ eqnPrefix:
   - "éq."
   - "éqs."
 chapters: true
-numberSections: false
+numberSections: true
 chaptersDepth: 1
 sectionsDepth: 3
 lang: fr
