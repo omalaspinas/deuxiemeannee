@@ -1,7 +1,5 @@
-NAME=cours
-
-default:
-	pandoc -s -o cours.pdf cours.md --filter=pandoc-numbering --filter=$(PANDOC_CROSSREF)pandoc-crossref --template=./default.latex --pdf-engine pdflatex
+cours.pdf: cours.md default.latex
+	pandoc -s -o cours.pdf cours.md --filter=pandoc-numbering --filter=pandoc-crossref --template=./default.latex --pdf-engine pdflatex
 
 # latex:
 # 	pandoc -s -S -o cours.tex cours.md --filter=pandoc-numbering --filter=$(PANDOC_CROSSREF)pandoc-crossref  --template=./default.latex
