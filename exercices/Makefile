@@ -2,9 +2,12 @@ FILTERS = --filter=pandoc-numbering --filter=pandoc-crossref
 TEMPLATE = --template=./default.latex
 PDFENGINE = --pdf-engine pdflatex
 
-all: fourier.pdf probas.pdf
+all: fourier.pdf fourier_serie1.pdf probas.pdf
 
 fourier.pdf: fourier.md
+	pandoc -s -o $@ $< $(FILTERS) $(TEMPLATE) $(PDFENGINE)
+
+fourier_serie1.pdf: fourier_serie1.md
 	pandoc -s -o $@ $< $(FILTERS) $(TEMPLATE) $(PDFENGINE)
 
 probas.pdf: probas.md

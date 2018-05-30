@@ -123,7 +123,7 @@ On peut assez simplement calculer les coefficients de Fourier $a_j$,
 qui sont donnés par (la fonction $f$ étant impaire, nous pouvons utiliser le fait que $f(x)\sin(jx)$ est, elle, paire, d'où l'intégration sur le demi-domaine)
 \begin{align}
 a_j&=\frac{2}{\pi}\int_0^\pi\sin(x/2)\sin(jx)\dd x=\frac{1}{\pi}\left(\int_0^\pi \cos((j-1/2)x)-\cos((j+1/2)x)\dd x\right),\\
-&=\frac{1}{\pi}\left(\frac{\sin((n-1/2)x)}{n-1/2}-\frac{\sin((n+1/2)x)}{n+1/2}\right)_{0}^\pi=-\frac{(-1)^j}{\pi}\frac{2j}{j^2-1/4}.
+&=\frac{1}{\pi}\left.\left(\frac{\sin((n-1/2)x)}{n-1/2}-\frac{\sin((n+1/2)x)}{n+1/2}\right)\right|_{0}^\pi=-\frac{(-1)^j}{\pi}\frac{2j}{j^2-1/4}.
 \end{align}
 
 Exercice +.#

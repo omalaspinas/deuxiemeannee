@@ -2123,7 +2123,7 @@ appelés vecteurs et notés $v$, sont sont munis des opérations
 $+$ (l’addition) et $\cdot$ (la multiplication par un scalaire) qui ont les
 propriétés suivantes
 
--    
+-  
 
     1. L’addition est associative et commutative. Soient $u,v,w\in V$,
         alors $$u+v=v+u,\quad \mbox{ et }\quad (u+v)+w=u+(v+w).$$
@@ -2133,7 +2133,7 @@ propriétés suivantes
 
     3. Tout $v$ admet un opposé, noté $-v$ tel que $$v+(-v)=0_V.$$
 
--    
+-  
 
     1. La multiplication par un scalaire est distributive à gauche sur
         l’addition (et à droite sur $E$). Pour $u,v\in V$ et
@@ -2896,26 +2896,26 @@ Illustration +.#
     entreprise. Les salaires possibles sont $40'000$, $50'000$, $60'000$
     et $1'000'000$ CHF.
 
-    -   Il y a 35 personnes payées $40'000$ CHF.
+    - Il y a 35 personnes payées $40'000$ CHF.
 
-    -   Il y a 20 personnes payées $50'000$ CHF.
+    - Il y a 20 personnes payées $50'000$ CHF.
 
-    -   Il y a 5 personnes payées $60'000$ CHF.
+    - Il y a 5 personnes payées $60'000$ CHF.
 
-    -   Il y a 1 personne payée $1'000'000$ CHF.
+    - Il y a 1 personne payée $1'000'000$ CHF.
 
 2. Cas continu: Lors du benchmark d’une application, $A$, nous
     effectuons plusieurs mesures (la population) du temps d’exécution
     (le caractère) de l’application. Les résultats obtenus sont les
     suivants:
 
-    -   7 exécutions ont pris entre 50 et 51 secondes.
+    - 7 exécutions ont pris entre 50 et 51 secondes.
 
-    -   12 exécutions ont pris entre 51 et 52 secondes.
+    - 12 exécutions ont pris entre 51 et 52 secondes.
 
-    -   8 exécutions ont pris entre 52 et 53 secondes.
+    - 8 exécutions ont pris entre 52 et 53 secondes.
 
-    -   23 exécutions ont pris entre 53 et 54 secondes.
+    - 23 exécutions ont pris entre 53 et 54 secondes.
 
 ---
 
@@ -2936,7 +2936,7 @@ le cas des salaires (voir Tabl. @fig:salaires)
 et du benchmark de l’application (voir Tabl. @fig:exec)
 
     Temps d’exécution     Nombre
-   -------------------   --------
+   ------------------- --------
         \[50,51)             7
         \[51,52)            12
         \[52,53)             8
@@ -3189,8 +3189,8 @@ avons vus plus tôt dans le cours.
 
 ---
 
-Exemple du jeu de dé
---------------------
+Probabilités: Exemple du jeu de dé
+----------------------------------
 
 On considère un dé à 6 faces. Le lancer de dé est une *expérience
 aléatoire*, car on ne peut dire quel sera le résultat avant d’avoir
@@ -3204,29 +3204,23 @@ sera utile pour la suite.
 
 Définition +.#
 
--   L’ensemble des résultats possibles du lancer de dé est
+- L’ensemble des résultats possibles du lancer de dé est
     $\Omega=\{1,2,3,4,5,6\}$ et cet ensemble est appelé l’*univers* du
     lancer de dé.
-
--   Chaque résultat possible du lancer de dé ($1$, $2$, etc), noté
+- Chaque résultat possible du lancer de dé ($1$, $2$, etc), noté
     $\omega\in\Omega$, est appelé une *éventualité*.
-
--   Un ensemble de résultats possibles, par exemple tous les résultats
+- Un ensemble de résultats possibles, par exemple tous les résultats
     pairs du lancer de dé $A=\{2, 4, 6\}\in\Omega$, s’appelle un
     *événement*. Un événement composé d’une seule éventualité est appelé
     *événement élémentaire*.
-
--   On dit que l’événement $A$ est *réalisé* si on obtient $2$, $4$, ou
+- On dit que l’événement $A$ est *réalisé* si on obtient $2$, $4$, ou
     $6$ en lançant le dé.
-
--   *L’événement certain* est l’univers en entier. On est certain de
+- *L’événement certain* est l’univers en entier. On est certain de
     réaliser l’événement.
-
--   *L’événement impossible* est l’ensemble vide, $A=\emptyset$. Il
+- *L’événement impossible* est l’ensemble vide, $A=\emptyset$. Il
     correspondrait à l’événement obtenir $7$ ou plus en lançant un dé
     par exemple.
-
--   Si $A$ est un événement, on note $p(A)$ la *probabilité* que $A$
+- Si $A$ est un événement, on note $p(A)$ la *probabilité* que $A$
     soit réalisé.
 
 ---
@@ -3753,9 +3747,9 @@ Il peut se révéler utile de dessiner un arbre pour ces exercices.
     tire successivement deux boules sans remise. Calculer et comparer
     les probabilités des deux événements suivants
 
-    -   Tirer deux boules de même couleur.
+    - Tirer deux boules de même couleur.
 
-    -   Tirer deux boules de couleurs différentes.
+    - Tirer deux boules de couleurs différentes.
 
 2. Une bille, lâchée en $O$ tombe dans l’une des trois boîtes $A$, $B$,
     ou $C$. A chaque bifurcation, la bille tombe à gauche avec la
@@ -3765,28 +3759,28 @@ Il peut se révéler utile de dessiner un arbre pour ces exercices.
     ![Une bille lâchée en $O$ tombe dans la boîte $A$, $B$, ou
     $C$.](figs/bille.pdf){#fig:bille height="2.8truecm"}
 
-    -   Calculer les probabilités $p(A)$, $p(B)$, $p(C)$ pour qu’une
+    - Calculer les probabilités $p(A)$, $p(B)$, $p(C)$ pour qu’une
         bille lâchée de O tombe respectivement dans la boîte $A$, $B$ ou
         $C$.
 
-    -   On lâche deux billes en $O$. Calculer la probabilité pour que
+    - On lâche deux billes en $O$. Calculer la probabilité pour que
         les deux billes tombent dans la même boîte.
 
-    -   On lâche trois billes en $O$. Calculer la probabilité d’avoir
+    - On lâche trois billes en $O$. Calculer la probabilité d’avoir
         une bille dans chaque boîte.
 
-    -   On lâche dix billes en $O$. Calculer la probabilité d’avoir au
+    - On lâche dix billes en $O$. Calculer la probabilité d’avoir au
         moins trois billes dans la boîte B.
 
 3. A la naissance, la probabilité qu’un enfant soit un garçon est de
     $p(G)=0.514$.
 
-    -   Calculer et la probabilité qu’un enfant soit une fille.
+    - Calculer et la probabilité qu’un enfant soit une fille.
 
-    -   On considère la naissance de deux enfants. Calculer et la
+    - On considère la naissance de deux enfants. Calculer et la
         probabilité que les deux enfants soient de même sexe.
 
-    -   On considère la naissance de deux enfants. Calculer et la
+    - On considère la naissance de deux enfants. Calculer et la
         probabilité que les deux enfants soient de sexes différents.
 
 Variables aléatoires
@@ -3971,13 +3965,13 @@ exactement).
 Quelques paramètres utilisés dans des générateurs connus sont par
 exemple
 
--   la fonction `rand()` du langage $C$
+- la fonction `rand()` du langage $C$
     $$a=1103515245,\quad c=12345,\quad m=2^{32}.$$
 
--   la fonction `drand()` du langage $C$
+- la fonction `drand()` du langage $C$
     $$a=25214903917,\quad c=11,\quad m=2^{48}.$$
 
--   le générateur `RANDU` des ordinateurs IBM des années 1960
+- le générateur `RANDU` des ordinateurs IBM des années 1960
     $$a=65539,\quad c=0,\quad m=2^{32}.$$
 
 Ce genre de générateur de nombres aléatoires est très efficace d’un
